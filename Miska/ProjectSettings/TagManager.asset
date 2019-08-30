@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - WoodFloor
+  - Pickup
   layers:
   - Default
   - TransparentFX

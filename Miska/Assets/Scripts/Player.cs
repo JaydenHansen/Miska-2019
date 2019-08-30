@@ -195,9 +195,9 @@ public class Player : MonoBehaviour
     //    //m_velocity -= velocityProjected;
     //}
 
-    public void OnTrashPickup()
-    {
-        m_trashCount++;
-        //m_trashSound.Post(gameObject);
-    }
+    //public void OnTrashPickup()
+    //{
+    //    m_trashCount++;
+    //    //m_trashSound.Post(gameObject);
+    //}
 }

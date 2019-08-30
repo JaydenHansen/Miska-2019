@@ -1,0 +1,215 @@
+fileFormatVersion: 2
+guid: b6b97836f66c0f14f985a6c4145b67b2
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: StoneBase
+    100004: StoneBase_1
+    100006: StoneBase_2
+    100008: StoneBase_3
+    100010: StoneStack_1
+    100012: StoneStack_101
+    100014: StoneStack_102
+    100016: StoneStack_103
+    100018: StoneStack_104
+    100020: StoneStack_105
+    100022: StoneStack_106
+    100024: StoneStack_107
+    100026: StoneStack_2
+    100028: StoneStack_201
+    100030: StoneStack_202
+    100032: StoneStack_203
+    100034: StoneStack_204
+    100036: StoneStack_205
+    100038: StoneStack_206
+    100040: StoneStack_207
+    100042: StoneStack_208
+    100044: StoneStack_209
+    100046: StoneStack_210
+    100048: StoneStack_211
+    100050: StoneStack_212
+    100052: StoneStack_213
+    400000: //RootNode
+    400002: StoneBase
+    400004: StoneBase_1
+    400006: StoneBase_2
+    400008: StoneBase_3
+    400010: StoneStack_1
+    400012: StoneStack_101
+    400014: StoneStack_102
+    400016: StoneStack_103
+    400018: StoneStack_104
+    400020: StoneStack_105
+    400022: StoneStack_106
+    400024: StoneStack_107
+    400026: StoneStack_2
+    400028: StoneStack_201
+    400030: StoneStack_202
+    400032: StoneStack_203
+    400034: StoneStack_204
+    400036: StoneStack_205
+    400038: StoneStack_206
+    400040: StoneStack_207
+    400042: StoneStack_208
+    400044: StoneStack_209
+    400046: StoneStack_210
+    400048: StoneStack_211
+    400050: StoneStack_212
+    400052: StoneStack_213
+    2100000: lambert1
+    2300000: StoneBase_1
+    2300002: StoneBase_2
+    2300004: StoneBase_3
+    2300006: StoneStack_101
+    2300008: StoneStack_102
+    2300010: StoneStack_103
+    2300012: StoneStack_104
+    2300014: StoneStack_105
+    2300016: StoneStack_106
+    2300018: StoneStack_107
+    2300020: StoneStack_201
+    2300022: StoneStack_202
+    2300024: StoneStack_203
+    2300026: StoneStack_204
+    2300028: StoneStack_205
+    2300030: StoneStack_206
+    2300032: StoneStack_207
+    2300034: StoneStack_208
+    2300036: StoneStack_209
+    2300038: StoneStack_210
+    2300040: StoneStack_211
+    2300042: StoneStack_212
+    2300044: StoneStack_213
+    3300000: StoneBase_1
+    3300002: StoneBase_2
+    3300004: StoneBase_3
+    3300006: StoneStack_101
+    3300008: StoneStack_102
+    3300010: StoneStack_103
+    3300012: StoneStack_104
+    3300014: StoneStack_105
+    3300016: StoneStack_106
+    3300018: StoneStack_107
+    3300020: StoneStack_201
+    3300022: StoneStack_202
+    3300024: StoneStack_203
+    3300026: StoneStack_204
+    3300028: StoneStack_205
+    3300030: StoneStack_206
+    3300032: StoneStack_207
+    3300034: StoneStack_208
+    3300036: StoneStack_209
+    3300038: StoneStack_210
+    3300040: StoneStack_211
+    3300042: StoneStack_212
+    3300044: StoneStack_213
+    4300000: StoneBase_1
+    4300002: StoneBase_2
+    4300004: StoneBase_3
+    4300006: StoneStack_101
+    4300008: StoneStack_102
+    4300010: StoneStack_103
+    4300012: StoneStack_104
+    4300014: StoneStack_105
+    4300016: StoneStack_106
+    4300018: StoneStack_107
+    4300020: StoneStack_201
+    4300022: StoneStack_202
+    4300024: StoneStack_203
+    4300026: StoneStack_204
+    4300028: StoneStack_205
+    4300030: StoneStack_206
+    4300032: StoneStack_207
+    4300034: StoneStack_208
+    4300036: StoneStack_209
+    4300038: StoneStack_210
+    4300040: StoneStack_211
+    4300042: StoneStack_212
+    4300044: StoneStack_213
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

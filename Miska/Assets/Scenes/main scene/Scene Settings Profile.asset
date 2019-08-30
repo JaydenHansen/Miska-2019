@@ -24,7 +24,7 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   multiplier:
     m_OverrideState: 1
     m_Value: 1
@@ -340,10 +340,10 @@ MonoBehaviour:
   m_AdvancedMode: 0
   lift:
     m_OverrideState: 1
-    m_Value: {x: 0.8778905, y: 0.8180274, z: 1, w: 0}
+    m_Value: {x: 0.7583498, y: 0.7870438, z: 1, w: 0}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 0.91275734, y: 0.9346971, z: 1, w: 0}
+    m_Value: {x: 0.7898965, y: 0.8024597, z: 1, w: 0}
   gain:
     m_OverrideState: 1
     m_Value: {x: 1, y: 0.89270985, z: 0.9390732, w: 0}

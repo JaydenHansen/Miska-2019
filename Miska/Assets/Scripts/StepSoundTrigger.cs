@@ -32,6 +32,10 @@ public class StepSoundTrigger : MonoBehaviour
         {
           //  AkSoundEngine.SetSwitch("Locomotion_Material", "Grass", gameObject);
         }
+        else if (terMat == TerrainMaterial.Rock)
+        {
+            //AkSoundEngine.SetSwitch("Locomotion_Material", "Wood", gameObject);
+        }
         else
         {
             Debug.Log("Invalid Terrain Material");

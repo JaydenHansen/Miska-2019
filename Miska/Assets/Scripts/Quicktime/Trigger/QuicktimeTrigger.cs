@@ -2,35 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum QuicktimeResult
-{
-    Success,
-    Continue,
-    Failure
-}
 
 
-public class QuicktimeTrigger : MonoBehaviour
-{
-    protected bool m_inQuicktime = false;
-    protected bool m_stayInQuicktime = false;
-    protected QuicktimeResponse[] m_responses;
-    protected Player m_player;
 
-    public Player Player
-    {
-        get { return m_player; }
-    }
-
-    // Start is called before the first frame update
-    public virtual void Start()
-    {
-        m_responses = GetComponents<QuicktimeResponse>();
-        foreach(QuicktimeResponse response in m_responses)
-        {
-            response.Owner = this;
-        }
-    }
+public class QuicktimeTrigger : QuicktimeBase
+{    
+    protected bool m_stayInQuicktime = false;        
 
     // Update is called once per frame
     void Update()

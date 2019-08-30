@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
         if (!m_hasPickup)
         {
             RaycastHit hit;
-            if (Physics.Raycast(m_cameraController.DirectionRay, out hit, m_rockGlowDist, 1 - LayerMask.NameToLayer("Rock"), QueryTriggerInteraction.Collide))
+            if (Physics.Raycast(m_cameraController.DirectionRay, out hit, m_rockGlowDist, (1 << LayerMask.NameToLayer("Rock")) | (1 << LayerMask.NameToLayer("Highlighters")), QueryTriggerInteraction.Collide))
             {
                 if (m_lastLookedAt)
                 {
@@ -158,7 +158,7 @@ public class Player : MonoBehaviour
         // Pickup
         if (Input.GetMouseButtonDown(0))
         {
-            if (!m_hasPickup)
+            if (!m_hasPickup && m_lastLookedAt)
             {
                 Pickup rock = m_lastLookedAt.GetComponent<Pickup>();
                 if (rock && !rock.Rigidbody.isKinematic)

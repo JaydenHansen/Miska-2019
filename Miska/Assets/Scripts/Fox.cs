@@ -18,8 +18,10 @@ public class Fox : MonoBehaviour
         m_agent = GetComponent<NavMeshAgent>();
         m_animator = GetComponent<Animator>();
         m_currentWaypoint = 0;
-        m_agent.autoBraking = false;
+        if (m_waypoints.Length > 1)
+            m_agent.autoBraking = false;
         m_agent.updateRotation = false;
+        m_agent.updateUpAxis = false;
         m_agent.SetDestination(m_waypoints[m_currentWaypoint].position);
     }
 
@@ -43,7 +45,7 @@ public class Fox : MonoBehaviour
         if (m_agent.velocity.sqrMagnitude != 0)
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position + Vector3.up * 0.5f, Vector3.down, out hit, 10, 1 - LayerMask.NameToLayer("Ground")))
+            if (Physics.Raycast(transform.position + Vector3.up * 0.5f, Vector3.down, out hit, 10, 1 << LayerMask.NameToLayer("Ground")))
             {
                 Quaternion targetRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
                 targetRotation *= Quaternion.LookRotation(new Vector3(m_agent.velocity.x, 0, m_agent.velocity.z));

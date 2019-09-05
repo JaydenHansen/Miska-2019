@@ -168,4 +168,10 @@ public class CameraController : MonoBehaviour
             transform.rotation = Quaternion.Euler(m_pitch, m_yaw, 0); // apply the rotation
         }
     }
+
+    public void SetRotation(Vector3 euler)
+    {
+        m_yaw = euler.y;
+        m_pitch = euler.x;
+    }
 }

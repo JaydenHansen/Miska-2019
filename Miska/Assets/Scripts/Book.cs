@@ -97,7 +97,8 @@ public class Book : MonoBehaviour
             m_currentPage = 0;
             m_leftPages.gameObject.SetActive(true);
             m_rightPages.gameObject.SetActive(true);
-            m_nextPageButton.SetActive(true);
+            if (m_nextPageButton)
+                m_nextPageButton.SetActive(true);
             m_pages[m_currentPage * 2].SetActive(true);
             m_pages[m_currentPage * 2 + 1].SetActive(true);
 
@@ -125,8 +126,10 @@ public class Book : MonoBehaviour
         m_staticRightPage.SetActive(false);
         foreach (GameObject page in m_pages)
             page.SetActive(false);
-        m_nextPageButton.SetActive(false);
-        m_prevPageButton.SetActive(false);
+        if (m_nextPageButton)
+            m_nextPageButton.SetActive(false);
+        if (m_prevPageButton)
+            m_prevPageButton.SetActive(false);
         m_open = false;
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -150,21 +153,23 @@ public class Book : MonoBehaviour
             {
                 m_pageTurn.Play("Book_Zoom_001");
                 m_zoomed = true;
-                m_nextPageButton.SetActive(false);
-                m_prevPageButton.SetActive(false);
+                if (m_nextPageButton)
+                    m_nextPageButton.SetActive(false);
+                if (m_prevPageButton)
+                    m_prevPageButton.SetActive(false);
             }
             else
             {
                 m_pageTurn.Play("Book_Zoom_Reverse_001");
                 m_zoomed = false;
-                if (m_currentPage + 1 <= Mathf.CeilToInt(m_pages.Count / 2f) - 1)
+                if (m_nextPageButton && m_currentPage + 1 <= Mathf.CeilToInt(m_pages.Count / 2f) - 1)
                     m_nextPageButton.SetActive(true);
-                else
+                else if (m_nextPageButton)
                     m_nextPageButton.SetActive(false);
 
-                if (m_currentPage - 1 >= 0)
+                if (m_prevPageButton && m_currentPage - 1 >= 0)
                     m_prevPageButton.SetActive(true);
-                else
+                else if (m_prevPageButton)
                     m_prevPageButton.SetActive(false);
             }
         }
@@ -193,8 +198,10 @@ public class Book : MonoBehaviour
         int oldPage = m_currentPage;
         m_currentPage = index;
 
-        m_nextPageButton.SetActive(false);
-        m_prevPageButton.SetActive(false);
+        if (m_nextPageButton)
+            m_nextPageButton.SetActive(false);
+        if (m_prevPageButton)
+            m_prevPageButton.SetActive(false);
 
         m_pageMesh.SetActive(true);
 
@@ -261,14 +268,14 @@ public class Book : MonoBehaviour
 
         m_pageMesh.SetActive(false);
 
-        if (m_currentPage + 1 <= Mathf.CeilToInt(m_pages.Count / 2f) - 1)
+        if (m_nextPageButton && m_currentPage + 1 <= Mathf.CeilToInt(m_pages.Count / 2f) - 1)
             m_nextPageButton.SetActive(true);
-        else
+        else if (m_nextPageButton)
             m_nextPageButton.SetActive(false);
 
-        if (m_currentPage - 1 >= 0)
+        if (m_prevPageButton && m_currentPage - 1 >= 0)
             m_prevPageButton.SetActive(true);
-        else
+        else if (m_prevPageButton)
             m_prevPageButton.SetActive(false);
     }
 

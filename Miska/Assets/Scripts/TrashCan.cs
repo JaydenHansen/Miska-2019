@@ -6,12 +6,14 @@ public class TrashCan : MonoBehaviour
 {
     public int m_requiredTrash;
     public TrashHolder m_trashCount;
+    public GameObject[] m_trash;
     public VoidEvent m_onAllTrash;
 
     int m_trashLeft;
     public int TrashLeft
     {
         get { return m_trashLeft; }
+        set { m_trashLeft = value; }
     }
 
     // Start is called before the first frame update

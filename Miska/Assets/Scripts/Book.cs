@@ -18,12 +18,21 @@ public class Book : MonoBehaviour
     public GameObject m_staticLeftPage;
     public GameObject m_staticRightPage;
     public Animation m_pageTurn;
+    public float m_openDelay;
 
     List<GameObject> m_pages;
     int m_currentPage;
     bool m_open;
     Vector3 m_baseCameraPos;
     bool m_zoomed = false;
+    float m_timer;
+
+    Vector3 m_startPosition;
+    Vector3 m_targetPosition;
+    Quaternion m_startRotation;
+    Quaternion m_targetRotation;
+
+    bool TMP;
 
     Dictionary<AreaName, bool> m_checklist;
     public ProgressLog m_progress;
@@ -52,6 +61,9 @@ public class Book : MonoBehaviour
         {
             canvas.worldCamera = m_bookCamera;
         }
+
+        m_targetPosition = m_bookCamera.transform.localPosition;
+        m_targetRotation = m_bookCamera.transform.localRotation;
 
         //CloseBook();
         //OpenBook();
@@ -88,6 +100,13 @@ public class Book : MonoBehaviour
                 m_bookCamera.transform.localPosition = m_baseCameraPos;
             }
         }
+
+        if (TMP)
+        {
+            m_timer += Time.deltaTime;
+            m_bookCamera.transform.localPosition = Vector3.Lerp(m_startPosition, m_targetPosition, m_timer / m_openDelay);
+            m_bookCamera.transform.localRotation = Quaternion.Lerp(m_startRotation, m_targetRotation, m_timer / m_openDelay);
+        }
     }
 
     public void OpenBook()
@@ -114,6 +133,14 @@ public class Book : MonoBehaviour
             m_bookCamera.enabled = true;
             m_playerCamera.m_camera.enabled = false;
             m_playerCamera.enabled = false;
+
+            TMP = true;            
+
+            m_bookCamera.transform.position = m_playerCamera.transform.position;
+            m_bookCamera.transform.rotation = m_playerCamera.transform.rotation;
+
+            m_startPosition = m_bookCamera.transform.localPosition;
+            m_startRotation = m_bookCamera.transform.localRotation;
         }
     }
 
@@ -143,6 +170,8 @@ public class Book : MonoBehaviour
             zoomReverse.SampleAnimation(gameObject, zoomReverse.length);
             m_zoomed = false;
         }
+        TMP = false;
+        m_timer = 0;
     }
 
     public void LeftZoom()

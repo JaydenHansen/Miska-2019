@@ -8,8 +8,7 @@ public class Trash : MonoBehaviour
 
     float m_timer;
     Transform m_parent;
-
-
+    bool m_pickedUp;
 
     // Start is called before the first frame update
     void Start()
@@ -21,17 +20,20 @@ public class Trash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.parent != m_parent)
+        if (m_pickedUp)
         {
             m_timer -= Time.deltaTime;
 
             if (m_timer <= 0)
             {
-
-                Destroy(m_parent.gameObject);
-
-                Destroy(gameObject);
+                transform.parent = m_parent;
+                m_parent.gameObject.SetActive(false);                
             }
         }
+    }
+
+    public void StartPickup()
+    {
+        m_pickedUp = true;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PointClickPlacementTool : EditorWindow
 {
@@ -27,6 +28,11 @@ public class PointClickPlacementTool : EditorWindow
 	private GameObject newSelectedGameObject;
 	private int indexname = 0;
 
+    // ADDON
+    private bool m_useGroup;
+    private float m_angle;
+    private int m_placeAmount;
+
 	[MenuItem("Tools/Point Click Placement Tool")]
 
 	public static void ShowWindow()
@@ -51,43 +57,83 @@ public class PointClickPlacementTool : EditorWindow
 		{
 			HandleUtility.AddDefaultControl(GUIUtility.GetControlID(FocusType.Passive));
 
-			if(Selection.activeObject != null)
-			{
-				if(Selection.activeGameObject != null && Selection.activeTransform == null)
-				{
-					newSelectedGameObject = Selection.activeGameObject;
-				}
+            if (!m_useGroup)
+            {
+                if (Selection.activeObject != null)
+                {
+                    if (Selection.activeGameObject != null && Selection.activeTransform == null)
+                    {
+                        newSelectedGameObject = Selection.activeGameObject;
+                    }
 
-				if(Event.current.type == EventType.MouseDown && Event.current.button == 0)
-				{
-					Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
-					RaycastHit hit;
+                    if (Event.current.type == EventType.MouseDown && Event.current.button == 0)
+                    {
+                        Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
+                        RaycastHit hit;
 
-					if(Physics.Raycast(ray, out hit))
-					{
-						buildPos = hit.point + offSet;
+                        if (Physics.Raycast(ray, out hit))
+                        {
+                            buildPos = hit.point + offSet;
 
-						if(Selection.activeGameObject != null && Selection.activeTransform == null)
-						{
-							instantiatePrefab = true;
-						}
-						if(Selection.activeTransform != null)
-						{
-							instantiatePrefab = false; 
-						}
+                            if (Selection.activeGameObject != null && Selection.activeTransform == null)
+                            {
+                                instantiatePrefab = true;
+                            }
+                            if (Selection.activeTransform != null)
+                            {
+                                instantiatePrefab = false;
+                            }
 
-						if(instantiatePrefab == true)
-						{
-							AddSingle(buildPos, hit);
-						}
+                            if (instantiatePrefab == true)
+                            {
+                                AddSingle(buildPos, hit);
+                            }
 
-						if(instantiatePrefab == false)
-						{
-							WarnUser();
-						}
-					}
-				}
-			}
+                            if (instantiatePrefab == false)
+                            {
+                                WarnUser();
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                List<GameObject> newObjects = new List<GameObject>();
+                if (Selection.transforms.Length == 0)
+                {
+                    for (int i = 0; i < Selection.objects.Length && i < Selection.gameObjects.Length; i++)
+                    {
+                        if (Selection.objects[i] != null)
+                        {
+                            if (Selection.gameObjects[i] != null)
+                            {
+                                newObjects.Add(Selection.gameObjects[i]);
+                            }
+                        }
+                    }
+                }
+
+                if (Event.current.type == EventType.MouseDown && Event.current.button == 0)
+                {
+                    for (int i = 0; i < m_placeAmount; i++)
+                    { 
+                        Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition + new Vector2(Random.Range(-1, 1), Random.Range(-1, 1)) * m_angle);
+
+                        Transform camera = sceneView.camera.transform;
+                        float angle = m_angle * Mathf.Deg2Rad;
+                        ray.direction = ray.direction + camera.right * Random.Range(-angle, angle) + camera.up * Random.Range(-angle, angle);
+
+
+                        RaycastHit hit;
+                        if (Physics.Raycast(ray, out hit))
+                        {
+                            buildPos = hit.point + offSet;                            
+                            AddSingle(buildPos, hit, newObjects[Random.Range(0, newObjects.Count)]);                           
+                        }
+                    }
+                }                                  
+            }
 		}
 	}
 
@@ -128,8 +174,44 @@ public class PointClickPlacementTool : EditorWindow
 		Undo.RegisterCreatedObjectUndo(prefab, "Added " + prefab.name + " to Scene");
 	}
 
+    private void AddSingle(Vector3 buildPos, RaycastHit clickedObject, GameObject selectedObject)
+    {
+        GameObject prefab = PrefabUtility.InstantiatePrefab(selectedObject) as GameObject;
 
-	private void WarnUser()
+        Vector3 newPos = new Vector3(buildPos.x, buildPos.y, buildPos.z);
+
+        prefab.transform.position = newPos;
+
+        if (useNormalRotation)
+        {
+            prefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, clickedObject.normal) * prefab.transform.rotation;
+        }
+
+        if (randomRotateYAxis)
+        {
+            prefab.transform.rotation = Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), prefab.transform.up) * prefab.transform.rotation;
+        }
+
+        if (randomiseScale)
+        {
+            float myScale = Random.Range(scaleMin, scaleMax);
+            prefab.transform.localScale = new Vector3(myScale, myScale, myScale);
+        }
+
+        if (selectedGroup != null)
+        {
+            prefab.transform.parent = selectedGroup.transform;
+        }
+
+        indexname++;
+
+        prefab.name = string.Format("{0}_{1}", prefab.name, indexname);
+
+        Undo.RegisterCreatedObjectUndo(prefab, "Added " + prefab.name + " to Scene");
+    }
+
+
+    private void WarnUser()
 	{
 		Debug.Log("You have selected an object in the scene! Please use prefabs or gameobjects from your project window or disable the Point Click Placement Tool");
 	}
@@ -200,6 +282,23 @@ public class PointClickPlacementTool : EditorWindow
 			{
 				enabled = false;
 			}
+
+            if (!m_useGroup)
+            {
+                if (GUILayout.Button("Use Multi"))
+                {
+                    m_useGroup = true;
+                }
+            }
+            else
+            {
+                if (GUILayout.Button("Disable Multi"))
+                {
+                    m_useGroup = false;
+                }
+                m_angle = EditorGUILayout.FloatField("Random Place Angle", m_angle);
+                m_placeAmount = EditorGUILayout.IntField("Place Amount", m_placeAmount);
+            }
 			
 
 

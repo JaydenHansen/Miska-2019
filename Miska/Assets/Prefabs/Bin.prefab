@@ -108,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_requiredTrash: 3
   m_trashCount: {fileID: 0}
+  m_trash: []
   m_onAllTrash:
     m_PersistentCalls:
       m_Calls:
@@ -133,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8822066977888988175}
   - component: {fileID: 8822066977888988170}
-  - component: {fileID: 8822066977888988173}
+  - component: {fileID: 3972982570062350327}
   - component: {fileID: 8822066977888988172}
   m_Layer: 0
   m_Name: Trigger
@@ -169,7 +170,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.57, y: 1, z: 3.31}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8822066977888988173
+--- !u!114 &3972982570062350327
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,10 +179,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8822066977888988174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a6747d3764d004989c935923c20130, type: 3}
+  m_Script: {fileID: 11500000, guid: 4538c5f57b200ea4dba85dcb1e59e90e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: 323
 --- !u!114 &8822066977888988172
 MonoBehaviour:
   m_ObjectHideFlags: 0

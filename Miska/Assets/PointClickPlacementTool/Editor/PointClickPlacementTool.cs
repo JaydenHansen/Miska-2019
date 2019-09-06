@@ -32,6 +32,8 @@ public class PointClickPlacementTool : EditorWindow
     private bool m_useGroup;
     private float m_angle;
     private int m_placeAmount;
+    private bool m_useLayerMask;
+    private LayerMask m_placeLayerMask;
 
 	[MenuItem("Tools/Point Click Placement Tool")]
 
@@ -71,27 +73,56 @@ public class PointClickPlacementTool : EditorWindow
                         Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
                         RaycastHit hit;
 
-                        if (Physics.Raycast(ray, out hit))
+                        if (m_useLayerMask)
                         {
-                            buildPos = hit.point + offSet;
+                            if (Physics.Raycast(ray, out hit, 999, 1 << m_placeLayerMask))
+                            {
+                                buildPos = hit.point + offSet;
 
-                            if (Selection.activeGameObject != null && Selection.activeTransform == null)
-                            {
-                                instantiatePrefab = true;
-                            }
-                            if (Selection.activeTransform != null)
-                            {
-                                instantiatePrefab = false;
-                            }
+                                if (Selection.activeGameObject != null && Selection.activeTransform == null)
+                                {
+                                    instantiatePrefab = true;
+                                }
+                                if (Selection.activeTransform != null)
+                                {
+                                    instantiatePrefab = false;
+                                }
 
-                            if (instantiatePrefab == true)
-                            {
-                                AddSingle(buildPos, hit);
-                            }
+                                if (instantiatePrefab == true)
+                                {
+                                    AddSingle(buildPos, hit);
+                                }
 
-                            if (instantiatePrefab == false)
+                                if (instantiatePrefab == false)
+                                {
+                                    WarnUser();
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (Physics.Raycast(ray, out hit))
                             {
-                                WarnUser();
+                                buildPos = hit.point + offSet;
+
+                                if (Selection.activeGameObject != null && Selection.activeTransform == null)
+                                {
+                                    instantiatePrefab = true;
+                                }
+                                if (Selection.activeTransform != null)
+                                {
+                                    instantiatePrefab = false;
+                                }
+
+                                if (instantiatePrefab == true)
+                                {
+                                    AddSingle(buildPos, hit);
+                                }
+
+                                if (instantiatePrefab == false)
+                                {
+                                    WarnUser();
+                                }
                             }
                         }
                     }
@@ -126,10 +157,21 @@ public class PointClickPlacementTool : EditorWindow
 
 
                         RaycastHit hit;
-                        if (Physics.Raycast(ray, out hit))
+                        if (m_useLayerMask)
                         {
-                            buildPos = hit.point + offSet;                            
-                            AddSingle(buildPos, hit, newObjects[Random.Range(0, newObjects.Count)]);                           
+                            if (Physics.Raycast(ray, out hit, 999, 1 << m_placeLayerMask))
+                            {
+                                buildPos = hit.point + offSet;
+                                AddSingle(buildPos, hit, newObjects[Random.Range(0, newObjects.Count)]);
+                            }
+                        }
+                        else
+                        {
+                            if (Physics.Raycast(ray, out hit))
+                            {
+                                buildPos = hit.point + offSet;
+                                AddSingle(buildPos, hit, newObjects[Random.Range(0, newObjects.Count)]);
+                            }
                         }
                     }
                 }                                  
@@ -297,12 +339,26 @@ public class PointClickPlacementTool : EditorWindow
                     m_useGroup = false;
                 }
                 m_angle = EditorGUILayout.FloatField("Random Place Angle", m_angle);
-                m_placeAmount = EditorGUILayout.IntField("Place Amount", m_placeAmount);
+                m_placeAmount = EditorGUILayout.IntField("Place Amount", m_placeAmount);                                
             }
-			
 
+            if (!m_useLayerMask)
+            {
+                if (GUILayout.Button("Use LayerMask"))
+                {
+                    m_useLayerMask = true;
+                }
+            }
+            else
+            {
+                if (GUILayout.Button("Disable LayerMask"))
+                {
+                    m_useLayerMask = false;
+                }
+                m_placeLayerMask = EditorGUILayout.LayerField("Layer Mask", m_placeLayerMask);
+            }
 
-			if(customOffset == false)
+            if (customOffset == false)
 			{
 				if(enableHelp)
 				{

@@ -16,7 +16,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   rotation:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 45.95
     min: 0
     max: 360
   skyIntensityMode:
@@ -24,10 +24,10 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 1.01
   multiplier:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 1.02
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 1
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.074
+    m_Value: 0
     min: 0
     max: 1
   scatter:
@@ -162,7 +162,7 @@ MonoBehaviour:
     m_Value: 1
   skyAmbientMode:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   fogType:
     m_OverrideState: 0
     m_Value: 2
@@ -324,6 +324,7 @@ MonoBehaviour:
   - {fileID: 5965192920614078323}
   - {fileID: -6367788959808752721}
   - {fileID: 280620935200753249}
+  - {fileID: 1191834483143515499}
 --- !u!114 &280620935200753249
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -339,14 +340,36 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   lift:
-    m_OverrideState: 1
-    m_Value: {x: 0.7583498, y: 0.7870438, z: 1, w: 0}
+    m_OverrideState: 0
+    m_Value: {x: 0.9455259, y: 0.9801772, z: 1, w: 0}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 0.7898965, y: 0.8024597, z: 1, w: 0}
+    m_Value: {x: 0.6969584, y: 0.79431367, z: 1, w: 0}
   gain:
     m_OverrideState: 1
     m_Value: {x: 1, y: 0.89270985, z: 0.9390732, w: 0}
+--- !u!114 &1191834483143515499
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f034cba68ab55e046ae1445a42f18c0e, type: 3}
+  m_Name: IndirectLightingController
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  indirectSpecularIntensity:
+    m_OverrideState: 0
+    m_Value: 8.32
+    min: 0
+  indirectDiffuseIntensity:
+    m_OverrideState: 1
+    m_Value: 0.2
+    min: 0
 --- !u!114 &1235744231697325297
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -372,13 +395,13 @@ MonoBehaviour:
     max: 4
   cascadeShadowSplit0:
     m_OverrideState: 1
-    m_Value: 0.05
+    m_Value: 0.02
   cascadeShadowSplit1:
     m_OverrideState: 1
-    m_Value: 0.15
+    m_Value: 0.261
   cascadeShadowSplit2:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 0.634
   cascadeShadowBorder0:
     m_OverrideState: 1
     m_Value: 0
@@ -403,17 +426,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b24b200358312b4fa1004e2431c2f1f, type: 3}
   m_Name: ShadowsMidtonesHighlights
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   shadows:
     m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_Value: {x: 0.6976367, y: 1, z: 0.8700028, w: 0.041493878}
   midtones:
     m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_Value: {x: 0.6115446, y: 0.90807474, z: 1, w: 0}
   highlights:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.96310484, z: 0.8524186, w: 0}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
@@ -518,30 +541,30 @@ MonoBehaviour:
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 1.07
+    m_Value: 1.01
     min: 0
     max: 4
   stepCount:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 2
     min: 2
     max: 32
   radius:
     m_OverrideState: 1
-    m_Value: 1.23
+    m_Value: 1.45
     min: 0.25
     max: 5
   fullResolution:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   maximumRadiusInPixels:
     m_OverrideState: 1
-    m_Value: 246
+    m_Value: 256
     min: 16
     max: 256
   directLightingStrength:
     m_OverrideState: 1
-    m_Value: 0.267
+    m_Value: 1
     min: 0
     max: 1
   enableRaytracing:
@@ -577,19 +600,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8bcdf71d7fafa419fca1ed162f5fc9, type: 3}
   m_Name: ColorAdjustments
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
     m_Value: 0
   contrast:
     m_OverrideState: 1
-    m_Value: 3.9
+    m_Value: 0
     min: -100
     max: 100
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
+    m_Value: {r: 0.86743504, g: 0.9528302, b: 0.9219761, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1

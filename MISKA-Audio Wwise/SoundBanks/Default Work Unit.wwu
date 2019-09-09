@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{C23F6161-E0E9-4430-9A3F-2B92CA0E24F2}" SchemaVersion="94">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{C23F6161-E0E9-4430-9A3F-2B92CA0E24F2}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="BNK_Global" ID="{542750B9-22AC-4295-95C7-55CE9571FE56}">
+					<ObjectInclusionList>
+						<ObjectRef Name="GLOBAL" ID="{1A363B3E-CCBE-4A31-A579-488A78A13137}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="BNK_Station" ID="{5C35CE9A-8949-447F-9585-974DF495655A}">
+					<ObjectInclusionList>
+						<ObjectRef Name="STATION" ID="{2DBDA12F-4AA2-4DE6-A249-E029792750B0}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="BNK_Rocks" ID="{B34BE1BE-6A30-41B7-9D2F-CF665C13FD35}">
+					<ObjectInclusionList>
+						<ObjectRef Name="ROCKS" ID="{3A2BA605-A1DD-482B-8706-04B6FC493381}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="BNK_Ducks" ID="{5EBEC370-F31E-41ED-B803-F1900D2F3547}">
+					<ObjectInclusionList>
+						<ObjectRef Name="DUCKS" ID="{AAB07626-8856-4EC6-A9A1-4A6C5FBA9471}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

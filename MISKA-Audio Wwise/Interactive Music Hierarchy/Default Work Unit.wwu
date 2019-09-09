@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}" SchemaVersion="94">
+	<InteractiveMusic>
+		<WorkUnit Name="Default Work Unit" ID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicSwitchContainer Name="AreaMusic" ID="{C740C809-50A2-4C27-916A-D30E781AEF22}" ShortID="810959028">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicPlaylistContainer Name="Rocks_Area" ID="{52D8F320-D7C7-437B-BEC8-F18AB1D1DBC6}" ShortID="316588627">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="Seg1" ID="{4F476B0B-1A1F-4CA1-B671-89AFB1286AE5}" ShortID="1011977675">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="16842.1088435374"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="miska rock area - percussion" ID="{90C7CB83-8847-4596-A763-0F46C06F359F}" ShortID="818514382">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<RTPCList>
+														<RTPC Name="" ID="{12460E83-B5B8-4680-9F8C-1912BAA6BC02}" ShortID="269812505">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="DistanceFrom_Centre" ID="{94F3AB72-93B6-45A7-9F3F-ED6AEE0EE548}" WorkUnitID="{5BDB56D3-FCE7-4264-9A6C-F7770480508D}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{6A4040F3-BCCC-47A7-9CC8-D20B5048D2F9}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="65537"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>80.0418</XPos>
+																		<YPos>11</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>91.95402</XPos>
+																		<YPos>27</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>52</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<RTPCList>
+														<RTPC Name="" ID="{3A513B25-2D33-4344-885D-E4EDDA29E4B2}" ShortID="484739264">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="CurrentSceneProgress" ID="{EA375F83-7D9B-482E-B2DD-EFBAFD61A912}" WorkUnitID="{5BDB56D3-FCE7-4264-9A6C-F7770480508D}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{A7A11E5B-DCAD-44D8-9E45-A95275CE7E3B}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>69.48798</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>80.45977</XPos>
+																		<YPos>0</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>0</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+														<RTPC Name="" ID="{098D6834-2084-40C2-AFE2-65817D92B78B}" ShortID="902889666">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="DistanceFrom_Centre" ID="{94F3AB72-93B6-45A7-9F3F-ED6AEE0EE548}" WorkUnitID="{5BDB56D3-FCE7-4264-9A6C-F7770480508D}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{B78FB668-FB74-4925-9093-5C5D01E25C6D}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-0.115049999999997</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>80.0418</XPos>
+																		<YPos>-0.757209999999986</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>89.86416</XPos>
+																		<YPos>-2.09107</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="miska rock area - percussion" ID="{398AAB77-EC06-4530-9C19-8191A46548A2}" ShortID="133258633">
+													<Language>SFX</Language>
+													<AudioFile>miska rock area - percussion.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{BF943E4A-DC38-4647-A45D-0ADD5543CAEA}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<SequenceList>
+												<MusicTrackSequence Name="" ID="{4D19C1C9-1265-4CEA-A97F-9369BC86B4A7}">
+													<ClipList>
+														<MusicClip Name="miska rock area - percussion" ID="{8E5034D7-85C3-4D33-9E40-FDC71D8E510E}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="16842.1088435374"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+															</PropertyList>
+															<AudioSourceRef Name="miska rock area - percussion" ID="{398AAB77-EC06-4530-9C19-8191A46548A2}"/>
+														</MusicClip>
+													</ClipList>
+												</MusicTrackSequence>
+											</SequenceList>
+										</MusicTrack>
+										<MusicTrack Name="miska rock area - melody" ID="{A3C5EFC7-EA8D-4D9A-B966-491EA6E93FD7}" ShortID="496781106">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<RTPCList>
+														<RTPC Name="" ID="{C587C3C5-71B3-423D-86E3-965D04A7BBF7}" ShortID="1010549315">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="DistanceFrom_Centre" ID="{94F3AB72-93B6-45A7-9F3F-ED6AEE0EE548}" WorkUnitID="{5BDB56D3-FCE7-4264-9A6C-F7770480508D}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{5443C70A-B4C6-4A6D-A3D0-6BBE9153E8E6}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="65537"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>92.4764890282132</XPos>
+																		<YPos>0</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>50</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<RTPCList>
+														<RTPC Name="" ID="{7FD97FA9-AFB5-4F08-92D0-460EDA111FFB}" ShortID="530076170">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="DistanceFrom_Centre" ID="{94F3AB72-93B6-45A7-9F3F-ED6AEE0EE548}" WorkUnitID="{5BDB56D3-FCE7-4264-9A6C-F7770480508D}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{ED411FDA-7904-4806-90BD-1CDDC3ADE3DF}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>0.23164</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>96.9697</XPos>
+																		<YPos>0.01099</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>-2.05325</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="miska rock area - melody" ID="{D40F7F2D-ECDE-49A7-9B2E-7BF5023040B7}" ShortID="443437660">
+													<Language>SFX</Language>
+													<AudioFile>miska rock area - melody.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{54815410-B668-4337-939F-4BEC1FFBE4BA}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<SequenceList>
+												<MusicTrackSequence Name="" ID="{27A179F6-2A15-485E-89B1-D2E948044E74}">
+													<ClipList>
+														<MusicClip Name="miska rock area - melody" ID="{404E45FB-E114-4773-8973-A2C20480D65B}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="16842.1088435374"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+															</PropertyList>
+															<AudioSourceRef Name="miska rock area - melody" ID="{D40F7F2D-ECDE-49A7-9B2E-7BF5023040B7}"/>
+														</MusicClip>
+													</ClipList>
+												</MusicTrackSequence>
+											</SequenceList>
+										</MusicTrack>
+										<MusicTrack Name="miska rock area - drums + extra chords" ID="{F33C3BB2-C23A-4852-909E-570130779497}" ShortID="854245563">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<RTPCList>
+														<RTPC Name="" ID="{45C6CB85-D085-4B18-9FE3-075BAAD57A84}" ShortID="708762901">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="DistanceFrom_Centre" ID="{94F3AB72-93B6-45A7-9F3F-ED6AEE0EE548}" WorkUnitID="{5BDB56D3-FCE7-4264-9A6C-F7770480508D}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{8FEFB507-5445-46CB-BBD6-6315B66BF57F}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="65537"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>80.0418</XPos>
+																		<YPos>11</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>91.95402</XPos>
+																		<YPos>27</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>52</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<RTPCList>
+														<RTPC Name="" ID="{F31FBE38-2A62-4DCB-AC94-6762F3D36BB7}" ShortID="828445242">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="DistanceFrom_Centre" ID="{94F3AB72-93B6-45A7-9F3F-ED6AEE0EE548}" WorkUnitID="{5BDB56D3-FCE7-4264-9A6C-F7770480508D}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{46448235-064F-4A47-B41C-50A42A0D5E9A}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-0.115049999999997</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>80.0418</XPos>
+																		<YPos>-0.757209999999986</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>89.86416</XPos>
+																		<YPos>-2.09107</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+														<RTPC Name="" ID="{A9C8A371-0721-43AD-8324-7909A638325E}" ShortID="442000859">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="CurrentSceneProgress" ID="{EA375F83-7D9B-482E-B2DD-EFBAFD61A912}" WorkUnitID="{5BDB56D3-FCE7-4264-9A6C-F7770480508D}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{F56DD815-2EAB-454D-8A9F-999D5E227A2E}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>80.35528</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>89.86416</XPos>
+																		<YPos>0.07051</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>0</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="miska rock area - drums + extra chords" ID="{57E71738-E27D-4125-A056-5B00B82D41D4}" ShortID="143940162">
+													<Language>SFX</Language>
+													<AudioFile>miska rock area - drums + extra chords.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{2FB7693C-875A-456F-BC6B-D8621D10E7B3}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<SequenceList>
+												<MusicTrackSequence Name="" ID="{C0281BEA-BA0B-44DF-898D-82246CC64D01}">
+													<ClipList>
+														<MusicClip Name="miska rock area - drums + extra chords" ID="{90B91E08-7BCD-49D7-B9AF-4F90F8A746D7}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="16842.1088435374"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+															</PropertyList>
+															<AudioSourceRef Name="miska rock area - drums + extra chords" ID="{57E71738-E27D-4125-A056-5B00B82D41D4}"/>
+														</MusicClip>
+													</ClipList>
+												</MusicTrackSequence>
+											</SequenceList>
+										</MusicTrack>
+										<MusicTrack Name="miska rock area - bass + chords" ID="{7714A3FF-7939-48BF-A5D3-3556D4323053}" ShortID="465137520">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<RTPCList>
+														<RTPC Name="" ID="{2EC6868A-79BD-43FE-804C-63C96A498B02}" ShortID="542941240">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="DistanceFrom_Centre" ID="{94F3AB72-93B6-45A7-9F3F-ED6AEE0EE548}" WorkUnitID="{5BDB56D3-FCE7-4264-9A6C-F7770480508D}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{D7741D24-7B2B-463D-A8E4-5F890BA83A48}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="65537"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>70.11495</XPos>
+																		<YPos>8</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>92.163</XPos>
+																		<YPos>37</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>69</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<RTPCList>
+														<RTPC Name="" ID="{8AFC9F4F-8ED8-46F9-AE45-15FF65A1E471}" ShortID="539349631">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="DistanceFrom_Centre" ID="{94F3AB72-93B6-45A7-9F3F-ED6AEE0EE548}" WorkUnitID="{5BDB56D3-FCE7-4264-9A6C-F7770480508D}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{97F7F643-02A9-4ACB-AFE4-343BE87B1747}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-0.11505</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>80.66876</XPos>
+																		<YPos>0.0752</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>89.86416</XPos>
+																		<YPos>-2.09107</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>-14.09445</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+														<RTPC Name="" ID="{EAE7BBF8-56A2-448F-94A1-8CA73850D0A0}" ShortID="502186102">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="CurrentSceneProgress" ID="{EA375F83-7D9B-482E-B2DD-EFBAFD61A912}" WorkUnitID="{5BDB56D3-FCE7-4264-9A6C-F7770480508D}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{80636012-770E-4B8A-9E5E-B7B867AE2F3B}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>10.13584</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>60.08359</XPos>
+																		<YPos>-0.11505</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>69.80146</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>79.9373</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>90.07315</XPos>
+																		<YPos>0</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>-0.11504</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="miska rock area - bass + chords" ID="{60504DAA-BC19-43EF-BB43-8592C2BEA902}" ShortID="669154298">
+													<Language>SFX</Language>
+													<AudioFile>miska rock area - bass + chords.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{6CF28464-B95F-4A31-A87C-235EAACC5425}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<SequenceList>
+												<MusicTrackSequence Name="" ID="{1BAD2EB1-2787-4ADD-8376-A094687CAB33}">
+													<ClipList>
+														<MusicClip Name="miska rock area - bass + chords" ID="{BD7B36E5-8A7E-44B2-AA6E-4FB76989E4F3}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="16842.1088435374"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+															</PropertyList>
+															<AudioSourceRef Name="miska rock area - bass + chords" ID="{60504DAA-BC19-43EF-BB43-8592C2BEA902}"/>
+														</MusicClip>
+													</ClipList>
+												</MusicTrackSequence>
+											</SequenceList>
+										</MusicTrack>
+									</ChildrenList>
+									<CueList>
+										<MusicCue Name="Entry Cue" ID="{B4571ED3-574B-4FB8-93C3-143791D84867}"/>
+										<MusicCue Name="Exit Cue" ID="{0DEA1404-6B90-4067-A934-F6CBB24D5A4E}">
+											<PropertyList>
+												<Property Name="CueType" Type="int16" Value="1"/>
+												<Property Name="TimeMs" Type="Real64" Value="16838.0775669801"/>
+											</PropertyList>
+										</MusicCue>
+									</CueList>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{75FF68D5-CF70-4138-AAD1-4BC305F2A69C}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{D561F0EE-6833-45CF-B73A-E229603C2FC9}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{D216A5EC-494D-4A54-B556-0C2E70A0DB00}" ShortID="1033822123"/>
+							</Playlist>
+						</MusicPlaylistContainer>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{FA5DF007-4707-45C2-9906-3C1F7E29B180}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{B0FD723A-9946-4F70-AC14-4B2E4C2F3758}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+				</MusicSwitchContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

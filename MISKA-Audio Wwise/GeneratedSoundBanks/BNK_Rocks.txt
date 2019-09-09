@@ -1,0 +1,4 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2108854380	OBJ_RocksFall			\Default Work Unit\LOCAL\ROCKS\OBJ_RocksFall	
+	3345242612	OBJ_RocksPlaced			\Default Work Unit\LOCAL\ROCKS\OBJ_RocksPlaced	
+

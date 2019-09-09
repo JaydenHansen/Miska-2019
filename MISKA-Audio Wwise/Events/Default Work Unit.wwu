@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{EEAABAC8-E09E-4265-99BD-B315B882E069}" SchemaVersion="94">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{EEAABAC8-E09E-4265-99BD-B315B882E069}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="GLOBAL" ID="{C9ACABFE-D521-479D-B9FB-4C9599EED9F7}" ShortID="329009178">
+					<ChildrenList>
+						<Folder Name="OBJECT" ID="{FFF3F72F-B709-49A1-8687-E3068ED377BF}" ShortID="559089671">
+							<ChildrenList>
+								<Event Name="OBJ_JournalOpen" ID="{157001E8-1525-4158-94CD-7018436D021C}"/>
+								<Event Name="OBJ_BottlePickup" ID="{B805815E-D6C7-4DAD-911D-8556E50204AF}">
+									<ChildrenList>
+										<Action Name="" ID="{69D05366-869D-4EF5-AF9A-06928B68C1EC}" ShortID="914177561">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Bottle" ID="{89670AF7-2DD3-4955-952E-BED76D74ED70}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="OBJ_JournalClose" ID="{281D8531-0B6E-498B-821B-4FA5093E2CF9}"/>
+								<Event Name="OBJ_JournalWrite" ID="{4A504EF9-46F4-4237-9A01-146D383B0F69}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="PLAYER" ID="{1E6ED148-F40C-495D-B215-3024AF3F5BEA}" ShortID="1055529855">
+							<ChildrenList>
+								<Event Name="PLYR_Footstep" ID="{2646A45B-6C6D-42BD-B8F0-CFA5BEC02DA1}">
+									<ChildrenList>
+										<Action Name="" ID="{9C80E3AF-BC5C-4EA9-A97D-2B9E9BA2DDD3}" ShortID="938729149">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Footstep" ID="{8478DAB6-AAD5-4E11-8DA2-298FCB2633B6}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="UI" ID="{69F8DF61-2D66-464A-9214-169C833A2F04}" ShortID="254223084">
+							<ChildrenList>
+								<Event Name="UI_POIComplete" ID="{03A9A18E-E2E3-450A-B48E-1A624D7C41FB}"/>
+							</ChildrenList>
+						</Folder>
+						<Event Name="Start_Music" ID="{6359C87C-F9C8-4611-8CB7-187105B645DD}"/>
+						<Folder Name="AMBIENCE" ID="{EAC67DAD-2B2A-4EB4-809E-461D8632B020}" ShortID="452775827">
+							<ChildrenList>
+								<Folder Name="EMITTERS" ID="{9E995326-FD3D-4C43-A8D4-953619C6F1FB}" ShortID="281027721">
+									<ChildrenList>
+										<Event Name="EMIT_Cicadas" ID="{9BF72342-7D26-4D3C-A372-653AF470449F}">
+											<ChildrenList>
+												<Action Name="" ID="{B7055C72-F7E9-4C61-985A-337CB0A2F65C}" ShortID="678142816">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="CicadaNightClose" ID="{3E72F7A6-FC7E-4FF9-98A7-CA5782937708}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="EMIT_Birds" ID="{6CDF149B-4613-4FE2-9D2C-855A0B88EBCE}">
+											<ChildrenList>
+												<Action Name="" ID="{170D18B5-7D28-41CC-A560-363EC07695CC}" ShortID="877199292">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Birds" ID="{70F06F7E-124B-4EB9-B539-027E6E18CB0E}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="EMIT_River" ID="{03141939-EAE9-4932-B8FB-85EA254A75AC}">
+											<ChildrenList>
+												<Action Name="" ID="{D593475A-48CD-4E85-944A-D0B9E03BC1C3}" ShortID="833438682">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="STREAM_-_cu_-_summer_-_forest_-_AND04" ID="{29BC6882-7898-47FB-84EE-BE0ADAC026D7}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
+								<Event Name="AMB_Bed" ID="{034A391C-28AD-49ED-A352-084C06AC4828}">
+									<ChildrenList>
+										<Action Name="" ID="{B1D7016F-E4F0-4A1F-B3EE-DEDC163B1AE4}" ShortID="901545882">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Ambience" ID="{A8C6D211-EFCF-4391-8143-D82D0CBE2E39}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="LOCAL" ID="{A2325219-5657-403E-BB10-B659926BDDD1}" ShortID="374897514">
+					<ChildrenList>
+						<Folder Name="ROCKS" ID="{2878B8F9-4857-4FC5-89C0-17C8E0F2F098}" ShortID="166212175">
+							<ChildrenList>
+								<Event Name="OBJ_RockStackFalls" ID="{8BB83A97-8E24-47A6-9612-1544BA0E96F8}">
+									<ChildrenList>
+										<Action Name="" ID="{44D425D2-3269-4BAE-B3D1-F634BD286231}" ShortID="794939791">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Rock-Fall-Debris 1" ID="{B7671216-CA79-4E65-9697-7BD20622B4C6}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="OBJ_RockCollide" ID="{D218AE36-168F-49F8-BD59-314FDE71F4B0}">
+									<ChildrenList>
+										<Action Name="" ID="{C40DD362-6A4F-4A0C-B6FF-331B0B342FCF}" ShortID="577002695">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RockCollide" ID="{A2336291-A39E-452C-9D60-38FC6D70FEE3}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="OBJ_FossilPOI" ID="{30A3B872-6687-4971-8DC5-8637744F3D23}">
+									<ChildrenList>
+										<Action Name="" ID="{538889CC-9AF3-4518-A935-EF688F355B8B}" ShortID="483224825">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RockBell" ID="{A0DE4264-282A-47ED-A0E3-25D02BE82AC3}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

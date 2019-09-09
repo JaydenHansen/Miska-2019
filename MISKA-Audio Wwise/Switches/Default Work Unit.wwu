@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{A34F8B61-9D20-4E9E-8130-FCF4A3172A11}" SchemaVersion="94">
+	<Switches>
+		<WorkUnit Name="Default Work Unit" ID="{A34F8B61-9D20-4E9E-8130-FCF4A3172A11}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Locomotion_Speed" ID="{1A5C513B-08D2-4308-9B06-1878B8696196}">
+					<ChildrenList>
+						<Switch Name="Walk" ID="{813AAEC8-F28A-4F2D-86D9-7693C68D2CBD}"/>
+						<Switch Name="Sprint" ID="{97B4474D-8E37-41D1-AF35-309C32DF41A6}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="Locomotion_Material" ID="{6CC9DE98-D097-4C27-A080-054A5F3BCFBC}">
+					<ChildrenList>
+						<Switch Name="Grass" ID="{879B8F18-3A79-4A1E-A55B-33F5DC2C1276}"/>
+						<Switch Name="Dirt" ID="{C9899E27-C5DE-43A2-9178-1C0347D424D5}"/>
+						<Switch Name="Wood" ID="{F0B81392-598D-4178-BC23-60E90FDD3766}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="CurrentLocation" ID="{F8123B9A-B476-421C-8FF1-9A305C12B2C0}">
+					<ChildrenList>
+						<Switch Name="Rocks" ID="{E1E7978A-EA29-40AB-8B84-9213DD051691}"/>
+						<Switch Name="Station" ID="{1321C591-8905-4E90-93F0-ECBAB3DB34E8}"/>
+						<Switch Name="Fireflies" ID="{FB98C58F-D222-41B1-9338-00CBE0DFF9E7}"/>
+						<Switch Name="Ducks" ID="{0C2295FF-74AA-49E1-888B-33216979FCD5}"/>
+						<Switch Name="Fox" ID="{A790FE4D-B735-4E7B-BAA2-3CD84046C618}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="TrashType" ID="{444093F4-0EF4-4EF0-ACFA-EF361CF6FE0B}">
+					<ChildrenList>
+						<Switch Name="Bottle" ID="{8F076B00-F6C0-4604-8EEE-D270B29CA4B2}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="Circket_Loc" ID="{E68865FA-1912-456B-8516-506BD0546E0D}">
+					<ChildrenList>
+						<Switch Name="CricketField" ID="{01DF75DB-8852-4E07-8E5E-DDBCC79BA073}"/>
+						<Switch Name="CricketLake" ID="{79B76BDA-7433-4681-A1E0-DF30CEF4EC55}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</Switches>
+</WwiseDocument>

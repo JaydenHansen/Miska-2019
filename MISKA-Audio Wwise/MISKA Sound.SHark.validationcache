@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValidationCache Version="1" SchemaVersion="94">
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1567002911" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Attenuations\Default Work Unit.wwu" DateLow="1566989696" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Audio Devices\Default Work Unit.wwu" DateLow="1566734892" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Control Surface Sessions\Default Work Unit.wwu" DateLow="1566734892" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Conversion Settings\Default Work Unit.wwu" DateLow="1566734892" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Conversion Settings\Factory Conversion Settings.wwu" DateLow="1566734892" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Conversion Settings\Factory SoundSeed Grain.wwu" DateLow="1566734892" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1566734892" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Effects\Default Work Unit.wwu" DateLow="1566734892" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Events\Default Work Unit.wwu" DateLow="1567002911" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Game Parameters\Default Work Unit.wwu" DateLow="1567001140" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1566734892" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1566734892" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\MISKA Sound.SHark.wsettings" DateLow="1566987212" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\MISKA Sound.wproj" DateLow="1566734892" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Mixing Sessions\Default Work Unit.wwu" DateLow="1566734892" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Modulators\Default Work Unit.wwu" DateLow="1566734892" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Presets\Default Work Unit.wwu" DateLow="1566734901" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Queries\Default Work Unit.wwu" DateLow="1566734901" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Queries\Factory Queries.wwu" DateLow="1566734901" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\SoundBanks\Default Work Unit.wwu" DateLow="1567000815" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1566734901" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\States\Default Work Unit.wwu" DateLow="1566734901" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Switches\Default Work Unit.wwu" DateLow="1566987817" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Triggers\Default Work Unit.wwu" DateLow="1566734901" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA 25-Aug\MISKA\MISKA-Audio Wwise\Virtual Acoustics\Default Work Unit.wwu" DateLow="1566734901" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1566016648" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Attenuations\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Audio Devices\Default Work Unit.wwu" DateLow="1566026592" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Control Surface Sessions\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Conversion Settings\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Conversion Settings\Factory Conversion Settings.wwu" DateLow="1560829252" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Conversion Settings\Factory SoundSeed Grain.wwu" DateLow="1560830342" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Effects\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Effects\Factory Altiverb - Outdoor and More.wwu" DateLow="1560830490" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Effects\Factory Auro Headphone.wwu" DateLow="1560830452" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Effects\Factory Convolution Reverb Effects Ambisonics.wwu" DateLow="1564531584" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Effects\Factory Convolution Reverb Effects Stereo.wwu" DateLow="1564531584" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Effects\Factory Effects.wwu" DateLow="1560829252" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Effects\Factory iZotope Box Modeler.wwu" DateLow="1564531584" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Effects\Factory iZotope Delay.wwu" DateLow="1560830344" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Effects\Factory iZotope Dynamics.wwu" DateLow="1560830344" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Effects\Factory iZotope Filters.wwu" DateLow="1560830344" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Effects\Factory iZotope Hybrid Reverb Effects.wwu" DateLow="1560830344" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Effects\Factory iZotope Multiband Distortion.wwu" DateLow="1560830344" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Effects\Factory iZotope Singleband Distortion.wwu" DateLow="1560830344" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Effects\Factory McDSP Effects.wwu" DateLow="1560830324" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Events\Default Work Unit.wwu" DateLow="1566016648" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Game Parameters\Default Work Unit.wwu" DateLow="1564723436" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1564722756" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1562757250" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\MISKA Sound.SHark.wsettings" DateLow="1566046347" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\MISKA Sound.wproj" DateLow="1565970215" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Mixing Sessions\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Modulators\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Presets\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Queries\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Queries\Factory Queries.wwu" DateLow="1560829252" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\SoundBanks\Default Work Unit.wwu" DateLow="1564717646" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\States\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Switches\Default Work Unit.wwu" DateLow="1564642298" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Triggers\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Virtual Acoustics\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\Miska-Game\MISKA-Audio Wwise\Virtual Acoustics\Factory Reflect Acoustic Textures.wwu" DateLow="1560830316" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1567054294" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Attenuations\Default Work Unit.wwu" DateLow="1567561187" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Audio Devices\Default Work Unit.wwu" DateLow="1566734894" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Control Surface Sessions\Default Work Unit.wwu" DateLow="1566734894" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Conversion Settings\Default Work Unit.wwu" DateLow="1566734894" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Conversion Settings\Factory Conversion Settings.wwu" DateLow="1566734894" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Conversion Settings\Factory SoundSeed Grain.wwu" DateLow="1566734894" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1566734894" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Effects\Default Work Unit.wwu" DateLow="1566734894" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Events\Default Work Unit.wwu" DateLow="1567002912" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Game Parameters\Default Work Unit.wwu" DateLow="1567001142" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1566734894" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1566734894" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\MISKA Sound.SHark.wsettings" DateLow="1567296954" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\MISKA Sound.wproj" DateLow="1567156641" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Mixing Sessions\Default Work Unit.wwu" DateLow="1566734894" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Modulators\Default Work Unit.wwu" DateLow="1566734894" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Presets\Default Work Unit.wwu" DateLow="1566734902" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Queries\Default Work Unit.wwu" DateLow="1566734902" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Queries\Factory Queries.wwu" DateLow="1566734902" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\SoundBanks\Default Work Unit.wwu" DateLow="1567054294" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1566734902" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\States\Default Work Unit.wwu" DateLow="1566734902" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Switches\Default Work Unit.wwu" DateLow="1566987818" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Triggers\Default Work Unit.wwu" DateLow="1566734902" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\Miska-2019\MISKA-Audio Wwise\Virtual Acoustics\Default Work Unit.wwu" DateLow="1566734902" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1566052397" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Attenuations\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Audio Devices\Default Work Unit.wwu" DateLow="1566026592" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Control Surface Sessions\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Conversion Settings\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Conversion Settings\Factory Conversion Settings.wwu" DateLow="1560829252" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Conversion Settings\Factory SoundSeed Grain.wwu" DateLow="1560830342" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Effects\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Events\Default Work Unit.wwu" DateLow="1566052397" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Game Parameters\Default Work Unit.wwu" DateLow="1564723436" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1564722756" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1562757250" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\MISKA Sound.SHark.wsettings" DateLow="1566052400" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\MISKA Sound.wproj" DateLow="1565970215" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Mixing Sessions\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Modulators\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Presets\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Queries\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Queries\Factory Queries.wwu" DateLow="1560829252" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\SoundBanks\Default Work Unit.wwu" DateLow="1564717646" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\States\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Switches\Default Work Unit.wwu" DateLow="1566052397" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Triggers\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\Games Making\2019\MISKA\MISKA-Audio Wwise\Virtual Acoustics\Default Work Unit.wwu" DateLow="1562756226" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1564285227" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Actor-Mixer Hierarchy\Factory Crankcase REV.wwu" DateLow="1560830681" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Actor-Mixer Hierarchy\Factory Motion.wwu" DateLow="1560830270" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects.wwu" DateLow="1560830302" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Actor-Mixer Hierarchy\Factory SoundSeed Grain.wwu" DateLow="1560830340" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Actor-Mixer Hierarchy\Factory Synth One.wwu" DateLow="1560829250" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Attenuations\Default Work Unit.wwu" DateLow="1562756224" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Audio Devices\Default Work Unit.wwu" DateLow="1562756494" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Control Surface Sessions\Default Work Unit.wwu" DateLow="1562756224" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Conversion Settings\Default Work Unit.wwu" DateLow="1562756224" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Conversion Settings\Factory Conversion Settings.wwu" DateLow="1560829250" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Conversion Settings\Factory SoundSeed Grain.wwu" DateLow="1560830340" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1562756224" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Effects\Default Work Unit.wwu" DateLow="1562756224" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Effects\Factory Altiverb - Outdoor and More.wwu" DateLow="1560830489" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Effects\Factory Auro Headphone.wwu" DateLow="1560830450" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Effects\Factory Convolution Reverb Effects Ambisonics.wwu" DateLow="1560830450" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Effects\Factory Convolution Reverb Effects Stereo.wwu" DateLow="1560830451" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Effects\Factory Effects.wwu" DateLow="1560829250" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Effects\Factory iZotope Box Modeler.wwu" DateLow="1560830342" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Effects\Factory iZotope Delay.wwu" DateLow="1560830342" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Effects\Factory iZotope Dynamics.wwu" DateLow="1560830342" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Effects\Factory iZotope Filters.wwu" DateLow="1560830342" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Effects\Factory iZotope Hybrid Reverb Effects.wwu" DateLow="1560830342" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Effects\Factory iZotope Multiband Distortion.wwu" DateLow="1560830342" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Effects\Factory iZotope Singleband Distortion.wwu" DateLow="1560830342" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Effects\Factory McDSP Effects.wwu" DateLow="1560830322" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Events\Default Work Unit.wwu" DateLow="1564278619" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Game Parameters\Default Work Unit.wwu" DateLow="1562756224" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Game Parameters\Factory Motion.wwu" DateLow="1560830270" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Game Parameters\Factory SoundSeed Air Game Syncs.wwu" DateLow="1560830302" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Game Parameters\Factory SoundSeed Grain.wwu" DateLow="1560830340" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1564284688" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1562757249" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\MISKA Sound.SHark.wsettings" DateLow="1564368089" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\MISKA Sound.wproj" DateLow="1562756224" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Mixing Sessions\Default Work Unit.wwu" DateLow="1562756224" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Modulators\Default Work Unit.wwu" DateLow="1562756224" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Presets\Default Work Unit.wwu" DateLow="1562756224" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Queries\Default Work Unit.wwu" DateLow="1562756224" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Queries\Factory Queries.wwu" DateLow="1560829250" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\SoundBanks\Default Work Unit.wwu" DateLow="1562756224" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1562756224" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\States\Default Work Unit.wwu" DateLow="1562756224" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Switches\Default Work Unit.wwu" DateLow="1562757302" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Triggers\Default Work Unit.wwu" DateLow="1562756224" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Virtual Acoustics\Default Work Unit.wwu" DateLow="1562756224" DateHigh="0"/>
+	<ValidationCacheItem File="D:\MISKA\MISKA Audio\MISKA Sound\Virtual Acoustics\Factory Reflect Acoustic Textures.wwu" DateLow="1560830314" DateHigh="0"/>
+</ValidationCache>

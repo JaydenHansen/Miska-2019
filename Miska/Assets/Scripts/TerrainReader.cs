@@ -6,7 +6,7 @@ public enum TerrainMaterial
 {
     Grass,
     Dirt,
-    Rock
+    Wood
 };
 
 public class TerrainReader : MonoBehaviour
@@ -41,10 +41,33 @@ public class TerrainReader : MonoBehaviour
         return pos;
     }
 
+    bool IsPlayerOnWood()
+    {
+        Vector3 rayOrigin = m_player.transform.position + new Vector3(0.0f, 0.5f, 0.0f);
+        RaycastHit hit;
+        if (Physics.Raycast(rayOrigin, Vector3.down, out hit))
+        {
+            if (hit.collider.gameObject.tag == "WoodFloor")
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void Update()
     {
-        TerrainMaterial terrainID = GetMainTexture();
-        m_stepScript.SetTerrainMaterial(terrainID);
+        if (IsPlayerOnWood())
+        {
+            m_stepScript.SetTerrainMaterial(TerrainMaterial.Wood);
+        }
+        else
+        {
+            TerrainMaterial terrainID = GetMainTexture();
+            m_stepScript.SetTerrainMaterial(terrainID);
+        }
+        
+        
     }
 
     //Creates an array of floats that defines the defines the relative amounts of different textures in the player's position
@@ -81,6 +104,18 @@ public class TerrainReader : MonoBehaviour
             }
         }
 
-        return (TerrainMaterial)maxIndex;
+        if (maxIndex == 0 || maxIndex == 1 || maxIndex == 2 || maxIndex == 4 )
+        {
+            return TerrainMaterial.Grass;
+        }
+        else if (maxIndex == 3 || maxIndex == 5 || maxIndex == 6 || maxIndex == 7)
+        {
+            return TerrainMaterial.Dirt;
+        }
+        else
+        {
+            Debug.Log("ERROR! Terrain Reader failed to find matching Terrain Material, defaulting to Grass");
+            return TerrainMaterial.Grass;
+        }
     }
 }

@@ -1629,10 +1629,7 @@
 							<ChildrenList>
 								<Folder Name="BedAmbience" ID="{AC229689-DB0F-4376-BD28-8717D8525D58}" ShortID="515050880">
 									<ChildrenList>
-										<BlendContainer Name="Ambience" ID="{A8C6D211-EFCF-4391-8143-D82D0CBE2E39}" ShortID="309294876">
-											<PropertyList>
-												<Property Name="EnableAttenuation" Type="bool" Value="False"/>
-											</PropertyList>
+										<Sound Name="forest BED" ID="{8BB1EB62-88BC-468E-B680-68BB990A9820}" ShortID="1073597258">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
@@ -1641,7 +1638,16 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
 												</Reference>
 											</ReferenceList>
-										</BlendContainer>
+											<ChildrenList>
+												<AudioFileSource Name="forest BED" ID="{F1B78831-0A01-41EC-B7BB-AFDFA5497081}" ShortID="520141947">
+													<Language>SFX</Language>
+													<AudioFile>forest BED.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="forest BED" ID="{F1B78831-0A01-41EC-B7BB-AFDFA5497081}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="EmittersAmbience" ID="{4EB1E8FD-6B9B-48E5-89C9-51CD5B1C895D}" ShortID="577590413">
@@ -1687,7 +1693,7 @@
 												<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="43"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>2</Value>
+														<Value>-6</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -1845,6 +1851,43 @@
 												</Sound>
 											</ChildrenList>
 										</RandomSequenceContainer>
+										<Sound Name="river" ID="{B1758ED5-3655-4197-83CB-5C0EB8A7C021}" ShortID="995885714">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="CenterPercentage" Type="int32">
+													<ValueList>
+														<Value>45</Value>
+													</ValueList>
+												</Property>
+												<Property Name="HoldEmitterPositionOrientation" Type="bool" Value="True"/>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-13</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="RIver" ID="{8F364F32-4794-486F-80E9-C84998E5D1CF}" WorkUnitID="{9694F749-499E-4F12-BEF9-AA448E069519}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="river 1" ID="{C7582024-A411-4462-B42D-BB4BBAFD6179}" ShortID="116744292">
+													<Language>SFX</Language>
+													<AudioFile>river 1.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="river 1" ID="{C7582024-A411-4462-B42D-BB4BBAFD6179}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>

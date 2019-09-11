@@ -75,7 +75,7 @@
 												<Action Name="" ID="{D593475A-48CD-4E85-944A-D0B9E03BC1C3}" ShortID="833438682">
 													<ReferenceList>
 														<Reference Name="Target">
-															<ObjectRef Name="STREAM_-_cu_-_summer_-_forest_-_AND04" ID="{29BC6882-7898-47FB-84EE-BE0ADAC026D7}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+															<ObjectRef Name="river" ID="{B1758ED5-3655-4197-83CB-5C0EB8A7C021}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
 														</Reference>
 													</ReferenceList>
 												</Action>
@@ -88,7 +88,7 @@
 										<Action Name="" ID="{B1D7016F-E4F0-4A1F-B3EE-DEDC163B1AE4}" ShortID="901545882">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Ambience" ID="{A8C6D211-EFCF-4391-8143-D82D0CBE2E39}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+													<ObjectRef Name="forest BED" ID="{8BB1EB62-88BC-468E-B680-68BB990A9820}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

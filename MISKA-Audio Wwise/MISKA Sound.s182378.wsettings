@@ -3,6 +3,7 @@
 	<UserProjectSettingsInfo>
 		<UserProjectSettings Name="" ID="{D5CB4A35-3C20-4626-9D4E-F18898679E6C}">
 			<PropertyList>
+				<Property Name="Event Action List\{03141939-EAE9-4932-B8FB-85EA254A75AC}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{03A9A18E-E2E3-450A-B48E-1A624D7C41FB}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{157001E8-1525-4158-94CD-7018436D021C}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{2646A45B-6C6D-42BD-B8F0-CFA5BEC02DA1}\x64_Expand States" Type="string" Value=""/>
@@ -94,7 +95,7 @@
 				<Property Name="SoundBankPathUserOverride" Type="bool" Value="True"/>
 				<Property Name="SoundBankPaths" Type="string">
 					<ValueList>
-						<Value Platform="Windows">..\TEST #3\Assets\StreamingAssets\Audio\GeneratedSoundBanks\</Value>
+						<Value Platform="Windows">..\Miska\Assets\StreamingAssets\Audio\GeneratedSoundBanks\</Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPostGenerateCustomCmdDescription" Type="string">

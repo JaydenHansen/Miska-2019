@@ -16,6 +16,7 @@ namespace AK
         static const AkUniqueID AMB_BED = 3587600583U;
         static const AkUniqueID EMIT_BIRDS = 1054363565U;
         static const AkUniqueID EMIT_CICADAS = 1225233505U;
+        static const AkUniqueID EMIT_RIVER = 1862066479U;
         static const AkUniqueID OBJ_BOTTLEPICKUP = 920825535U;
         static const AkUniqueID OBJ_FOSSILPOI = 4108701605U;
         static const AkUniqueID OBJ_ROCKCOLLIDE = 614124066U;

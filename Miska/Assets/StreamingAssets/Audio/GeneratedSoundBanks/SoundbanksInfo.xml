@@ -19,6 +19,7 @@
 				<Event Id="3587600583" Name="AMB_Bed" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\AMB_Bed"/>
 				<Event Id="1054363565" Name="EMIT_Birds" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Birds"/>
 				<Event Id="1225233505" Name="EMIT_Cicadas" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Cicadas"/>
+				<Event Id="1862066479" Name="EMIT_River" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_River"/>
 				<Event Id="920825535" Name="OBJ_BottlePickup" ObjectPath="\Events\Default Work Unit\GLOBAL\OBJECT\OBJ_BottlePickup"/>
 				<Event Id="4254456693" Name="PLYR_Footstep" ObjectPath="\Events\Default Work Unit\GLOBAL\PLAYER\PLYR_Footstep"/>
 			</IncludedEvents>
@@ -46,6 +47,10 @@
 				<File Id="101642060" Language="SFX">
 					<ShortName>CHAR_StepDirt2.wav</ShortName>
 					<Path>SFX\CHAR_StepDirt2_10C4C929.wem</Path>
+				</File>
+				<File Id="116744292" Language="SFX">
+					<ShortName>river 1.wav</ShortName>
+					<Path>SFX\river 1_D79FB2B7.wem</Path>
 				</File>
 				<File Id="118404946" Language="SFX">
 					<ShortName>Glass bottle 3.wav</ShortName>
@@ -106,6 +111,10 @@
 				<File Id="471469595" Language="SFX">
 					<ShortName>CicadaNightClose.wav</ShortName>
 					<Path>SFX\CicadaNightClose_D79FB2B7.wem</Path>
+				</File>
+				<File Id="520141947" Language="SFX">
+					<ShortName>forest BED.wav</ShortName>
+					<Path>SFX\forest BED_10C4C929.wem</Path>
 				</File>
 				<File Id="556919227" Language="SFX">
 					<ShortName>CHAR_StepDirt1.wav</ShortName>

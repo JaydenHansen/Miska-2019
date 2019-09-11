@@ -3,16 +3,16 @@
 	<Platform GUID="{29AD6252-0245-435D-A5DA-DECBEE11E859}">
 		<Banks>
 			<Language ID="393239870">
-				<File Name="BNK_Ducks" Hash="1876643607" Timestamp="1568162412"/>
-				<File Name="BNK_Global" Hash="3262997791" Timestamp="1568162412"/>
-				<File Name="BNK_Rocks" Hash="700085816" Timestamp="1568162412"/>
-				<File Name="BNK_Station" Hash="3894657024" Timestamp="1568162412"/>
-				<File Name="Init" Hash="591572226" Timestamp="1568162412"/>
+				<File Name="BNK_Ducks" Hash="1876643607" Timestamp="1568168050"/>
+				<File Name="BNK_Global" Hash="1163184090" Timestamp="1568168050"/>
+				<File Name="BNK_Rocks" Hash="700085816" Timestamp="1568168050"/>
+				<File Name="BNK_Station" Hash="3894657024" Timestamp="1568168050"/>
+				<File Name="Init" Hash="591572226" Timestamp="1568168050"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="4256784483" Timestamp="1568162412"/>
+				<File Name="" Hash="2764264881" Timestamp="1568168050"/>
 			</Language>
 		</XMLInfo>
 	</Platform>

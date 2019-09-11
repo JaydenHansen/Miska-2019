@@ -26,7 +26,7 @@ public class QuicktimeLockPosition : QuicktimeResponse
     public override void OnFailure()
     {
         m_player.MovementState = MovementState.Walking;
-        m_player.CharacterController.enabled = true;
         m_player.transform.position = m_oldPos;
+        m_player.CharacterController.enabled = true;
     }
 }

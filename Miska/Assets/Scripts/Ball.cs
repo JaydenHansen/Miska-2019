@@ -68,11 +68,14 @@ public class Ball : MonoBehaviour
 
     public void DogPickup(Transform parent)
     {
-        m_parent = Parent.Dog;
-        transform.parent = parent;
-        transform.localPosition = Vector3.zero;
-        m_inHand = true;
-        m_rigidbody.isKinematic = true;
-        m_collider.enabled = false;
+        if (m_parent != Parent.Player)
+        {
+            m_parent = Parent.Dog;
+            transform.parent = parent;
+            transform.localPosition = Vector3.zero;
+            m_inHand = true;
+            m_rigidbody.isKinematic = true;
+            m_collider.enabled = false;
+        }
     }
 }

@@ -18,6 +18,7 @@ public class Dog : MonoBehaviour
     public Transform m_basePosition;
     public float m_radius;
     public float m_distanceBehindPlayer;
+    public DogArea m_area;
 
     NavMeshAgent m_agent;
     Target m_currentTarget;
@@ -35,14 +36,13 @@ public class Dog : MonoBehaviour
         {
             case Target.Player:
                 {
-                    if (m_ball.Parent == Parent.None && (m_ball.transform.position - m_basePosition.position).sqrMagnitude < m_radius * m_radius)
+                    if (m_ball.Parent == Parent.None && m_area.Contains(m_ball.transform.position))
                     {
                         m_currentTarget = Target.Ball;
                         m_agent.stoppingDistance = 0;
                         break;
-                    }
-                    float distance = (m_player.position - m_basePosition.position).sqrMagnitude;
-                    if (distance >= m_radius * m_radius)
+                    }                    
+                    if (!m_area.Contains(m_player.position))
                     {
                         m_currentTarget = Target.Base;
                         m_agent.stoppingDistance = 0;
@@ -51,15 +51,14 @@ public class Dog : MonoBehaviour
                 }
             case Target.Ball:
                 {
-                    if (m_ball.Parent == Parent.Dog)
+                    if (m_ball.Parent == Parent.Dog || m_ball.Parent == Parent.Player)
                     {
                         m_currentTarget = Target.Player;
                         m_agent.stoppingDistance = 5;
-                    }
-                    float distance = (m_ball.transform.position - m_basePosition.position).sqrMagnitude;
-                    if (distance >= m_radius * m_radius)
+                    }                    
+                    if (!m_area.Contains(m_ball.transform.position))
                     {
-                        if ((m_player.position - m_basePosition.position).sqrMagnitude < m_radius * m_radius)
+                        if (m_area.Contains(m_player.position))
                         {
                             m_currentTarget = Target.Player;
                             m_agent.stoppingDistance = 5;
@@ -76,17 +75,15 @@ public class Dog : MonoBehaviour
                 {
                     if (m_ball.Parent == Parent.None)
                     {
-                        float distance = (m_ball.transform.position - m_basePosition.position).sqrMagnitude;
-                        if (distance < m_radius * m_radius)
+                        if (m_area.Contains(m_ball.transform.position))
                         {
                             m_currentTarget = Target.Ball;
                             m_agent.stoppingDistance = 0;
                         }
                     }
                     else
-                    {
-                        float distance = (m_player.position - m_basePosition.position).sqrMagnitude;
-                        if (distance < m_radius * m_radius)
+                    {                        
+                        if (m_area.Contains(m_player.position))
                         {
                             m_currentTarget = Target.Player;
                             m_agent.stoppingDistance = 5;

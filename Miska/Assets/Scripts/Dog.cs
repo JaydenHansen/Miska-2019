@@ -22,11 +22,14 @@ public class Dog : MonoBehaviour
 
     NavMeshAgent m_agent;
     Target m_currentTarget;
+    float m_baseStoppingDistance;
+
     // Start is called before the first frame update
     void Start()
     {
         m_agent = GetComponent<NavMeshAgent>();
         m_agent.updateRotation = false;
+        m_baseStoppingDistance = m_agent.stoppingDistance;
     }
 
     
@@ -54,14 +57,14 @@ public class Dog : MonoBehaviour
                     if (m_ball.Parent == Parent.Dog || m_ball.Parent == Parent.Player)
                     {
                         m_currentTarget = Target.Player;
-                        m_agent.stoppingDistance = 5;
+                        m_agent.stoppingDistance = m_baseStoppingDistance;
                     }                    
                     if (!m_area.Contains(m_ball.transform.position))
                     {
                         if (m_area.Contains(m_player.position))
                         {
                             m_currentTarget = Target.Player;
-                            m_agent.stoppingDistance = 5;
+                            m_agent.stoppingDistance = m_baseStoppingDistance;
                         }
                         else
                         {
@@ -86,7 +89,7 @@ public class Dog : MonoBehaviour
                         if (m_area.Contains(m_player.position))
                         {
                             m_currentTarget = Target.Player;
-                            m_agent.stoppingDistance = 5;
+                            m_agent.stoppingDistance = m_baseStoppingDistance;
                         }
                     }
                     break;

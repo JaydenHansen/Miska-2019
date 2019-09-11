@@ -8,6 +8,6 @@
   <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
   <SoundbankPath>Audio/GeneratedSoundBanks</SoundbankPath>
   <WwiseInstallationPathMac />
-  <WwiseInstallationPathWindows>C:\Program Files (x86)\Audiokinetic\Wwise 2019.1.3.7048</WwiseInstallationPathWindows>
-  <WwiseProjectPath>../../../../2019/MISKA/Miska-2019/MISKA-Audio Wwise/MISKA Sound.wproj</WwiseProjectPath>
+  <WwiseInstallationPathWindows>C:\Program Files (x86)\Audiokinetic\Wwise 2019.1.2.7018</WwiseInstallationPathWindows>
+  <WwiseProjectPath>../../MISKA-Audio Wwise/MISKA Sound.wproj</WwiseProjectPath>
 </WwiseSettings>

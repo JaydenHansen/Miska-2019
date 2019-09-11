@@ -17,21 +17,21 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 008f34a31108904182ccca47e0b7be48
     GuidInternal: 
-    m_lastTime: -8586348719834775808
+    m_lastTime: -8586334486392983439
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: c836f35345477a4ab19e8ee120a18e42
     GuidInternal: 
-    m_lastTime: -8586348719914775808
+    m_lastTime: -8586334486397911762
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 61613fc2e9e030449a3f2b92ca0e24f2
     GuidInternal: 
-    m_lastTime: -8586345525914775808
+    m_lastTime: -8586334486393263349
     List:
     - name: BNK_Ducks
       guid: 70c3be5e1ef3ed41b803f1900d2f3547
@@ -74,7 +74,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: c8baaaee9ee0654299bdb315b882e069
     GuidInternal: 
-    m_lastTime: -8586338737537481462
+    m_lastTime: -8586334448480004237
     List:
     - name: AMB_Bed
       guid: 1c394a03ad28ed49a352084c06ac4828
@@ -90,20 +90,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\GLOBAL\AMBIENCE\AMB_Bed
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: CollectedRock
-      guid: 40fe5188fdfc0a4da9c5cb9225d9a57c
-      id: 2454299289
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: CollectedRock
-        ObjectType: 3
-      Path: Default Work Unit\CollectedRock
-      maxAttenuation: 0
-      maxDuration: 5.20127
-      minDuration: 5.20127
+      maxDuration: 0
+      minDuration: 0
     - name: EMIT_Birds
       guid: 9b14df6c1346e24f9d2c855a0b88ebce
       id: 1054363565
@@ -155,21 +143,9 @@ MonoBehaviour:
       - ElementName: EMIT_River
         ObjectType: 3
       Path: Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_River
-      maxAttenuation: 30
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: OBJ_AllTrash_RockPOI
-      guid: e016231942453144a97d6c32a8790c50
-      id: 228174558
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: OBJ_AllTrash_RockPOI
-        ObjectType: 3
-      Path: Default Work Unit\OBJ_AllTrash_RockPOI
-      maxAttenuation: 20
-      maxDuration: 3.616531
-      minDuration: 3.616531
     - name: OBJ_BottlePickup
       guid: 5e8105b8c7d6ad4d911d8556e50204af
       id: 920825535
@@ -186,6 +162,22 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1.85319
       minDuration: 1.514565
+    - name: OBJ_FossilPOI
+      guid: 72b8a330876671498dc58637744f3d23
+      id: 4108701605
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: LOCAL
+        ObjectType: 4
+      - ElementName: ROCKS
+        ObjectType: 4
+      - ElementName: OBJ_FossilPOI
+        ObjectType: 3
+      Path: Default Work Unit\LOCAL\ROCKS\OBJ_FossilPOI
+      maxAttenuation: 20
+      maxDuration: 3.616531
+      minDuration: 3.616531
     - name: OBJ_JournalClose
       guid: 31851d286e0b8b49821b4fa5093e2cf9
       id: 1744469232
@@ -266,30 +258,6 @@ MonoBehaviour:
       maxAttenuation: 30
       maxDuration: 2.407744
       minDuration: 2.407744
-    - name: Play_BottlesIntoBin
-      guid: a48ea70055029041a5ea0fbc819aa449
-      id: 2899955338
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Play_BottlesIntoBin
-        ObjectType: 3
-      Path: Default Work Unit\Play_BottlesIntoBin
-      maxAttenuation: 0
-      maxDuration: 1.730703
-      minDuration: 1.730703
-    - name: Play_RockFallOffStack
-      guid: 0a0f5fb1433cb648baf19f5a45abdc80
-      id: 385623423
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Play_RockFallOffStack
-        ObjectType: 3
-      Path: Default Work Unit\Play_RockFallOffStack
-      maxAttenuation: 0
-      maxDuration: 2.124626
-      minDuration: 2.124626
     - name: PLYR_Footstep
       guid: 5ba446266d6cbd42b8f0cfa5bec02da1
       id: 4254456693
@@ -341,7 +309,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d356db5be7fc64429a6cf7770480508d
     GuidInternal: 
-    m_lastTime: -8586346057434775808
+    m_lastTime: -8586334486398071708
     List:
     - name: CurrentSceneProgress
       guid: 835f37ea9b7d2e48b2ddefbafd61a912
@@ -375,14 +343,14 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 40f47286675947438a6b0f966d807484
     GuidInternal: 
-    m_lastTime: -8586348719834775808
+    m_lastTime: -8586334486393123400
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 618b4fa3209d9e4e8130fcf4a3172a11
     GuidInternal: 
-    m_lastTime: -8586346190674775808
+    m_lastTime: -8586334486393103410
     List:
     - name: Circket_Loc
       guid: fa6588e612196b458516506bd0546e0d
@@ -532,8 +500,9 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: bda7fc60bf5701409f43a92e37509cfe
     GuidInternal: 
-    m_lastTime: -8586348719834775808
+    m_lastTime: -8586334486393063421
     List: []
-  ExpandedItems: []
+  ExpandedItems:
+  - /MISKA Sound
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

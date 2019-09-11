@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
+	<RootPaths>
+		<ProjectRoot>C:\Users\s182378\Documents\Miska-2019\MISKA-Audio Wwise\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\s182378\Documents\Miska-2019\MISKA-Audio Wwise\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\s182378\Documents\Miska-2019\Miska\Assets\StreamingAssets\Audio\GeneratedSoundBanks\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\s182378\Documents\Miska-2019\MISKA-Audio Wwise\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="568373026" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\BNK_Global</ObjectPath>
+			<ShortName>BNK_Global</ShortName>
+			<Path>BNK_Global.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3587600583" Name="AMB_Bed" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\AMB_Bed"/>
+				<Event Id="1054363565" Name="EMIT_Birds" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Birds"/>
+				<Event Id="1225233505" Name="EMIT_Cicadas" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Cicadas"/>
+				<Event Id="920825535" Name="OBJ_BottlePickup" ObjectPath="\Events\Default Work Unit\GLOBAL\OBJECT\OBJ_BottlePickup"/>
+				<Event Id="4254456693" Name="PLYR_Footstep" ObjectPath="\Events\Default Work Unit\GLOBAL\PLAYER\PLYR_Footstep"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="36869918" Language="SFX">
+					<ShortName>thick-billed flowerpecker calls- india 191204.wav</ShortName>
+					<Path>SFX\thick-billed flowerpecker calls- india 191204_10C4C929.wem</Path>
+				</File>
+				<File Id="41777339" Language="SFX">
+					<ShortName>grasswalk3.wav</ShortName>
+					<Path>SFX\grasswalk3_10C4C929.wem</Path>
+				</File>
+				<File Id="58940914" Language="SFX">
+					<ShortName>Glass bottle 2.wav</ShortName>
+					<Path>SFX\Glass bottle 2_10C4C929.wem</Path>
+				</File>
+				<File Id="72370513" Language="SFX">
+					<ShortName>canteen_run.wav</ShortName>
+					<Path>SFX\canteen_run_10C4C929.wem</Path>
+				</File>
+				<File Id="95813090" Language="SFX">
+					<ShortName>CHAR_KeyJingle1.wav</ShortName>
+					<Path>SFX\CHAR_KeyJingle1_10C4C929.wem</Path>
+				</File>
+				<File Id="101642060" Language="SFX">
+					<ShortName>CHAR_StepDirt2.wav</ShortName>
+					<Path>SFX\CHAR_StepDirt2_10C4C929.wem</Path>
+				</File>
+				<File Id="118404946" Language="SFX">
+					<ShortName>Glass bottle 3.wav</ShortName>
+					<Path>SFX\Glass bottle 3_10C4C929.wem</Path>
+				</File>
+				<File Id="138724543" Language="SFX">
+					<ShortName>wood walk2.wav</ShortName>
+					<Path>SFX\wood walk2_10C4C929.wem</Path>
+				</File>
+				<File Id="159767409" Language="SFX">
+					<ShortName>run_dirt3.wav</ShortName>
+					<Path>SFX\run_dirt3_10C4C929.wem</Path>
+				</File>
+				<File Id="220955263" Language="SFX">
+					<ShortName>wood walk3.wav</ShortName>
+					<Path>SFX\wood walk3_10C4C929.wem</Path>
+				</File>
+				<File Id="225701338" Language="SFX">
+					<ShortName>run_dirt4.wav</ShortName>
+					<Path>SFX\run_dirt4_10C4C929.wem</Path>
+				</File>
+				<File Id="252657119" Language="SFX">
+					<ShortName>canteen_walk.wav</ShortName>
+					<Path>SFX\canteen_walk_10C4C929.wem</Path>
+				</File>
+				<File Id="273585866" Language="SFX">
+					<ShortName>wood walk4.wav</ShortName>
+					<Path>SFX\wood walk4_10C4C929.wem</Path>
+				</File>
+				<File Id="281232217" Language="SFX">
+					<ShortName>Emerald-spotted Wood Dove.wav</ShortName>
+					<Path>SFX\Emerald-spotted Wood Dove_10C4C929.wem</Path>
+				</File>
+				<File Id="297779384" Language="SFX">
+					<ShortName>Wooodpecker Bearded.wav</ShortName>
+					<Path>SFX\Wooodpecker Bearded_10C4C929.wem</Path>
+				</File>
+				<File Id="318438522" Language="SFX">
+					<ShortName>Glass bottle.wav</ShortName>
+					<Path>SFX\Glass bottle_10C4C929.wem</Path>
+				</File>
+				<File Id="327973492" Language="SFX">
+					<ShortName>canteen_run3.wav</ShortName>
+					<Path>SFX\canteen_run3_10C4C929.wem</Path>
+				</File>
+				<File Id="411336376" Language="SFX">
+					<ShortName>CHAR_KeyJingle9.wav</ShortName>
+					<Path>SFX\CHAR_KeyJingle9_10C4C929.wem</Path>
+				</File>
+				<File Id="412018200" Language="SFX">
+					<ShortName>CHAR_KeyJingle7.wav</ShortName>
+					<Path>SFX\CHAR_KeyJingle7_10C4C929.wem</Path>
+				</File>
+				<File Id="415327098" Language="SFX">
+					<ShortName>grassrun1.wav</ShortName>
+					<Path>SFX\grassrun1_10C4C929.wem</Path>
+				</File>
+				<File Id="471469595" Language="SFX">
+					<ShortName>CicadaNightClose.wav</ShortName>
+					<Path>SFX\CicadaNightClose_D79FB2B7.wem</Path>
+				</File>
+				<File Id="556919227" Language="SFX">
+					<ShortName>CHAR_StepDirt1.wav</ShortName>
+					<Path>SFX\CHAR_StepDirt1_10C4C929.wem</Path>
+				</File>
+				<File Id="582241636" Language="SFX">
+					<ShortName>rufous-naped tit calls- uzbek 120504.wav</ShortName>
+					<Path>SFX\rufous-naped tit calls- uzbek 120504_10C4C929.wem</Path>
+				</File>
+				<File Id="640444701" Language="SFX">
+					<ShortName>grassrun3.wav</ShortName>
+					<Path>SFX\grassrun3_10C4C929.wem</Path>
+				</File>
+				<File Id="756801656" Language="SFX">
+					<ShortName>CHAR_KeyJingle4.wav</ShortName>
+					<Path>SFX\CHAR_KeyJingle4_10C4C929.wem</Path>
+				</File>
+				<File Id="778543657" Language="SFX">
+					<ShortName>CHAR_StepDirt4.wav</ShortName>
+					<Path>SFX\CHAR_StepDirt4_10C4C929.wem</Path>
+				</File>
+				<File Id="812160932" Language="SFX">
+					<ShortName>slaty flycatcher song- halmahera 091006.wav</ShortName>
+					<Path>SFX\slaty flycatcher song- halmahera 091006_10C4C929.wem</Path>
+				</File>
+				<File Id="823768882" Language="SFX">
+					<ShortName>wood walk.wav</ShortName>
+					<Path>SFX\wood walk_10C4C929.wem</Path>
+				</File>
+				<File Id="825209776" Language="SFX">
+					<ShortName>run_dirt1.wav</ShortName>
+					<Path>SFX\run_dirt1_10C4C929.wem</Path>
+				</File>
+				<File Id="833917855" Language="SFX">
+					<ShortName>canteen_run2.wav</ShortName>
+					<Path>SFX\canteen_run2_10C4C929.wem</Path>
+				</File>
+				<File Id="889890054" Language="SFX">
+					<ShortName>canteen_walk3.wav</ShortName>
+					<Path>SFX\canteen_walk3_10C4C929.wem</Path>
+				</File>
+				<File Id="916592380" Language="SFX">
+					<ShortName>run_dirt2.wav</ShortName>
+					<Path>SFX\run_dirt2_10C4C929.wem</Path>
+				</File>
+				<File Id="959970206" Language="SFX">
+					<ShortName>canteen_walk2.wav</ShortName>
+					<Path>SFX\canteen_walk2_10C4C929.wem</Path>
+				</File>
+				<File Id="963579058" Language="SFX">
+					<ShortName>grasswalk4.wav</ShortName>
+					<Path>SFX\grasswalk4_10C4C929.wem</Path>
+				</File>
+				<File Id="983771690" Language="SFX">
+					<ShortName>grassrun2.wav</ShortName>
+					<Path>SFX\grassrun2_10C4C929.wem</Path>
+				</File>
+				<File Id="988950208" Language="SFX">
+					<ShortName>CHAR_StepDirt7.wav</ShortName>
+					<Path>SFX\CHAR_StepDirt7_10C4C929.wem</Path>
+				</File>
+				<File Id="1046026369" Language="SFX">
+					<ShortName>grasswalk.wav</ShortName>
+					<Path>SFX\grasswalk_10C4C929.wem</Path>
+				</File>
+				<File Id="1046108882" Language="SFX">
+					<ShortName>grasswalk2.wav</ShortName>
+					<Path>SFX\grasswalk2_10C4C929.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="1567831353" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\BNK_Station</ObjectPath>
+			<ShortName>BNK_Station</ShortName>
+			<Path>BNK_Station.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="2516644323" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\BNK_Ducks</ObjectPath>
+			<ShortName>BNK_Ducks</ShortName>
+			<Path>BNK_Ducks.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="2733895951" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\BNK_Rocks</ObjectPath>
+			<ShortName>BNK_Rocks</ShortName>
+			<Path>BNK_Rocks.bnk</Path>
+			<IncludedEvents>
+				<Event Id="4108701605" Name="OBJ_FossilPOI" ObjectPath="\Events\Default Work Unit\LOCAL\ROCKS\OBJ_FossilPOI"/>
+				<Event Id="614124066" Name="OBJ_RockCollide" ObjectPath="\Events\Default Work Unit\LOCAL\ROCKS\OBJ_RockCollide"/>
+				<Event Id="3472354586" Name="OBJ_RockStackFalls" ObjectPath="\Events\Default Work Unit\LOCAL\ROCKS\OBJ_RockStackFalls"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="70690693" Language="SFX">
+					<ShortName>IMPACT ROCKS FALL SCATTER CEMENT 01.wav</ShortName>
+					<Path>SFX\IMPACT ROCKS FALL SCATTER CEMENT 01_1A2C0213.wem</Path>
+				</File>
+				<File Id="151541401" Language="SFX">
+					<ShortName>rockbell.wav</ShortName>
+					<Path>SFX\rockbell_10C4C929.wem</Path>
+				</File>
+				<File Id="236611281" Language="SFX">
+					<ShortName>Dog akita puppy single bark_BLASTWAVEFX_00090.wav</ShortName>
+					<Path>SFX\Dog akita puppy single bark_BLASTWAVEFX_00090_10C4C929.wem</Path>
+				</File>
+				<File Id="465045227" Language="SFX">
+					<ShortName>Fox bark.wav</ShortName>
+					<Path>SFX\Fox bark_A6DF42BA.wem</Path>
+				</File>
+				<File Id="672269398" Language="SFX">
+					<ShortName>Drop_Masonry_SoftSurface_Heavy_01.wav</ShortName>
+					<Path>SFX\Drop_Masonry_SoftSurface_Heavy_01_0B39DB37.wem</Path>
+				</File>
+				<File Id="675710130" Language="SFX">
+					<ShortName>Rock-Fall-Debris 1.wav</ShortName>
+					<Path>SFX\Rock-Fall-Debris 1_1AA7C6D1.wem</Path>
+				</File>
+				<File Id="782625208" Language="SFX">
+					<ShortName>Drop_Rock_HardSurface_Heavy_02.wav</ShortName>
+					<Path>SFX\Drop_Rock_HardSurface_Heavy_02_9662FAA1.wem</Path>
+				</File>
+				<File Id="850930565" Language="SFX">
+					<ShortName>Dog akita puppy whine breathy short_BLASTWAVEFX_10305.wav</ShortName>
+					<Path>SFX\Dog akita puppy whine breathy short_BLASTWAVEFX_10305_10C4C929.wem</Path>
+				</File>
+				<File Id="891604117" Language="SFX">
+					<ShortName>Dog in the mountains barking and growling.wav</ShortName>
+					<Path>SFX\Dog in the mountains barking and growling_10C4C929.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

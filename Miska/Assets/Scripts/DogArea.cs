@@ -19,7 +19,7 @@ public class DogArea : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireCube(transform.position + m_bounds.center, m_bounds.size);
+        Gizmos.DrawWireCube(m_bounds.center, m_bounds.size);
     }
 
     public bool Contains(Vector3 position)

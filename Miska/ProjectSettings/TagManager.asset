@@ -8,6 +8,7 @@ TagManager:
   - WoodFloor
   - Pickup
   - Fox
+  - Dog
   layers:
   - Default
   - TransparentFX

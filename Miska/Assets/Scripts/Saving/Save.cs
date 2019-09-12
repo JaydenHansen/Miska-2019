@@ -10,7 +10,7 @@ public class Save
     public int m_playerTrashCount;
 
     public List<int> m_trashCanTrashLeft = new List<int>();
-    public List<bool> m_trashActive = new List<bool>();
+    public List<List<bool>> m_trashActive = new List<List<bool>>();
 }
 
 [System.Serializable]

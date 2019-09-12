@@ -3,39 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
 public class Duck : MonoBehaviour
 {
-    public float m_baseDelay;
-    public float m_radius;
+    public float m_forwardDist;
+    public float m_circleRadius;
+    public float m_speed;
+    public float m_distanceFromEdge;    
 
-    NavMeshAgent m_agent;
-    float m_timer;
+    Vector3 m_velocity;
+    int m_areaMask;
 
     // Start is called before the first frame update
     void Start()
     {
-        m_agent = GetComponent<NavMeshAgent>();
+        m_areaMask = 1 << NavMesh.GetAreaFromName("Duck");
     }
 
     // Update is called once per frame
     void Update()
     {
-        m_timer += Time.deltaTime;
-        if (m_timer >= m_baseDelay)
-        {
-            Vector3 direction = Random.insideUnitSphere * m_radius;
-            direction += transform.position;
+        Wander();
+        FleeEdge();
 
-            NavMeshHit hit;
-            if (NavMesh.SamplePosition(direction, out hit, m_radius, -1))
-            {
-                m_agent.SetDestination(hit.position);
-            }
-
-            m_timer = 0;
-        }
+        transform.position += m_velocity * Time.deltaTime * m_speed;
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(m_velocity.normalized), Time.deltaTime);
     }
 
-    
+    void Wander()
+    {
+        Vector3 circlePos = transform.position + (m_velocity.normalized * m_forwardDist);
+        Vector2 circle = Random.insideUnitCircle.normalized * m_circleRadius;
+        Vector3 displacement = circlePos + new Vector3(circle.x, 0, circle.y);
+
+        m_velocity += ((displacement - transform.position).normalized - m_velocity) * Time.deltaTime;
+    }
+
+    void FleeEdge()
+    {
+        NavMeshHit hit;
+        if (NavMesh.FindClosestEdge(transform.position, out hit, m_areaMask))
+        {
+            if (hit.distance < m_distanceFromEdge)
+            {
+                m_velocity += ((new Vector3(transform.position.x, 0, transform.position.z) - new Vector3(hit.position.x, 0, hit.position.z)).normalized - m_velocity) * Time.deltaTime;
+            }
+        }
+    }
 }

@@ -111,7 +111,7 @@ public class Dog : MonoBehaviour
                 break;
         }
 
-        m_agent.SetDestination(targetPosition);
+        m_agent.SetDestination(targetPosition);           
         //if (NavMesh.SamplePosition(targetPosition, out hit, 1, NavMesh.AllAreas))
         //{
         //    m_agent.SetDestination(hit.position);

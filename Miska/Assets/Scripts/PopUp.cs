@@ -61,6 +61,7 @@ public class PopUp : MonoBehaviour
                     m_image.enabled = false;
                     m_active = false;
                     m_popUpTimer = 0;
+                    m_flashTimer = 0;
                 }
             }
         }
@@ -73,7 +74,7 @@ public class PopUp : MonoBehaviour
         m_tempFlash = temp;
 
         m_popUpTimer = 0;
-        m_flashTimer = 0;
+        
         m_active = true;
         m_image.enabled = true;
     }
@@ -82,6 +83,7 @@ public class PopUp : MonoBehaviour
         m_image.enabled = false;
         m_active = false;
         m_popUpTimer = 0;
+        m_flashTimer = 0;
     }
 
     int IconIndex

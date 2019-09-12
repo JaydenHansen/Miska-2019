@@ -10,10 +10,15 @@ public class TrashCan : MonoBehaviour
     public VoidEvent m_onAllTrash;
 
     int m_trashLeft;
+    bool m_triggered;
     public int TrashLeft
     {
         get { return m_trashLeft; }
         set { m_trashLeft = value; }
+    }
+    public bool Triggered
+    {
+        get { return m_triggered; }
     }
 
     // Start is called before the first frame update
@@ -52,8 +57,9 @@ public class TrashCan : MonoBehaviour
         //        m_onAllTrash.Invoke();
         //    }
         //}
-        if (m_trashLeft <= 0)
+        if (m_trashLeft <= 0 && !m_triggered)
         {
+            m_triggered = true;
             m_onAllTrash.Invoke();
         }
     }   

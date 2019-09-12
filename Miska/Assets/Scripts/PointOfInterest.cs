@@ -15,33 +15,57 @@ public class PointOfInterest : MonoBehaviour
 
     private void Update()
     {
-        bool playerInArea = false;
-        Collider[] hits = Physics.OverlapBox(transform.position, m_size * 0.5f, transform.rotation, 1 << LayerMask.NameToLayer("Player"));
-        foreach (Collider hit in hits)
+        if (!m_trashCan.Triggered)
         {
-            if (hit.gameObject == m_player)
+            bool playerInArea = false;
+            Collider[] hits = Physics.OverlapBox(transform.position, m_size * 0.5f, transform.rotation, 1 << LayerMask.NameToLayer("Player"));
+            foreach (Collider hit in hits)
             {
-                playerInArea = true;
+                if (hit.gameObject == m_player)
+                {
+                    playerInArea = true;
+                }
             }
-        }
 
-        if (!m_playerInArea && playerInArea)
-        {
-            m_popUp.StartPopUp(IconType.Rubbish, false);
-            m_trashCount.text = m_trashCan.TrashLeft + "/" + m_trashCan.m_requiredTrash;
-            m_trashCount.enabled = true;
+            if (!m_playerInArea && playerInArea) // Player Enter
+            {
+                if (m_trashCan.TrashLeft != 0)
+                {
+                    m_popUp.StartPopUp(IconType.Rubbish, false);
+                    m_trashCount.text = (m_trashCan.m_requiredTrash - m_trashCan.TrashLeft) + "/" + m_trashCan.m_requiredTrash;
+                    m_trashCount.enabled = true;
+                }
+                else
+                {
+                    m_popUp.StartPopUp(IconType.Bin, false);
+                }
+            }
+            else if (m_playerInArea && !playerInArea) // Player Exit
+            {
+                m_popUp.StopPopUp();
+                m_trashCount.enabled = false;
+            }
+            else if (m_playerInArea && playerInArea) // Player Stay
+            {
+                if (m_trashCan.TrashLeft != 0)
+                {
+                    m_trashCount.text = (m_trashCan.m_requiredTrash - m_trashCan.TrashLeft) + "/" + m_trashCan.m_requiredTrash;
+                }
+                else if (m_popUp.m_currentIcon == IconType.Rubbish)
+                {
+                    m_popUp.StartPopUp(IconType.Bin, false);
+                    m_trashCount.enabled = false;
+                }                
+            }
+
+            m_playerInArea = playerInArea;
         }
-        else if (m_playerInArea && !playerInArea)
+        else if (m_playerInArea)
         {
             m_popUp.StopPopUp();
             m_trashCount.enabled = false;
+            m_playerInArea = false;
         }
-        else if (m_playerInArea && playerInArea)
-        {
-            m_trashCount.text = m_trashCan.TrashLeft + "/" + m_trashCan.m_requiredTrash;
-        }
-
-        m_playerInArea = playerInArea;
     }
 
     private void OnDrawGizmosSelected()

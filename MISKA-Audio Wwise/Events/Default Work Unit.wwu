@@ -139,6 +139,28 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
+				<Event Name="Play_Ducks" ID="{CA4648FD-74F4-481E-B4C5-5038DADB004A}">
+					<ChildrenList>
+						<Action Name="" ID="{628300CA-3EF0-4F53-81AE-A61624EB50C7}" ShortID="701813072">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ducks" ID="{F8A47C96-099B-4F15-8C32-5D47BF1CACA4}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Water_lapping" ID="{1597D6E1-24CC-465A-9963-E28B11BF2BA3}">
+					<ChildrenList>
+						<Action Name="" ID="{FC415D71-892A-4DB8-8FD8-ECA449C696BC}" ShortID="119057345">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Water lapping on Lake Ontario" ID="{E0DAB72F-A6DE-40E6-BC3C-2E60FB055002}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -52,10 +52,11 @@ public class PhotoMode : MonoBehaviour
         m_photoOverlay.SetActive(false);
         yield return new WaitForSeconds(.05f);
 
+        string fullpath = Application.dataPath + "/Photos/";
         DateTime now = DateTime.Now;
         string dt = now.Day.ToString() + "-" + now.Month.ToString() + "-" + now.Year.ToString() + " " + now.Hour.ToString() + "-" + now.Minute.ToString() + "-" + now.Second.ToString() + "-" + now.Millisecond.ToString();
         Debug.Log("Screen capture taken at " + dt);
-        ScreenCapture.CaptureScreenshot("ScreenCap_test " + dt + ".png");
+        ScreenCapture.CaptureScreenshot(fullpath + "ScreenCap_test " + dt + ".png");
         yield return new WaitForSeconds(.05f);
 
         m_photoOverlay.SetActive(true);

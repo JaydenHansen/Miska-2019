@@ -3,7 +3,442 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}" PersistMode="Standalone">
 			<ChildrenList>
-				<Folder Name="GLOBAL" ID="{1A363B3E-CCBE-4A31-A579-488A78A13137}" ShortID="43360316">
+				<Folder Name="LOCAL" ID="{AB2C5B40-3296-49AF-ACBE-38B49F6C2E58}" ShortID="201134258">
+					<ChildrenList>
+						<Folder Name="ROCKS" ID="{3A2BA605-A1DD-482B-8706-04B6FC493381}" ShortID="369310673">
+							<ChildrenList>
+								<Folder Name="OBJECTS" ID="{91C43F6C-8567-4E9F-80DB-1087D54475AC}" ShortID="858582751">
+									<ChildrenList>
+										<Sound Name="RockBell" ID="{A0DE4264-282A-47ED-A0E3-25D02BE82AC3}" ShortID="823186379">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="HoldEmitterPositionOrientation" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="Short" ID="{FBE71A9B-EE4C-4A9C-8B45-114790E36A4A}" WorkUnitID="{9694F749-499E-4F12-BEF9-AA448E069519}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="rockbell" ID="{72FF6101-F343-4AA5-A032-15EDB912BCC3}" ShortID="151541401">
+													<Language>SFX</Language>
+													<AudioFile>rockbell.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="rockbell" ID="{72FF6101-F343-4AA5-A032-15EDB912BCC3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<RandomSequenceContainer Name="RockCollide" ID="{A2336291-A39E-452C-9D60-38FC6D70FEE3}" ShortID="767584469">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="Lowpass" Type="int16">
+													<RTPCList>
+														<RTPC Name="" ID="{25FFC425-71FE-40EB-BD47-74F0A16A6189}" ShortID="1050203716">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RockCollideForce" ID="{3FDB926D-8E6B-4318-9908-4321D8098C42}" WorkUnitID="{5BDB56D3-FCE7-4264-9A6C-F7770480508D}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{ABABA9F6-E811-4D8F-9E87-28F00354513E}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="65537"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-28</YPos>
+																		<Flags>5</Flags>
+																		<SegmentShape>Log3</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>7</XPos>
+																		<YPos>0</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+												<Property Name="MakeUpGain" Type="Real64">
+													<RTPCList>
+														<RTPC Name="" ID="{B56749F3-A4E5-4E08-9D53-9DFE89E762A0}" ShortID="966820523">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RockCollideForce" ID="{3FDB926D-8E6B-4318-9908-4321D8098C42}" WorkUnitID="{5BDB56D3-FCE7-4264-9A6C-F7770480508D}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{0C4C0DCA-4438-447E-A3DE-CCC75E249EBE}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-13.53322</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>7</XPos>
+																		<YPos>0</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<RTPCList>
+														<RTPC Name="" ID="{DDD14069-2802-4834-ADC2-64CA14770C2D}" ShortID="252497414">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RockCollideForce" ID="{3FDB926D-8E6B-4318-9908-4321D8098C42}" WorkUnitID="{5BDB56D3-FCE7-4264-9A6C-F7770480508D}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{59F83C50-C3F9-4034-A021-65243DFC65B7}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="65537"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-189</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>7</XPos>
+																		<YPos>252</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+												<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="58"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>2</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="Short" ID="{FBE71A9B-EE4C-4A9C-8B45-114790E36A4A}" WorkUnitID="{9694F749-499E-4F12-BEF9-AA448E069519}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="Drop_Masonry_SoftSurface_Heavy_01" ID="{E72BF412-230F-4C0B-B0A2-147CC1B74E4A}" ShortID="720878256">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Drop_Masonry_SoftSurface_Heavy_01" ID="{88DEAF54-96BC-49C5-9FAE-AE9CC9C4A8BA}" ShortID="672269398">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.232045009784736"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.330851272015656"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>Drop_Masonry_SoftSurface_Heavy_01.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Drop_Masonry_SoftSurface_Heavy_01" ID="{88DEAF54-96BC-49C5-9FAE-AE9CC9C4A8BA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Drop_Rock_HardSurface_Heavy_02" ID="{D121C9D2-19E8-4DF0-A7A4-F114262773A1}" ShortID="1041056221">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Drop_Rock_HardSurface_Heavy_02" ID="{99BAEFC0-AAD1-42F5-B895-B5434C447D80}" ShortID="782625208">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.183310657596372"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.358095238095238"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>Drop_Rock_HardSurface_Heavy_02.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Drop_Rock_HardSurface_Heavy_02" ID="{99BAEFC0-AAD1-42F5-B895-B5434C447D80}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="IMPACT ROCKS FALL SCATTER CEMENT 01" ID="{96847CCA-A7B6-44D2-B78E-E4AEAE20A207}" ShortID="812675886">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="IMPACT ROCKS FALL SCATTER CEMENT 01" ID="{04AF6449-F487-4978-B22B-1963EB674743}" ShortID="70690693">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.116423912030566"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.243060447923462"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>IMPACT ROCKS FALL SCATTER CEMENT 01.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="IMPACT ROCKS FALL SCATTER CEMENT 01" ID="{04AF6449-F487-4978-B22B-1963EB674743}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<Sound Name="Rock-Fall-Debris 1" ID="{B7671216-CA79-4E65-9697-7BD20622B4C6}" ShortID="758033079">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="HoldEmitterPositionOrientation" Type="bool" Value="True"/>
+												<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="83"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="Mid-Long(35)" ID="{344645EA-C709-4622-A32E-11D250404203}" WorkUnitID="{9694F749-499E-4F12-BEF9-AA448E069519}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Rock-Fall-Debris 1" ID="{DB9CDFE0-9863-4225-951B-6D8CF1A4AADE}" ShortID="675710130">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.87758904109589"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.87758904109589"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Rock-Fall-Debris 1.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Rock-Fall-Debris 1" ID="{DB9CDFE0-9863-4225-951B-6D8CF1A4AADE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="ANIMALS" ID="{0050AAAF-8E87-4D2C-8F1E-795E32D711C7}" ShortID="570083503">
+									<ChildrenList>
+										<RandomSequenceContainer Name="Fox barks" ID="{98AE91AD-0BD6-433E-A24C-3B6801886D1A}" ShortID="224456248">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="1"/>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{71C0BFB0-57CA-4725-A0DD-6DC536FA1D4E}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="152"/>
+																	<Property Name="Min" Type="Real64" Value="-101"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>2</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{A704A093-1DAD-47B6-81AD-FE0BF75ACA62}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="3"/>
+																	<Property Name="Min" Type="Real64" Value="-5"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="Fox bark" ID="{F885BB00-5977-4D03-A903-2118AB60D9B0}" ShortID="937259856">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Fox bark" ID="{95AF15B2-8311-4CA4-ABBF-73658973F2B2}" ShortID="465045227">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="5.96508276255708E-02"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.350448612300228"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>Fox bark.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Fox bark" ID="{95AF15B2-8311-4CA4-ABBF-73658973F2B2}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Dog akita puppy single bark_BLASTWAVEFX_00090" ID="{5BC692C0-DE61-4A07-A60E-8A093E480271}" ShortID="434077551">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Dog akita puppy single bark_BLASTWAVEFX_00090" ID="{A7A996BA-BAE1-4A4A-B798-9BEF8ED2A7EC}" ShortID="236611281">
+															<Language>SFX</Language>
+															<AudioFile>Dog akita puppy single bark_BLASTWAVEFX_00090.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Dog akita puppy single bark_BLASTWAVEFX_00090" ID="{A7A996BA-BAE1-4A4A-B798-9BEF8ED2A7EC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Dog akita puppy whine breathy short_BLASTWAVEFX_10305" ID="{020FCBFB-A65A-4BD3-97CA-82339B8D505E}" ShortID="398619820">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Dog akita puppy whine breathy short_BLASTWAVEFX_10305" ID="{62EE72B1-626B-443A-9BBF-32D5353A9096}" ShortID="850930565">
+															<Language>SFX</Language>
+															<AudioFile>Dog akita puppy whine breathy short_BLASTWAVEFX_10305.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Dog akita puppy whine breathy short_BLASTWAVEFX_10305" ID="{62EE72B1-626B-443A-9BBF-32D5353A9096}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Dog in the mountains barking and growling" ID="{5BE92F74-5487-4BA0-BC0D-309C0BFB635C}" ShortID="1031017946">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Dog in the mountains barking and growling" ID="{B46B119F-E978-4321-91DD-33DF675C31BC}" ShortID="891604117">
+															<Language>SFX</Language>
+															<AudioFile>Dog in the mountains barking and growling.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Dog in the mountains barking and growling" ID="{B46B119F-E978-4321-91DD-33DF675C31BC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<PositioningInfo>
+												<Position Name="" ID="{A797F875-628F-4C48-BF83-2B95FFF97DA5}"/>
+											</PositioningInfo>
+										</RandomSequenceContainer>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="AMBIENCE" ID="{2B8202B3-6012-4425-91A3-4A67F686FA8C}" ShortID="310841485"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="STATION" ID="{2DBDA12F-4AA2-4DE6-A249-E029792750B0}" ShortID="716825042"/>
+						<Folder Name="DUCKS" ID="{AAB07626-8856-4EC6-A9A1-4A6C5FBA9471}" ShortID="983657930">
+							<ChildrenList>
+								<Sound Name="Ducks" ID="{F8A47C96-099B-4F15-8C32-5D47BF1CACA4}" ShortID="493331335">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Ducks" ID="{5CEC97F5-0DF5-42B2-BE56-2DF61A3445EB}" ShortID="538809633">
+											<Language>SFX</Language>
+											<AudioFile>Ducks.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Ducks" ID="{5CEC97F5-0DF5-42B2-BE56-2DF61A3445EB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Water lapping on Lake Ontario" ID="{E0DAB72F-A6DE-40E6-BC3C-2E60FB055002}" ShortID="513883408">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Water lapping on Lake Ontario" ID="{C0A83EB4-669C-44AC-8B97-E92F783D5A11}" ShortID="126525382">
+											<Language>SFX</Language>
+											<AudioFile>Water lapping on Lake Ontario.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Water lapping on Lake Ontario" ID="{C0A83EB4-669C-44AC-8B97-E92F783D5A11}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<ActorMixer Name="GLOBAL" ID="{C41DE8B2-A957-4042-ACBD-47B6DF2A616A}" ShortID="482354652">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+						</Reference>
+					</ReferenceList>
 					<ChildrenList>
 						<Folder Name="PLAYER CHARACTER" ID="{2EB45288-76F9-4B72-9F86-E009932066D5}" ShortID="935290128">
 							<ChildrenList>
@@ -1625,7 +2060,15 @@
 								</Folder>
 							</ChildrenList>
 						</Folder>
-						<Folder Name="AMBIENCE" ID="{1FA61F2A-8CB0-41F3-ACF7-F728314843A7}" ShortID="471907591">
+						<ActorMixer Name="AMBIENCE" ID="{2EB473F9-AD11-4CF8-9C50-87772FA15338}" ShortID="559218032">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+								</Reference>
+							</ReferenceList>
 							<ChildrenList>
 								<Folder Name="BedAmbience" ID="{AC229689-DB0F-4376-BD28-8717D8525D58}" ShortID="515050880">
 									<ChildrenList>
@@ -1891,395 +2334,67 @@
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>
-						</Folder>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="PlayerState" ID="{06EF04F6-4D5E-4078-B334-C0A4E2D725C1}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="Sitting" ID="{7957FA1A-2BFC-4208-BA73-14228E9E0BE6}"/>
+										<CustomState Name="" ID="{99B57CB8-469B-4A72-9616-BC6A3B9AE9DE}" ShortID="949563131">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16" Value="7"/>
+												<Property Name="Lowpass" Type="int16" Value="23"/>
+												<Property Name="MakeUpGain" Type="Real64" Value="-5"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="Journal" ID="{9715A2F6-D386-45BC-92C0-B99622ABB9E9}"/>
+										<CustomState Name="" ID="{CA75097D-B00F-4211-BA38-EC59CC81BFB0}" ShortID="745928592">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16" Value="22"/>
+												<Property Name="Lowpass" Type="int16" Value="31"/>
+												<Property Name="MakeUpGain" Type="Real64" Value="-14"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="Walking" ID="{6115ABC9-3C5E-4C62-89F6-3AC049BDDDF3}"/>
+										<CustomState Name="" ID="{A055B3CC-DD5E-49AC-8F69-63FC37392341}" ShortID="144202977"/>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
+						</ActorMixer>
 					</ChildrenList>
-				</Folder>
-				<Folder Name="LOCAL" ID="{AB2C5B40-3296-49AF-ACBE-38B49F6C2E58}" ShortID="201134258">
-					<ChildrenList>
-						<Folder Name="ROCKS" ID="{3A2BA605-A1DD-482B-8706-04B6FC493381}" ShortID="369310673">
-							<ChildrenList>
-								<Folder Name="OBJECTS" ID="{91C43F6C-8567-4E9F-80DB-1087D54475AC}" ShortID="858582751">
-									<ChildrenList>
-										<Sound Name="RockBell" ID="{A0DE4264-282A-47ED-A0E3-25D02BE82AC3}" ShortID="823186379">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="2"/>
-												<Property Name="HoldEmitterPositionOrientation" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Attenuation">
-													<ObjectRef Name="Short" ID="{FBE71A9B-EE4C-4A9C-8B45-114790E36A4A}" WorkUnitID="{9694F749-499E-4F12-BEF9-AA448E069519}"/>
-												</Reference>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="rockbell" ID="{72FF6101-F343-4AA5-A032-15EDB912BCC3}" ShortID="151541401">
-													<Language>SFX</Language>
-													<AudioFile>rockbell.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="rockbell" ID="{72FF6101-F343-4AA5-A032-15EDB912BCC3}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<RandomSequenceContainer Name="RockCollide" ID="{A2336291-A39E-452C-9D60-38FC6D70FEE3}" ShortID="767584469">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="2"/>
-												<Property Name="Lowpass" Type="int16">
-													<RTPCList>
-														<RTPC Name="" ID="{25FFC425-71FE-40EB-BD47-74F0A16A6189}" ShortID="1050203716">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="RockCollideForce" ID="{3FDB926D-8E6B-4318-9908-4321D8098C42}" WorkUnitID="{5BDB56D3-FCE7-4264-9A6C-F7770480508D}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{ABABA9F6-E811-4D8F-9E87-28F00354513E}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="65537"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-28</YPos>
-																		<Flags>5</Flags>
-																		<SegmentShape>Log3</SegmentShape>
-																	</Point>
-																	<Point>
-																		<XPos>7</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
-												</Property>
-												<Property Name="MakeUpGain" Type="Real64">
-													<RTPCList>
-														<RTPC Name="" ID="{B56749F3-A4E5-4E08-9D53-9DFE89E762A0}" ShortID="966820523">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="RockCollideForce" ID="{3FDB926D-8E6B-4318-9908-4321D8098C42}" WorkUnitID="{5BDB56D3-FCE7-4264-9A6C-F7770480508D}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{0C4C0DCA-4438-447E-A3DE-CCC75E249EBE}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-13.53322</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>7</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
-												</Property>
-												<Property Name="Pitch" Type="int32">
-													<RTPCList>
-														<RTPC Name="" ID="{DDD14069-2802-4834-ADC2-64CA14770C2D}" ShortID="252497414">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="RockCollideForce" ID="{3FDB926D-8E6B-4318-9908-4321D8098C42}" WorkUnitID="{5BDB56D3-FCE7-4264-9A6C-F7770480508D}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{59F83C50-C3F9-4034-A021-65243DFC65B7}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="65537"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-189</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>7</XPos>
-																		<YPos>252</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
-												</Property>
-												<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="58"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>2</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Attenuation">
-													<ObjectRef Name="Short" ID="{FBE71A9B-EE4C-4A9C-8B45-114790E36A4A}" WorkUnitID="{9694F749-499E-4F12-BEF9-AA448E069519}"/>
-												</Reference>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="Drop_Masonry_SoftSurface_Heavy_01" ID="{E72BF412-230F-4C0B-B0A2-147CC1B74E4A}" ShortID="720878256">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Drop_Masonry_SoftSurface_Heavy_01" ID="{88DEAF54-96BC-49C5-9FAE-AE9CC9C4A8BA}" ShortID="672269398">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.232045009784736"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimEnd" Type="Real64" Value="0.330851272015656"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>Drop_Masonry_SoftSurface_Heavy_01.wav</AudioFile>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Drop_Masonry_SoftSurface_Heavy_01" ID="{88DEAF54-96BC-49C5-9FAE-AE9CC9C4A8BA}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Drop_Rock_HardSurface_Heavy_02" ID="{D121C9D2-19E8-4DF0-A7A4-F114262773A1}" ShortID="1041056221">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Drop_Rock_HardSurface_Heavy_02" ID="{99BAEFC0-AAD1-42F5-B895-B5434C447D80}" ShortID="782625208">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.183310657596372"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimEnd" Type="Real64" Value="0.358095238095238"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>Drop_Rock_HardSurface_Heavy_02.wav</AudioFile>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Drop_Rock_HardSurface_Heavy_02" ID="{99BAEFC0-AAD1-42F5-B895-B5434C447D80}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="IMPACT ROCKS FALL SCATTER CEMENT 01" ID="{96847CCA-A7B6-44D2-B78E-E4AEAE20A207}" ShortID="812675886">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="IMPACT ROCKS FALL SCATTER CEMENT 01" ID="{04AF6449-F487-4978-B22B-1963EB674743}" ShortID="70690693">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.116423912030566"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimEnd" Type="Real64" Value="0.243060447923462"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>IMPACT ROCKS FALL SCATTER CEMENT 01.wav</AudioFile>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="IMPACT ROCKS FALL SCATTER CEMENT 01" ID="{04AF6449-F487-4978-B22B-1963EB674743}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-										<Sound Name="Rock-Fall-Debris 1" ID="{B7671216-CA79-4E65-9697-7BD20622B4C6}" ShortID="758033079">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="2"/>
-												<Property Name="HoldEmitterPositionOrientation" Type="bool" Value="True"/>
-												<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="83"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Attenuation">
-													<ObjectRef Name="Mid-Long(35)" ID="{344645EA-C709-4622-A32E-11D250404203}" WorkUnitID="{9694F749-499E-4F12-BEF9-AA448E069519}"/>
-												</Reference>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Rock-Fall-Debris 1" ID="{DB9CDFE0-9863-4225-951B-6D8CF1A4AADE}" ShortID="675710130">
-													<PropertyList>
-														<Property Name="LoopBegin" Type="Real64" Value="0.87758904109589"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="0.87758904109589"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>Rock-Fall-Debris 1.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Rock-Fall-Debris 1" ID="{DB9CDFE0-9863-4225-951B-6D8CF1A4AADE}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-									</ChildrenList>
-								</Folder>
-								<Folder Name="ANIMALS" ID="{0050AAAF-8E87-4D2C-8F1E-795E32D711C7}" ShortID="570083503">
-									<ChildrenList>
-										<RandomSequenceContainer Name="Fox barks" ID="{98AE91AD-0BD6-433E-A24C-3B6801886D1A}" ShortID="224456248">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="Pitch" Type="int32">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{71C0BFB0-57CA-4725-A0DD-6DC536FA1D4E}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="152"/>
-																	<Property Name="Min" Type="Real64" Value="-101"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>2</Value>
-													</ValueList>
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{A704A093-1DAD-47B6-81AD-FE0BF75ACA62}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="3"/>
-																	<Property Name="Min" Type="Real64" Value="-5"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="Fox bark" ID="{F885BB00-5977-4D03-A903-2118AB60D9B0}" ShortID="937259856">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Fox bark" ID="{95AF15B2-8311-4CA4-ABBF-73658973F2B2}" ShortID="465045227">
-															<PropertyList>
-																<Property Name="FadeInDuration" Type="Real64" Value="5.96508276255708E-02"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.350448612300228"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>Fox bark.wav</AudioFile>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Fox bark" ID="{95AF15B2-8311-4CA4-ABBF-73658973F2B2}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Dog akita puppy single bark_BLASTWAVEFX_00090" ID="{5BC692C0-DE61-4A07-A60E-8A093E480271}" ShortID="434077551">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Dog akita puppy single bark_BLASTWAVEFX_00090" ID="{A7A996BA-BAE1-4A4A-B798-9BEF8ED2A7EC}" ShortID="236611281">
-															<Language>SFX</Language>
-															<AudioFile>Dog akita puppy single bark_BLASTWAVEFX_00090.wav</AudioFile>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Dog akita puppy single bark_BLASTWAVEFX_00090" ID="{A7A996BA-BAE1-4A4A-B798-9BEF8ED2A7EC}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Dog akita puppy whine breathy short_BLASTWAVEFX_10305" ID="{020FCBFB-A65A-4BD3-97CA-82339B8D505E}" ShortID="398619820">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Dog akita puppy whine breathy short_BLASTWAVEFX_10305" ID="{62EE72B1-626B-443A-9BBF-32D5353A9096}" ShortID="850930565">
-															<Language>SFX</Language>
-															<AudioFile>Dog akita puppy whine breathy short_BLASTWAVEFX_10305.wav</AudioFile>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Dog akita puppy whine breathy short_BLASTWAVEFX_10305" ID="{62EE72B1-626B-443A-9BBF-32D5353A9096}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Dog in the mountains barking and growling" ID="{5BE92F74-5487-4BA0-BC0D-309C0BFB635C}" ShortID="1031017946">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Dog in the mountains barking and growling" ID="{B46B119F-E978-4321-91DD-33DF675C31BC}" ShortID="891604117">
-															<Language>SFX</Language>
-															<AudioFile>Dog in the mountains barking and growling.wav</AudioFile>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Dog in the mountains barking and growling" ID="{B46B119F-E978-4321-91DD-33DF675C31BC}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-											<PositioningInfo>
-												<Position Name="" ID="{A797F875-628F-4C48-BF83-2B95FFF97DA5}"/>
-											</PositioningInfo>
-										</RandomSequenceContainer>
-									</ChildrenList>
-								</Folder>
-								<Folder Name="AMBIENCE" ID="{2B8202B3-6012-4425-91A3-4A67F686FA8C}" ShortID="310841485"/>
-							</ChildrenList>
-						</Folder>
-						<Folder Name="STATION" ID="{2DBDA12F-4AA2-4DE6-A249-E029792750B0}" ShortID="716825042"/>
-						<Folder Name="DUCKS" ID="{AAB07626-8856-4EC6-A9A1-4A6C5FBA9471}" ShortID="983657930"/>
-					</ChildrenList>
-				</Folder>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="PlayerState" ID="{06EF04F6-4D5E-4078-B334-C0A4E2D725C1}"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="Sitting" ID="{7957FA1A-2BFC-4208-BA73-14228E9E0BE6}"/>
+								<CustomState Name="" ID="{8AECB97C-0358-4B2C-B332-751699777BFA}" ShortID="571067494">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16" Value="15"/>
+									</PropertyList>
+								</CustomState>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Journal" ID="{9715A2F6-D386-45BC-92C0-B99622ABB9E9}"/>
+								<CustomState Name="" ID="{39A697BE-554B-49FA-9F32-2485F4379D4F}" ShortID="917599653"/>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Walking" ID="{6115ABC9-3C5E-4C62-89F6-3AC049BDDDF3}"/>
+								<CustomState Name="" ID="{FE99EBE3-C6BE-4730-9B16-CEE3E22B6C83}" ShortID="299226017"/>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
+				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{8672F440-5967-4347-8A6B-0F966D807484}" SchemaVersion="94">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{8672F440-5967-4347-8A6B-0F966D807484}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{8672F440-5967-4347-8A6B-0F966D807484}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="PlayerState" ID="{06EF04F6-4D5E-4078-B334-C0A4E2D725C1}">
+					<ChildrenList>
+						<State Name="None" ID="{F2FB12F1-1121-4590-BDDA-980627B4FB4A}"/>
+						<State Name="Walking" ID="{6115ABC9-3C5E-4C62-89F6-3AC049BDDDF3}"/>
+						<State Name="Sitting" ID="{7957FA1A-2BFC-4208-BA73-14228E9E0BE6}"/>
+						<State Name="Journal" ID="{9715A2F6-D386-45BC-92C0-B99622ABB9E9}"/>
+					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="Walking" ID="{6115ABC9-3C5E-4C62-89F6-3AC049BDDDF3}"/>
+							<EndState Name="Journal" ID="{9715A2F6-D386-45BC-92C0-B99622ABB9E9}"/>
+							<Time>2</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="Walking" ID="{6115ABC9-3C5E-4C62-89F6-3AC049BDDDF3}"/>
+							<EndState Name="Sitting" ID="{7957FA1A-2BFC-4208-BA73-14228E9E0BE6}"/>
+							<Time>5</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="Journal" ID="{9715A2F6-D386-45BC-92C0-B99622ABB9E9}"/>
+							<EndState Name="Walking" ID="{6115ABC9-3C5E-4C62-89F6-3AC049BDDDF3}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="Sitting" ID="{7957FA1A-2BFC-4208-BA73-14228E9E0BE6}"/>
+							<EndState Name="Walking" ID="{6115ABC9-3C5E-4C62-89F6-3AC049BDDDF3}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

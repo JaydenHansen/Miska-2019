@@ -10,6 +10,7 @@ public class PhotoMode : MonoBehaviour
     GameObject      m_photoOverlay;
     RectTransform   m_viewfinderTrans;
     Animator        m_animator;
+    GameObject m_PopupOverlay;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class PhotoMode : MonoBehaviour
         //m_photoOverlay.SetActive(false);
         m_viewfinderTrans = m_photoOverlay.GetComponentInChildren<RectTransform>();
         m_animator = m_photoOverlay.GetComponentInChildren<Animator>();
+        m_PopupOverlay = GameObject.Find("PopUpCanvas");
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class PhotoMode : MonoBehaviour
         {
             if(m_photoModeActive == false)
             {
+                m_PopupOverlay.SetActive(false);
                 m_photoModeActive = true;
                 Debug.Log("Photo Mode engaged");
                 //m_photoOverlay.SetActive(true);
@@ -34,6 +37,7 @@ public class PhotoMode : MonoBehaviour
             }
             else
             {
+                m_PopupOverlay.SetActive(true);
                 m_animator.SetTrigger("TransOUT");
                 Debug.Log("Photo Mode disengaged");
                 m_photoModeActive = false;

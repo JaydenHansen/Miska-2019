@@ -35,10 +35,13 @@ public class GameManager : MonoBehaviour
         foreach(TrashCan trashCan in m_trashCans)
         {
             save.m_trashCanTrashLeft.Add(trashCan.TrashLeft);
+            List<bool> trashActive = new List<bool>();
             foreach (GameObject trash in trashCan.m_trash)
             {
-                save.m_trashActive.Add(trash.activeSelf);
+                trashActive.Add(trash.activeSelf);
             }
+
+            save.m_trashActive.Add(trashActive);
         }
 
         return save;
@@ -75,7 +78,7 @@ public class GameManager : MonoBehaviour
                 m_trashCans[i].TrashLeft = save.m_trashCanTrashLeft[i];
                 for (int j = 0; j < m_trashCans[i].m_trash.Length; j++)
                 {
-                    m_trashCans[i].m_trash[j].SetActive(save.m_trashActive[j * (i + 1)]);
+                    m_trashCans[i].m_trash[j].SetActive(save.m_trashActive[i][j]);
                 }
             }
         }

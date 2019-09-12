@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
             m_player.GetComponent<CharacterController>().enabled = true;
             m_camera.SetRotation(save.m_cameraRotation.GetVector3());
             m_player.transform.rotation = Quaternion.Euler(0, save.m_cameraRotation.y, 0);
-            m_trashHolder.TrashCount = save.m_playerTrashCount;
+            m_trashHolder.TrashCount = save.m_playerTrashCount;            
 
             for (int i = 0; i < m_trashCans.Length && i < save.m_trashCanTrashLeft.Count; i++)
             {

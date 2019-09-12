@@ -8,6 +8,7 @@ public class Book : MonoBehaviour
     public Player m_player;
     public CameraController m_playerCamera;
     public Camera m_bookCamera;
+    public Camera m_groundCamera;
     public GameObject m_pageMesh;
     public Transform m_pageTurnLeft;
     public Transform m_pageTurnRight;
@@ -131,6 +132,7 @@ public class Book : MonoBehaviour
             Cursor.visible = true;
 
             m_bookCamera.enabled = true;
+            m_groundCamera.enabled = true;
             m_playerCamera.m_camera.enabled = false;
             m_playerCamera.enabled = false;
 
@@ -161,6 +163,7 @@ public class Book : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         m_bookCamera.enabled = false;
+        m_groundCamera.enabled = false;
         m_playerCamera.m_camera.enabled = true;
         m_playerCamera.enabled = true;
 

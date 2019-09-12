@@ -116,8 +116,8 @@ Material:
     - Vector1_5BB2D107: 16.88
     - Vector1_6BF859CE: 7
     - Vector1_9EF82CA3: 1.7
-    - Vector1_C115B2D0: 0.1
-    - Vector1_D3ECD7A5: 40.69
+    - Vector1_C115B2D0: 0
+    - Vector1_D3ECD7A5: 1
     - Vector1_E50C625F: 7
     - Vector1_EC057244: 0
     - _AORemapMax: 1

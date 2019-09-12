@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4760083690816610064}
   - component: {fileID: 7666656940734653074}
   - component: {fileID: 1460856782831433094}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Save
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 6339574241533776214}
   - component: {fileID: 43627912377937202}
   - component: {fileID: 7594628796472244797}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 4296762565332504185}
   - component: {fileID: 7430942711090224361}
   - component: {fileID: 5911543350831377829}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 5801979510527049397}
   - component: {fileID: 7930473132458994006}
   - component: {fileID: 2171264894807416332}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Restart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 7424514551061864234}
   - component: {fileID: 8540114548985295296}
   - component: {fileID: 9199608619874334748}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GalleryBookmark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -642,7 +642,7 @@ GameObject:
   - component: {fileID: 7679355669364588290}
   - component: {fileID: 5735112619146187019}
   - component: {fileID: 3455176877892581796}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tooltip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,7 +739,7 @@ GameObject:
   - component: {fileID: 6356221945829869576}
   - component: {fileID: 7206829756840360751}
   - component: {fileID: 4145558802865036162}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Page5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -826,6 +826,189 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &1109504002565172145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3938813631320161656}
+  - component: {fileID: 2452562708486635481}
+  - component: {fileID: 8733101024316273023}
+  - component: {fileID: 9052160596973919623}
+  m_Layer: 9
+  m_Name: BookCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3938813631320161656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109504002565172145}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 2.266, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6273763071998877391}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!20 &2452562708486635481
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109504002565172145}
+  m_Enabled: 0
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.01
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 512
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &8733101024316273023
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109504002565172145}
+  m_Enabled: 1
+--- !u!114 &9052160596973919623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109504002565172145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clearColorMode: 2
+  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
+  clearDepth: 1
+  volumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  volumeAnchorOverride: {fileID: 0}
+  antialiasing: 0
+  SMAAQuality: 2
+  dithering: 0
+  stopNaNs: 0
+  physicalParameters:
+    m_Iso: 200
+    m_ShutterSpeed: 0.005
+    m_Aperture: 16
+    m_BladeCount: 5
+    m_Curvature: {x: 2, y: 11}
+    m_BarrelClipping: 0.25
+    m_Anamorphism: 0
+  flipYMode: 0
+  fullscreenPassthrough: 0
+  allowDynamicResolution: 0
+  customRenderingSettings: 0
+  invertFaceCulling: 0
+  probeLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPathCustomFrameSettings:
+    bitDatas:
+      data1: 69284256546589
+      data2: 4539628424389459968
+    lodBias: 1
+    lodBiasMode: 0
+    maximumLODLevel: 0
+    maximumLODLevelMode: 0
+  renderingPathCustomFrameSettingsOverrideMask:
+    mask:
+      data1: 0
+      data2: 0
+  defaultFrameSettings: 0
+  m_Version: 5
+  m_ObsoleteRenderingPath: 0
+  m_ObsoleteFrameSettings:
+    overrides: 0
+    enableShadow: 0
+    enableContactShadows: 0
+    enableShadowMask: 0
+    enableSSR: 0
+    enableSSAO: 0
+    enableSubsurfaceScattering: 0
+    enableTransmission: 0
+    enableAtmosphericScattering: 0
+    enableVolumetrics: 0
+    enableReprojectionForVolumetrics: 0
+    enableLightLayers: 0
+    enableExposureControl: 1
+    diffuseGlobalDimmer: 0
+    specularGlobalDimmer: 0
+    shaderLitMode: 0
+    enableDepthPrepassWithDeferredRendering: 0
+    enableTransparentPrepass: 0
+    enableMotionVectors: 0
+    enableObjectMotionVectors: 0
+    enableDecals: 0
+    enableRoughRefraction: 0
+    enableTransparentPostpass: 0
+    enableDistortion: 0
+    enablePostprocess: 0
+    enableOpaqueObjects: 0
+    enableTransparentObjects: 0
+    enableRealtimePlanarReflection: 0
+    enableMSAA: 0
+    enableAsyncCompute: 0
+    runLightListAsync: 0
+    runSSRAsync: 0
+    runSSAOAsync: 0
+    runContactShadowsAsync: 0
+    runVolumeVoxelizationAsync: 0
+    lightLoopSettings:
+      overrides: 0
+      enableDeferredTileAndCluster: 0
+      enableComputeLightEvaluation: 0
+      enableComputeLightVariants: 0
+      enableComputeMaterialVariants: 0
+      enableFptlForForwardOpaque: 0
+      enableBigTilePrepass: 0
+      isFptlEnabled: 0
 --- !u!1 &1672745556590611927
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +1021,7 @@ GameObject:
   - component: {fileID: 852830846258311436}
   - component: {fileID: 3386889517705393638}
   - component: {fileID: 8291678068637294284}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PrevPage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -940,7 +1123,7 @@ GameObject:
   - component: {fileID: 8099409566673901676}
   - component: {fileID: 956663094425852378}
   - component: {fileID: 9012056103742152199}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Page1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1039,7 +1222,7 @@ GameObject:
   - component: {fileID: 3055389101833245634}
   - component: {fileID: 2349556967204336885}
   - component: {fileID: 7266655349092861712}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1116,7 +1299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8986558139960087889}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftPages
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1151,7 +1334,7 @@ GameObject:
   - component: {fileID: 1824828719031275733}
   - component: {fileID: 8737493489512833005}
   - component: {fileID: 1486678426512922783}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1232,7 +1415,7 @@ GameObject:
   - component: {fileID: 6895910980388524998}
   - component: {fileID: 388627532684540757}
   - component: {fileID: 5330565111041192303}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TitleBookmark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1378,7 +1561,7 @@ GameObject:
   - component: {fileID: 3751062619253460983}
   - component: {fileID: 8902712145068139230}
   - component: {fileID: 5116902347337411187}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1451,7 +1634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 297217391027440604}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PageTurnLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1484,7 +1667,7 @@ GameObject:
   - component: {fileID: 9157704164242368608}
   - component: {fileID: 8370295464786519828}
   - component: {fileID: 6571983509881248886}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NextPage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1585,7 +1768,7 @@ GameObject:
   - component: {fileID: 4702701674959979030}
   - component: {fileID: 2794367225562374682}
   - component: {fileID: 5959260369650841855}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1664,7 +1847,7 @@ GameObject:
   - component: {fileID: 6741720306120509487}
   - component: {fileID: 8749405239876828091}
   - component: {fileID: 3517953229607528791}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1741,7 +1924,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 53413082671039289}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pages
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1778,7 +1961,7 @@ GameObject:
   - component: {fileID: 4124649673292154150}
   - component: {fileID: 8123959755772867792}
   - component: {fileID: 1315879154855799219}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PrevButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1910,7 +2093,7 @@ GameObject:
   - component: {fileID: 2763988992443224188}
   - component: {fileID: 5405544781810086688}
   - component: {fileID: 2462290568067292400}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1989,7 +2172,7 @@ GameObject:
   - component: {fileID: 8785366973076690622}
   - component: {fileID: 1367577447941204650}
   - component: {fileID: 7452485330581630831}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2069,7 +2252,7 @@ GameObject:
   - component: {fileID: 4474408817332575973}
   - component: {fileID: 4515889996239556719}
   - component: {fileID: 154727724573744732}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Page5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2167,7 +2350,7 @@ GameObject:
   - component: {fileID: 474462960487579532}
   - component: {fileID: 3679172853271019456}
   - component: {fileID: 2398438118194061368}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2248,7 +2431,7 @@ GameObject:
   - component: {fileID: 2257406973418246155}
   - component: {fileID: 1011319273182382868}
   - component: {fileID: 5765825991844893683}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: POIBookmark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2394,7 +2577,7 @@ GameObject:
   - component: {fileID: 7157777679869583744}
   - component: {fileID: 9122251340583559422}
   - component: {fileID: 5644982006672325031}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2473,7 +2656,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4215234074601642184}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightPages
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2508,7 +2691,7 @@ GameObject:
   - component: {fileID: 1132822928193874401}
   - component: {fileID: 7765893582617506762}
   - component: {fileID: 2942685458560931535}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2584,7 +2767,7 @@ GameObject:
   - component: {fileID: 1219823799819630076}
   - component: {fileID: 1091324709316567625}
   - component: {fileID: 5682195853304447041}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NextButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2716,7 +2899,7 @@ GameObject:
   - component: {fileID: 1804955946524236541}
   - component: {fileID: 2734601324033804637}
   - component: {fileID: 1423536766742282770}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2791,7 +2974,7 @@ GameObject:
   - component: {fileID: 6241857691921273012}
   - component: {fileID: 6957811667887062576}
   - component: {fileID: 2632544159785016482}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2872,7 +3055,7 @@ GameObject:
   - component: {fileID: 7999677895768954826}
   - component: {fileID: 8854515791186629144}
   - component: {fileID: 3174571067637637597}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2951,7 +3134,7 @@ GameObject:
   - component: {fileID: 1686600657656036226}
   - component: {fileID: 1281719411895139208}
   - component: {fileID: 8112944189139949946}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3034,7 +3217,7 @@ GameObject:
   - component: {fileID: 5690821409017138227}
   - component: {fileID: 7790992725190799646}
   - component: {fileID: 7494211205916923461}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CreditsBookmark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3181,7 +3364,7 @@ GameObject:
   - component: {fileID: 6931178458918596187}
   - component: {fileID: 2716446511744767746}
   - component: {fileID: 1593329769956808803}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Page2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3285,7 +3468,7 @@ GameObject:
   - component: {fileID: 6257851659562493881}
   - component: {fileID: 5534612167096045842}
   - component: {fileID: 1986464164270890099}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3416,7 +3599,7 @@ GameObject:
   - component: {fileID: 6980748140828456725}
   - component: {fileID: 6011939103071298}
   - component: {fileID: 4821502444119693690}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3493,7 +3676,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6273763071998877377}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Page_mid_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3524,7 +3707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6273763071998877379}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Page_Mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3555,7 +3738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6273763071998877381}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Page_L_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3585,7 +3768,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6273763071998877383}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Page_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3617,7 +3800,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6273763071998877385}
   - component: {fileID: 6273763072001953773}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Page
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3707,7 +3890,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6273763071998877387}
   - component: {fileID: 6273763072001953775}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3796,7 +3979,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6273763071998877389}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Book_Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3830,7 +4013,7 @@ GameObject:
   - component: {fileID: 6273763071998877391}
   - component: {fileID: 7303606345794417710}
   - component: {fileID: 5271667463460592492}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Book_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3851,6 +4034,7 @@ Transform:
   - {fileID: 6273763071998877389}
   - {fileID: 6273763071998877401}
   - {fileID: 8992766833860371928}
+  - {fileID: 3938813631320161656}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3887,7 +4071,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_player: {fileID: 0}
   m_playerCamera: {fileID: 0}
-  m_bookCamera: {fileID: 8992766833860371935}
+  m_bookCamera: {fileID: 2452562708486635481}
+  m_groundCamera: {fileID: 8992766833860371935}
   m_pageMesh: {fileID: 6273763071998771945}
   m_pageTurnLeft: {fileID: 297217391027440604}
   m_pageTurnRight: {fileID: 6841006917755191397}
@@ -3898,6 +4083,7 @@ MonoBehaviour:
   m_staticLeftPage: {fileID: 1672745556590611927}
   m_staticRightPage: {fileID: 2568552797034607674}
   m_pageTurn: {fileID: 7303606345794417710}
+  m_openDelay: 0
   m_progress: {fileID: 0}
 --- !u!1 &6273763071998771959
 GameObject:
@@ -3908,7 +4094,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6273763071998877399}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3941,7 +4127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6273763071998877401}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3973,7 +4159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6273763071998877403}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Page_R_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4003,7 +4189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6273763071998877405}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Page_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4034,7 +4220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6273763071998877407}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Page_Mid_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4068,7 +4254,7 @@ GameObject:
   - component: {fileID: 5477332031973109268}
   - component: {fileID: 7819306899249973495}
   - component: {fileID: 1187178593578055729}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4157,7 +4343,7 @@ GameObject:
   - component: {fileID: 8396307762397053329}
   - component: {fileID: 1977302552461874191}
   - component: {fileID: 624906328509017081}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TrashCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4251,7 +4437,7 @@ GameObject:
   - component: {fileID: 7009232199478627417}
   - component: {fileID: 2114080216458057859}
   - component: {fileID: 8441300922518457720}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Page4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4349,7 +4535,7 @@ GameObject:
   - component: {fileID: 3963525222417984976}
   - component: {fileID: 7632255340253113491}
   - component: {fileID: 6613691898982794233}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Continue Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4481,7 +4667,7 @@ GameObject:
   - component: {fileID: 5788736031559947317}
   - component: {fileID: 6959046602095260155}
   - component: {fileID: 6553359700823479756}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4558,7 +4744,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6841006917755191397}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PageTurnRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4590,7 +4776,7 @@ GameObject:
   - component: {fileID: 7409615267108276923}
   - component: {fileID: 9203515174437836362}
   - component: {fileID: 3906123999764302458}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4670,8 +4856,8 @@ GameObject:
   - component: {fileID: 8992766833860371935}
   - component: {fileID: 8992766833860371934}
   - component: {fileID: 8992766833860371929}
-  m_Layer: 0
-  m_Name: BookCamera
+  m_Layer: 9
+  m_Name: GroundCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4722,7 +4908,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 15671
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -4854,7 +5040,7 @@ GameObject:
   - component: {fileID: 8533799658422661803}
   - component: {fileID: 8011214353722001299}
   - component: {fileID: 7663355382158992980}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Load
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4990,7 +5176,7 @@ GameObject:
   - component: {fileID: 4415307085616287832}
   - component: {fileID: 663600182195166108}
   - component: {fileID: 3576070078497160320}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Page3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

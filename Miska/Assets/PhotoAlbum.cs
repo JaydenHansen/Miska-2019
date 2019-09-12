@@ -16,10 +16,9 @@ public class PhotoAlbum : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_folderPath = "/Photos";
+        m_folderPath = "/Resources/Photos";
         m_fullpath = Application.dataPath + m_folderPath;
         GetFileInfo();
-        Debug.Log(m_fullpath);
         m_isShowingAlbum = false;
         m_currPicIndex = 0;
         m_photoOBJ = gameObject.GetComponentInChildren<RawImage>();
@@ -41,25 +40,48 @@ public class PhotoAlbum : MonoBehaviour
             if (m_isShowingAlbum == false)
             {
                 m_isShowingAlbum = true;
-                StartCoroutine("ConvertToTexture", m_picsInfo[m_currPicIndex]);
-                //ConvertToTexture(m_picsInfo[m_currPicIndex]);
+                LoadIndexedPhotoToTexture();
             }
-            if (m_isShowingAlbum == true)
+            else
             {
                 m_isShowingAlbum = false;
             }
         }
+
+        if (m_isShowingAlbum)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                if (m_currPicIndex == 0)
+                {
+                    m_currPicIndex = m_picsInfo.Length - 1;
+                }
+                else
+                {
+                    m_currPicIndex--;
+                }
+                LoadIndexedPhotoToTexture();
+            }
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                if (m_currPicIndex == m_picsInfo.Length - 1)
+                {
+                    m_currPicIndex = 0;
+                }
+                else
+                {
+                    m_currPicIndex++;
+                }
+                LoadIndexedPhotoToTexture();
+            }
+        }
     }
 
-    IEnumerator ConvertToTexture(FileInfo filename)
+    private void LoadIndexedPhotoToTexture()
     {
-        Texture2D tex;
-        tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
-        using (WWW www = new WWW(filename.Name))
-        {
-            yield return www;
-            www.LoadImageIntoTexture(tex);
-            GetComponent<Renderer>().material.mainTexture = tex;
-        }
+        string PhotoPath = m_picsInfo[m_currPicIndex].Name;
+        string loadPath = "Photos/" + Path.GetFileNameWithoutExtension(PhotoPath);
+        var texture = Resources.Load<Texture>(loadPath);
+        m_photoOBJ.texture = texture;
     }
 }

@@ -10,7 +10,7 @@ public class PassPlayerPos : MonoBehaviour
 
     private void Start()
     {
-        m_material = GetComponent<Renderer>().material;
+        m_material = GetComponent<Renderer>().sharedMaterial;
     }
 
     private void Update()

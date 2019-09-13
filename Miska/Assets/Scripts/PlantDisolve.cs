@@ -27,7 +27,7 @@ public class PlantDisolve : MonoBehaviour
             {
                 foreach (Material material in plant.materials)
                 {
-                    material.SetFloat("_DissolveSlider", -((m_timer / m_disolveSpeed) * 2));
+                    material.SetFloat("_DissolveSlider", -((m_timer / m_disolveSpeed) +1));
                 }
             }
 

@@ -8,19 +8,34 @@
 						<Folder Name="OBJECT" ID="{FFF3F72F-B709-49A1-8687-E3068ED377BF}" ShortID="559089671">
 							<ChildrenList>
 								<Event Name="OBJ_JournalOpen" ID="{157001E8-1525-4158-94CD-7018436D021C}"/>
-								<Event Name="OBJ_BottlePickup" ID="{B805815E-D6C7-4DAD-911D-8556E50204AF}">
-									<ChildrenList>
-										<Action Name="" ID="{69D05366-869D-4EF5-AF9A-06928B68C1EC}" ShortID="914177561">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Bottle" ID="{89670AF7-2DD3-4955-952E-BED76D74ED70}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
 								<Event Name="OBJ_JournalClose" ID="{281D8531-0B6E-498B-821B-4FA5093E2CF9}"/>
 								<Event Name="OBJ_JournalWrite" ID="{4A504EF9-46F4-4237-9A01-146D383B0F69}"/>
+								<Folder Name="GARBAGE" ID="{0A58FC4A-1C8D-4535-9F3E-BCF77D5751EB}" ShortID="367835178">
+									<ChildrenList>
+										<Event Name="OBJ_BottlePickup" ID="{B805815E-D6C7-4DAD-911D-8556E50204AF}">
+											<ChildrenList>
+												<Action Name="" ID="{69D05366-869D-4EF5-AF9A-06928B68C1EC}" ShortID="914177561">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Bottle" ID="{89670AF7-2DD3-4955-952E-BED76D74ED70}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="OBJ_DepositBottle" ID="{ED728EE6-AA3F-4BE5-824C-2AD343FC741D}">
+											<ChildrenList>
+												<Action Name="" ID="{332D31DF-13C9-44CB-8514-B7D3F082693A}" ShortID="415625978">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="DepositBottle" ID="{D654B4A5-0154-4197-90C7-5A879D908987}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="PLAYER" ID="{1E6ED148-F40C-495D-B215-3024AF3F5BEA}" ShortID="1055529855">

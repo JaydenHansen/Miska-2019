@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_delay: 1
+  m_bottleSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 211eb4a55bd2b6d4f87be88dd30165ec,
+      type: 2}
 --- !u!1 &2729283868041621384
 GameObject:
   m_ObjectHideFlags: 0
@@ -28,7 +33,7 @@ GameObject:
   - component: {fileID: 2729283868041621385}
   - component: {fileID: 1902206272}
   m_Layer: 11
-  m_Name: Trash Parent
+  m_Name: Rubbish_Interactable_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

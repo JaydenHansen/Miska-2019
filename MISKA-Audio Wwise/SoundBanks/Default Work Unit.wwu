@@ -5,7 +5,7 @@
 			<ChildrenList>
 				<SoundBank Name="BNK_Global" ID="{542750B9-22AC-4295-95C7-55CE9571FE56}">
 					<ObjectInclusionList>
-						<ObjectRef Name="GLOBAL" ID="{1A363B3E-CCBE-4A31-A579-488A78A13137}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="GLOBAL" ID="{C41DE8B2-A957-4042-ACBD-47B6DF2A616A}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}" Filter="7" Origin="Manual"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

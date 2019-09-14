@@ -18,11 +18,28 @@ namespace AK
         static const AkUniqueID EMIT_CICADAS = 1225233505U;
         static const AkUniqueID EMIT_RIVER = 1862066479U;
         static const AkUniqueID OBJ_BOTTLEPICKUP = 920825535U;
+        static const AkUniqueID OBJ_DEPOSITBOTTLE = 2632544887U;
         static const AkUniqueID OBJ_FOSSILPOI = 4108701605U;
         static const AkUniqueID OBJ_ROCKCOLLIDE = 614124066U;
         static const AkUniqueID OBJ_ROCKSTACKFALLS = 3472354586U;
         static const AkUniqueID PLYR_FOOTSTEP = 4254456693U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace PLAYERSTATE
+        {
+            static const AkUniqueID GROUP = 3285234865U;
+
+            namespace STATE
+            {
+                static const AkUniqueID JOURNAL = 3484357458U;
+                static const AkUniqueID SITTING = 3353412347U;
+                static const AkUniqueID WALKING = 340271938U;
+            } // namespace STATE
+        } // namespace PLAYERSTATE
+
+    } // namespace STATES
 
     namespace SWITCHES
     {

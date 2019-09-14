@@ -388,7 +388,7 @@
 						<Folder Name="STATION" ID="{2DBDA12F-4AA2-4DE6-A249-E029792750B0}" ShortID="716825042"/>
 						<Folder Name="DUCKS" ID="{AAB07626-8856-4EC6-A9A1-4A6C5FBA9471}" ShortID="983657930">
 							<ChildrenList>
-								<Sound Name="Ducks" ID="{F8A47C96-099B-4F15-8C32-5D47BF1CACA4}" ShortID="493331335">
+								<RandomSequenceContainer Name="Ducks" ID="{5173506A-684A-4421-80A4-84B03513E5C2}" ShortID="872351051">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
@@ -397,35 +397,7 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
 										</Reference>
 									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Ducks" ID="{5CEC97F5-0DF5-42B2-BE56-2DF61A3445EB}" ShortID="538809633">
-											<Language>SFX</Language>
-											<AudioFile>Ducks.wav</AudioFile>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Ducks" ID="{5CEC97F5-0DF5-42B2-BE56-2DF61A3445EB}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="Water lapping on Lake Ontario" ID="{E0DAB72F-A6DE-40E6-BC3C-2E60FB055002}" ShortID="513883408">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Water lapping on Lake Ontario" ID="{C0A83EB4-669C-44AC-8B97-E92F783D5A11}" ShortID="126525382">
-											<Language>SFX</Language>
-											<AudioFile>Water lapping on Lake Ontario.wav</AudioFile>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Water lapping on Lake Ontario" ID="{C0A83EB4-669C-44AC-8B97-E92F783D5A11}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
+								</RandomSequenceContainer>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
@@ -491,7 +463,7 @@
 												</Folder>
 												<Folder Name="GARBAGE" ID="{0173D0DA-1FBB-47C5-BA09-829F78F925D8}" ShortID="634903326">
 													<ChildrenList>
-														<SwitchContainer Name="TrashType" ID="{2643DFD8-9B2B-4BE3-A866-11ABB7F28DD3}" ShortID="743904428">
+														<SwitchContainer Name="Pickup_TrashType" ID="{2643DFD8-9B2B-4BE3-A866-11ABB7F28DD3}" ShortID="743904428">
 															<PropertyList>
 																<Property Name="EnableAttenuation" Type="bool" Value="False"/>
 															</PropertyList>
@@ -509,11 +481,6 @@
 															<ChildrenList>
 																<RandomSequenceContainer Name="Bottle" ID="{89670AF7-2DD3-4955-952E-BED76D74ED70}" ShortID="436275670">
 																	<PropertyList>
-																		<Property Name="InitialDelay" Type="Real64">
-																			<ValueList>
-																				<Value>0.5</Value>
-																			</ValueList>
-																		</Property>
 																		<Property Name="Pitch" Type="int32">
 																			<ModifierList>
 																				<ModifierInfo>
@@ -625,6 +592,94 @@
 																</GroupingList>
 															</GroupingInfo>
 														</SwitchContainer>
+														<RandomSequenceContainer Name="DepositBottle" ID="{D654B4A5-0154-4197-90C7-5A879D908987}" ShortID="1033538028">
+															<PropertyList>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>22</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{4F0FED93-EB87-422F-AEA2-609FA5364480}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="1"/>
+																					<Property Name="Min" Type="Real64" Value="-3"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Pitch" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{C07DE6F5-BE7E-4EDF-BE3E-7EA85E11023C}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="152"/>
+																					<Property Name="Min" Type="Real64" Value="-227"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{B6E90393-A284-4990-B6D5-F8BDB1DB31E4}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Min" Type="Real64" Value="-9"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<Sound Name="DepositBottles" ID="{A299CEBB-3575-4AA7-B78B-095CB515C940}" ShortID="839987586">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="Bottles16" ID="{6F1D52AD-1702-42E7-A09F-9996A93B7B5A}" ShortID="512137132">
+																			<Language>SFX</Language>
+																			<AudioFile>Bottles16.wav</AudioFile>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="Bottles16" ID="{6F1D52AD-1702-42E7-A09F-9996A93B7B5A}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+															</ChildrenList>
+														</RandomSequenceContainer>
+													</ChildrenList>
+												</Folder>
+												<Folder Name="CAMERA" ID="{4C9523CC-D341-4092-977B-15DB3F3DFC45}" ShortID="810293081">
+													<ChildrenList>
+														<RandomSequenceContainer Name="New Random Container" ID="{9AA07679-FD6B-4672-BB55-853FF4C6D231}" ShortID="1046108895">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																</Reference>
+															</ReferenceList>
+														</RandomSequenceContainer>
 													</ChildrenList>
 												</Folder>
 											</ChildrenList>
@@ -2093,47 +2148,25 @@
 										</Sound>
 									</ChildrenList>
 								</Folder>
-								<Folder Name="EmittersAmbience" ID="{4EB1E8FD-6B9B-48E5-89C9-51CD5B1C895D}" ShortID="577590413">
+								<ActorMixer Name="Emitters" ID="{27F9A572-0938-48AA-B519-E9EA6F8BCC2C}" ShortID="1023628194">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+										</Reference>
+									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="CicadaNightClose" ID="{3E72F7A6-FC7E-4FF9-98A7-CA5782937708}" ShortID="68349377">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="2"/>
-												<Property Name="HoldEmitterPositionOrientation" Type="bool" Value="True"/>
-												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-5</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Attenuation">
-													<ObjectRef Name="Short" ID="{FBE71A9B-EE4C-4A9C-8B45-114790E36A4A}" WorkUnitID="{9694F749-499E-4F12-BEF9-AA448E069519}"/>
-												</Reference>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="CicadaNightClose" ID="{14DAD696-74EA-494B-8C14-4BC163F539BF}" ShortID="471469595">
-													<Language>SFX</Language>
-													<AudioFile>CicadaNightClose.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="CicadaNightClose" ID="{14DAD696-74EA-494B-8C14-4BC163F539BF}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
 										<RandomSequenceContainer Name="Birds" ID="{70F06F7E-124B-4EB9-B539-027E6E18CB0E}" ShortID="121911938">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="2"/>
-												<Property Name="HoldEmitterPositionOrientation" Type="bool" Value="True"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
-												<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="43"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-6</Value>
@@ -2296,14 +2329,8 @@
 										</RandomSequenceContainer>
 										<Sound Name="river" ID="{B1758ED5-3655-4197-83CB-5C0EB8A7C021}" ShortID="995885714">
 											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="2"/>
-												<Property Name="CenterPercentage" Type="int32">
-													<ValueList>
-														<Value>45</Value>
-													</ValueList>
-												</Property>
-												<Property Name="HoldEmitterPositionOrientation" Type="bool" Value="True"/>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-13</Value>
@@ -2331,8 +2358,39 @@
 												<ActiveSource Name="river 1" ID="{C7582024-A411-4462-B42D-BB4BBAFD6179}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
+										<Sound Name="CicadaNightClose" ID="{3E72F7A6-FC7E-4FF9-98A7-CA5782937708}" ShortID="68349377">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="Short" ID="{FBE71A9B-EE4C-4A9C-8B45-114790E36A4A}" WorkUnitID="{9694F749-499E-4F12-BEF9-AA448E069519}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CicadaNightClose" ID="{14DAD696-74EA-494B-8C14-4BC163F539BF}" ShortID="471469595">
+													<Language>SFX</Language>
+													<AudioFile>CicadaNightClose.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CicadaNightClose" ID="{14DAD696-74EA-494B-8C14-4BC163F539BF}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
-								</Folder>
+								</ActorMixer>
 							</ChildrenList>
 							<StateInfo>
 								<StateGroupList>
@@ -2394,6 +2452,16 @@
 							</CustomState>
 						</CustomStateList>
 					</StateInfo>
+				</ActorMixer>
+				<ActorMixer Name="L" ID="{318CC0DF-E7E2-47AF-8E1F-6129944D8056}" ShortID="447203154">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+						</Reference>
+					</ReferenceList>
 				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>

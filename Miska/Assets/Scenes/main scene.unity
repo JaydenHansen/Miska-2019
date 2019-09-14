@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1002497288}
-  m_IndirectSpecularColor: {r: 0.6831283, g: 0.8249556, b: 1.0338027, a: 1}
+  m_IndirectSpecularColor: {r: 0.681364, g: 0.82281053, b: 1.0310225, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6927,91 +6927,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd576f1a969ccf2449113f3518493ef9, type: 3}
---- !u!1 &173302390
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 173302392}
-  - component: {fileID: 173302391}
-  - component: {fileID: 173302393}
-  m_Layer: 0
-  m_Name: WwiseGlobal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &173302391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173302390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b6afad114dab114ea1d8a8ce0770e66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationSettings: {fileID: 11400000, guid: fabcfeed5e393454c8037a433144b08a,
-    type: 2}
-  basePath: 
-  language: 
-  defaultPoolSize: 0
-  lowerPoolSize: 0
-  streamingPoolSize: 0
-  preparePoolSize: 0
-  memoryCutoffThreshold: 0
-  monitorPoolSize: 0
-  monitorQueuePoolSize: 0
-  callbackManagerBufferSize: 0
-  spatialAudioPoolSize: 0
-  maxSoundPropagationDepth: 0
-  diffractionFlags: 11
-  engineLogging: 0
---- !u!4 &173302392
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173302390}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 42
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &173302393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173302390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c61327e7bdba44f9ef071f10d41470, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: f7e1664c
-  useOtherObject: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: aeaea281398047c46a834d72d49fd844,
-      type: 2}
-  decodeBank: 0
-  loadAsynchronous: 0
-  saveDecodedBank: 0
-  unloadTriggerList: 958ca0ea
-  bankNameInternal: 
-  valueGuidInternal: 
 --- !u!1001 &176654509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13679,7 +13594,7 @@ Transform:
   - {fileID: 673749087}
   - {fileID: 944050665}
   m_Father: {fileID: 0}
-  m_RootOrder: 45
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &360628961
 GameObject:
@@ -14156,55 +14071,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7906403}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &375014167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59b6606ef2548734bb6d11b9d160bc7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 45.95
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 1.01
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1.02
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1.3146424
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 0
-  hdriSky:
-    m_OverrideState: 0
-    m_Value: {fileID: 8900000, guid: 90196f2c2d8d2f2448717676e1a09894, type: 3}
 --- !u!1001 &376161090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14865,7 +14731,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 43
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &388003255 stripped
 Transform:
@@ -18393,6 +18259,12 @@ PrefabInstance:
       propertyPath: m_onAllTrash.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8822066976722018216, guid: 2f02b1e3bd64e3148831caec69323bf9,
+        type: 3}
+      propertyPath: m_depositTrashSound.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 8c90bb62ee2abb04ba1388449723fcf9,
+        type: 2}
     - target: {fileID: 8822066976722018212, guid: 2f02b1e3bd64e3148831caec69323bf9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22652,6 +22524,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6673f5ee5ceef3f4c8c6e6cce04af9f3, type: 3}
+--- !u!114 &618577002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b6606ef2548734bb6d11b9d160bc7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 45.95
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 1.01
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1.02
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1.3146424
+    min: 0
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 0
+  hdriSky:
+    m_OverrideState: 0
+    m_Value: {fileID: 8900000, guid: 90196f2c2d8d2f2448717676e1a09894, type: 3}
 --- !u!1001 &620254743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22931,6 +22852,12 @@ PrefabInstance:
       propertyPath: m_trash.Array.data[0]
       value: 
       objectReference: {fileID: 766913770}
+    - target: {fileID: 8822066976722018216, guid: 2f02b1e3bd64e3148831caec69323bf9,
+        type: 3}
+      propertyPath: m_depositTrashSound.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 211eb4a55bd2b6d4f87be88dd30165ec,
+        type: 2}
     - target: {fileID: 8822066976722018212, guid: 2f02b1e3bd64e3148831caec69323bf9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23289,7 +23216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: e63c5fcdbc18c024b9a360404f90f231, type: 2}
   m_StaticLightingSkyUniqueID: 1
-  m_SkySettings: {fileID: 375014167}
+  m_SkySettings: {fileID: 618577002}
   m_SkySettingsFromProfile: {fileID: -8894946306541347339, guid: e63c5fcdbc18c024b9a360404f90f231,
     type: 2}
 --- !u!114 &636661772
@@ -28034,7 +27961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &752596010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28047,6 +27974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c8c88d796c07f4a865c3465bbb8531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_playerScript: {fileID: 0}
 --- !u!4 &752596011
 Transform:
   m_ObjectHideFlags: 0
@@ -28060,7 +27988,7 @@ Transform:
   m_Children:
   - {fileID: 1798136677}
   m_Father: {fileID: 0}
-  m_RootOrder: 46
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &754343502
 PrefabInstance:
@@ -54661,6 +54589,12 @@ PrefabInstance:
       propertyPath: m_trashCount
       value: 
       objectReference: {fileID: 1403445845}
+    - target: {fileID: 8822066976722018216, guid: 2f02b1e3bd64e3148831caec69323bf9,
+        type: 3}
+      propertyPath: m_depositTrashSound.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 8c90bb62ee2abb04ba1388449723fcf9,
+        type: 2}
     - target: {fileID: 8822066976722018212, guid: 2f02b1e3bd64e3148831caec69323bf9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -59318,6 +59252,91 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 43.407, z: 0}
+--- !u!1 &1640969686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1640969688}
+  - component: {fileID: 1640969687}
+  - component: {fileID: 1640969689}
+  m_Layer: 0
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1640969687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640969686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b6afad114dab114ea1d8a8ce0770e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationSettings: {fileID: 11400000, guid: fabcfeed5e393454c8037a433144b08a,
+    type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  preparePoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  diffractionFlags: 11
+  engineLogging: 0
+--- !u!4 &1640969688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640969686}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 46
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1640969689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640969686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c61327e7bdba44f9ef071f10d41470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: aeaea281398047c46a834d72d49fd844,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1001 &1641481239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78657,7 +78676,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2131921161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78670,6 +78689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da453edc5e7db914b9535d8006b73a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_virtCam: {fileID: 0}
 --- !u!4 &2131921162
 Transform:
   m_ObjectHideFlags: 0
@@ -78683,7 +78703,7 @@ Transform:
   m_Children:
   - {fileID: 1753687064}
   m_Father: {fileID: 0}
-  m_RootOrder: 44
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2133150184
 PrefabInstance:

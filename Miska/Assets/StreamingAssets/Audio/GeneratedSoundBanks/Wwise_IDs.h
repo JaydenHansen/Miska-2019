@@ -24,6 +24,22 @@ namespace AK
         static const AkUniqueID PLYR_FOOTSTEP = 4254456693U;
     } // namespace EVENTS
 
+    namespace STATES
+    {
+        namespace PLAYERSTATE
+        {
+            static const AkUniqueID GROUP = 3285234865U;
+
+            namespace STATE
+            {
+                static const AkUniqueID JOURNAL = 3484357458U;
+                static const AkUniqueID SITTING = 3353412347U;
+                static const AkUniqueID WALKING = 340271938U;
+            } // namespace STATE
+        } // namespace PLAYERSTATE
+
+    } // namespace STATES
+
     namespace SWITCHES
     {
         namespace CIRCKET_LOC

@@ -9,6 +9,9 @@ public class TrashCan : MonoBehaviour
     public GameObject[] m_trash;
     public VoidEvent m_onAllTrash;
 
+    public AK.Wwise.Event m_depositTrashSound;
+    public AK.Wwise.Event m_allTrashDepositSound;
+
     int m_trashLeft;
     bool m_triggered;
     public int TrashLeft
@@ -61,6 +64,10 @@ public class TrashCan : MonoBehaviour
         {
             m_triggered = true;
             m_onAllTrash.Invoke();
+        }
+        else
+        {
+            
         }
     }   
 

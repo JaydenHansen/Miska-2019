@@ -9,6 +9,10 @@ public class Trash : MonoBehaviour
     float m_timer;
     Transform m_parent;
     bool m_pickedUp;
+    public AK.Wwise.Event m_bottleSound;
+    //m_chipsSound
+
+    //TODO: Include system for identifying type of trash to select appropriate sound
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +31,7 @@ public class Trash : MonoBehaviour
             if (m_timer <= 0)
             {
                 transform.parent = m_parent;
+                m_bottleSound.Post(gameObject);
                 m_parent.gameObject.SetActive(false);                
             }
         }

@@ -8,6 +8,7 @@
 				<Property Name="Event Action List\{2646A45B-6C6D-42BD-B8F0-CFA5BEC02DA1}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{281D8531-0B6E-498B-821B-4FA5093E2CF9}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{30A3B872-6687-4971-8DC5-8637744F3D23}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{48752A46-476F-407A-A2AB-4D3F744CD3C1}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{6359C87C-F9C8-4611-8CB7-187105B645DD}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{6CDF149B-4613-4FE2-9D2C-855A0B88EBCE}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{8BB83A97-8E24-47A6-9612-1544BA0E96F8}\x64_Expand States" Type="string" Value=""/>
@@ -16,6 +17,7 @@
 				<Property Name="Event Action List\{B0145922-F70A-47FA-A5CF-7FE30415C050}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{B805815E-D6C7-4DAD-911D-8556E50204AF}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{D218AE36-168F-49F8-BD59-314FDE71F4B0}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{ED728EE6-AA3F-4BE5-824C-2AD343FC741D}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
@@ -55,7 +57,7 @@
 				<Property Name="MonitoringManager\WatchMgr\x64_Watches" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\FirstVisible_10_1" Type="string" Value="{4C96B38B-3DB4-40C7-91C9-665510E38993}"/>
 				<Property Name="ProjectExplorer\FirstVisible_11_1" Type="string" Value="{23EC2DE3-3ED8-4B82-AC99-92E25F2E4C6B}"/>
-				<Property Name="ProjectExplorer\FirstVisible_1_1" Type="string" Value="{2388DAEA-9775-46C6-A2ED-C5222A397756}"/>
+				<Property Name="ProjectExplorer\FirstVisible_1_1" Type="string" Value="{5EA7BBF8-64C0-4A50-8821-A07E8BE21D68}"/>
 				<Property Name="ProjectExplorer\FirstVisible_3_1" Type="string" Value="{A69BF0FC-D84A-487C-ABDD-56F71CB2A126}"/>
 				<Property Name="ProjectExplorer\FirstVisible_4_1" Type="string" Value="{CB6175F1-6080-4A23-92EF-0807E304D0C1}"/>
 				<Property Name="ProjectExplorer\FirstVisible_6_1" Type="string" Value="{C98E673F-A24C-48A8-960F-10565FFE70A0}"/>
@@ -73,7 +75,7 @@
 				<Property Name="ProjectExplorer\x64_Expanded_1_1" Type="string" Value="yDbzU0VHekqxno7hIKGOQg=="/>
 				<Property Name="ProjectExplorer\x64_Expanded_20_1" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\x64_Expanded_21_1" Type="string" Value=""/>
-				<Property Name="ProjectExplorer\x64_Expanded_2_1" Type="string" Value="9pGqvSqankCg5JKFUDdbawWmKzrdoStIhwYEtvxJM4FAWyyrljKvSay+OLSfbC5YbD/EkWeFn06A2xCH1UR1rA=="/>
+				<Property Name="ProjectExplorer\x64_Expanded_2_1" Type="string" Value="sugdxFepQkCsvUe23yphavaRqr0qmp5AoOSShVA3W2va0HMBux/FR7oJgp94+SXYBaYrOt2hK0iHBgS2/EkzgaYGNN+1MoJImuSaFmmHN3dypfknOAmqSLUZ6epvi8ws5GBrHHjsTEmx13rzAjW8FEBbLKuWMq9JrL44tJ9sLliIUrQu+XZyS5+G4AmTIGbV2N9DJiub40uoZhGrt/KN0/lztC4RrfhMnFCHdy+hUzg="/>
 				<Property Name="ProjectExplorer\x64_Expanded_3_1" Type="string" Value="yLqq7p7gZUKZvbMVuILgaf6rrMkh1Z1HuftMlZnu2fcv9/P/CbehSYaH4waO03e/"/>
 				<Property Name="ProjectExplorer\x64_Expanded_4_1" Type="string" Value="mjsS+Ha0HEKP8ZowXBKywDtRXBrSCAhDmwYYeLhpYZaY3slsl9AnTKCABUpfO8+8YYtPoyCdnk6BMPz0oxcqEfSTQET0DvBOrPrvNhz2/gs="/>
 				<Property Name="ProjectExplorer\x64_Expanded_5_1" Type="string" Value=""/>
@@ -90,7 +92,7 @@
 				<Property Name="SoundBankPathUserOverride" Type="bool" Value="True"/>
 				<Property Name="SoundBankPaths" Type="string">
 					<ValueList>
-						<Value Platform="Windows">..\TEST #3\Assets\StreamingAssets\Audio\GeneratedSoundBanks\</Value>
+						<Value Platform="Windows">..\Miska\Assets\StreamingAssets\Audio\GeneratedSoundBanks\</Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPostGenerateCustomCmdDescription" Type="string">

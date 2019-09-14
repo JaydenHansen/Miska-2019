@@ -152,30 +152,34 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="DUCKS" ID="{AABB8BD2-F3F6-4CEE-9680-4ACF7E7EB8BA}" ShortID="975038615">
+							<ChildrenList>
+								<Event Name="BEDAMB_WaterLaps" ID="{4E70861C-6C5B-46B3-9BE3-A37356C737CA}">
+									<ChildrenList>
+										<Action Name="" ID="{7EBC0D37-E832-40D8-A9FC-4C728C9CD862}" ShortID="910959099">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="WATER LAPS- LAKESIDE" ID="{AE7DC3A9-A1DE-4637-A175-A7E3893E91EF}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="EMIT_Ducks" ID="{CA4648FD-74F4-481E-B4C5-5038DADB004A}">
+									<ChildrenList>
+										<Action Name="" ID="{628300CA-3EF0-4F53-81AE-A61624EB50C7}" ShortID="701813072">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Ducks" ID="{5173506A-684A-4421-80A4-84B03513E5C2}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
-				<Event Name="Play_Ducks" ID="{CA4648FD-74F4-481E-B4C5-5038DADB004A}">
-					<ChildrenList>
-						<Action Name="" ID="{628300CA-3EF0-4F53-81AE-A61624EB50C7}" ShortID="701813072">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Ducks" ID="{F8A47C96-099B-4F15-8C32-5D47BF1CACA4}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Play_Water_lapping" ID="{1597D6E1-24CC-465A-9963-E28B11BF2BA3}">
-					<ChildrenList>
-						<Action Name="" ID="{FC415D71-892A-4DB8-8FD8-ECA449C696BC}" ShortID="119057345">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Water lapping on Lake Ontario" ID="{E0DAB72F-A6DE-40E6-BC3C-2E60FB055002}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

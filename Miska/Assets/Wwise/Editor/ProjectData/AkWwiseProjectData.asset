@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 61613fc2e9e030449a3f2b92ca0e24f2
     GuidInternal: 
-    m_lastTime: -8586331615577207008
+    m_lastTime: -8586330461472914042
     List:
     - name: BNK_Ducks
       guid: 70c3be5e1ef3ed41b803f1900d2f3547
@@ -74,7 +74,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: c8baaaee9ee0654299bdb315b882e069
     GuidInternal: 
-    m_lastTime: -8586331550253289518
+    m_lastTime: -8586330461472613769
     List:
     - name: AMB_Bed
       guid: 1c394a03ad28ed49a352084c06ac4828
@@ -92,6 +92,22 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 92.285446
       minDuration: 92.285446
+    - name: BEDAMB_WaterLaps
+      guid: 1c86704e5b6cb3469be3a37356c737ca
+      id: 2574415040
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: LOCAL
+        ObjectType: 4
+      - ElementName: DUCKS
+        ObjectType: 4
+      - ElementName: BEDAMB_WaterLaps
+        ObjectType: 3
+      Path: Default Work Unit\LOCAL\DUCKS\BEDAMB_WaterLaps
+      maxAttenuation: 30
+      maxDuration: -1
+      minDuration: -1
     - name: EMIT_Birds
       guid: 9b14df6c1346e24f9d2c855a0b88ebce
       id: 1054363565
@@ -126,6 +142,22 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Cicadas
       maxAttenuation: 20
+      maxDuration: -1
+      minDuration: -1
+    - name: EMIT_Ducks
+      guid: fd4846caf4741e48b4c55038dadb004a
+      id: 2870480783
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: LOCAL
+        ObjectType: 4
+      - ElementName: DUCKS
+        ObjectType: 4
+      - ElementName: EMIT_Ducks
+        ObjectType: 3
+      Path: Default Work Unit\LOCAL\DUCKS\EMIT_Ducks
+      maxAttenuation: 30
       maxDuration: -1
       minDuration: -1
     - name: EMIT_River
@@ -180,8 +212,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_DepositBottle
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.117279
+      minDuration: 0.897607
     - name: OBJ_FossilPOI
       guid: 72b8a330876671498dc58637744f3d23
       id: 4108701605
@@ -195,7 +227,7 @@ MonoBehaviour:
       - ElementName: OBJ_FossilPOI
         ObjectType: 3
       Path: Default Work Unit\LOCAL\ROCKS\OBJ_FossilPOI
-      maxAttenuation: 20
+      maxAttenuation: 0
       maxDuration: 3.616531
       minDuration: 3.616531
     - name: OBJ_JournalClose
@@ -259,7 +291,7 @@ MonoBehaviour:
       - ElementName: OBJ_RockCollide
         ObjectType: 3
       Path: Default Work Unit\LOCAL\ROCKS\OBJ_RockCollide
-      maxAttenuation: 20
+      maxAttenuation: 0
       maxDuration: 0.358095
       minDuration: 0.24306
     - name: OBJ_RockStackFalls
@@ -275,33 +307,9 @@ MonoBehaviour:
       - ElementName: OBJ_RockStackFalls
         ObjectType: 3
       Path: Default Work Unit\LOCAL\ROCKS\OBJ_RockStackFalls
-      maxAttenuation: 30
+      maxAttenuation: 0
       maxDuration: 2.407744
       minDuration: 2.407744
-    - name: Play_Ducks
-      guid: fd4846caf4741e48b4c55038dadb004a
-      id: 1740636044
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Play_Ducks
-        ObjectType: 3
-      Path: Default Work Unit\Play_Ducks
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Play_Water_lapping
-      guid: e1d69715cc245a469963e28b11bf2ba3
-      id: 735067221
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Play_Water_lapping
-        ObjectType: 3
-      Path: Default Work Unit\Play_Water_lapping
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
     - name: PLYR_Footstep
       guid: 5ba446266d6cbd42b8f0cfa5bec02da1
       id: 4254456693
@@ -587,9 +595,7 @@ MonoBehaviour:
   - /MISKA Sound
   - /MISKA Sound/Events
   - /MISKA Sound/Events/Default Work Unit
-  - /MISKA Sound/Events/Default Work Unit/GLOBAL
-  - /MISKA Sound/Events/Default Work Unit/GLOBAL/AMBIENCE
-  - /MISKA Sound/Events/Default Work Unit/GLOBAL/AMBIENCE/EMITTERS
-  - /MISKA Sound/Events/Default Work Unit/GLOBAL/OBJECT
+  - /MISKA Sound/Events/Default Work Unit/LOCAL
+  - /MISKA Sound/Events/Default Work Unit/LOCAL/DUCKS
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

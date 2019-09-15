@@ -8,7 +8,8 @@ public class Duck : MonoBehaviour
     public float m_forwardDist;
     public float m_circleRadius;
     public float m_speed;
-    public float m_distanceFromEdge;    
+    public float m_distanceFromEdge;
+    public AK.Wwise.Event m_duckSound;
 
     Vector3 m_velocity;
     int m_areaMask;
@@ -17,6 +18,7 @@ public class Duck : MonoBehaviour
     void Start()
     {
         m_areaMask = 1 << NavMesh.GetAreaFromName("Duck");
+        m_duckSound.Post(gameObject);
     }
 
     // Update is called once per frame

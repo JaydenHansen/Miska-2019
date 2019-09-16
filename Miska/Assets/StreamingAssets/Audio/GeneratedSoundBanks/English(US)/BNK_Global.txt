@@ -1,0 +1,106 @@
+Event	ID	Name			Wwise Object Path	Notes
+	614124066	OBJ_RockCollide			\Default Work Unit\LOCAL\ROCKS\OBJ_RockCollide	
+	920825535	OBJ_BottlePickup			\Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_BottlePickup	
+	1054363565	EMIT_Birds			\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Birds	
+	1225233505	EMIT_Cicadas			\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Cicadas	
+	1862066479	EMIT_River			\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_River	
+	2574415040	BEDAMB_WaterLaps			\Default Work Unit\LOCAL\DUCKS\BEDAMB_WaterLaps	
+	2632544887	OBJ_DepositBottle			\Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_DepositBottle	
+	2870480783	EMIT_Ducks			\Default Work Unit\LOCAL\DUCKS\EMIT_Ducks	
+	3472354586	OBJ_RockStackFalls			\Default Work Unit\LOCAL\ROCKS\OBJ_RockStackFalls	
+	3587600583	AMB_Bed			\Default Work Unit\GLOBAL\AMBIENCE\AMB_Bed	
+	3849891620	BallCollide			\Default Work Unit\LOCAL\STATION\BallCollide	
+	4108701605	OBJ_FossilPOI			\Default Work Unit\LOCAL\ROCKS\OBJ_FossilPOI	
+	4254456693	PLYR_Footstep			\Default Work Unit\GLOBAL\PLAYER\PLYR_Footstep	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	1155297313	TrashType			\Default Work Unit\TrashType	
+	2450193098	Locomotion_Speed			\Default Work Unit\Locomotion_Speed	
+	2739821022	Locomotion_Material			\Default Work Unit\Locomotion_Material	
+
+Switch	ID	Name	Switch Group			Notes
+	3848582449	Bottle	TrashType			
+	1296465089	Sprint	Locomotion_Speed			
+	2108779966	Walk	Locomotion_Speed			
+	2058049674	Wood	Locomotion_Material			
+	2195636714	Dirt	Locomotion_Material			
+	4248645337	Grass	Locomotion_Material			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	3285234865	PlayerState			\Default Work Unit\PlayerState	
+
+State	ID	Name	State Group			Notes
+	0	None	PlayerState			
+	340271938	Walking	PlayerState			
+	3353412347	Sitting	PlayerState			
+	3484357458	Journal	PlayerState			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	571067494	Sitting	PlayerState	\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL		
+	745928592	Journal	PlayerState	\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\AMBIENCE		
+	949563131	Sitting	PlayerState	\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\AMBIENCE		
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1277399449	RockCollideForce			\Default Work Unit\RockCollideForce	
+	1774519205	BallCollideForce			\Default Work Unit\BallCollideForce	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	31473344	ball bounce grass2	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\ball bounce grass2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\S\Ball\ball bounce grass2		194624
+	36869918	thick-billed flowerpecker calls- india 191204	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\thick-billed flowerpecker calls- india 191204_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\AMBIENCE\Emitters\Birds\thick-billed flowerpecker calls- india 191204		3821586
+	41777339	grasswalk3	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\grasswalk3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Walk\Terrain Material\WLK_Grass\grasswalk3		194504
+	58940914	Glass bottle 2	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\Glass bottle 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\OBJECTS\GARBAGE\Pickup_TrashType\Bottle\Glass bottle 2		94272
+	70690693	IMPACT ROCKS FALL SCATTER CEMENT 01	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\IMPACT ROCKS FALL SCATTER CEMENT 01_1A2C0213.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\R\OBJECTS\RockCollide\IMPACT ROCKS FALL SCATTER CEMENT 01		42940
+	72370513	canteen_run	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\canteen_run_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Running\Canteen\canteen_run		64576
+	95813090	CHAR_KeyJingle1	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\CHAR_KeyJingle1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Jingle\CHAR_KeyJingle1		103532
+	101642060	CHAR_StepDirt2	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\CHAR_StepDirt2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Walk\Terrain Material\WLK_Dirt\CHAR_StepDirt2		155508
+	116744292	river	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\river 1_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\AMBIENCE\Emitters\river		8842972
+	118404946	Glass bottle 3	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\Glass bottle 3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\OBJECTS\GARBAGE\Pickup_TrashType\Bottle\Glass bottle 3		92224
+	138724543	wood walk2	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\wood walk2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Running\Terrain\RUN_Wood\wood walk2		97344
+	144648537	ball bounce grass	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\ball bounce grass_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\S\Ball\ball bounce grass		37952
+	151541401	FossilPoIBreak	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\rockbell_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\R\OBJECTS\FossilPoIBreak		638020
+	159767409	run_dirt3	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\run_dirt3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Running\Terrain\RUN_Dirt\run_dirt3		74608
+	182608478	ducks on canal 01	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\ducks on canal 01_2B7606C8.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\D\Ducks\ducks on canal 01		571412
+	220955263	wood walk3	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\wood walk3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Running\Terrain\RUN_Wood\wood walk3		103488
+	225701338	run_dirt4	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\run_dirt4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Running\Terrain\RUN_Dirt\run_dirt4		84620
+	236611281	Dog akita puppy single bark_BLASTWAVEFX_00090	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\Dog akita puppy single bark_BLASTWAVEFX_00090_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\R\ANIMALS\Fox barks\Dog akita puppy single bark_BLASTWAVEFX_00090		56920
+	252657119	canteen_walk	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\canteen_walk_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Walk\Canteen\canteen_walk		65600
+	273585866	wood walk4	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\wood walk4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Running\Terrain\RUN_Wood\wood walk4		107584
+	281232217	Emerald-spotted Wood Dove	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\Emerald-spotted Wood Dove_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\AMBIENCE\Emitters\Birds\Emerald-spotted Wood Dove		6548144
+	297779384	Wooodpecker Bearded	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\Wooodpecker Bearded_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\AMBIENCE\Emitters\Birds\Wooodpecker Bearded		2744448
+	318438522	Glass bottle	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\Glass bottle_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\OBJECTS\GARBAGE\Pickup_TrashType\Bottle\Glass bottle		97344
+	327973492	canteen_run3	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\canteen_run3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Running\Canteen\canteen_run3		90432
+	408202227	ball bounce grass3	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\ball bounce grass3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\S\Ball\ball bounce grass3		204864
+	411336376	CHAR_KeyJingle9	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\CHAR_KeyJingle9_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Jingle\CHAR_KeyJingle9		130524
+	412018200	CHAR_KeyJingle7	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\CHAR_KeyJingle7_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Jingle\CHAR_KeyJingle7		155268
+	415327098	grassrun1	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\grassrun1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Running\Terrain\RUN_Grass\grassrun1		40006
+	465045227	Fox bark	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\Fox bark_A6DF42BA.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\R\ANIMALS\Fox barks\Fox bark		119500
+	471469595	CicadaNightClose	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\CicadaNightClose_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\AMBIENCE\Emitters\CicadaNightClose		2954200
+	512137132	DepositBottles	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\Bottles16_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\OBJECTS\GARBAGE\DepositBottle\DepositBottles		94142
+	520141947	forest BED	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\forest BED_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\AMBIENCE\BedAmbience\forest BED		17718868
+	542045413	WATER LAPS- LAKESIDE	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\WATER LAPS- LAKESIDE_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\D\WATER LAPS- LAKESIDE		3338140
+	556919227	CHAR_StepDirt1	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\CHAR_StepDirt1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Walk\Terrain Material\WLK_Dirt\CHAR_StepDirt1		103028
+	582241636	rufous-naped tit calls- uzbek 120504	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\rufous-naped tit calls- uzbek 120504_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\AMBIENCE\Emitters\Birds\rufous-naped tit calls- uzbek 120504		3528754
+	640444701	grassrun3	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\grassrun3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Running\Terrain\RUN_Grass\grassrun3		105112
+	672269398	Drop_Masonry_SoftSurface_Heavy_01	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\Drop_Masonry_SoftSurface_Heavy_01_0B39DB37.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\R\OBJECTS\RockCollide\Drop_Masonry_SoftSurface_Heavy_01		29246
+	675710130	Rock-Fall-Debris 1	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\Rock-Fall-Debris 1_1AA7C6D1.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\R\OBJECTS\Rock-Fall-Debris 1		231208
+	756801656	CHAR_KeyJingle4	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\CHAR_KeyJingle4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Jingle\CHAR_KeyJingle4		126776
+	769553704	ducks on canal 01_02	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\ducks on canal 01_474874EC.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\D\Ducks\ducks on canal 01_02		648744
+	778543657	CHAR_StepDirt4	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\CHAR_StepDirt4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Walk\Terrain Material\WLK_Dirt\CHAR_StepDirt4		114732
+	782625208	Drop_Rock_HardSurface_Heavy_02	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\Drop_Rock_HardSurface_Heavy_02_9662FAA1.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\R\OBJECTS\RockCollide\Drop_Rock_HardSurface_Heavy_02		31648
+	812160932	slaty flycatcher song- halmahera 091006	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\slaty flycatcher song- halmahera 091006_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\AMBIENCE\Emitters\Birds\slaty flycatcher song- halmahera 091006		5215662
+	813074779	ducks on canal 01_01	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\ducks on canal 01_49F20E7D.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\D\Ducks\ducks on canal 01_01		648748
+	823768882	wood walk	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\wood walk_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Running\Terrain\RUN_Wood\wood walk		95296
+	825209776	run_dirt1	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\run_dirt1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Running\Terrain\RUN_Dirt\run_dirt1		62368
+	833917855	canteen_run2	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\canteen_run2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Running\Canteen\canteen_run2		70720
+	841502212	ducks on canal 01_03	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\ducks on canal 01_9448EBF5.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\D\Ducks\ducks on canal 01_03		896224
+	850930565	Dog akita puppy whine breathy short_BLASTWAVEFX_10305	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\Dog akita puppy whine breathy short_BLASTWAVEFX_10305_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\R\ANIMALS\Fox barks\Dog akita puppy whine breathy short_BLASTWAVEFX_10305		343400
+	889890054	canteen_walk3	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\canteen_walk3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Walk\Canteen\canteen_walk3		110656
+	891604117	Dog in the mountains barking and growling	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\Dog in the mountains barking and growling_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\R\ANIMALS\Fox barks\Dog in the mountains barking and growling		491584
+	916592380	run_dirt2	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\run_dirt2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Running\Terrain\RUN_Dirt\run_dirt2		62924
+	959970206	canteen_walk2	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\canteen_walk2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Walk\Canteen\canteen_walk2		81216
+	963579058	grasswalk4	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\grasswalk4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Walk\Terrain Material\WLK_Grass\grasswalk4		284704
+	983771690	grassrun2	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\grassrun2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Running\Terrain\RUN_Grass\grassrun2		105112
+	988950208	CHAR_StepDirt7	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\CHAR_StepDirt7_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Walk\Terrain Material\WLK_Dirt\CHAR_StepDirt7		200104
+	1046026369	grasswalk	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\grasswalk_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Walk\Terrain Material\WLK_Grass\grasswalk		241152
+	1046108882	grasswalk2	D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\SFX\grasswalk2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GLOBAL\PLAYER CHARACTER\GAMEPLAY\Footstep\Speed\Walk\Terrain Material\WLK_Grass\grasswalk2		335916
+

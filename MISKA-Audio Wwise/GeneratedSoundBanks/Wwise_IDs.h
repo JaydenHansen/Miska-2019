@@ -14,6 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID AMB_BED = 3587600583U;
+        static const AkUniqueID BALLCOLLIDE = 3849891620U;
         static const AkUniqueID BEDAMB_WATERLAPS = 2574415040U;
         static const AkUniqueID EMIT_BIRDS = 1054363565U;
         static const AkUniqueID EMIT_CICADAS = 1225233505U;
@@ -107,6 +108,7 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID BALLCOLLIDEFORCE = 1774519205U;
         static const AkUniqueID CURRENTSCENEPROGRESS = 4175992265U;
         static const AkUniqueID DISTANCEFROM_CENTRE = 546813746U;
         static const AkUniqueID ROCKCOLLIDEFORCE = 1277399449U;

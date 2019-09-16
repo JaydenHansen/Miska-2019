@@ -13,6 +13,7 @@ public class SingleRock : MonoBehaviour
     float m_timer;
 
     public AK.Wwise.Event m_knockOverSound;
+    public AK.Wwise.Event m_pickUpSound;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +44,7 @@ public class SingleRock : MonoBehaviour
     {
         m_pickedUp = true;
         m_rigidbody.isKinematic = true;
-        //POI Sting
+        m_pickUpSound.Post(gameObject);
     }
 
 }

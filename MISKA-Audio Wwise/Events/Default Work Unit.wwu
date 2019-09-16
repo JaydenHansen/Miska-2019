@@ -144,7 +144,7 @@
 										<Action Name="" ID="{538889CC-9AF3-4518-A935-EF688F355B8B}" ShortID="483224825">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="RockBell" ID="{A0DE4264-282A-47ED-A0E3-25D02BE82AC3}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+													<ObjectRef Name="FossilPoIBreak" ID="{A0DE4264-282A-47ED-A0E3-25D02BE82AC3}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

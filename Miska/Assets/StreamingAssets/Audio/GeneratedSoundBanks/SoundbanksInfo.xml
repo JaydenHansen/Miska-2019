@@ -17,6 +17,7 @@
 			<Path>BNK_Global.bnk</Path>
 			<IncludedEvents>
 				<Event Id="3587600583" Name="AMB_Bed" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\AMB_Bed"/>
+				<Event Id="3849891620" Name="BallCollide" ObjectPath="\Events\Default Work Unit\LOCAL\STATION\BallCollide"/>
 				<Event Id="2574415040" Name="BEDAMB_WaterLaps" ObjectPath="\Events\Default Work Unit\LOCAL\DUCKS\BEDAMB_WaterLaps"/>
 				<Event Id="1054363565" Name="EMIT_Birds" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Birds"/>
 				<Event Id="1225233505" Name="EMIT_Cicadas" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Cicadas"/>
@@ -30,6 +31,10 @@
 				<Event Id="4254456693" Name="PLYR_Footstep" ObjectPath="\Events\Default Work Unit\GLOBAL\PLAYER\PLYR_Footstep"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="31473344" Language="SFX">
+					<ShortName>ball bounce grass2.wav</ShortName>
+					<Path>SFX\ball bounce grass2_10C4C929.wem</Path>
+				</File>
 				<File Id="36869918" Language="SFX">
 					<ShortName>thick-billed flowerpecker calls- india 191204.wav</ShortName>
 					<Path>SFX\thick-billed flowerpecker calls- india 191204_10C4C929.wem</Path>
@@ -69,6 +74,10 @@
 				<File Id="138724543" Language="SFX">
 					<ShortName>wood walk2.wav</ShortName>
 					<Path>SFX\wood walk2_10C4C929.wem</Path>
+				</File>
+				<File Id="144648537" Language="SFX">
+					<ShortName>ball bounce grass.wav</ShortName>
+					<Path>SFX\ball bounce grass_10C4C929.wem</Path>
 				</File>
 				<File Id="151541401" Language="SFX">
 					<ShortName>rockbell.wav</ShortName>
@@ -117,6 +126,10 @@
 				<File Id="327973492" Language="SFX">
 					<ShortName>canteen_run3.wav</ShortName>
 					<Path>SFX\canteen_run3_10C4C929.wem</Path>
+				</File>
+				<File Id="408202227" Language="SFX">
+					<ShortName>ball bounce grass3.wav</ShortName>
+					<Path>SFX\ball bounce grass3_10C4C929.wem</Path>
 				</File>
 				<File Id="411336376" Language="SFX">
 					<ShortName>CHAR_KeyJingle9.wav</ShortName>

@@ -21,6 +21,8 @@ public class Ball : MonoBehaviour
     bool m_onThisFrame;
     Parent m_parent;
 
+    public AK.Wwise.Event m_ballCollideSound;
+
     public bool InHand
     {
         get { return m_inHand; }
@@ -76,6 +78,17 @@ public class Ball : MonoBehaviour
             m_inHand = true;
             m_rigidbody.isKinematic = true;
             m_collider.enabled = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (m_parent == Parent.None)
+        {
+            float speed = collision.relativeVelocity.magnitude;
+            Debug.Log(speed.ToString());
+            AkSoundEngine.SetRTPCValue("BallCollideForce", speed);
+            m_ballCollideSound.Post(gameObject);
         }
     }
 }

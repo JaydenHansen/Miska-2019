@@ -15,6 +15,12 @@
 						<Property Name="Max" Type="Real64" Value="7"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="BallCollideForce" ID="{73DC2738-28D2-4E5A-B7CC-183D25EE3DB9}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="7"/>
+						<Property Name="Max" Type="Real64" Value="7"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

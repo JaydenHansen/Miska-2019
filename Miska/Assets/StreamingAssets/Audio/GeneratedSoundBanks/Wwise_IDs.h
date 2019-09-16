@@ -107,6 +107,7 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID BALLCOLLIDEFORCE = 1774519205U;
         static const AkUniqueID CURRENTSCENEPROGRESS = 4175992265U;
         static const AkUniqueID DISTANCEFROM_CENTRE = 546813746U;
         static const AkUniqueID ROCKCOLLIDEFORCE = 1277399449U;

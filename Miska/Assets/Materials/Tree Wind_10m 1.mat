@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Tree Wind_10m 1
   m_Shader: {fileID: 4800000, guid: 4ea3e6525294d7742ab5ed97c5914f01, type: 3}
-  m_ShaderKeywords: _DOUBLESIDED_ON
-  m_LightmapFlags: 2
+  m_ShaderKeywords: _DISABLE_SSR _DOUBLESIDED_ON
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
   m_CustomRenderQueue: 2000
@@ -231,10 +231,10 @@ Material:
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
     - _ReceiveShadows: 1
-    - _ReceivesSSR: 1
+    - _ReceivesSSR: 0
     - _RefractionModel: 0
     - _RenderQueueType: 1
-    - _RequireSplitLighting: 1
+    - _RequireSplitLighting: 0
     - _SSRefractionProjectionModel: 0
     - _Smoothness: 0
     - _SmoothnessRemapMax: 1
@@ -244,11 +244,11 @@ Material:
     - _SpecularAAThreshold: 0.2
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StencilRef: 1
-    - _StencilRefDepth: 0
+    - _StencilRef: 2
+    - _StencilRefDepth: 32
     - _StencilRefDistortionVec: 64
-    - _StencilRefGBuffer: 1
-    - _StencilRefMV: 128
+    - _StencilRefGBuffer: 34
+    - _StencilRefMV: 160
     - _StencilWriteMask: 3
     - _StencilWriteMaskDepth: 48
     - _StencilWriteMaskDistortionVec: 64
@@ -285,7 +285,7 @@ Material:
     - _windStrengthX: 0.06
     - _windStrengthY: 0.08
     m_Colors:
-    - Color_D7281684: {r: 0.16666667, g: 0.060784314, b: 0.039215688, a: 1}
+    - Color_D7281684: {r: 0, g: 0, b: 0, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

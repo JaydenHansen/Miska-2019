@@ -47,7 +47,7 @@ MonoBehaviour:
     increaseSssSampleCount: 1
     supportVolumetrics: 1
     increaseResolutionOfVolumetrics: 1
-    supportLightLayers: 0
+    supportLightLayers: 1
     supportDistortion: 1
     supportTransparentBackface: 1
     supportTransparentDepthPrepass: 1
@@ -94,7 +94,7 @@ MonoBehaviour:
         shadowAtlasResolution: 4096
         shadowAtlasDepthBits: 32
         useDynamicViewportRescale: 1
-      supportScreenSpaceShadows: 0
+      supportScreenSpaceShadows: 1
       maxScreenSpaceShadows: 2
     decalSettings:
       drawDistance: 1000

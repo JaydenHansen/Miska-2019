@@ -8,6 +8,7 @@ public class PlantDisolve : MonoBehaviour
     public float m_disolveSpeed;
 
     bool m_active;
+    bool m_alreadyActivated;
     float m_timer;
 
     // Start is called before the first frame update
@@ -38,7 +39,11 @@ public class PlantDisolve : MonoBehaviour
 
     public void StartDissolve()
     {
-        m_timer = 0;
-        m_active = true;
+        if (!m_alreadyActivated)
+        {
+            m_timer = 0;
+            m_active = true;
+            m_alreadyActivated = true;
+        }
     }
 }

@@ -14,7 +14,13 @@ public class PlantDisolve : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        foreach (Renderer plant in m_plants)
+        {
+            foreach (Material material in plant.materials)
+            {
+                material.SetFloat("_DissolveSlider", -1);
+            }
+        }
     }
 
     // Update is called once per frame

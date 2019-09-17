@@ -35,7 +35,6 @@ public class Player : MonoBehaviour
     //private int m_trashCount;
 
     public StepSoundTrigger m_stepper;
-  //  public AK.Wwise.Event m_trashSound;
 
     #region Getter/Setter
     public CharacterController CharacterController
@@ -186,6 +185,18 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         CollisionFlags collision = m_characterController.Move((m_velocity * Time.fixedDeltaTime) + (m_gravity * Time.fixedDeltaTime));
+    }
+
+    public void SetPlayerSitting()
+    {
+        AkSoundEngine.SetState("PlayerState", "Sitting");
+        Animator anim = GameObject.Find("Headbob").GetComponent<Animator>();
+        anim.SetTrigger("Sitting");
+    }
+
+    public void ExitPlayerSitting()
+    {
+        AkSoundEngine.SetState("PlayerState", "Walking");
     }
 
     //private void OnControllerColliderHit(ControllerColliderHit hit)

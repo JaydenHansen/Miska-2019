@@ -2234,74 +2234,144 @@
 							<ChildrenList>
 								<Folder Name="ANIMALS" ID="{0050AAAF-8E87-4D2C-8F1E-795E32D711C7}" ShortID="570083503">
 									<ChildrenList>
-										<RandomSequenceContainer Name="Fox barks" ID="{98AE91AD-0BD6-433E-A24C-3B6801886D1A}" ShortID="224456248">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="Pitch" Type="int32">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{71C0BFB0-57CA-4725-A0DD-6DC536FA1D4E}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="152"/>
-																	<Property Name="Min" Type="Real64" Value="-101"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>2</Value>
-													</ValueList>
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{A704A093-1DAD-47B6-81AD-FE0BF75ACA62}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="3"/>
-																	<Property Name="Min" Type="Real64" Value="-5"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-												</Reference>
-											</ReferenceList>
+										<Folder Name="CANINE" ID="{261E0C6F-120B-4EFD-8A60-0908FAF9E65E}" ShortID="53378825">
 											<ChildrenList>
-												<Sound Name="Fox bark" ID="{F885BB00-5977-4D03-A903-2118AB60D9B0}" ShortID="937259856">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-														</Reference>
-													</ReferenceList>
+												<Folder Name="FOX" ID="{5AD70A88-B2D1-4448-8F3E-2116B61B49B2}" ShortID="87669080">
 													<ChildrenList>
-														<AudioFileSource Name="Fox bark" ID="{95AF15B2-8311-4CA4-ABBF-73658973F2B2}" ShortID="465045227">
+														<RandomSequenceContainer Name="Fox barks" ID="{98AE91AD-0BD6-433E-A24C-3B6801886D1A}" ShortID="224456248">
 															<PropertyList>
-																<Property Name="FadeInDuration" Type="Real64" Value="5.96508276255708E-02"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.350448612300228"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="Pitch" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{71C0BFB0-57CA-4725-A0DD-6DC536FA1D4E}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="152"/>
+																					<Property Name="Min" Type="Real64" Value="-101"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>2</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{A704A093-1DAD-47B6-81AD-FE0BF75ACA62}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="3"/>
+																					<Property Name="Min" Type="Real64" Value="-5"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
 															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>Fox bark.wav</AudioFile>
-														</AudioFileSource>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<Sound Name="Fox bark" ID="{F885BB00-5977-4D03-A903-2118AB60D9B0}" ShortID="937259856">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="Fox bark" ID="{95AF15B2-8311-4CA4-ABBF-73658973F2B2}" ShortID="465045227">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="5.96508276255708E-02"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.350448612300228"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>Fox bark.wav</AudioFile>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="Fox bark" ID="{95AF15B2-8311-4CA4-ABBF-73658973F2B2}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="Dog akita puppy single bark_BLASTWAVEFX_00090" ID="{5BC692C0-DE61-4A07-A60E-8A093E480271}" ShortID="434077551">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="Dog akita puppy single bark_BLASTWAVEFX_00090" ID="{A7A996BA-BAE1-4A4A-B798-9BEF8ED2A7EC}" ShortID="236611281">
+																			<Language>SFX</Language>
+																			<AudioFile>Dog akita puppy single bark_BLASTWAVEFX_00090.wav</AudioFile>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="Dog akita puppy single bark_BLASTWAVEFX_00090" ID="{A7A996BA-BAE1-4A4A-B798-9BEF8ED2A7EC}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="Dog akita puppy whine breathy short_BLASTWAVEFX_10305" ID="{020FCBFB-A65A-4BD3-97CA-82339B8D505E}" ShortID="398619820">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="Dog akita puppy whine breathy short_BLASTWAVEFX_10305" ID="{62EE72B1-626B-443A-9BBF-32D5353A9096}" ShortID="850930565">
+																			<Language>SFX</Language>
+																			<AudioFile>Dog akita puppy whine breathy short_BLASTWAVEFX_10305.wav</AudioFile>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="Dog akita puppy whine breathy short_BLASTWAVEFX_10305" ID="{62EE72B1-626B-443A-9BBF-32D5353A9096}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="Dog in the mountains barking and growling" ID="{5BE92F74-5487-4BA0-BC0D-309C0BFB635C}" ShortID="1031017946">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="Dog in the mountains barking and growling" ID="{B46B119F-E978-4321-91DD-33DF675C31BC}" ShortID="891604117">
+																			<Language>SFX</Language>
+																			<AudioFile>Dog in the mountains barking and growling.wav</AudioFile>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="Dog in the mountains barking and growling" ID="{B46B119F-E978-4321-91DD-33DF675C31BC}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+															</ChildrenList>
+														</RandomSequenceContainer>
 													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Fox bark" ID="{95AF15B2-8311-4CA4-ABBF-73658973F2B2}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Dog akita puppy single bark_BLASTWAVEFX_00090" ID="{5BC692C0-DE61-4A07-A60E-8A093E480271}" ShortID="434077551">
+												</Folder>
+												<SwitchContainer Name="CANINEWALK" ID="{89EA706F-DAF5-44CE-835E-CF7BFB0B740D}" ShortID="886690929">
+													<PropertyList>
+														<Property Name="OverridePositioning" Type="bool" Value="True"/>
+													</PropertyList>
 													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="Short" ID="{FBE71A9B-EE4C-4A9C-8B45-114790E36A4A}" WorkUnitID="{9694F749-499E-4F12-BEF9-AA448E069519}"/>
+														</Reference>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
 														</Reference>
@@ -2310,58 +2380,124 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="Dog akita puppy single bark_BLASTWAVEFX_00090" ID="{A7A996BA-BAE1-4A4A-B798-9BEF8ED2A7EC}" ShortID="236611281">
-															<Language>SFX</Language>
-															<AudioFile>Dog akita puppy single bark_BLASTWAVEFX_00090.wav</AudioFile>
-														</AudioFileSource>
+														<RandomSequenceContainer Name="CNNWLK_Grass" ID="{FEC6C7E5-D916-4591-AD20-5817F7FA5AEE}" ShortID="383520173">
+															<PropertyList>
+																<Property Name="HoldEmitterPositionOrientation" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="Short" ID="{FBE71A9B-EE4C-4A9C-8B45-114790E36A4A}" WorkUnitID="{9694F749-499E-4F12-BEF9-AA448E069519}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<Sound Name="dog_walk1" ID="{1EB3417A-4A6A-452C-92BF-C204DDA6373B}" ShortID="418324664">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="dog_walk1" ID="{62465A11-B058-4B10-B44B-477218518E03}" ShortID="1058375346">
+																			<Language>SFX</Language>
+																			<AudioFile>dog_walk1.wav</AudioFile>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="dog_walk1" ID="{62465A11-B058-4B10-B44B-477218518E03}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="dog_walk2" ID="{BA02AC45-4843-4484-B51A-2DBEDE6EE110}" ShortID="888061008">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="dog_walk2" ID="{442BF661-4FB5-4916-A706-070907DB8280}" ShortID="1043040951">
+																			<Language>SFX</Language>
+																			<AudioFile>dog_walk2.wav</AudioFile>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="dog_walk2" ID="{442BF661-4FB5-4916-A706-070907DB8280}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="dog_walk3" ID="{E584BD97-7990-4209-90D4-4C4B87A013A2}" ShortID="236649573">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="dog_walk3" ID="{9D99E257-3244-4844-B8D8-CA583EA04F30}" ShortID="476115269">
+																			<Language>SFX</Language>
+																			<AudioFile>dog_walk3.wav</AudioFile>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="dog_walk3" ID="{9D99E257-3244-4844-B8D8-CA583EA04F30}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="dog_walk4" ID="{8D0A2229-9203-4A2C-B69F-9CB8ED2AF0AE}" ShortID="893049410">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="dog_walk4" ID="{588F9C30-24F4-4D97-99E5-ADD2DF79C817}" ShortID="391704253">
+																			<Language>SFX</Language>
+																			<AudioFile>dog_walk4.wav</AudioFile>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="dog_walk4" ID="{588F9C30-24F4-4D97-99E5-ADD2DF79C817}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+															</ChildrenList>
+														</RandomSequenceContainer>
+														<RandomSequenceContainer Name="CNNWLK_Rock" ID="{54095BA7-7C8B-46E9-A7C8-88EDF4B10DD2}" ShortID="635105693">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																</Reference>
+															</ReferenceList>
+														</RandomSequenceContainer>
 													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Dog akita puppy single bark_BLASTWAVEFX_00090" ID="{A7A996BA-BAE1-4A4A-B798-9BEF8ED2A7EC}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Dog akita puppy whine breathy short_BLASTWAVEFX_10305" ID="{020FCBFB-A65A-4BD3-97CA-82339B8D505E}" ShortID="398619820">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Dog akita puppy whine breathy short_BLASTWAVEFX_10305" ID="{62EE72B1-626B-443A-9BBF-32D5353A9096}" ShortID="850930565">
-															<Language>SFX</Language>
-															<AudioFile>Dog akita puppy whine breathy short_BLASTWAVEFX_10305.wav</AudioFile>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Dog akita puppy whine breathy short_BLASTWAVEFX_10305" ID="{62EE72B1-626B-443A-9BBF-32D5353A9096}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Dog in the mountains barking and growling" ID="{5BE92F74-5487-4BA0-BC0D-309C0BFB635C}" ShortID="1031017946">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Dog in the mountains barking and growling" ID="{B46B119F-E978-4321-91DD-33DF675C31BC}" ShortID="891604117">
-															<Language>SFX</Language>
-															<AudioFile>Dog in the mountains barking and growling.wav</AudioFile>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Dog in the mountains barking and growling" ID="{B46B119F-E978-4321-91DD-33DF675C31BC}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
+													<GroupingInfo>
+														<GroupingBehaviorList>
+															<GroupingBehavior>
+																<ItemRef Name="CNNWLK_Rock" ID="{54095BA7-7C8B-46E9-A7C8-88EDF4B10DD2}"/>
+															</GroupingBehavior>
+															<GroupingBehavior>
+																<ItemRef Name="CNNWLK_Grass" ID="{FEC6C7E5-D916-4591-AD20-5817F7FA5AEE}"/>
+															</GroupingBehavior>
+														</GroupingBehaviorList>
+													</GroupingInfo>
+												</SwitchContainer>
 											</ChildrenList>
-											<PositioningInfo>
-												<Position Name="" ID="{A797F875-628F-4C48-BF83-2B95FFF97DA5}"/>
-											</PositioningInfo>
-										</RandomSequenceContainer>
+										</Folder>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="AMBIENCE" ID="{2B8202B3-6012-4425-91A3-4A67F686FA8C}" ShortID="310841485"/>
@@ -2371,6 +2507,11 @@
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="2"/>
 												<Property Name="HoldEmitterPositionOrientation" Type="bool" Value="True"/>
+												<Property Name="InitialDelay" Type="Real64">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
@@ -2607,6 +2748,13 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="FossilPickup" ID="{3459A2FC-D174-4ECB-BFC7-7F720CC43945}" ShortID="475336355">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
@@ -2624,6 +2772,11 @@
 							<ChildrenList>
 								<RandomSequenceContainer Name="Ball" ID="{005ACB73-C62E-40CA-87CE-DBD1AF7913CF}" ShortID="617273360">
 									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>13</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Lowpass" Type="int16">
 											<RTPCList>
 												<RTPC Name="" ID="{08D4BA50-DDF1-44C2-A240-B16F9AA12153}" ShortID="685955438">
@@ -2681,7 +2834,11 @@
 												</RTPC>
 											</RTPCList>
 										</Property>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>300</Value>
+											</ValueList>
 											<ModifierList>
 												<ModifierInfo>
 													<Modifier Name="" ID="{A01C8197-D8A6-4A7C-962F-4EC4B4A8F933}">
@@ -2720,8 +2877,16 @@
 												</RTPC>
 											</RTPCList>
 										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-7</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Short" ID="{FBE71A9B-EE4C-4A9C-8B45-114790E36A4A}" WorkUnitID="{9694F749-499E-4F12-BEF9-AA448E069519}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
 										</Reference>

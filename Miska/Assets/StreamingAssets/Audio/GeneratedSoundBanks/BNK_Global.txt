@@ -9,7 +9,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2870480783	EMIT_Ducks			\Default Work Unit\LOCAL\DUCKS\EMIT_Ducks	
 	3472354586	OBJ_RockStackFalls			\Default Work Unit\LOCAL\ROCKS\OBJ_RockStackFalls	
 	3587600583	AMB_Bed			\Default Work Unit\GLOBAL\AMBIENCE\AMB_Bed	
-	3849891620	BallCollide			\Default Work Unit\LOCAL\STATION\BallCollide	
+	3849891620	BallCollide			\Default Work Unit\LOCAL\BallCollide	
 	4108701605	OBJ_FossilPOI			\Default Work Unit\LOCAL\ROCKS\OBJ_FossilPOI	
 	4254456693	PLYR_Footstep			\Default Work Unit\GLOBAL\PLAYER\PLYR_Footstep	
 

@@ -14,6 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID AMB_BED = 3587600583U;
+        static const AkUniqueID BALLCOLLIDE = 3849891620U;
         static const AkUniqueID BEDAMB_WATERLAPS = 2574415040U;
         static const AkUniqueID EMIT_BIRDS = 1054363565U;
         static const AkUniqueID EMIT_CICADAS = 1225233505U;

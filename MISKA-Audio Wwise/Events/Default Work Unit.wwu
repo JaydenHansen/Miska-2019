@@ -178,8 +178,30 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Event Name="BallCollide" ID="{1E8900CC-7999-48C1-8AA0-FCDB2B21C12A}">
+							<ChildrenList>
+								<Action Name="" ID="{79E879B5-BFF0-40FB-88E5-C9F4E6776293}" ShortID="864547675">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ball" ID="{005ACB73-C62E-40CA-87CE-DBD1AF7913CF}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="Play_CNNWLK_Grass" ID="{72964A1C-C518-4CF3-B2C0-438168CCF621}">
+					<ChildrenList>
+						<Action Name="" ID="{AC7E0DA9-9B77-4BC6-9687-4DF2F0D2CC5E}" ShortID="261346876">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CNNWLK_Grass" ID="{FEC6C7E5-D916-4591-AD20-5817F7FA5AEE}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

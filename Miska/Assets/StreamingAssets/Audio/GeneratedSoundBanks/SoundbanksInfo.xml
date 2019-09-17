@@ -17,7 +17,7 @@
 			<Path>BNK_Global.bnk</Path>
 			<IncludedEvents>
 				<Event Id="3587600583" Name="AMB_Bed" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\AMB_Bed"/>
-				<Event Id="3849891620" Name="BallCollide" ObjectPath="\Events\Default Work Unit\LOCAL\STATION\BallCollide"/>
+				<Event Id="3849891620" Name="BallCollide" ObjectPath="\Events\Default Work Unit\LOCAL\BallCollide"/>
 				<Event Id="2574415040" Name="BEDAMB_WaterLaps" ObjectPath="\Events\Default Work Unit\LOCAL\DUCKS\BEDAMB_WaterLaps"/>
 				<Event Id="1054363565" Name="EMIT_Birds" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Birds"/>
 				<Event Id="1225233505" Name="EMIT_Cicadas" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Cicadas"/>

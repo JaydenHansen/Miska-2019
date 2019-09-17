@@ -22,10 +22,7 @@ public class QuicktimePlayAnimation : QuicktimeResponse
 
     public override void OnStart()
     {
-        if (m_disableMovement)
-        {
-            m_player.MovementState = MovementState.Disabled;
-        }
+        
     }
 
     public override void OnSuccess()

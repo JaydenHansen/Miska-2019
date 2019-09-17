@@ -66,7 +66,7 @@ public class Book : MonoBehaviour
         m_targetPosition = m_bookCamera.transform.localPosition;
         m_targetRotation = m_bookCamera.transform.localRotation;
 
-        //CloseBook();
+        CloseBook();
         //OpenBook();
     }
 

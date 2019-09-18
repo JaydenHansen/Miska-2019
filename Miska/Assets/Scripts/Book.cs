@@ -20,6 +20,7 @@ public class Book : MonoBehaviour
     public GameObject m_staticRightPage;
     public Animation m_pageTurn;
     public float m_openDelay;
+    public bool m_autoClose;
 
     List<GameObject> m_pages;
     int m_currentPage;
@@ -66,7 +67,8 @@ public class Book : MonoBehaviour
         m_targetPosition = m_bookCamera.transform.localPosition;
         m_targetRotation = m_bookCamera.transform.localRotation;
 
-        CloseBook();
+        if (m_autoClose)
+            CloseBook();
         //OpenBook();
     }
 

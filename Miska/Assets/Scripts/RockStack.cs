@@ -11,6 +11,7 @@ public class RockStack : MonoBehaviour
 
     private void Start()
     {
+        m_knockOverDirection.Normalize();
         m_knockOverDirection = transform.rotation * m_knockOverDirection;
     }
 

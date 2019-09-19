@@ -29,6 +29,7 @@ public class Dog : MonoBehaviour
     {
         m_agent = GetComponent<NavMeshAgent>();
         m_agent.updateRotation = false;
+        m_agent.updateUpAxis = false;
         m_baseStoppingDistance = m_agent.stoppingDistance;
     }
 
@@ -96,7 +97,6 @@ public class Dog : MonoBehaviour
                 }            
         }
 
-        NavMeshHit hit;
         Vector3 targetPosition = Vector3.zero;
         switch (m_currentTarget)
         {
@@ -111,17 +111,19 @@ public class Dog : MonoBehaviour
                 break;
         }
 
-        m_agent.SetDestination(targetPosition);           
-        //if (NavMesh.SamplePosition(targetPosition, out hit, 1, NavMesh.AllAreas))
-        //{
-        //    m_agent.SetDestination(hit.position);
-        //}
-        
+        m_agent.SetDestination(targetPosition);
 
         if (m_agent.velocity.sqrMagnitude != 0)
-            transform.rotation = Quaternion.LookRotation(m_agent.velocity.normalized);
-        else
-            transform.forward = (new Vector3(m_player.position.x, 0, m_player.position.z) - new Vector3(transform.position.x, 0, transform.position.z)).normalized;
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position + Vector3.up * 0.5f, Vector3.down, out hit, 10, 1 << LayerMask.NameToLayer("Ground")))
+            {
+                Quaternion targetRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+                targetRotation *= Quaternion.LookRotation(new Vector3(m_agent.velocity.x, 0, m_agent.velocity.z));
+
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10);
+            }
+        }
     }
 
     public void Spawn()

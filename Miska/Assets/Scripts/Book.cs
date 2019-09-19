@@ -25,7 +25,6 @@ public class Book : MonoBehaviour
     List<GameObject> m_pages;
     int m_currentPage;
     bool m_open;
-    Vector3 m_baseCameraPos;
     bool m_zoomed = false;
     float m_timer;
 
@@ -98,10 +97,6 @@ public class Book : MonoBehaviour
                 if (m_currentPage - 1 >= 0)
                     SetPage(m_currentPage - 1);
             }            
-            if (Input.GetKeyUp(KeyCode.Mouse1))
-            {
-                m_bookCamera.transform.localPosition = m_baseCameraPos;
-            }
         }
 
         if (TMP)
@@ -134,7 +129,8 @@ public class Book : MonoBehaviour
             Cursor.visible = true;
 
             m_bookCamera.enabled = true;
-            m_groundCamera.enabled = true;
+            if (m_groundCamera)
+                m_groundCamera.enabled = true;
             m_playerCamera.m_camera.enabled = false;
             m_playerCamera.enabled = false;
 
@@ -165,7 +161,8 @@ public class Book : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         m_bookCamera.enabled = false;
-        m_groundCamera.enabled = false;
+        if (m_groundCamera)
+            m_groundCamera.enabled = false;
         m_playerCamera.m_camera.enabled = true;
         m_playerCamera.enabled = true;
 

@@ -23,6 +23,7 @@ public class Fox : MonoBehaviour
         m_agent.updateRotation = false;
         m_agent.updateUpAxis = false;
         m_agent.SetDestination(m_waypoints[m_currentWaypoint].position);
+
     }
 
     // Update is called once per frame
@@ -50,7 +51,7 @@ public class Fox : MonoBehaviour
                 Quaternion targetRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
                 targetRotation *= Quaternion.LookRotation(new Vector3(m_agent.velocity.x, 0, m_agent.velocity.z));
 
-                transform.rotation = targetRotation;//Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10);
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10);
             }
         }
     }

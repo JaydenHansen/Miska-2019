@@ -20,7 +20,8 @@ public class PopUp : MonoBehaviour
     public float m_flashDelay;
     public Sprite[] m_icons;
     public IconType m_currentIcon;
-    public bool m_tempFlash;
+    public bool m_useTimer;
+    public bool m_autoStart;
 
     float m_popUpTimer;
     float m_flashTimer;
@@ -32,7 +33,9 @@ public class PopUp : MonoBehaviour
     void Start()
     {
         m_image = GetComponent<Image>();
-        //StartPopUp(IconType.Bench, false);        
+
+        if (m_autoStart)
+            StartPopUp(m_currentIcon, m_useTimer);        
     }
 
     // Update is called once per frame
@@ -53,7 +56,7 @@ public class PopUp : MonoBehaviour
                 m_spriteToggle = !m_spriteToggle;
             }
 
-            if (m_tempFlash)
+            if (m_useTimer)
             {
                 m_popUpTimer += Time.deltaTime;
                 if (m_popUpTimer >= m_popUpTime)
@@ -67,11 +70,11 @@ public class PopUp : MonoBehaviour
         }
     }
 
-    public void StartPopUp(IconType icon, bool temp)
+    public void StartPopUp(IconType icon, bool useTimer)
     {
         m_currentIcon = icon;
         m_image.sprite = m_icons[IconIndex];
-        m_tempFlash = temp;
+        m_useTimer = useTimer;
 
         m_popUpTimer = 0;
         

@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlantDisolve : MonoBehaviour
 {
     public Renderer[] m_plants;
-    public float m_disolveSpeed;
+    public float m_dissolveSpeed;
+    public float m_dissolveRandomOffset;
 
     bool m_active;
     bool m_alreadyActivated;
@@ -30,15 +31,16 @@ public class PlantDisolve : MonoBehaviour
         {
             m_timer += Time.deltaTime;
 
-            foreach(Renderer plant in m_plants)
-            {
-                foreach (Material material in plant.materials)
+            for (int i = 0; i < m_plants.Length; i++)
+            { 
+                Random.InitState(i);
+                foreach (Material material in m_plants[i].materials)
                 {
-                    material.SetFloat("_DissolveSlider", -((m_timer / m_disolveSpeed) +1));
+                    material.SetFloat("_DissolveSlider", -((m_timer / (m_dissolveSpeed + Random.Range(-m_dissolveRandomOffset, m_dissolveRandomOffset))) +1));
                 }
             }
 
-            if (m_timer > m_disolveSpeed)
+            if (m_timer > m_dissolveSpeed)
                 m_active = false;
         }
     }

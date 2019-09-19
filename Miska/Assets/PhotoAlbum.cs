@@ -6,15 +6,35 @@ using UnityEngine.UI;
 
 public class PhotoAlbum : MonoBehaviour
 {
-    FileInfo[]      m_picsInfo;
+
+    //struct PhotoImage
+    //{
+    //    public PhotoImage(FileInfo fi)
+    //    {
+    //        isFile = true;
+    //        file = fi;
+    //        image = null;
+    //    }
+    //    public PhotoImage (Texture2D tx)
+    //    {
+    //        isFile = false;
+    //        file = null;
+    //        image = tx;
+    //    }
+
+    //    public bool isFile;
+    //   public  FileInfo file;
+    //    public Texture2D image;
+    //}
+
+    List<FileInfo>m_picsInfo;
+
     string          m_fullpath;
     string          m_folderPath;
     bool            m_isShowingAlbum;
     Canvas          m_canvas;
     RawImage        m_photoOBJ;
     int             m_currPicIndex;
-
-    float           m_rawDimensionHeight = 950;
 
     public Player   m_playerScript;
 
@@ -23,20 +43,26 @@ public class PhotoAlbum : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_picsInfo = new List<FileInfo>();
         m_folderPath = "/Resources/Photos";
         m_fullpath = Application.dataPath + m_folderPath;
-        GetFileInfo();
         m_isShowingAlbum = false;
         m_currPicIndex = 0;
+        GetFileArray();
         m_photoOBJ = gameObject.GetComponentInChildren<RawImage>();
         //m_photoOBJ.enabled = false;
         m_canvas = gameObject.GetComponentInChildren<Canvas>();
+        
     }
 
-    private void GetFileInfo()
+    private void GetFileArray()
     {
         DirectoryInfo dir = new DirectoryInfo(m_fullpath);
-        m_picsInfo = dir.GetFiles("*.png");
+        var picsInfo = dir.GetFiles("*.png");
+        foreach (var file in picsInfo)
+        {
+            m_picsInfo. Add(file);
+        }
     }
 
     // Update is called once per frame
@@ -63,7 +89,7 @@ public class PhotoAlbum : MonoBehaviour
             {
                 if (m_currPicIndex == 0)
                 {
-                    m_currPicIndex = m_picsInfo.Length - 1;
+                    m_currPicIndex = m_picsInfo.Count - 1;
                 }
                 else
                 {
@@ -73,7 +99,7 @@ public class PhotoAlbum : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                if (m_currPicIndex == m_picsInfo.Length - 1)
+                if (m_currPicIndex == m_picsInfo.Count - 1)
                 {
                     m_currPicIndex = 0;
                 }
@@ -88,9 +114,27 @@ public class PhotoAlbum : MonoBehaviour
 
     private void LoadIndexedPhotoToTexture()
     {
-        string PhotoPath             = m_picsInfo[m_currPicIndex].Name;
-        string loadPath                 = "Photos/" + Path.GetFileNameWithoutExtension(PhotoPath);
-        var texture                            = Resources.Load<Texture2D>(loadPath);
-        m_photoOBJ.texture      = texture;
+
+        string PhotoPath = m_picsInfo[m_currPicIndex].Name;
+        string loadPath = "Photos/" + Path.GetFileNameWithoutExtension(PhotoPath);
+        var texture = Resources.Load<Texture2D>(loadPath);
+        m_photoOBJ.texture = texture;
+
+        //if (m_picsInfo[m_currPicIndex].isFile)
+        //{
+            
+        //}
+        //else
+        //{
+        //    m_photoOBJ.texture = m_picsInfo[m_currPicIndex].image;
+        //}
+       
     }
+
+    public void AddNewPhoto(string filename)
+    {
+        FileInfo fi = new FileInfo(filename);
+                m_picsInfo.Add(fi);
+        Debug.Break();
+            }
 }

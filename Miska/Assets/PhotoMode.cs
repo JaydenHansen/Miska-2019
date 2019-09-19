@@ -13,6 +13,7 @@ public class PhotoMode : MonoBehaviour
     GameObject              m_PopupOverlay;
 
     public Camera        m_virtCam;
+    public PhotoAlbum m_album;
 
     private void Start()
     {
@@ -98,11 +99,15 @@ public class PhotoMode : MonoBehaviour
         RenderTexture.active = null;
         m_virtCam.targetTexture = null;
 
-        Destroy(tempRT);
-
         byte[] bytes;
         bytes = virtualPhoto.EncodeToPNG();
 
-        System.IO.File.WriteAllBytes(GenerateFileName(), bytes);
+        string filename = GenerateFileName();
+
+        System.IO.File.WriteAllBytes(filename, bytes);
+
+        m_album.AddNewPhoto(filename);
+
+
      }
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
 	<RootPaths>
-		<ProjectRoot>D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\</ProjectRoot>
-		<SourceFilesRoot>D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Games Making\MISKA\Miska-2019\Miska\Assets\StreamingAssets\Audio\GeneratedSoundBanks\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\s182378\Documents\Miska-2019\MISKA-Audio Wwise\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\s182378\Documents\Miska-2019\MISKA-Audio Wwise\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\s182378\Documents\Miska-2019\Miska\Assets\StreamingAssets\Audio\GeneratedSoundBanks\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\s182378\Documents\Miska-2019\MISKA-Audio Wwise\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>

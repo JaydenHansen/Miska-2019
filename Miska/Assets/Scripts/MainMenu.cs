@@ -8,10 +8,13 @@ public class MainMenu : MonoBehaviour
     public Animation m_animation;
     public CameraController m_camera;
     public VoidEvent m_animationEnd;
+
+    bool isLoadingNow;
     // Start is called before the first frame update
     void Start()
     {
         PlayAnimation();
+        isLoadingNow = false;
     }
 
     // Update is called once per frame
@@ -52,12 +55,20 @@ public class MainMenu : MonoBehaviour
 
     public void ContinueGame()
     {
-        StartCoroutine(LoadScene(1, true));
+        if (isLoadingNow == false)
+        {
+            StartCoroutine(LoadScene(1, true));
+            isLoadingNow = true;
+        }
     }
 
     public void NewGame()
     {
-        StartCoroutine(LoadScene(1, false));
+        if (isLoadingNow == false)
+        {
+            StartCoroutine(LoadScene(1, false));
+            isLoadingNow = true;
+        }
     }
 
     private IEnumerator WaitForAnimation(Animation animation)

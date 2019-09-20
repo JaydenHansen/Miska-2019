@@ -18,6 +18,8 @@ public class PopUp : MonoBehaviour
 {
     public float m_popUpTime;
     public float m_flashDelay;
+    public float m_scaleSpeed;
+    public float m_scaleSize;
     public Sprite[] m_icons;
     public IconType m_currentIcon;
     public bool m_useTimer;
@@ -25,14 +27,19 @@ public class PopUp : MonoBehaviour
 
     float m_popUpTimer;
     float m_flashTimer;
+    float m_scaleTimer;
+    float m_baseScale;
     bool m_active;
     Image m_image;
+    Text m_text;
     bool m_spriteToggle;
 
     // Start is called before the first frame update
     void Start()
     {
         m_image = GetComponent<Image>();
+        m_text = GetComponentInChildren<Text>();
+        m_baseScale = m_image.rectTransform.sizeDelta.x;
 
         if (m_autoStart)
             StartPopUp(m_currentIcon, m_useTimer);        
@@ -44,6 +51,16 @@ public class PopUp : MonoBehaviour
         if (m_active)
         {           
             m_flashTimer += Time.deltaTime;
+            m_scaleTimer += Time.deltaTime;
+
+            if (m_scaleTimer <= m_scaleSpeed)
+            {
+                m_image.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Mathf.Lerp(m_baseScale, m_scaleSize, Mathf.Sin(m_scaleTimer / m_scaleSpeed * Mathf.PI)));
+                m_image.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Mathf.Lerp(m_baseScale, m_scaleSize, Mathf.Sin(m_scaleTimer / m_scaleSpeed * Mathf.PI)));
+
+                m_text.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Mathf.Lerp(m_baseScale, m_scaleSize, Mathf.Sin(m_scaleTimer / m_scaleSpeed * Mathf.PI)));
+                m_text.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Mathf.Lerp(m_baseScale, m_scaleSize, Mathf.Sin(m_scaleTimer / m_scaleSpeed * Mathf.PI)));
+            }
 
             //Color color = m_image.color;
             //color.a = 1 - ((Mathf.Cos((m_timer / m_popUpTime) * Mathf.PI * m_flashAmount * 2) + 1) * 0.5f);
@@ -77,6 +94,7 @@ public class PopUp : MonoBehaviour
         m_useTimer = useTimer;
 
         m_popUpTimer = 0;
+        m_scaleTimer = 0;
         
         m_active = true;
         m_image.enabled = true;

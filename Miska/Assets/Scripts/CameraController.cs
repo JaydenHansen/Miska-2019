@@ -101,7 +101,13 @@ public class CameraController : MonoBehaviour
             m_yawVelocity += Input.GetAxis("Mouse X") * m_rotationSpeed; // mouse x controls the yaw
         }
         m_yaw += m_yawVelocity * Time.deltaTime;
-        m_yawVelocity -= m_yawVelocity * m_rotationFriction * Time.deltaTime; // drag
+
+        float yawDrag = m_yawVelocity * m_rotationFriction * Time.deltaTime; // drag
+        if (Mathf.Abs(yawDrag) > Mathf.Abs(m_yawVelocity))
+            m_yawVelocity = 0;
+        else
+            m_yawVelocity -= yawDrag;
+
         // keeps the yaw value between [-180, 180]
         if (m_yaw > 180)
         {
@@ -117,7 +123,13 @@ public class CameraController : MonoBehaviour
             m_pitchVelocity -= Input.GetAxis("Mouse Y") * m_rotationSpeed; // mouse y controls the pitch
         }
         m_pitch += m_pitchVelocity * Time.deltaTime;
-        m_pitchVelocity -= m_pitchVelocity * m_rotationFriction * Time.deltaTime; // drag
+
+        float pitchDrag = m_pitchVelocity * m_rotationFriction * Time.deltaTime; // drag
+        if (Mathf.Abs(pitchDrag) > Mathf.Abs(m_pitchVelocity))
+            m_pitchVelocity = 0;
+        else
+            m_pitchVelocity -= pitchDrag;
+
         // Keeps the pitch value between [lowerLimit, upperLimit]
         m_pitch = Mathf.Clamp(m_pitch, m_pitchLowerLimit, m_pitchUpperLimit);
 
@@ -173,5 +185,18 @@ public class CameraController : MonoBehaviour
     {
         m_yaw = euler.y;
         m_pitch = euler.x;
+    }
+
+    public void DisableMovement()
+    {
+        m_disableControl = true;
+        //Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
+    }
+    public void EnableMovement()
+    {
+        m_disableControl = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 }

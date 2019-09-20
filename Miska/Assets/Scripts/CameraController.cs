@@ -22,6 +22,9 @@ public class CameraController : MonoBehaviour
     public Transform m_lookAt;
     public float m_baseLookAtStrength;
     public float m_lookAtDeadzone;
+    [Header("Misc")]
+    public bool m_lockYaw;
+    public Vector2 m_yawBounds;
 
     private float m_yaw = 0.0f;
     private float m_pitch = 0.0f;
@@ -108,14 +111,21 @@ public class CameraController : MonoBehaviour
         else
             m_yawVelocity -= yawDrag;
 
-        // keeps the yaw value between [-180, 180]
-        if (m_yaw > 180)
+        if (m_lockYaw)
         {
-            m_yaw -= 360;
+            m_yaw = Mathf.Clamp(m_yaw, m_yawBounds.x, m_yawBounds.y);
         }
-        if (m_yaw < -180)
-        {
-            m_yaw += 360;
+        else
+        { 
+            // keeps the yaw value between [-180, 180]
+            if (m_yaw > 180)
+            {
+                m_yaw -= 360;
+            }
+            if (m_yaw < -180)
+            {
+                m_yaw += 360;
+            }
         }
 
         if (!m_disableControl)

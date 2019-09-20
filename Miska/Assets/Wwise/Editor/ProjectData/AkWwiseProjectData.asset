@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 61613fc2e9e030449a3f2b92ca0e24f2
     GuidInternal: 
-    m_lastTime: -8586327585485101582
+    m_lastTime: -8586327573522011935
     List:
     - name: BNK_Ducks
       guid: 70c3be5e1ef3ed41b803f1900d2f3547
@@ -74,7 +74,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: c8baaaee9ee0654299bdb315b882e069
     GuidInternal: 
-    m_lastTime: -8586327585485491455
+    m_lastTime: -8586327573522241344
     List:
     - name: AMB_Bed
       guid: 1c394a03ad28ed49a352084c06ac4828
@@ -90,8 +90,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\GLOBAL\AMBIENCE\AMB_Bed
       maxAttenuation: 0
-      maxDuration: 92.285446
-      minDuration: 92.285446
+      maxDuration: -1
+      minDuration: -1
     - name: BallCollide
       guid: cc00891e9979c1488aa0fcdb2b21c12a
       id: 3849891620
@@ -103,9 +103,9 @@ MonoBehaviour:
       - ElementName: BallCollide
         ObjectType: 3
       Path: Default Work Unit\LOCAL\BallCollide
-      maxAttenuation: 20
-      maxDuration: 1.734514
-      minDuration: 0.312471
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: BEDAMB_WaterLaps
       guid: 1c86704e5b6cb3469be3a37356c737ca
       id: 2574415040
@@ -119,7 +119,7 @@ MonoBehaviour:
       - ElementName: BEDAMB_WaterLaps
         ObjectType: 3
       Path: Default Work Unit\LOCAL\DUCKS\BEDAMB_WaterLaps
-      maxAttenuation: 30
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
     - name: EMIT_Birds
@@ -137,7 +137,7 @@ MonoBehaviour:
       - ElementName: EMIT_Birds
         ObjectType: 3
       Path: Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Birds
-      maxAttenuation: 30
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
     - name: EMIT_Cicadas
@@ -155,7 +155,7 @@ MonoBehaviour:
       - ElementName: EMIT_Cicadas
         ObjectType: 3
       Path: Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Cicadas
-      maxAttenuation: 20
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
     - name: EMIT_Ducks
@@ -171,7 +171,7 @@ MonoBehaviour:
       - ElementName: EMIT_Ducks
         ObjectType: 3
       Path: Default Work Unit\LOCAL\DUCKS\EMIT_Ducks
-      maxAttenuation: 30
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
     - name: EMIT_River
@@ -189,7 +189,7 @@ MonoBehaviour:
       - ElementName: EMIT_River
         ObjectType: 3
       Path: Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_River
-      maxAttenuation: 30
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
     - name: OBJ_BottlePickup
@@ -208,8 +208,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_BottlePickup
       maxAttenuation: 0
-      maxDuration: 1.35319
-      minDuration: 1.014565
+      maxDuration: -1
+      minDuration: -1
     - name: OBJ_DepositBottle
       guid: e68e72ed3faae54b824c2ad343fc741d
       id: 2632544887
@@ -226,8 +226,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_DepositBottle
       maxAttenuation: 0
-      maxDuration: 1.117279
-      minDuration: 0.897607
+      maxDuration: -1
+      minDuration: -1
     - name: OBJ_FossilPOI
       guid: 72b8a330876671498dc58637744f3d23
       id: 4108701605
@@ -241,9 +241,9 @@ MonoBehaviour:
       - ElementName: OBJ_FossilPOI
         ObjectType: 3
       Path: Default Work Unit\LOCAL\ROCKS\OBJ_FossilPOI
-      maxAttenuation: 20
-      maxDuration: 4.61653
-      minDuration: 4.61653
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: OBJ_JournalClose
       guid: 31851d286e0b8b49821b4fa5093e2cf9
       id: 1744469232
@@ -305,9 +305,9 @@ MonoBehaviour:
       - ElementName: OBJ_RockCollide
         ObjectType: 3
       Path: Default Work Unit\LOCAL\ROCKS\OBJ_RockCollide
-      maxAttenuation: 20
-      maxDuration: 0.358095
-      minDuration: 0.24306
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: OBJ_RockStackFalls
       guid: 973ab88b248ea64796121544ba0e96f8
       id: 3472354586
@@ -321,9 +321,9 @@ MonoBehaviour:
       - ElementName: OBJ_RockStackFalls
         ObjectType: 3
       Path: Default Work Unit\LOCAL\ROCKS\OBJ_RockStackFalls
-      maxAttenuation: 30
-      maxDuration: 2.407744
-      minDuration: 2.407744
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_CNNWLK_Grass
       guid: 1c4a967218c5f34cb2c0438168ccf621
       id: 721889916
@@ -350,8 +350,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\GLOBAL\PLAYER\PLYR_Footstep
       maxAttenuation: 0
-      maxDuration: 2.108877
-      minDuration: 0.632809
+      maxDuration: -1
+      minDuration: -1
     - name: Start_Music
       guid: 7cc85963c8f911468cb7187105b645dd
       id: 540993415
@@ -387,7 +387,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d356db5be7fc64429a6cf7770480508d
     GuidInternal: 
-    m_lastTime: -8586327585485561430
+    m_lastTime: -8586327573522351061
     List:
     - name: BallCollideForce
       guid: 3827dc73d2285a4eb7cc183d25ee3db9

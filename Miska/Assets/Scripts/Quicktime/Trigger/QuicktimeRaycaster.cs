@@ -29,15 +29,20 @@ public class QuicktimeRaycaster : MonoBehaviour
                 if (m_lastTrigger && m_lastTrigger != trigger)
                 {
                     m_lastTrigger.StopLookAt();
-                    trigger.StartLookAt(m_player);
-                    m_lastTrigger = trigger;
+                    if (trigger.StartLookAt(m_player))
+                        m_lastTrigger = trigger;
                 }
-                else
-                {
-                    trigger.StartLookAt(m_player);
-                    m_lastTrigger = trigger;
+                else if (m_lastTrigger != trigger)
+                {                    
+                    if (trigger.StartLookAt(m_player))
+                        m_lastTrigger = trigger;
                 }
                 
+            }
+            else if (m_lastTrigger)
+            {
+                m_lastTrigger.StopLookAt();
+                m_lastTrigger = null;
             }
         }
         else

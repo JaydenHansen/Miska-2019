@@ -15,17 +15,17 @@ public class QuicktimeEvents : QuicktimeResponse
 
     public override void OnStart()
     {
-        m_onStart.Invoke(m_owner.Player);
+        m_onStart.Invoke(m_owner ? m_owner.Player : null);
     }
 
     public override void OnSuccess()
     {
-        m_onSuccess.Invoke(m_owner.Player);
+        m_onSuccess.Invoke(m_owner ? m_owner.Player : null);
     }
 
     public override void OnFailure()
     {
-        m_onFailure.Invoke(m_owner.Player);
+        m_onFailure.Invoke(m_owner ? m_owner.Player : null);
     }
 
 }

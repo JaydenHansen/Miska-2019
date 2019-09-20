@@ -14,6 +14,7 @@ public class TrashCan : MonoBehaviour
 
     int m_trashLeft;
     bool m_triggered;
+    Renderer m_renderer;
     public int TrashLeft
     {
         get { return m_trashLeft; }
@@ -28,6 +29,7 @@ public class TrashCan : MonoBehaviour
     void Start()
     {
         m_trashLeft = m_requiredTrash;
+        m_renderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -74,5 +76,10 @@ public class TrashCan : MonoBehaviour
     public void OnTrashPickup()
     {
         m_trashLeft--;
+    }
+
+    public void DisableGlow()
+    {
+        m_renderer.material.SetFloat("_Enabled", 0);
     }
 }

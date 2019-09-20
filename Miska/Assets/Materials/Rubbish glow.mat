@@ -113,6 +113,7 @@ Material:
     m_Floats:
     - Vector1_94DA7A6C: 2.5
     - Vector1_A8CAD963: 0.7
+    - Vector1_E3611F9F: 0
     - Vector1_F3E3F741: 0.17
     - _AORemapMax: 1
     - _AORemapMin: 0
@@ -163,7 +164,7 @@ Material:
     - _EnableMotionVectorForVertexAnimation: 0
     - _EnableSpecularOcclusion: 0
     - _EnableWind: 0
-    - _Enabled: 0
+    - _Enabled: 1
     - _EnergyConservingSpecularColor: 1
     - _HdrpVersion: 2
     - _HeightAmplitude: 0.02
@@ -181,6 +182,7 @@ Material:
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
     - _LinkDetailsWithBase: 1
+    - _LookAt: 0
     - _MaterialID: 1
     - _Metallic: 0
     - _NormalMapSpace: 0

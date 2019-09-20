@@ -22,12 +22,12 @@ public class TrashHighlighter : MonoBehaviour
         {
             if (m_lastLookedAt)
             {
-                m_lastLookedAt.material.SetFloat("_Enabled", 0);
+                m_lastLookedAt.material.SetFloat("_LookAt", 0);
             }
             Renderer renderer = hit.collider.GetComponent<Renderer>();
             if (renderer)
             {
-                renderer.material.SetFloat("_Enabled", 1);
+                renderer.material.SetFloat("_LookAt", 1);
                 m_lastLookedAt = renderer;
             }
             else
@@ -35,14 +35,14 @@ public class TrashHighlighter : MonoBehaviour
                 Renderer childRenderer = hit.collider.GetComponentInChildren<Renderer>();
                 if (childRenderer)
                 {
-                    childRenderer.material.SetFloat("_Enabled", 1);
+                    childRenderer.material.SetFloat("_LookAt", 1);
                     m_lastLookedAt = childRenderer;
                 }
             }
         }
         else if (m_lastLookedAt)
         {
-            m_lastLookedAt.material.SetFloat("_Enabled", 0);
+            m_lastLookedAt.material.SetFloat("_LookAt", 0);
             m_lastLookedAt = null;
         }
     }

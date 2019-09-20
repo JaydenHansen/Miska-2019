@@ -112,6 +112,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_94DA7A6C: 2.5
+    - Vector1_CDFA0B0: 0
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
@@ -161,7 +162,7 @@ Material:
     - _EnableMotionVectorForVertexAnimation: 0
     - _EnableSpecularOcclusion: 0
     - _EnableWind: 0
-    - _Enabled: 0
+    - _Enabled: 1
     - _EnergyConservingSpecularColor: 1
     - _HdrpVersion: 2
     - _HeightAmplitude: 0.02
@@ -179,6 +180,7 @@ Material:
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
     - _LinkDetailsWithBase: 1
+    - _LookAt: 0
     - _MaterialID: 1
     - _Metallic: 0
     - _NormalMapSpace: 0

@@ -11,7 +11,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: d2dae14b5a66509408439e7e959d19eb, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _DOUBLESIDED_ON
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
+  m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
   m_CustomRenderQueue: 2000
   stringTagMap:

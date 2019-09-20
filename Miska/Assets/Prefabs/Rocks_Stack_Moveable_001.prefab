@@ -19,7 +19,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5151562036447963169
 Transform:
@@ -68,6 +68,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -124,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_stacker: {fileID: 5151562036475043560}
   m_delay: 1.8
+  m_freezeOnTouch: 0
 --- !u!1 &5151562036447671299
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +145,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5151562036447963171
 Transform:
@@ -192,6 +194,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -248,6 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_stacker: {fileID: 5151562036475043560}
   m_delay: 1.8
+  m_freezeOnTouch: 0
 --- !u!1 &5151562036447671301
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +271,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5151562036447963173
 Transform:
@@ -316,6 +320,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -372,6 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_stacker: {fileID: 5151562036475043560}
   m_delay: 1.8
+  m_freezeOnTouch: 0
 --- !u!1 &5151562036447671303
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +397,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5151562036447963175
 Transform:
@@ -440,6 +446,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -496,6 +503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_stacker: {fileID: 5151562036475043560}
   m_delay: 1.8
+  m_freezeOnTouch: 0
 --- !u!1 &5151562036447671305
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +523,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5151562036447963177
 Transform:
@@ -564,6 +572,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -620,6 +629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_stacker: {fileID: 5151562036475043560}
   m_delay: 1.8
+  m_freezeOnTouch: 0
 --- !u!1 &5151562036447671307
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,7 +649,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5151562036447963179
 Transform:
@@ -688,6 +698,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -744,6 +755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_stacker: {fileID: 5151562036475043560}
   m_delay: 1.8
+  m_freezeOnTouch: 0
 --- !u!1 &5151562036447671309
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +771,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5151562036447963181
 Transform:
@@ -806,6 +818,7 @@ MonoBehaviour:
   m_maxTouchingGround: 1
   m_stackDelay: 0
   m_knockOverStrength: 10
+  m_knockOverDirection: {x: 0, y: 0, z: 0}
   m_onStacked:
     m_PersistentCalls:
       m_Calls: []
@@ -829,7 +842,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5151562036447963183
 Transform:
@@ -878,6 +891,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -934,3 +948,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_stacker: {fileID: 5151562036475043560}
   m_delay: 1.8
+  m_freezeOnTouch: 0

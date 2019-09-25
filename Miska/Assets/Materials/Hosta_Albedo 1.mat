@@ -285,7 +285,7 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     - _colorGradientOffset: 0
-    - _swayHeightOffest: -0.76
+    - _swayHeightOffest: -0.12
     - _swayHeightOffset: 0.25
     - _windStrengthX: 0.06
     - _windStrengthY: 0.08

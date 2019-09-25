@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5443423931462263094}
   - component: {fileID: 5443423931461493014}
   - component: {fileID: 5443423931460363222}
-  - component: {fileID: 2526572620308981802}
   m_Layer: 0
   m_Name: Hosta_Y_01
   m_TagString: Untagged
@@ -79,16 +78,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2526572620308981802
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5443423931462368534}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.63, y: 0.26630268, z: 0.39}
-  m_Center: {x: -0.02290243, y: 0.1319982, z: 0.057850868}

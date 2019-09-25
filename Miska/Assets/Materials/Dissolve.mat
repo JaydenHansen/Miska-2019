@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_7F023B2:
-        m_Texture: {fileID: 2800000, guid: a65b65b6ce8030c42b3cf4d42e326c0b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9f03531d87519f34b8d0594cacf8af30, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AnisotropyMap:
@@ -141,7 +141,7 @@ Material:
     - _DisplacementLockObjectScale: 1
     - _DisplacementLockTilingScale: 1
     - _DisplacementMode: 0
-    - _DissolveSlider: 61.502995
+    - _DissolveSlider: -61
     - _DistortionBlendMode: 0
     - _DistortionBlurBlendMode: 0
     - _DistortionBlurDstBlend: 0

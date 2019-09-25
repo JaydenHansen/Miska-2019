@@ -12,7 +12,10 @@ public class PhotoMode : MonoBehaviour
     Animator                      m_animator;
     GameObject              m_PopupOverlay;
 
-    public Camera        m_virtCam;
+    public GameObject          m_virtCamOBJ;
+    Camera                                      m_virtCam;
+    PhotoSubject                        m_virtCamScript;
+
     public PhotoAlbum m_album;
 
     private void Start()
@@ -23,6 +26,8 @@ public class PhotoMode : MonoBehaviour
         m_viewfinderTrans = m_photoOverlay.GetComponentInChildren<RectTransform>();
         m_animator = m_photoOverlay.GetComponentInChildren<Animator>();
         m_PopupOverlay = GameObject.Find("PopUpCanvas");
+        m_virtCam = m_virtCamOBJ.GetComponent<Camera>();
+        m_virtCamScript = m_virtCamOBJ.GetComponent<PhotoSubject>();
         m_virtCam.enabled = false;
     }
 
@@ -62,6 +67,7 @@ public class PhotoMode : MonoBehaviour
         yield return new WaitForSeconds(.05f);
 
         RenderToImage();
+        m_virtCamScript.RunIdentifier();
         yield return new WaitForSeconds(.05f);
 
         m_photoOverlay.SetActive(true);

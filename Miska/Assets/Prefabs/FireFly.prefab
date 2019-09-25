@@ -57,6 +57,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8194f59e3cfe81846bb63dbb87a1f19f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 06bdce458b8112f459eb9fdd690c2957, type: 3}
   m_Color: {r: 0.2569139, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,8 +93,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ad3508433c45c44eaf8c394d0478354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_forwardDist: 0
+  m_forwardDist: 2
   m_circleRadius: 1
-  m_speed: 1
+  m_speed: 3
   m_player: {fileID: 0}
+  m_camera: {fileID: 0}
   m_terrain: {fileID: 0}

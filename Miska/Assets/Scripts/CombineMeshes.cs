@@ -7,6 +7,8 @@ public class CombineMeshes : MonoBehaviour
 {
     public MeshFilter[] m_subMeshes;
     public bool m_useChildren;
+    public bool m_destroySub;
+    public bool m_destroyScript;
 
     MeshFilter m_combined;
 
@@ -76,9 +78,48 @@ public class CombineMeshes : MonoBehaviour
                 for (int i = 0; i < objectCount; i++)
                 {
                     CombineInstance[] temp = combineStorage[i].ToArray();
-
+                   
                     Mesh combinedMesh = new Mesh();
-                    combinedMesh.CombineMeshes(temp);
+                    combinedMesh.CombineMeshes(temp, false);
+                    
+                    List<int[]> subMeshes = new List<int[]>();
+                    for (int j = 0; j < combinedMesh.subMeshCount; j++)
+                    {
+                        subMeshes.Add(combinedMesh.GetTriangles(j));
+                    }
+
+                    combinedMesh.subMeshCount = sameMeshes[0].sharedMesh.subMeshCount;
+
+                    List<List<int>> newSubMeshes = new List<List<int>>();
+                    for (int j = 0; j < combinedMesh.subMeshCount; j++)
+                    {
+                        List<int> currentSubMesh = new List<int>();
+                        int index = 0;
+                        for (int k = 0; k < subMeshes.Count; k++)
+                        {
+                            if (index == j)
+                            {
+                                currentSubMesh.AddRange(subMeshes[k]);
+                            }
+
+                            if (index++ == combinedMesh.subMeshCount)
+                                index = 0;
+                        }
+                        newSubMeshes.Add(currentSubMesh);
+                    }
+
+                    for (int j = 0; j < newSubMeshes.Count; j++)
+                    {
+                        combinedMesh.SetTriangles(newSubMeshes[j], j);
+                    }
+
+                    int[] submesh1 = combinedMesh.GetTriangles(0);
+                    int[] submesh2 = combinedMesh.GetTriangles(1);
+
+                    combinedMesh.Optimize();
+                    combinedMesh.RecalculateBounds();
+                    combinedMesh.RecalculateNormals();
+
                     combinedMesh.name = sameMeshes[0].sharedMesh.name + " combined " + i.ToString();
 
                     GameObject newObject = new GameObject(sameMeshes[0].sharedMesh.name + " combined " + i.ToString());
@@ -112,24 +153,70 @@ public class CombineMeshes : MonoBehaviour
             }
         }
     }
+
+    public void CombineIntoParent()
+    {
+        m_subMeshes = GetComponentsInChildren<MeshFilter>();        
+        if (m_subMeshes.Length == 0)
+        {
+            Debug.Log("No MeshFilters found");
+            return;
+        }
+
+        List<CombineInstance> combineStorage = new List<CombineInstance>();
+        for (int i = 0; i < m_subMeshes.Length; i++)
+        {
+            CombineInstance newInstance = new CombineInstance();
+            newInstance.mesh = m_subMeshes[i].sharedMesh;
+
+            Matrix4x4 matrix = Matrix4x4.identity;
+            if (i != 0)
+                matrix.SetTRS(m_subMeshes[i].transform.localPosition, m_subMeshes[i].transform.localRotation, m_subMeshes[i].transform.localScale);
+
+            newInstance.transform = matrix;
+            combineStorage.Add(newInstance);
+            if (m_destroySub && i != 0)
+            {
+                DestroyImmediate(m_subMeshes[i].gameObject);
+            }
+        }
+
+        Mesh combinedMesh = new Mesh();
+        combinedMesh.CombineMeshes(combineStorage.ToArray());
+
+        m_subMeshes[0].sharedMesh = combinedMesh;   
+
+        if (m_destroyScript)
+        {
+            DestroyImmediate(this);
+        }
+    }
 }
 
 #if UNITY_EDITOR
 [CustomEditor(typeof(CombineMeshes))]
+[CanEditMultipleObjects]
 public class CombineMeshesInspector : Editor
 {
-    CombineMeshes m_script;
+    SerializedObject m_script;
 
     private void OnEnable()
     {
-        m_script = (CombineMeshes)target;        
+        m_script = serializedObject;
     }
 
     public override void OnInspectorGUI()
     {
+        SerializedProperty useChildren = m_script.FindProperty("m_useChildren");
+        SerializedProperty destroySub = m_script.FindProperty("m_destroySub");
+        SerializedProperty destroyScript = m_script.FindProperty("m_destroyScript");
+
         //DrawDefaultInspector();
-        m_script.m_useChildren = EditorGUILayout.Toggle("Use Children", m_script.m_useChildren);
-        if (!m_script.m_useChildren)
+        useChildren.boolValue = EditorGUILayout.Toggle("Use Children", useChildren.boolValue);
+        destroySub.boolValue = EditorGUILayout.Toggle("Destroy SubMeshes", destroySub.boolValue);
+        destroyScript.boolValue = EditorGUILayout.Toggle("Destroy Script", destroyScript.boolValue);
+
+        if (!useChildren.boolValue)
         {
             SerializedProperty subMeshes = serializedObject.FindProperty("m_subMeshes");
             EditorGUILayout.PropertyField(subMeshes, true);
@@ -138,7 +225,18 @@ public class CombineMeshesInspector : Editor
 
         if (GUILayout.Button("Combine"))
         {
-            m_script.Combine();
+            foreach (Object script in m_script.targetObjects)
+            {
+                ((CombineMeshes)script).Combine();
+            }
+        }
+
+        if (GUILayout.Button("Combine into parent"))
+        {
+            foreach (Object script in m_script.targetObjects)
+            {
+                ((CombineMeshes)script).CombineIntoParent();
+            }
         }
     }
 }

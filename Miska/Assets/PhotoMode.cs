@@ -26,6 +26,7 @@ public class PhotoMode : MonoBehaviour
         m_viewfinderTrans = m_photoOverlay.GetComponentInChildren<RectTransform>();
         m_animator = m_photoOverlay.GetComponentInChildren<Animator>();
         m_PopupOverlay = GameObject.Find("PopUpCanvas");
+        m_PopupOverlay.SetActive(false);
         m_virtCam = m_virtCamOBJ.GetComponent<Camera>();
         m_virtCamScript = m_virtCamOBJ.GetComponent<PhotoSubject>();
         m_virtCam.enabled = false;
@@ -38,7 +39,7 @@ public class PhotoMode : MonoBehaviour
         {
             if(m_photoModeActive == false)
             {
-                m_PopupOverlay.SetActive(false);
+                m_PopupOverlay.SetActive(true);
                 m_photoModeActive = true;
                 Debug.Log("Photo Mode engaged");
                 //m_photoOverlay.SetActive(true);
@@ -46,7 +47,7 @@ public class PhotoMode : MonoBehaviour
             }
             else
             {
-                m_PopupOverlay.SetActive(true);
+                m_PopupOverlay.SetActive(false);
                 m_animator.SetTrigger("TransOUT");
                 Debug.Log("Photo Mode disengaged");
                 m_photoModeActive = false;
@@ -67,7 +68,7 @@ public class PhotoMode : MonoBehaviour
         yield return new WaitForSeconds(.05f);
 
         RenderToImage();
-        m_virtCamScript.RunIdentifier();
+        //m_virtCamScript.RunIdentifier();
         yield return new WaitForSeconds(.05f);
 
         m_photoOverlay.SetActive(true);
@@ -113,7 +114,5 @@ public class PhotoMode : MonoBehaviour
         System.IO.File.WriteAllBytes(filename, bytes);
 
         m_album.AddNewPhoto(filename);
-
-
      }
 }

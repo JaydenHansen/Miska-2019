@@ -27,12 +27,12 @@ public class PhotoAlbum : MonoBehaviour
     //    public Texture2D image;
     //}
 
-    List<FileInfo>m_picsInfo;
+    List<string>m_picsFileNames;
 
     string          m_fullpath;
     string          m_folderPath;
     bool            m_isShowingAlbum;
-    Canvas          m_canvas;
+    public Canvas          m_canvas;
     RawImage        m_photoOBJ;
     int             m_currPicIndex;
 
@@ -43,7 +43,7 @@ public class PhotoAlbum : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_picsInfo = new List<FileInfo>();
+        m_picsFileNames = new List<string>();
         m_folderPath = "/Resources/Photos";
         m_fullpath = Application.dataPath + m_folderPath;
         m_isShowingAlbum = false;
@@ -51,7 +51,6 @@ public class PhotoAlbum : MonoBehaviour
         GetFileArray();
         m_photoOBJ = gameObject.GetComponentInChildren<RawImage>();
         //m_photoOBJ.enabled = false;
-        m_canvas = gameObject.GetComponentInChildren<Canvas>();
         
     }
 
@@ -61,7 +60,7 @@ public class PhotoAlbum : MonoBehaviour
         var picsInfo = dir.GetFiles("*.png");
         foreach (var file in picsInfo)
         {
-            m_picsInfo. Add(file);
+            m_picsFileNames. Add(file.Name);
         }
     }
 
@@ -89,7 +88,7 @@ public class PhotoAlbum : MonoBehaviour
             {
                 if (m_currPicIndex == 0)
                 {
-                    m_currPicIndex = m_picsInfo.Count - 1;
+                    m_currPicIndex = m_picsFileNames.Count - 1;
                 }
                 else
                 {
@@ -99,7 +98,7 @@ public class PhotoAlbum : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                if (m_currPicIndex == m_picsInfo.Count - 1)
+                if (m_currPicIndex == m_picsFileNames.Count - 1)
                 {
                     m_currPicIndex = 0;
                 }
@@ -115,9 +114,9 @@ public class PhotoAlbum : MonoBehaviour
     private void LoadIndexedPhotoToTexture()
     {
 
-        string PhotoPath = m_picsInfo[m_currPicIndex].Name;
-        string loadPath = "Photos/" + Path.GetFileNameWithoutExtension(PhotoPath);
-        var texture = Resources.Load<Texture2D>(loadPath);
+        string PhotoPath = m_picsFileNames[m_currPicIndex];
+        string loadPath = Application.dataPath + "/Resources/Photos/" + PhotoPath;
+        var texture = LoadPNG(loadPath);
         m_photoOBJ.texture = texture;
 
         //if (m_picsInfo[m_currPicIndex].isFile)
@@ -131,10 +130,25 @@ public class PhotoAlbum : MonoBehaviour
        
     }
 
+    Texture2D LoadPNG(string filePath)
+    {
+
+        Texture2D tex = null;
+        byte[] fileData;
+
+        if (File.Exists(filePath))
+        {
+            fileData = File.ReadAllBytes(filePath);
+            tex = new Texture2D(2, 2);
+            tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
+        }
+        return tex;
+    }
+
     public void AddNewPhoto(string filename)
     {
-        FileInfo fi = new FileInfo(filename);
-                m_picsInfo.Add(fi);
-        Debug.Break();
-            }
+        string saveFile = Path.GetFileName(filename);
+
+        m_picsFileNames.Add(saveFile);
+     }
 }

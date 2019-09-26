@@ -5,6 +5,7 @@ using UnityEngine;
 public class Trash : MonoBehaviour
 {    
     public float m_delay;
+    public bool m_disableOldParent;
 
     float m_timer;
     Transform m_parent;
@@ -30,9 +31,12 @@ public class Trash : MonoBehaviour
 
             if (m_timer <= 0)
             {
-                transform.parent = m_parent;
                 m_bottleSound.Post(gameObject);
-                m_parent.gameObject.SetActive(false);                
+                transform.parent = m_parent;
+                if (m_disableOldParent)                
+                    m_parent.gameObject.SetActive(false);                
+                else                
+                    gameObject.SetActive(false);                
             }
         }
     }

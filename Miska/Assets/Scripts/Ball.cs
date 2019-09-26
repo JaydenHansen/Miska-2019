@@ -77,7 +77,7 @@ public class Ball : MonoBehaviour
             transform.localPosition = Vector3.zero;
             m_inHand = true;
             m_rigidbody.isKinematic = true;
-            m_qtBase.enabled = false;
+            //m_qtBase.enabled = false;
             m_collider.enabled = false;
         }
     }

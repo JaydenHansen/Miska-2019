@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class PointOfInterest : MonoBehaviour
 {
     public GameObject m_player;
-    public PopUp m_popUp;
-    public Text m_trashCount;
+    public HUD_UI m_hudUI;
     public TrashCan m_trashCan;
     public Vector3 m_size;
 
@@ -31,49 +30,39 @@ public class PointOfInterest : MonoBehaviour
             {
                 if (m_trashCan.TrashLeft != 0)
                 {
-                    m_popUp.StartPopUp(IconType.Rubbish, false);
-                    m_trashCount.text = (m_trashCan.m_requiredTrash - m_trashCan.TrashLeft) + "/" + m_trashCan.m_requiredTrash;
-                    m_trashCount.enabled = true;
+                    m_hudUI.SetupTrashScene(m_trashCan.m_requiredTrash, m_trashCan.TrashLeft);
                 }
                 else
                 {
-                    m_popUp.StartPopUp(IconType.Bin, false);
+                    m_hudUI.SetupDisposeScene();
                 }
             }
             else if (m_playerInArea && !playerInArea) // Player Exit
             {
-                m_popUp.StopPopUp();
-                m_trashCount.enabled = false;
+                m_hudUI.OnTrashAreaExit();
             }
-            else if (m_playerInArea && playerInArea) // Player Stay
-            {
-                if (m_trashCan.TrashLeft != 0)
-                {
-                    m_trashCount.text = (m_trashCan.m_requiredTrash - m_trashCan.TrashLeft) + "/" + m_trashCan.m_requiredTrash;
-                }
-                else if (m_popUp.m_currentIcon == IconType.Rubbish)
-                {
-                    m_popUp.StartPopUp(IconType.Bin, false);
-                    m_trashCount.enabled = false;
-                }                
-            }
+            //else if (m_playerInArea && playerInArea) // Player Stay
+            //{
+            //    if (m_trashCan.TrashLeft != 0)
+            //    {
+            //        m_trashCount.text = (m_trashCan.m_requiredTrash - m_trashCan.TrashLeft) + "/" + m_trashCan.m_requiredTrash;
+            //    }              
+            //}
 
             m_playerInArea = playerInArea;
         }
         else if (m_playerInArea)
         {
-            m_popUp.StopPopUp();
-            m_trashCount.enabled = false;
-            m_playerInArea = false;
+            m_hudUI.OnAllTrashDisposed();
         }
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, transform.localScale);
-        Gizmos.DrawWireCube(Vector3.zero, m_size);
-        Gizmos.matrix = Matrix4x4.identity;
-        Gizmos.color = Color.white;
-    }
+    //private void OnDrawGizmosSelected()
+    //{
+    //    Gizmos.color = Color.green;
+    //    Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, transform.localScale);
+    //    Gizmos.DrawWireCube(Vector3.zero, m_size);
+    //    Gizmos.matrix = Matrix4x4.identity;
+    //    Gizmos.color = Color.white;
+    //}
 }

@@ -11,6 +11,7 @@ public class Fox : MonoBehaviour
     NavMeshAgent m_agent;
     Animator m_animator;
     int m_currentWaypoint;
+    public AK.Wwise.Event m_stepSound;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +60,11 @@ public class Fox : MonoBehaviour
     private void FixedUpdate()
     {
        
+    }
+
+    public void PlayStepSound()
+    {
+        m_stepSound.Post(gameObject);
     }
 
     //private void OnDrawGizmosSelected()

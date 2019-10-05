@@ -75,6 +75,7 @@ public class HUD_UI : MonoBehaviour
 
     void SetupCheckboxes(int areaTrash)
     {
+        ResetArrayValues();
         for (int i = 0; i < 5; i++)
         {
             if (i < areaTrash)
@@ -136,19 +137,21 @@ public class HUD_UI : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
 
         SetBoxChecked(i, true);
+        //PlaySound
     }
 
     IEnumerator AllTrashCollected()
     {
         m_isAllTrashPickedUp = true;
+        m_animator.SetTrigger("TransTO_FullDetail");
         RawImage ri = m_GoalText.GetComponent<RawImage>();
-        ri.texture = 
+        ri.texture = m_gt_pickupDone;
+        //Playsound
         m_animator.SetTrigger("TransTO_Inactive");
         yield return new WaitForSeconds(0.5f);
 
         SetupCheckboxes(0);
         ResetArrayValues();
-        
         ri.texture = m_gt_dispose;
         m_animator.SetTrigger("TransTO_FullDetail");
         yield return null;

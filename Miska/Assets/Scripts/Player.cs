@@ -187,17 +187,20 @@ public class Player : MonoBehaviour
         CollisionFlags collision = m_characterController.Move((m_velocity * Time.fixedDeltaTime) + (m_gravity * Time.fixedDeltaTime));
     }
 
-    public void SetPlayerSitting()
+    public void SetPlayerSitting(bool isSitting)
     {
-        AkSoundEngine.SetState("PlayerState", "Sitting");
-        Animator anim = GameObject.Find("Headbob").GetComponent<Animator>();
-        anim.SetTrigger("Sitting");
+        if (isSitting)
+        {
+            AkSoundEngine.SetState("PlayerState", "Sitting");
+            Animator anim = GameObject.Find("Headbob").GetComponent<Animator>();
+            anim.SetTrigger("Sitting");
+        }
+        else
+        {
+            AkSoundEngine.SetState("PlayerState", "Walking");
+        }
     }
 
-    public void ExitPlayerSitting()
-    {
-        AkSoundEngine.SetState("PlayerState", "Walking");
-    }
 
     //private void OnControllerColliderHit(ControllerColliderHit hit)
     //{

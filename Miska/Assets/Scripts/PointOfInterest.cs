@@ -51,10 +51,10 @@ public class PointOfInterest : MonoBehaviour
 
             m_playerInArea = playerInArea;
         }
-        else if (m_playerInArea)
-        {
-            m_hudUI.OnAllTrashDisposed();
-        }
+        //else if (m_playerInArea)
+        //{
+        //    m_hudUI.OnAllTrashDisposed();
+        //}
     }
 
     //private void OnDrawGizmosSelected()

@@ -12,7 +12,12 @@ public class HUD_UI : MonoBehaviour
     Animator m_animator;
     public bool m_isAllTrashPickedUp;
     int m_currentAreaTrash;
-    public Texture2D m_box_empty, m_box_checked, m_gt_pickup, m_gt_dispose, m_gt_pickupDone;
+    public Texture2D m_box_empty, m_box_checked;
+    public Texture2D m_gt_pickup3, m_gt_pickup3Done, m_gt_pickup4, m_gt_pickup4Done, m_gt_pickup5, m_gt_pickup5Done;
+
+    Texture2D thisArea_gt_pickup, thisArea_gt_pickupDone;
+
+    public Texture2D m_gt_dispose, m_gt_disposeDone;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +41,24 @@ public class HUD_UI : MonoBehaviour
                 CheckOffNextBox();
             }
         }
+
+        if (totalTrash == 3)
+        {
+            thisArea_gt_pickup = m_gt_pickup3;
+            thisArea_gt_pickupDone = m_gt_pickup3Done;
+        }
+        else if (totalTrash == 4)
+        {
+            thisArea_gt_pickup = m_gt_pickup4;
+            thisArea_gt_pickupDone = m_gt_pickup4Done;
+        }
+        else if (totalTrash == 5)
+        {
+            thisArea_gt_pickup = m_gt_pickup5;
+            thisArea_gt_pickupDone = m_gt_pickup5Done;
+        }
+        RawImage ri = m_GoalText.GetComponent<RawImage>();
+        ri.texture = thisArea_gt_pickup;
         StartCoroutine("IntialTransition");
     }
 
@@ -144,11 +167,16 @@ public class HUD_UI : MonoBehaviour
     {
         m_isAllTrashPickedUp = true;
         m_animator.SetTrigger("TransTO_FullDetail");
+        yield return new WaitForSeconds(2.0f);
+
         RawImage ri = m_GoalText.GetComponent<RawImage>();
-        ri.texture = m_gt_pickupDone;
+        ri.texture = thisArea_gt_pickupDone;
         //Playsound
+        yield return new WaitForSeconds(1.5f);
+
+
         m_animator.SetTrigger("TransTO_Inactive");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
 
         SetupCheckboxes(0);
         ResetArrayValues();

@@ -21,6 +21,7 @@ public class Book : MonoBehaviour
     public Animation m_pageTurn;
     public float m_openDelay;
     public bool m_autoClose;
+    public bool m_manualControl = true;
 
     List<GameObject> m_pages;
     int m_currentPage;
@@ -74,7 +75,7 @@ public class Book : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab) && !m_pageTurn.isPlaying)
+        if (m_manualControl && Input.GetKeyDown(KeyCode.Tab) && !m_pageTurn.isPlaying)
         {
             if (m_open)
             {

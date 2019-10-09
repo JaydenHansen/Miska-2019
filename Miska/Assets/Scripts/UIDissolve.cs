@@ -9,13 +9,18 @@ public class UIDissolve : MonoBehaviour
     public float m_dissolveSpeed;
     public float m_dissolveRandomOffset;
     public Vector2 m_range;
+    public bool m_useDistance;
+    [Tooltip("X: Distance where image is full Y: Distance where image is gone")]
+    public Vector2 m_dissolveDistance;
+    public Transform m_player;
+    public Transform m_cameraArm;
 
     bool m_active;
     bool m_alreadyActivated;
     float m_timer;
     bool m_direction;
 
-    // Start is called before the first frame update
+    // Start is called before the first frame updated
     void Start()
     {
         foreach (Image image in m_image)
@@ -27,19 +32,33 @@ public class UIDissolve : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_active)
-        {
-            m_timer += Time.deltaTime;
+        transform.forward = m_cameraArm.forward;
 
+        if (m_useDistance)
+        {
+            float distance = (transform.position - m_player.position).magnitude;
             for (int i = 0; i < m_image.Length; i++)
             {
-                Random.InitState(i);
-                float newValue = Remap(m_timer / (m_dissolveSpeed + Random.Range(-m_dissolveRandomOffset, m_dissolveRandomOffset)), 0, 1, m_range.x, m_range.y) * (m_direction ? 1 : -1);
-                m_image[i].material.SetFloat("_DissolveSlider", newValue);                
+                float newValue = Remap(1f - Mathf.Clamp01((distance - m_dissolveDistance.x) / (m_dissolveDistance.y - m_dissolveDistance.x)), 0, 1, m_range.x, m_range.y);
+                m_image[i].material.SetFloat("_DissolveSlider", newValue);
             }
+        }
+        else
+        {
+            if (m_active)
+            {
+                m_timer += Time.deltaTime;
 
-            if (m_timer > m_dissolveSpeed)
-                m_active = false;
+                for (int i = 0; i < m_image.Length; i++)
+                {
+                    Random.InitState(i);
+                    float newValue = Remap(m_timer / (m_dissolveSpeed + Random.Range(-m_dissolveRandomOffset, m_dissolveRandomOffset)), 0, 1, m_range.x, m_range.y) * (m_direction ? 1 : -1);
+                    m_image[i].material.SetFloat("_DissolveSlider", newValue);
+                }
+
+                if (m_timer > m_dissolveSpeed)
+                    m_active = false;
+            }
         }
     }
 

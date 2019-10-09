@@ -14,6 +14,8 @@ public class Ball : MonoBehaviour
     public float m_throwStrength;
     public Transform m_cameraArm;
     public Collider m_collider;
+    public DogArea m_area;
+    public Transform m_mouthTransform;
 
     bool m_inHand = false;
     Rigidbody m_rigidbody;
@@ -42,6 +44,14 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (m_parent == Parent.None)
+        {
+            if (!m_area.Contains(transform.position))
+            {
+                DogPickup(m_mouthTransform);
+            }
+        }
+
         if (m_inHand && !m_onThisFrame && m_parent == Parent.Player && Input.GetKeyDown(KeyCode.Mouse0))
         {
             m_inHand = false;

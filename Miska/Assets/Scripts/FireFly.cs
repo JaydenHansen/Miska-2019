@@ -50,12 +50,17 @@ public class FireFly : MonoBehaviour
     }
     void FleeTerrain()
     {
-        Vector3 t2f = new Vector3(0, transform.position.y, 0) - new Vector3(0, m_terrain.SampleHeight(transform.position), 0);
+        float terrainHeight = m_terrain.SampleHeight(transform.position);
+        Vector3 t2f = new Vector3(0, transform.position.y, 0) - new Vector3(0, terrainHeight, 0);
         if (t2f.sqrMagnitude < 1)
         {
             t2f.y = Mathf.Abs(t2f.y);
             m_velocity += (t2f.normalized - m_velocity) * Time.deltaTime;
         }        
+        if (transform.position.y < terrainHeight)
+        {
+            transform.position = new Vector3(transform.position.x, terrainHeight, transform.position.z);
+        }
     }
 
     void StayInArea()

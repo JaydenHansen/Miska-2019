@@ -82,7 +82,7 @@ public class Book : MonoBehaviour
             }
             else if (!m_open)
             {
-                OpenBook();
+                OpenBook(0);
             }
         }
         if (m_open)
@@ -107,20 +107,30 @@ public class Book : MonoBehaviour
         }
     }
 
-    public void OpenBook()
+    public void OpenBook(int page)
     {
-        if (!m_pageTurn.isPlaying)
+        if (!m_pageTurn.isPlaying && !m_open)
         {
-            m_currentPage = 0;
+            m_currentPage = page;
             m_leftPages.gameObject.SetActive(true);
             m_rightPages.gameObject.SetActive(true);
-            if (m_nextPageButton)
+
+            if (m_nextPageButton && m_currentPage + 1 <= Mathf.CeilToInt(m_pages.Count / 2f) - 1)
                 m_nextPageButton.SetActive(true);
+            else if (m_nextPageButton)
+                m_nextPageButton.SetActive(false);
+
+            if (m_prevPageButton && m_currentPage - 1 >= 0)
+                m_prevPageButton.SetActive(true);
+            else if (m_prevPageButton)
+                m_prevPageButton.SetActive(false);
+
             m_pages[m_currentPage * 2].SetActive(true);
             m_pages[m_currentPage * 2 + 1].SetActive(true);
 
             if (m_player)
                 m_player.enabled = false;
+
             transform.GetChild(0).gameObject.SetActive(true);
             m_staticLeftPage.SetActive(true);
             m_staticRightPage.SetActive(true);

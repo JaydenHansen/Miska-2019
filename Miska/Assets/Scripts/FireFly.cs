@@ -10,8 +10,10 @@ public class FireFly : MonoBehaviour
     public Transform m_player;
     public Transform m_camera;
     public Terrain m_terrain;
+    public FireFlySpawner m_spawner;
 
     Vector3 m_velocity;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,7 @@ public class FireFly : MonoBehaviour
         Wander();
         Flee();
         FleeTerrain();
+        StayInArea();
 
         transform.position += m_velocity * Time.deltaTime * m_speed;
     }
@@ -50,7 +53,18 @@ public class FireFly : MonoBehaviour
         Vector3 t2f = new Vector3(0, transform.position.y, 0) - new Vector3(0, m_terrain.SampleHeight(transform.position), 0);
         if (t2f.sqrMagnitude < 1)
         {
+            t2f.y = Mathf.Abs(t2f.y);
             m_velocity += (t2f.normalized - m_velocity) * Time.deltaTime;
+        }        
+    }
+
+    void StayInArea()
+    {
+        Vector3 direction;
+        float distance = m_spawner.DistanceFromSpawn(transform.position, out direction);
+        if (distance > m_spawner.m_radius)
+        {
+            m_velocity += (direction - m_velocity) * Time.deltaTime;
         }
     }
 

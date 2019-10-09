@@ -19,6 +19,8 @@ public class HUD_UI : MonoBehaviour
 
     public Texture2D m_gt_dispose, m_gt_disposeDone;
 
+    public AK.Wwise.Event m_checkOffSound, m_slideSound, m_stampSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -155,12 +157,17 @@ public class HUD_UI : MonoBehaviour
         m_animator.SetTrigger("TransTO_Inactive");
     }
 
+    public void OnTransition()
+    {
+        m_slideSound.Post(gameObject);
+    }
+
     IEnumerator CheckOff(int i)
     {
         yield return new WaitForSeconds(0.8f);
 
         SetBoxChecked(i, true);
-        //PlaySound
+        m_checkOffSound.Post(gameObject);
     }
 
     IEnumerator AllTrashCollected()
@@ -171,7 +178,7 @@ public class HUD_UI : MonoBehaviour
 
         RawImage ri = m_GoalText.GetComponent<RawImage>();
         ri.texture = thisArea_gt_pickupDone;
-        //Playsound
+        m_stampSound.Post(gameObject);
         yield return new WaitForSeconds(1.5f);
 
 

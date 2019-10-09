@@ -26,7 +26,10 @@ namespace AK
         static const AkUniqueID OBJ_ROCKCOLLIDE = 614124066U;
         static const AkUniqueID OBJ_ROCKSTACKFALLS = 3472354586U;
         static const AkUniqueID PLAY_CNNWLK_GRASS = 721889916U;
+        static const AkUniqueID PLAY_TYPEWRITER_SLIDES = 398727428U;
         static const AkUniqueID PLYR_FOOTSTEP = 4254456693U;
+        static const AkUniqueID UI_CHECKOFF = 1901013417U;
+        static const AkUniqueID UI_STAMP = 866718607U;
     } // namespace EVENTS
 
     namespace STATES

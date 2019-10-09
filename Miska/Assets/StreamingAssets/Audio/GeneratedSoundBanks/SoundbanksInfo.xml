@@ -28,8 +28,11 @@
 				<Event Id="4108701605" Name="OBJ_FossilPOI" ObjectPath="\Events\Default Work Unit\LOCAL\ROCKS\OBJ_FossilPOI"/>
 				<Event Id="614124066" Name="OBJ_RockCollide" ObjectPath="\Events\Default Work Unit\LOCAL\ROCKS\OBJ_RockCollide"/>
 				<Event Id="3472354586" Name="OBJ_RockStackFalls" ObjectPath="\Events\Default Work Unit\LOCAL\ROCKS\OBJ_RockStackFalls"/>
-				<Event Id="721889916" Name="Play_CNNWLK_Grass" ObjectPath="\Events\Default Work Unit\Play_CNNWLK_Grass"/>
+				<Event Id="721889916" Name="Play_CNNWLK_Grass" ObjectPath="\Events\Default Work Unit\GLOBAL\Play_CNNWLK_Grass"/>
+				<Event Id="398727428" Name="Play_Typewriter_Slides" ObjectPath="\Events\Default Work Unit\Play_Typewriter_Slides"/>
 				<Event Id="4254456693" Name="PLYR_Footstep" ObjectPath="\Events\Default Work Unit\GLOBAL\PLAYER\PLYR_Footstep"/>
+				<Event Id="1901013417" Name="UI_CheckOff" ObjectPath="\Events\Default Work Unit\GLOBAL\UI\UI_CheckOff"/>
+				<Event Id="866718607" Name="UI_Stamp" ObjectPath="\Events\Default Work Unit\GLOBAL\UI\UI_Stamp"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="31473344" Language="SFX">
@@ -44,6 +47,10 @@
 					<ShortName>grasswalk3.wav</ShortName>
 					<Path>SFX\grasswalk3_10C4C929.wem</Path>
 				</File>
+				<File Id="45904059" Language="SFX">
+					<ShortName>Levers_Sliders_227-ss.wav</ShortName>
+					<Path>SFX\Levers_Sliders_227-ss_C629F2C0.wem</Path>
+				</File>
 				<File Id="58940914" Language="SFX">
 					<ShortName>Glass bottle 2.wav</ShortName>
 					<Path>SFX\Glass bottle 2_10C4C929.wem</Path>
@@ -55,6 +62,10 @@
 				<File Id="72370513" Language="SFX">
 					<ShortName>canteen_run.wav</ShortName>
 					<Path>SFX\canteen_run_10C4C929.wem</Path>
+				</File>
+				<File Id="85579563" Language="SFX">
+					<ShortName>Levers_Sliders_227-ss.wav</ShortName>
+					<Path>SFX\Levers_Sliders_227-ss_106A4F4F.wem</Path>
 				</File>
 				<File Id="95813090" Language="SFX">
 					<ShortName>CHAR_KeyJingle1.wav</ShortName>
@@ -160,6 +171,10 @@
 					<ShortName>dog_walk3.wav</ShortName>
 					<Path>SFX\dog_walk3_10C4C929.wem</Path>
 				</File>
+				<File Id="494594126" Language="SFX">
+					<ShortName>Levers_Sliders_227-ss.wav</ShortName>
+					<Path>SFX\Levers_Sliders_227-ss_D234D260.wem</Path>
+				</File>
 				<File Id="512137132" Language="SFX">
 					<ShortName>Bottles16.wav</ShortName>
 					<Path>SFX\Bottles16_10C4C929.wem</Path>
@@ -167,6 +182,10 @@
 				<File Id="520141947" Language="SFX">
 					<ShortName>forest BED.wav</ShortName>
 					<Path>SFX\forest BED_10C4C929.wem</Path>
+				</File>
+				<File Id="536595712" Language="SFX">
+					<ShortName>Levers_Sliders_227-ss.wav</ShortName>
+					<Path>SFX\Levers_Sliders_227-ss_AD245591.wem</Path>
 				</File>
 				<File Id="542045413" Language="SFX">
 					<ShortName>WATER LAPS- LAKESIDE.wav</ShortName>
@@ -183,6 +202,10 @@
 				<File Id="640444701" Language="SFX">
 					<ShortName>grassrun3.wav</ShortName>
 					<Path>SFX\grassrun3_10C4C929.wem</Path>
+				</File>
+				<File Id="663238036" Language="SFX">
+					<ShortName>Levers_Sliders_227-ss.wav</ShortName>
+					<Path>SFX\Levers_Sliders_227-ss_A9401F6C.wem</Path>
 				</File>
 				<File Id="672269398" Language="SFX">
 					<ShortName>Drop_Masonry_SoftSurface_Heavy_01.wav</ShortName>
@@ -264,6 +287,10 @@
 					<ShortName>CHAR_StepDirt7.wav</ShortName>
 					<Path>SFX\CHAR_StepDirt7_10C4C929.wem</Path>
 				</File>
+				<File Id="1025837284" Language="SFX">
+					<ShortName>Stamp self inking push down slow click_BLASTWAVEFX_15434.wav</ShortName>
+					<Path>SFX\Stamp self inking push down slow click_BLASTWAVEFX_15434_10C4C929.wem</Path>
+				</File>
 				<File Id="1043040951" Language="SFX">
 					<ShortName>dog_walk2.wav</ShortName>
 					<Path>SFX\dog_walk2_10C4C929.wem</Path>
@@ -276,9 +303,17 @@
 					<ShortName>grasswalk2.wav</ShortName>
 					<Path>SFX\grasswalk2_10C4C929.wem</Path>
 				</File>
+				<File Id="1053468266" Language="SFX">
+					<ShortName>Antique punchy typewriter typing x1 with a scrape.wav</ShortName>
+					<Path>SFX\Antique punchy typewriter typing x1 with a scrape_10C4C929.wem</Path>
+				</File>
 				<File Id="1058375346" Language="SFX">
 					<ShortName>dog_walk1.wav</ShortName>
 					<Path>SFX\dog_walk1_10C4C929.wem</Path>
+				</File>
+				<File Id="1067598789" Language="SFX">
+					<ShortName>ZOOM0057_TrLR.WAV</ShortName>
+					<Path>SFX\ZOOM0057_TrLR_428351AB.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

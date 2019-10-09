@@ -56,6 +56,28 @@
 						<Folder Name="UI" ID="{69F8DF61-2D66-464A-9214-169C833A2F04}" ShortID="254223084">
 							<ChildrenList>
 								<Event Name="UI_POIComplete" ID="{03A9A18E-E2E3-450A-B48E-1A624D7C41FB}"/>
+								<Event Name="UI_Stamp" ID="{A7C99628-983D-4981-B062-230480BB80EC}">
+									<ChildrenList>
+										<Action Name="" ID="{5340C9BB-18CE-47A3-8983-C69F91B37FB8}" ShortID="112339251">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Self-Inking Stamp" ID="{BD7245AE-24FA-457D-99E2-ED802F21D095}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="UI_CheckOff" ID="{E0EF90B5-ACE8-4FFD-8410-8906EE9E7718}">
+									<ChildrenList>
+										<Action Name="" ID="{E7E66543-8727-4A5D-9A27-F827388F3C13}" ShortID="791895521">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Typewriter_CheckOff" ID="{15421EEC-A839-4A87-B53F-338EDC092D49}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Event Name="Start_Music" ID="{6359C87C-F9C8-4611-8CB7-187105B645DD}"/>
@@ -111,6 +133,17 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Event Name="Play_CNNWLK_Grass" ID="{72964A1C-C518-4CF3-B2C0-438168CCF621}">
+							<ChildrenList>
+								<Action Name="" ID="{AC7E0DA9-9B77-4BC6-9687-4DF2F0D2CC5E}" ShortID="261346876">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="CNNWLK_Grass" ID="{FEC6C7E5-D916-4591-AD20-5817F7FA5AEE}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="LOCAL" ID="{A2325219-5657-403E-BB10-B659926BDDD1}" ShortID="374897514">
@@ -191,12 +224,12 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
-				<Event Name="Play_CNNWLK_Grass" ID="{72964A1C-C518-4CF3-B2C0-438168CCF621}">
+				<Event Name="Play_Typewriter_Slides" ID="{5417695D-B67C-4B1A-97B8-825A35FE5EAF}">
 					<ChildrenList>
-						<Action Name="" ID="{AC7E0DA9-9B77-4BC6-9687-4DF2F0D2CC5E}" ShortID="261346876">
+						<Action Name="" ID="{8D962246-64F4-4447-9B4A-2861AAB87884}" ShortID="164113669">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="CNNWLK_Grass" ID="{FEC6C7E5-D916-4591-AD20-5817F7FA5AEE}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+									<ObjectRef Name="Typewriter Slides" ID="{23A1B979-2D90-44B4-BAEE-6D8B370DDF11}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

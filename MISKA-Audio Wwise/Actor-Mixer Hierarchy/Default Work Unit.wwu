@@ -1928,37 +1928,6 @@
 												</Sound>
 											</ChildrenList>
 										</RandomSequenceContainer>
-										<Sound Name="river" ID="{B1758ED5-3655-4197-83CB-5C0EB8A7C021}" ShortID="995885714">
-											<PropertyList>
-												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-												<Property Name="OverridePositioning" Type="bool" Value="True"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-13</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Attenuation">
-													<ObjectRef Name="RIver" ID="{8F364F32-4794-486F-80E9-C84998E5D1CF}" WorkUnitID="{9694F749-499E-4F12-BEF9-AA448E069519}"/>
-												</Reference>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="river 1" ID="{C7582024-A411-4462-B42D-BB4BBAFD6179}" ShortID="116744292">
-													<Language>SFX</Language>
-													<AudioFile>river 1.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="river 1" ID="{C7582024-A411-4462-B42D-BB4BBAFD6179}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
 										<Sound Name="CicadaNightClose" ID="{3E72F7A6-FC7E-4FF9-98A7-CA5782937708}" ShortID="68349377">
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
@@ -1990,6 +1959,137 @@
 												<ActiveSource Name="CicadaNightClose" ID="{14DAD696-74EA-494B-8C14-4BC163F539BF}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
+										<Sound Name="Waterfall" ID="{F9FC2ECF-F77C-40DC-A201-ACCFA2380B41}" ShortID="330340952">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ValueList>
+														<Value>41</Value>
+													</ValueList>
+												</Property>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-150</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="ZOOM0057_TrLR" ID="{09BD6C28-7792-499E-B814-ADE0EF397210}" ShortID="1067598789">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="1841.984"/>
+														<Property Name="LoopBegin" Type="Real64" Value="70.5265759987816"/>
+														<Property Name="LoopEnd" Type="Real64" Value="82.7873920097474"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="69.8959407480861"/>
+														<Property Name="TrimEnd" Type="Real64" Value="83.24237060376"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>ZOOM0057_TrLR.WAV</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="ZOOM0057_TrLR" ID="{09BD6C28-7792-499E-B814-ADE0EF397210}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<BlendContainer Name="Riv" ID="{D40E24A6-70A6-4616-B151-81941E060EA0}" ShortID="884982429">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="river" ID="{B1758ED5-3655-4197-83CB-5C0EB8A7C021}" ShortID="995885714">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="OverridePositioning" Type="bool" Value="True"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-13</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="RIver" ID="{8F364F32-4794-486F-80E9-C84998E5D1CF}" WorkUnitID="{9694F749-499E-4F12-BEF9-AA448E069519}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="river 1" ID="{C7582024-A411-4462-B42D-BB4BBAFD6179}" ShortID="116744292">
+															<Language>SFX</Language>
+															<AudioFile>river 1.wav</AudioFile>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="river 1" ID="{C7582024-A411-4462-B42D-BB4BBAFD6179}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Waterfall" ID="{AF48A0C3-3906-4600-9872-29BFB23B6E15}" ShortID="460709161">
+													<PropertyList>
+														<Property Name="Highpass" Type="int16">
+															<ValueList>
+																<Value>41</Value>
+															</ValueList>
+														</Property>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>-150</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-4</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="ZOOM0057_TrLR" ID="{42828107-237A-4017-9931-B508028F22AB}" ShortID="131803462">
+															<PropertyList>
+																<Property Name="CrossfadeDuration" Type="Real64" Value="1841.984"/>
+																<Property Name="LoopBegin" Type="Real64" Value="70.5265759987816"/>
+																<Property Name="LoopEnd" Type="Real64" Value="82.7873920097474"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="69.8959407480861"/>
+																<Property Name="TrimEnd" Type="Real64" Value="83.24237060376"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>ZOOM0057_TrLR.WAV</AudioFile>
+															<ConvertedFileIDList>
+																<File ID="1067598789"/>
+															</ConvertedFileIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="ZOOM0057_TrLR" ID="{42828107-237A-4017-9931-B508028F22AB}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</BlendContainer>
 									</ChildrenList>
 								</ActorMixer>
 							</ChildrenList>
@@ -2986,6 +3086,245 @@
 											</ChildrenList>
 											<ActiveSourceList>
 												<ActiveSource Name="ball bounce grass3" ID="{E1107624-96E0-4BF6-8718-24084F41C976}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="UI" ID="{1E2CE33A-D8B3-496B-B353-5605EE0A07AA}" ShortID="401077073">
+							<ChildrenList>
+								<Sound Name="Self-Inking Stamp" ID="{BD7245AE-24FA-457D-99E2-ED802F21D095}" ShortID="225411933">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Stamp self inking push down slow click_BLASTWAVEFX_15434" ID="{1A458052-5501-45FF-96CA-5B4D03CBE5C2}" ShortID="1025837284">
+											<Language>SFX</Language>
+											<AudioFile>Stamp self inking push down slow click_BLASTWAVEFX_15434.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Stamp self inking push down slow click_BLASTWAVEFX_15434" ID="{1A458052-5501-45FF-96CA-5B4D03CBE5C2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Typewriter_CheckOff" ID="{15421EEC-A839-4A87-B53F-338EDC092D49}" ShortID="302777624">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Antique punchy typewriter typing x1 with a scrape" ID="{42785187-2FC5-4D43-9357-95FDE5B38742}" ShortID="1053468266">
+											<Language>SFX</Language>
+											<AudioFile>Antique punchy typewriter typing x1 with a scrape.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Antique punchy typewriter typing x1 with a scrape" ID="{42785187-2FC5-4D43-9357-95FDE5B38742}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<RandomSequenceContainer Name="Typewriter Slides" ID="{23A1B979-2D90-44B4-BAEE-6D8B370DDF11}" ShortID="230350313">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>14</Value>
+											</ValueList>
+										</Property>
+										<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+										<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>15</Value>
+											</ValueList>
+										</Property>
+										<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{5699F906-0EBE-441E-BB03-E262A26C434F}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="328"/>
+															<Property Name="Min" Type="Real64" Value="-101"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{1B4DAF6F-C638-43D8-8C98-F84DCB3CA671}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Min" Type="Real64" Value="-3"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Levers_Sliders_227-ss" ID="{5C05CF58-3E75-44DA-A463-274AB919760F}" ShortID="292297203">
+											<PropertyList>
+												<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Levers_Sliders_227-ss" ID="{B51F081E-57C2-4D2C-A8A6-9B28298D739B}" ShortID="494594126">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="5.26559954780766E-02"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.11377980494659"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Levers_Sliders_227-ss.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="536595712"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Levers_Sliders_227-ss" ID="{B51F081E-57C2-4D2C-A8A6-9B28298D739B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Levers_Sliders_227-ss_01" ID="{E2983631-5185-4092-8DA8-D8FA2A4A7AD9}" ShortID="814502521">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Levers_Sliders_227-ss" ID="{EDB7CD5C-20C0-4107-B3AE-10182A4BCF7E}" ShortID="536595712">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="1.64466438356164"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.25078194563357"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Levers_Sliders_227-ss.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="494594126"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Levers_Sliders_227-ss" ID="{EDB7CD5C-20C0-4107-B3AE-10182A4BCF7E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Levers_Sliders_227-ss_02" ID="{991EAC20-216B-4002-B77C-A1602506135E}" ShortID="226772685">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Levers_Sliders_227-ss" ID="{61291C28-037E-4691-9893-34A38956FC5C}" ShortID="45904059">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="3.53471887005"/>
+														<Property Name="TrimEnd" Type="Real64" Value="4.66008738200138"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Levers_Sliders_227-ss.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Levers_Sliders_227-ss" ID="{61291C28-037E-4691-9893-34A38956FC5C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Levers_Sliders_227-ss_03" ID="{9B147E13-371C-4331-9D4B-3F6A23AD6F2D}" ShortID="35938317">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Levers_Sliders_227-ss" ID="{3BB188C7-3C11-469D-BFC7-70401C324126}" ShortID="663238036">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="4.87100868169383"/>
+														<Property Name="TrimEnd" Type="Real64" Value="6.15056447960412"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Levers_Sliders_227-ss.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Levers_Sliders_227-ss" ID="{3BB188C7-3C11-469D-BFC7-70401C324126}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Levers_Sliders_227-ss_04" ID="{8E0E16D7-736E-4088-9AC5-1A71B20E4F39}" ShortID="351422031">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Levers_Sliders_227-ss" ID="{9E37777C-A810-4973-8F90-33A188D2694B}" ShortID="85579563">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="6.57991776773835"/>
+														<Property Name="TrimEnd" Type="Real64" Value="7.47808336900685"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Levers_Sliders_227-ss.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Levers_Sliders_227-ss" ID="{9E37777C-A810-4973-8F90-33A188D2694B}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>

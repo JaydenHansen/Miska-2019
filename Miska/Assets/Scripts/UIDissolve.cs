@@ -61,7 +61,11 @@ public class UIDissolve : MonoBehaviour
                 for (int i = 0; i < m_image.Length; i++)
                 {
                     Random.InitState(i);
-                    float newValue = Remap(m_timer / (m_dissolveSpeed + Random.Range(-m_dissolveRandomOffset, m_dissolveRandomOffset)), 0, 1, m_range.x, m_range.y) * (m_direction ? 1 : -1);
+                    float newValue;
+                    if (m_direction)                   
+                        newValue = Remap(Mathf.Clamp01(m_timer / (m_dissolveSpeed + Random.Range(-m_dissolveRandomOffset, m_dissolveRandomOffset))), 0, 1, m_range.x, m_range.y);
+                    else
+                        newValue = Remap(1 - Mathf.Clamp01(m_timer / (m_dissolveSpeed + Random.Range(-m_dissolveRandomOffset, m_dissolveRandomOffset))), 0, 1, m_range.x, m_range.y);
                     m_image[i].material.SetFloat("_DissolveSlider", newValue);
                 }
 

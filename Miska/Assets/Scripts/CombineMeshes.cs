@@ -9,6 +9,7 @@ public class CombineMeshes : MonoBehaviour
     public bool m_useChildren;
     public bool m_destroySub;
     public bool m_destroyScript;
+    public bool m_saveMesh;
 
     MeshFilter m_combined;
 
@@ -184,7 +185,20 @@ public class CombineMeshes : MonoBehaviour
         Mesh combinedMesh = new Mesh();
         combinedMesh.CombineMeshes(combineStorage.ToArray());
 
-        m_subMeshes[0].sharedMesh = combinedMesh;   
+        if (m_saveMesh)
+        {
+            string path = EditorUtility.SaveFilePanel("Save Combined Mesh", "Assets/", "combined", "asset");
+            if (string.IsNullOrEmpty(path)) return;
+
+            path = FileUtil.GetProjectRelativePath(path);
+
+            AssetDatabase.CreateAsset(combinedMesh, path);
+            AssetDatabase.SaveAssets();                                
+        }
+        else
+        {
+            m_subMeshes[0].sharedMesh = combinedMesh;
+        }
 
         if (m_destroyScript)
         {
@@ -210,11 +224,13 @@ public class CombineMeshesInspector : Editor
         SerializedProperty useChildren = m_script.FindProperty("m_useChildren");
         SerializedProperty destroySub = m_script.FindProperty("m_destroySub");
         SerializedProperty destroyScript = m_script.FindProperty("m_destroyScript");
+        SerializedProperty saveMesh = m_script.FindProperty("m_saveMesh");
 
         //DrawDefaultInspector();
         useChildren.boolValue = EditorGUILayout.Toggle("Use Children", useChildren.boolValue);
         destroySub.boolValue = EditorGUILayout.Toggle("Destroy SubMeshes", destroySub.boolValue);
         destroyScript.boolValue = EditorGUILayout.Toggle("Destroy Script", destroyScript.boolValue);
+        saveMesh.boolValue = EditorGUILayout.Toggle("Save Mesh", saveMesh.boolValue);        
 
         if (!useChildren.boolValue)
         {

@@ -18,7 +18,7 @@ public class Book : MonoBehaviour
     public GameObject m_nextPageButton;
     public GameObject m_staticLeftPage;
     public GameObject m_staticRightPage;
-    public Animation m_pageTurn;
+    public Animation m_animation;
     public float m_openDelay;
     public bool m_autoClose;
     public bool m_manualControl = true;
@@ -75,7 +75,7 @@ public class Book : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_manualControl && Input.GetKeyDown(KeyCode.Tab) && !m_pageTurn.isPlaying)
+        if (m_manualControl && Input.GetKeyDown(KeyCode.Tab) && !m_animation.isPlaying)
         {
             if (m_open)
             {
@@ -88,12 +88,12 @@ public class Book : MonoBehaviour
         }
         if (m_open)
         {
-            if (Input.GetKeyDown(KeyCode.RightArrow) && !m_pageTurn.isPlaying)
+            if (Input.GetKeyDown(KeyCode.RightArrow) && !m_animation.isPlaying)
             {
                 if (m_currentPage + 1 <= Mathf.CeilToInt(m_pages.Count / 2f) - 1)
                     SetPage(m_currentPage + 1);
             }
-            if (Input.GetKeyDown(KeyCode.LeftArrow) && !m_pageTurn.isPlaying)
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && !m_animation.isPlaying)
             {
                 if (m_currentPage - 1 >= 0)
                     SetPage(m_currentPage - 1);
@@ -110,8 +110,10 @@ public class Book : MonoBehaviour
 
     public void OpenBook(int page)
     {
-        if (!m_pageTurn.isPlaying && !m_open)
+        if (!m_animation.isPlaying && !m_open)
         {
+            m_animation.Play("Book_Open_001");
+
             m_currentPage = page;
             m_leftPages.gameObject.SetActive(true);
             m_rightPages.gameObject.SetActive(true);
@@ -179,7 +181,7 @@ public class Book : MonoBehaviour
 
         if (m_zoomed)
         {
-            AnimationClip zoomReverse = m_pageTurn.GetClip("Book_Zoom_Reverse_001");
+            AnimationClip zoomReverse = m_animation.GetClip("Book_Zoom_Reverse_001");
             zoomReverse.SampleAnimation(gameObject, zoomReverse.length);
             m_zoomed = false;
         }
@@ -189,11 +191,11 @@ public class Book : MonoBehaviour
 
     public void LeftZoom()
     {
-        if (!m_pageTurn.isPlaying)
+        if (!m_animation.isPlaying)
         {
             if (!m_zoomed)
             {
-                m_pageTurn.Play("Book_Zoom_001");
+                m_animation.Play("Book_Zoom_001");
                 m_zoomed = true;
                 if (m_nextPageButton)
                     m_nextPageButton.SetActive(false);
@@ -202,7 +204,7 @@ public class Book : MonoBehaviour
             }
             else
             {
-                m_pageTurn.Play("Book_Zoom_Reverse_001");
+                m_animation.Play("Book_Zoom_Reverse_001");
                 m_zoomed = false;
                 if (m_nextPageButton && m_currentPage + 1 <= Mathf.CeilToInt(m_pages.Count / 2f) - 1)
                     m_nextPageButton.SetActive(true);
@@ -262,9 +264,9 @@ public class Book : MonoBehaviour
             m_pages[m_currentPage * 2].transform.localPosition = Vector3.zero;
             m_pages[m_currentPage * 2].transform.localRotation = Quaternion.identity;
 
-            m_pageTurn.Play("Book_Flip_001");
+            m_animation.Play("Book_Flip_001");
 
-            yield return WaitForAnimation(m_pageTurn);
+            yield return WaitForAnimation(m_animation);
 
             m_pages[oldPage * 2 + 1].transform.parent = m_rightPages;
             m_pages[oldPage * 2 + 1].transform.localPosition = Vector3.zero;
@@ -290,9 +292,9 @@ public class Book : MonoBehaviour
             m_pages[m_currentPage * 2 + 1].transform.localPosition = Vector3.zero;
             m_pages[m_currentPage * 2 + 1].transform.localRotation = Quaternion.identity;
 
-            m_pageTurn.Play("Book_Flip_Reverse_001");
+            m_animation.Play("Book_Flip_Reverse_001");
 
-            yield return WaitForAnimation(m_pageTurn);
+            yield return WaitForAnimation(m_animation);
           
             m_pages[oldPage * 2].transform.parent = m_leftPages;
             m_pages[oldPage * 2].transform.localPosition = Vector3.zero;

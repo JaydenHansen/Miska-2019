@@ -31,7 +31,7 @@ public class FireFlySpawner : MonoBehaviour
 
     public float DistanceFromSpawn(Vector3 pos, out Vector3 direction)
     {
-        direction = new Vector3(transform.position.x, 0, transform.position.z) - new Vector3(pos.x, 0, pos.z);
+        direction = transform.position - pos;
         float distance = direction.magnitude;
         direction = direction / distance;
         return distance;

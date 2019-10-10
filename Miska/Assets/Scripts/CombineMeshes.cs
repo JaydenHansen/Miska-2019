@@ -193,7 +193,7 @@ public class CombineMeshes : MonoBehaviour
             path = FileUtil.GetProjectRelativePath(path);
 
             AssetDatabase.CreateAsset(combinedMesh, path);
-            AssetDatabase.SaveAssets();                                
+            AssetDatabase.SaveAssets();                   
         }
         else
         {

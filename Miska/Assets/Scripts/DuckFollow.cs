@@ -44,7 +44,8 @@ public class DuckFollow : MonoBehaviour
         NavMeshHit hit;
         if (NavMesh.SamplePosition(m_player.position - (m_player.forward * m_distanceBehindPlayer), out hit, 5, -1))
         {
-            m_agent.Warp(hit.position);
+            //m_agent.Warp(hit.position);
+            transform.position = hit.position;
         }
     }
 }

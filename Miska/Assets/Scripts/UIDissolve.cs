@@ -20,6 +20,12 @@ public class UIDissolve : MonoBehaviour
     float m_timer;
     bool m_direction;
 
+    public bool UseDistance
+    {
+        get { return m_useDistance; }
+        set { m_useDistance = value; }
+    }
+
     // Start is called before the first frame updated
     void Start()
     {

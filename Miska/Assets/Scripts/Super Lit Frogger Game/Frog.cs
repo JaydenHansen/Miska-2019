@@ -80,6 +80,7 @@ public class Frog : MonoBehaviour
         m_spawner.ResetGame();
         m_startTimer = m_startDelay;
         m_startCountdown.enabled = true;
+        m_gridPos = new Vector2Int(2, 0);
 
         if (lost)
             Score.currentScore = 0;

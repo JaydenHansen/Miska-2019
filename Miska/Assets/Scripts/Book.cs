@@ -108,6 +108,8 @@ public class Book : MonoBehaviour
 
             m_groundCamera.transform.localPosition = Vector3.Lerp(m_startPosition, m_targetPosition, m_timer / m_openDelay);
             m_groundCamera.transform.localRotation = Quaternion.Lerp(m_startRotation, m_targetRotation, m_timer / m_openDelay);
+
+            m_opening = false;
         }
     }
 

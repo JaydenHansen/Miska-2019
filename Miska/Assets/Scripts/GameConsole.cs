@@ -117,6 +117,7 @@ public class GameConsole : MonoBehaviour
 
         m_open = false;
 
+        m_frogger.GetComponentInChildren<Frog>().ResetGame(true);
         m_frogger.SetActive(false);
     }
 }

@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 public class Frog : MonoBehaviour
 {
-    public float travelDistance;
+    public float m_travelDistance;
     public EnemySpawner m_spawner;
     public float m_startDelay;
     public Text m_startCountdown;
+    public Score m_score;
 
     Rigidbody2D rb;
     Vector2 m_resetPos;
@@ -47,22 +48,22 @@ public class Frog : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow) && m_gridPos.x + 1 <= 4)
         {
-            rb.MovePosition(rb.position + Vector2.right * travelDistance);
+            rb.MovePosition(rb.position + Vector2.right * m_travelDistance);
             m_gridPos.x++;
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow) && m_gridPos.x - 1 >= 0)
         {
-            rb.MovePosition(rb.position + Vector2.left * travelDistance);
+            rb.MovePosition(rb.position + Vector2.left * m_travelDistance);
             m_gridPos.x--;
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow) && m_gridPos.y + 1 <= 4)
         {
-            rb.MovePosition(rb.position + Vector2.up * travelDistance);
+            rb.MovePosition(rb.position + Vector2.up * m_travelDistance);
             m_gridPos.y++;
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && m_gridPos.y - 1 >= 0)
         {
-            rb.MovePosition(rb.position + Vector2.down * travelDistance);
+            rb.MovePosition(rb.position + Vector2.down * m_travelDistance);
             m_gridPos.y--;
         }                    
     }
@@ -83,7 +84,7 @@ public class Frog : MonoBehaviour
         m_gridPos = new Vector2Int(2, 0);
 
         if (lost)
-            Score.currentScore = 0;
+            m_score.CurrentScore = 0;
 
         rb.MovePosition(m_resetPos);
     }

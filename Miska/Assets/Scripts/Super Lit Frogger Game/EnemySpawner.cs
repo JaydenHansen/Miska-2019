@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
         int randomIndex = Random.Range(0, spawnPoints.Length);
         Transform spawnPoint = spawnPoints[randomIndex];
 
-        GameObject enemy = Instantiate(Enemy, spawnPoint.position, spawnPoint.rotation);
+        GameObject enemy = Instantiate(Enemy, spawnPoint.position, spawnPoint.rotation, spawnPoint);
         m_spawned.AddLast(enemy);
         enemy.GetComponent<Enemy>().m_spawner = this;
     }

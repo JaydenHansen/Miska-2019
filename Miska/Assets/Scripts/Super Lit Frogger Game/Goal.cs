@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Goal : MonoBehaviour
 {
+    public Score m_score;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class Goal : MonoBehaviour
      void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("You Won");
-        Score.currentScore += 100;
+        m_score.CurrentScore += 100;
         collision.gameObject.GetComponent<Frog>().ResetGame(false);
     }
 }

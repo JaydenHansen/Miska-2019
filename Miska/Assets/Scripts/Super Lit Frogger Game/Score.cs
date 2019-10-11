@@ -5,9 +5,34 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public static int currentScore = 0;
+    public Text m_scoreText;
+    public Text m_highScoreText;
 
-    public Text scoreText;
+    int m_currentScore = 0;
+    public int CurrentScore
+    {
+        get { return m_currentScore; }
+        set
+        {
+            m_currentScore = value;
+            if (m_currentScore > m_highScore)
+                HighScore = m_currentScore;
+
+            m_scoreText.text = m_currentScore.ToString();
+        }
+    }
+
+    int m_highScore = 0;
+    public int HighScore
+    {
+        get { return m_highScore; }
+        set
+        {
+            m_highScore = value;
+            m_highScoreText.text = m_highScore.ToString();
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +40,6 @@ public class Score : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        scoreText.text = currentScore.ToString();        
-    }
+    {   
+    }    
 }

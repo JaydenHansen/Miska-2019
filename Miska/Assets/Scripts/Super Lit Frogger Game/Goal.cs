@@ -21,6 +21,6 @@ public class Goal : MonoBehaviour
     {
         Debug.Log("You Won");
         Score.currentScore += 100;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        collision.gameObject.GetComponent<Frog>().ResetGame(false);
     }
 }

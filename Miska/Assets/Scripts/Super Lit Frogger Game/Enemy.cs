@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
+    public EnemySpawner m_spawner;
     public Rigidbody2D rb;
 
     public float minSpeed = 1;
@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour
 
         if (timer > 7)
         {
+            m_spawner.EnemyDeath();
             Destroy(gameObject);
         }
     }

@@ -34,7 +34,7 @@ public class Book : MonoBehaviour
     Quaternion m_startRotation;
     Quaternion m_targetRotation;
 
-    bool TMP;
+    bool m_opening;
 
     Dictionary<AreaName, bool> m_checklist;
     public ProgressLog m_progress;
@@ -100,11 +100,14 @@ public class Book : MonoBehaviour
             }            
         }
 
-        if (TMP)
+        if (m_opening)
         {
             m_timer += Time.deltaTime;
             m_bookCamera.transform.localPosition = Vector3.Lerp(m_startPosition, m_targetPosition, m_timer / m_openDelay);
             m_bookCamera.transform.localRotation = Quaternion.Lerp(m_startRotation, m_targetRotation, m_timer / m_openDelay);
+
+            m_groundCamera.transform.localPosition = Vector3.Lerp(m_startPosition, m_targetPosition, m_timer / m_openDelay);
+            m_groundCamera.transform.localRotation = Quaternion.Lerp(m_startRotation, m_targetRotation, m_timer / m_openDelay);
         }
     }
 
@@ -147,7 +150,7 @@ public class Book : MonoBehaviour
             m_playerCamera.m_camera.enabled = false;
             m_playerCamera.enabled = false;
 
-            TMP = true;            
+            m_opening = true;            
 
             m_bookCamera.transform.position = m_playerCamera.transform.position;
             m_bookCamera.transform.rotation = m_playerCamera.transform.rotation;
@@ -185,7 +188,7 @@ public class Book : MonoBehaviour
             zoomReverse.SampleAnimation(gameObject, zoomReverse.length);
             m_zoomed = false;
         }
-        TMP = false;
+        m_opening = false;
         m_timer = 0;
     }
 

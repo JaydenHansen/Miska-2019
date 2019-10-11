@@ -223,20 +223,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1080331646879575930}
     m_Modifications:
+    - target: {fileID: 6273763071998771951, guid: 0f75fecb9998fb9439b38dcf7079d44b,
+        type: 3}
+      propertyPath: m_Name
+      value: Book_001
+      objectReference: {fileID: 0}
     - target: {fileID: 6273763071998877391, guid: 0f75fecb9998fb9439b38dcf7079d44b,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6273763071998877391, guid: 0f75fecb9998fb9439b38dcf7079d44b,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6273763071998877391, guid: 0f75fecb9998fb9439b38dcf7079d44b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6273763071998877391, guid: 0f75fecb9998fb9439b38dcf7079d44b,
         type: 3}
@@ -278,41 +273,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6273763071998771951, guid: 0f75fecb9998fb9439b38dcf7079d44b,
+    - target: {fileID: 7303606345794417710, guid: 0f75fecb9998fb9439b38dcf7079d44b,
         type: 3}
-      propertyPath: m_Name
-      value: Book_001
+      propertyPath: m_Animation
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5271667463460592492, guid: 0f75fecb9998fb9439b38dcf7079d44b,
         type: 3}
       propertyPath: m_player
       value: 
       objectReference: {fileID: 1080331646879575932}
-    - target: {fileID: 7303606345794417710, guid: 0f75fecb9998fb9439b38dcf7079d44b,
-        type: 3}
-      propertyPath: m_Animation
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7303606345794417710, guid: 0f75fecb9998fb9439b38dcf7079d44b,
-        type: 3}
-      propertyPath: m_Animations.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7303606345794417710, guid: 0f75fecb9998fb9439b38dcf7079d44b,
-        type: 3}
-      propertyPath: m_Animations.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7303606345794417710, guid: 0f75fecb9998fb9439b38dcf7079d44b,
-        type: 3}
-      propertyPath: m_Animations.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7303606345794417710, guid: 0f75fecb9998fb9439b38dcf7079d44b,
-        type: 3}
-      propertyPath: m_Animations.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8992766833860371929, guid: 0f75fecb9998fb9439b38dcf7079d44b,
         type: 3}
       propertyPath: m_RenderingPathCustomFrameSettings.bitDatas.data1

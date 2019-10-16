@@ -14,6 +14,7 @@ public class Ball : MonoBehaviour
     public float m_throwStrength;
     public Transform m_cameraArm;
     public Collider m_collider;
+    public Collider m_qtCollider;
     public DogArea m_area;
     public Transform m_mouthTransform;
 
@@ -59,6 +60,7 @@ public class Ball : MonoBehaviour
             m_rigidbody.isKinematic = false;
             m_rigidbody.AddForce(m_cameraArm.forward * m_throwStrength);
             m_qtBase.enabled = true;
+            m_qtCollider.enabled = true;
             m_parent = Parent.None;
             m_collider.enabled = true;
         }
@@ -74,6 +76,7 @@ public class Ball : MonoBehaviour
         m_inHand = true;
         m_rigidbody.isKinematic = true;
         m_qtBase.enabled = false;
+        m_qtCollider.enabled = false;
         m_onThisFrame = true;
         m_collider.enabled = false;
     }
@@ -87,7 +90,8 @@ public class Ball : MonoBehaviour
             transform.localPosition = Vector3.zero;
             m_inHand = true;
             m_rigidbody.isKinematic = true;
-            //m_qtBase.enabled = false;
+            m_qtBase.enabled = false;
+            m_qtCollider.enabled = false;
             m_collider.enabled = false;
         }
     }

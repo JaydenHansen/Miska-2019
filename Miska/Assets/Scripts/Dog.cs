@@ -23,6 +23,7 @@ public class Dog : MonoBehaviour
     NavMeshAgent m_agent;
     Target m_currentTarget;
     float m_baseStoppingDistance;
+    Animator m_animator;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,8 @@ public class Dog : MonoBehaviour
         m_agent.updateRotation = false;
         m_agent.updateUpAxis = false;
         m_baseStoppingDistance = m_agent.stoppingDistance;
+
+        m_animator = GetComponent<Animator>();
     }
 
     
@@ -110,6 +113,8 @@ public class Dog : MonoBehaviour
                 targetPosition = m_basePosition.position;
                 break;
         }
+
+        m_animator.SetFloat("Speed", m_agent.velocity.magnitude);
 
         m_agent.SetDestination(targetPosition);
 

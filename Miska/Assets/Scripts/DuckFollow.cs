@@ -8,6 +8,8 @@ public class DuckFollow : MonoBehaviour
 {
     public Transform m_player;
     public float m_distanceBehindPlayer;
+    public Transform m_baseArea;
+    public float m_areaRadius;
 
     NavMeshAgent m_agent;
 
@@ -22,7 +24,10 @@ public class DuckFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_agent.SetDestination(m_player.position);
+        if ((m_player.position - m_baseArea.position).magnitude < m_areaRadius)
+            m_agent.SetDestination(m_player.position);
+        else
+            m_agent.SetDestination(m_baseArea.position);
 
         if (m_agent.velocity.sqrMagnitude != 0)
         {
@@ -47,5 +52,11 @@ public class DuckFollow : MonoBehaviour
             //m_agent.Warp(hit.position);
             transform.position = hit.position;
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (m_baseArea)
+            Gizmos.DrawWireSphere(m_baseArea.position, m_areaRadius);
     }
 }

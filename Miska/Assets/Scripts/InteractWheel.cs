@@ -15,6 +15,7 @@ public class InteractWheel : MonoBehaviour
     float m_angle;
     Vector2 m_mousePosition;
     int m_currentSelected;
+    bool m_enabled;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class InteractWheel : MonoBehaviour
     {
         m_mousePosition += new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")) * m_mouseSpeed;
         m_mousePosition = Vector2.ClampMagnitude(m_mousePosition, m_maxMagnitude);
-        
+        m_tempMousePos.rectTransform.localPosition = m_mousePosition;
 
         if (m_mousePosition.magnitude > m_deadZone)
         {
@@ -82,19 +83,24 @@ public class InteractWheel : MonoBehaviour
         ChangeSelected(-1);
         m_mousePosition = Vector2.zero;
         m_tempMousePos.rectTransform.localPosition = m_mousePosition;
+        m_enabled = true;
     }
 
     public void DisableWheel()
     {
-        if (m_currentSelected >= 0)
+        if (m_enabled)
         {
-            QuicktimeResponse[] responses = m_images[m_currentSelected].GetComponents<QuicktimeResponse>();
-            foreach(QuicktimeResponse response in responses)
+            if (m_currentSelected >= 0)
             {
-                response.OnSuccess();
+                QuicktimeResponse[] responses = m_images[m_currentSelected].GetComponents<QuicktimeResponse>();
+                foreach (QuicktimeResponse response in responses)
+                {
+                    response.OnSuccess();
+                }
             }
-        }
 
-        gameObject.SetActive(false);
+            gameObject.SetActive(false);
+            m_enabled = false;
+        }
     }
 }

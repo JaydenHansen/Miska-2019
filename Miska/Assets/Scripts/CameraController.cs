@@ -22,6 +22,7 @@ public class CameraController : MonoBehaviour
     public Transform m_lookAt;
     public float m_baseLookAtStrength;
     public float m_lookAtDeadzone;
+    public float m_minMovement;
     [Header("Misc")]
     public bool m_lockYaw;
     public Vector2 m_yawBounds;
@@ -157,23 +158,43 @@ public class CameraController : MonoBehaviour
 
             if (m_yaw > lookAtEuler.y + m_lookAtDeadzone) // if the yaw is greater than the lookat yaw
             {
-                m_yawVelocity += Mathf.DeltaAngle(m_yaw, lookAtEuler.y + m_lookAtDeadzone) * m_lookAtStrength * Time.deltaTime; // rotate towards the look at rotation the speed is dependant on the difference between the current yaw and the desired yaw
+                float angle = Mathf.DeltaAngle(m_yaw, lookAtEuler.y + m_lookAtDeadzone);
+                if (Mathf.Abs(angle) < m_minMovement)
+                {
+                    angle = angle < 0 ? -m_minMovement : m_minMovement;
+                }
+                m_yawVelocity += angle * m_lookAtStrength * Time.deltaTime; // rotate towards the look at rotation the speed is dependant on the difference between the current yaw and the desired yaw
                 appliedMovement = true;
             }
             else if (m_yaw < lookAtEuler.y - m_lookAtDeadzone)
             {
-                m_yawVelocity += Mathf.DeltaAngle(m_yaw, lookAtEuler.y - m_lookAtDeadzone) * m_lookAtStrength * Time.deltaTime;
+                float angle = Mathf.DeltaAngle(m_yaw, lookAtEuler.y - m_lookAtDeadzone);
+                if (Mathf.Abs(angle) < m_minMovement)
+                {
+                    angle = angle < 0 ? -m_minMovement : m_minMovement;
+                }
+                m_yawVelocity += angle * m_lookAtStrength * Time.deltaTime;
                 appliedMovement = true;
             }
 
             if (m_pitch > lookAtEuler.x + m_lookAtDeadzone)
             {
-                m_pitchVelocity += Mathf.DeltaAngle(m_pitch, lookAtEuler.x + m_lookAtDeadzone) * m_lookAtStrength * Time.deltaTime;
+                float angle = Mathf.DeltaAngle(m_pitch, lookAtEuler.x + m_lookAtDeadzone);
+                if (Mathf.Abs(angle) < m_minMovement)
+                {
+                    angle = angle < 0 ? -m_minMovement : m_minMovement;
+                }
+                m_pitchVelocity += angle * m_lookAtStrength * Time.deltaTime;
                 appliedMovement = true;
             }
             else if (m_pitch < lookAtEuler.x - m_lookAtDeadzone)
             {
-                m_pitchVelocity += Mathf.DeltaAngle(m_pitch, lookAtEuler.x - m_lookAtDeadzone) * m_lookAtStrength * Time.deltaTime;
+                float angle = Mathf.DeltaAngle(m_pitch, lookAtEuler.x - m_lookAtDeadzone);
+                if (Mathf.Abs(angle) < m_minMovement)
+                {
+                    angle = angle < 0 ? -m_minMovement : m_minMovement;
+                }
+                m_pitchVelocity += angle * m_lookAtStrength * Time.deltaTime;
                 appliedMovement = true;
             }           
 

@@ -18,6 +18,7 @@ public class Dog : MonoBehaviour
     public Transform m_basePosition;
     public float m_radius;
     public float m_distanceBehindPlayer;
+    public float m_runThreshold;
     public DogArea m_area;
 
     NavMeshAgent m_agent;
@@ -114,9 +115,18 @@ public class Dog : MonoBehaviour
                 break;
         }
 
-        m_animator.SetFloat("Speed", m_agent.velocity.magnitude);
-
         m_agent.SetDestination(targetPosition);
+
+        if (m_agent.remainingDistance > m_runThreshold)
+        {
+            m_agent.speed = 4;
+        }
+        else
+        {
+            m_agent.speed = 3;
+        }
+
+        m_animator.SetFloat("Speed", m_agent.velocity.magnitude);
 
         if (m_agent.velocity.sqrMagnitude != 0)
         {

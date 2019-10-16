@@ -16,12 +16,14 @@ public class InteractWheel : MonoBehaviour
     Vector2 m_mousePosition;
     int m_currentSelected;
     bool m_enabled;
+    bool[] m_disabledOptions;
 
     // Start is called before the first frame update
     void Start()
     {
         m_angle = 360f / m_images.Length;
         m_mousePosition = Vector2.zero;
+        m_disabledOptions = new bool[m_images.Length];
     }
 
     // Update is called once per frame
@@ -73,7 +75,7 @@ public class InteractWheel : MonoBehaviour
 
         m_currentSelected = newSelected;
 
-        if (m_currentSelected >= 0)
+        if (m_currentSelected >= 0 && !m_disabledOptions[m_currentSelected])
             m_images[m_currentSelected].enabled = true;
     }
 
@@ -90,7 +92,7 @@ public class InteractWheel : MonoBehaviour
     {
         if (m_enabled)
         {
-            if (m_currentSelected >= 0)
+            if (m_currentSelected >= 0 && !m_disabledOptions[m_currentSelected])
             {
                 QuicktimeResponse[] responses = m_images[m_currentSelected].GetComponents<QuicktimeResponse>();
                 foreach (QuicktimeResponse response in responses)
@@ -101,6 +103,30 @@ public class InteractWheel : MonoBehaviour
 
             gameObject.SetActive(false);
             m_enabled = false;
+        }
+    }
+
+    public void DisableOption(int index)
+    {
+        if (index >= 0 && index < m_disabledOptions.Length)
+        {
+            m_disabledOptions[index] = true;
+        }
+        else
+        {
+            Debug.Log("Disabling Option out of bounds");
+        }
+    }
+
+    public void EnableOption(int index)
+    {
+        if (index >= 0 && index < m_disabledOptions.Length)
+        {
+            m_disabledOptions[index] = false;
+        }
+        else
+        {
+            Debug.Log("Enabling Option out of bounds");
         }
     }
 }

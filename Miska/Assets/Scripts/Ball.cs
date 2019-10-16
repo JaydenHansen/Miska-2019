@@ -17,6 +17,7 @@ public class Ball : MonoBehaviour
     public Collider m_qtCollider;
     public DogArea m_area;
     public Transform m_mouthTransform;
+    public InteractWheel m_interactWheel;
 
     bool m_inHand = false;
     Rigidbody m_rigidbody;
@@ -93,6 +94,11 @@ public class Ball : MonoBehaviour
             m_qtBase.enabled = false;
             m_qtCollider.enabled = false;
             m_collider.enabled = false;
+
+            if (m_interactWheel)
+            {
+                m_interactWheel.EnableOption(0);
+            }
         }
     }
 

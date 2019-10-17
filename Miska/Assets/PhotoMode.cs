@@ -20,9 +20,9 @@ public class PhotoMode : MonoBehaviour
 
    bool m_isTakingJournalPhoto;
    int m_currJournalPhoto;
-    int m_totalJournalPhotos = 3 ;
+   int m_totalJournalPhotos;
 
-    List<RawImage> m_journalPhotos;
+   public List<RawImage> m_journalPhotos;
 
     private void Start()
     {
@@ -42,9 +42,13 @@ public class PhotoMode : MonoBehaviour
         m_isTakingJournalPhoto = false;
         m_currJournalPhoto = 0;
 
+        m_journalPhotos = new List<RawImage>();
+        m_totalJournalPhotos = m_journalPhotos.Count;
+
         for (int i = 1; i <= m_totalJournalPhotos; i++)
         {
-            GameObject go = GameObject.Find("JournalPhoto_" + i.ToString());
+            string name = "JournalPhoto_" + i.ToString();
+            GameObject go = GameObject.Find(name);
             RawImage ri = go.GetComponent<RawImage>();
                 m_journalPhotos.Add(ri);
         }

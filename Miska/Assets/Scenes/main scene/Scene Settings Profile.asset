@@ -16,7 +16,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   rotation:
     m_OverrideState: 1
-    m_Value: 48
+    m_Value: 268
     min: 0
     max: 360
   skyIntensityMode:
@@ -24,7 +24,7 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.5
   multiplier:
     m_OverrideState: 1
     m_Value: 1
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   depthExtent:
     m_OverrideState: 1
-    m_Value: 22.03
+    m_Value: 21.05
     min: 0.1
   sliceDistributionUniformity:
     m_OverrideState: 1
@@ -642,7 +642,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   colorMode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   color:
     m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -689,7 +689,7 @@ MonoBehaviour:
     m_Value: 133.5
   anisotropy:
     m_OverrideState: 1
-    m_Value: 0.67
+    m_Value: 0
     min: -1
     max: 1
   globalLightProbeDimmer:
@@ -699,7 +699,7 @@ MonoBehaviour:
     max: 1
   enableDistantFog:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
 --- !u!114 &9159774405119377508
 MonoBehaviour:
   m_ObjectHideFlags: 3

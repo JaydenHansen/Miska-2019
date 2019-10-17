@@ -68,17 +68,19 @@ public class PhotoAlbum : MonoBehaviour
     void Update()
     {
         m_canvas.enabled        = m_isShowingAlbum;
-        m_playerScript.enabled  = !(m_isShowingAlbum);
+        //m_playerScript.enabled  = !(m_isShowingAlbum);
         if (Input.GetKeyDown(KeyCode.L))
         {
             if (m_isShowingAlbum == false)
             {
                 m_isShowingAlbum = true;
+                m_playerScript.enabled = false;
                 LoadIndexedPhotoToTexture();
             }
             else
             {
                 m_isShowingAlbum = false;
+                m_playerScript.enabled = true;
             }
         }
 

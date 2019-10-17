@@ -16,6 +16,7 @@ public class PhotoMode : MonoBehaviour
     public GameObject          m_virtCamOBJ;
     Camera                                      m_virtCam;
     PhotoSubject                        m_virtCamScript;
+    public PhotoAlbum          m_photoAlbum;
 
    bool m_isTakingJournalPhoto;
    int m_currJournalPhoto;
@@ -79,7 +80,7 @@ public class PhotoMode : MonoBehaviour
             }
         }
 
-        if(m_photoModeActive && Input.GetMouseButtonDown(0) && m_isTakingJournalPhoto)
+        if(m_photoModeActive && Input.GetMouseButtonDown(0))
         {
             StartCoroutine("CapturePhoto");
         }
@@ -138,7 +139,8 @@ public class PhotoMode : MonoBehaviour
 
         System.IO.File.WriteAllBytes(filename, bytes);
 
-        m_journalPhotos[m_currJournalPhoto].texture = LoadPNG(filename);
+        m_photoAlbum.AddNewPhoto(filename);
+        //m_journalPhotos[m_currJournalPhoto].texture = LoadPNG(filename);
      }
 
     Texture2D LoadPNG(string filepath)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +17,11 @@ public class PhotoMode : MonoBehaviour
     Camera                                      m_virtCam;
     PhotoSubject                        m_virtCamScript;
 
-    public PhotoAlbum m_album;
+   bool m_isTakingJournalPhoto;
+   int m_currJournalPhoto;
+    int m_totalJournalPhotos = 3 ;
+
+    List<RawImage> m_journalPhotos;
 
     private void Start()
     {
@@ -24,11 +29,32 @@ public class PhotoMode : MonoBehaviour
         m_photoOverlay = GameObject.Find("Photo_Overlay");
         //m_photoOverlay.SetActive(false);
         m_viewfinderTrans = m_photoOverlay.GetComponentInChildren<RectTransform>();
+
         m_animator = m_photoOverlay.GetComponentInChildren<Animator>();
-        m_PopupOverlay = GameObject.Find("PopUpCanvas");        
+
+        m_PopupOverlay = GameObject.Find("PopUpCanvas");
+
         m_virtCam = m_virtCamOBJ.GetComponent<Camera>();
         m_virtCamScript = m_virtCamOBJ.GetComponent<PhotoSubject>();
         m_virtCam.enabled = false;
+
+        m_isTakingJournalPhoto = false;
+        m_currJournalPhoto = 0;
+
+        for (int i = 1; i <= m_totalJournalPhotos; i++)
+        {
+            GameObject go = GameObject.Find("JournalPhoto_" + i.ToString());
+            RawImage ri = go.GetComponent<RawImage>();
+                m_journalPhotos.Add(ri);
+        }
+
+
+    }
+
+    public void JournalPhotoMode(bool status, int photoNo = 0)
+    {
+        m_isTakingJournalPhoto = status;
+        m_currJournalPhoto = photoNo;
     }
 
     // Update is called once per frame
@@ -53,7 +79,7 @@ public class PhotoMode : MonoBehaviour
             }
         }
 
-        if(m_photoModeActive && Input.GetMouseButtonDown(0))
+        if(m_photoModeActive && Input.GetMouseButtonDown(0) && m_isTakingJournalPhoto)
         {
             StartCoroutine("CapturePhoto");
         }
@@ -112,6 +138,20 @@ public class PhotoMode : MonoBehaviour
 
         System.IO.File.WriteAllBytes(filename, bytes);
 
-        m_album.AddNewPhoto(filename);
+        m_journalPhotos[m_currJournalPhoto].texture = LoadPNG(filename);
      }
+
+    Texture2D LoadPNG(string filepath)
+    {
+        Texture2D tex = null;
+        byte[] fileData;
+
+        if (File.Exists(filepath))
+        {
+            fileData = File.ReadAllBytes(filepath);
+            tex = new Texture2D(2, 2);
+            tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
+        }
+        return tex;
+    }
 }

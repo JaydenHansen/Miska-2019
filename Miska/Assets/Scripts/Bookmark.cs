@@ -43,4 +43,11 @@ public class Bookmark : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         m_mouseOver = false;
     }
+
+    private void OnDisable()
+    {
+        m_mouseOver = false;
+        m_timer = 0;
+        m_rect.localPosition = new Vector3(Mathf.Lerp(m_startX, m_finalX, 0), m_rect.localPosition.y, m_rect.localPosition.z);
+    }
 }

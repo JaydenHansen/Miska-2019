@@ -81,41 +81,46 @@ public class CombineMeshes : MonoBehaviour
                     CombineInstance[] temp = combineStorage[i].ToArray();
                    
                     Mesh combinedMesh = new Mesh();
-                    combinedMesh.CombineMeshes(temp, false);
-                    
-                    List<int[]> subMeshes = new List<int[]>();
-                    for (int j = 0; j < combinedMesh.subMeshCount; j++)
+
+                    if (sameMeshes[0].sharedMesh.subMeshCount == 1)
                     {
-                        subMeshes.Add(combinedMesh.GetTriangles(j));
+                        combinedMesh.CombineMeshes(temp);
                     }
+                    else
+                    { 
+                        combinedMesh.CombineMeshes(temp, false);
 
-                    combinedMesh.subMeshCount = sameMeshes[0].sharedMesh.subMeshCount;
-
-                    List<List<int>> newSubMeshes = new List<List<int>>();
-                    for (int j = 0; j < combinedMesh.subMeshCount; j++)
-                    {
-                        List<int> currentSubMesh = new List<int>();
-                        int index = 0;
-                        for (int k = 0; k < subMeshes.Count; k++)
+                        List<int[]> subMeshes = new List<int[]>();
+                        for (int j = 0; j < combinedMesh.subMeshCount; j++)
                         {
-                            if (index == j)
-                            {
-                                currentSubMesh.AddRange(subMeshes[k]);
-                            }
-
-                            if (index++ == combinedMesh.subMeshCount)
-                                index = 0;
+                            subMeshes.Add(combinedMesh.GetTriangles(j));
                         }
-                        newSubMeshes.Add(currentSubMesh);
-                    }
 
-                    for (int j = 0; j < newSubMeshes.Count; j++)
-                    {
-                        combinedMesh.SetTriangles(newSubMeshes[j], j);
-                    }
+                        combinedMesh.subMeshCount = sameMeshes[0].sharedMesh.subMeshCount;
 
-                    int[] submesh1 = combinedMesh.GetTriangles(0);
-                    int[] submesh2 = combinedMesh.GetTriangles(1);
+                        List<List<int>> newSubMeshes = new List<List<int>>();
+                        for (int j = 0; j < combinedMesh.subMeshCount; j++)
+                        {
+                            List<int> currentSubMesh = new List<int>();
+                            int index = 0;
+                            for (int k = 0; k < subMeshes.Count; k++)
+                            {
+                                if (index == j)
+                                {
+                                    currentSubMesh.AddRange(subMeshes[k]);
+                                }
+
+                                if (index++ == combinedMesh.subMeshCount)
+                                    index = 0;
+                            }
+                            newSubMeshes.Add(currentSubMesh);
+                        }
+
+                        for (int j = 0; j < newSubMeshes.Count; j++)
+                        {
+                            combinedMesh.SetTriangles(newSubMeshes[j], j);
+                        }
+                    }
 
                     combinedMesh.Optimize();
                     combinedMesh.RecalculateBounds();

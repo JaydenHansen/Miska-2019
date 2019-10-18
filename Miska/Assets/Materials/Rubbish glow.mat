@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Rubbish glow
-  m_Shader: {fileID: 4800000, guid: 84e13724554520840b1f9b415cb26194, type: 3}
+  m_Shader: {fileID: 4800000, guid: 25565c11e414d7a44b5d52351d8b3c46, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0

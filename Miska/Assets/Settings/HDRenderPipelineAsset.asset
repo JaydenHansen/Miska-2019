@@ -43,7 +43,7 @@ MonoBehaviour:
     supportShadowMask: 1
     supportSSR: 0
     supportSSAO: 1
-    supportSubsurfaceScattering: 1
+    supportSubsurfaceScattering: 0
     increaseSssSampleCount: 1
     supportVolumetrics: 1
     increaseResolutionOfVolumetrics: 1
@@ -87,11 +87,11 @@ MonoBehaviour:
       directionalShadowsDepthBits: 32
       shadowQuality: 0
       punctualLightShadowAtlas:
-        shadowAtlasResolution: 4096
+        shadowAtlasResolution: 2048
         shadowAtlasDepthBits: 32
         useDynamicViewportRescale: 1
       areaLightShadowAtlas:
-        shadowAtlasResolution: 4096
+        shadowAtlasResolution: 2048
         shadowAtlasDepthBits: 32
         useDynamicViewportRescale: 1
       supportScreenSpaceShadows: 1

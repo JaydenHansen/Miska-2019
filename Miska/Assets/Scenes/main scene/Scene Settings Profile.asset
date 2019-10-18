@@ -159,7 +159,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   depthExtent:
     m_OverrideState: 1
-    m_Value: 21.05
+    m_Value: 45.8
     min: 0.1
   sliceDistributionUniformity:
     m_OverrideState: 1
@@ -356,12 +356,12 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   indirectSpecularIntensity:
-    m_OverrideState: 0
-    m_Value: 8.32
+    m_OverrideState: 1
+    m_Value: 0
     min: 0
   indirectDiffuseIntensity:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.1
     min: 0
 --- !u!114 &1235744231697325297
 MonoBehaviour:
@@ -534,17 +534,17 @@ MonoBehaviour:
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.6
+    m_Value: 0.18
     min: 0
     max: 4
   stepCount:
     m_OverrideState: 1
-    m_Value: 7
+    m_Value: 32
     min: 2
     max: 32
   radius:
     m_OverrideState: 1
-    m_Value: 2.86
+    m_Value: 2.29
     min: 0.25
     max: 5
   fullResolution:
@@ -673,7 +673,7 @@ MonoBehaviour:
     min: 0
   albedo:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 1, g: 1, b: 1, a: 0}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
@@ -686,10 +686,10 @@ MonoBehaviour:
     m_Value: 0
   meanHeight:
     m_OverrideState: 1
-    m_Value: 133.5
+    m_Value: 305.4
   anisotropy:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.87
     min: -1
     max: 1
   globalLightProbeDimmer:

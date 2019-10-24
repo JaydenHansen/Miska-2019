@@ -260,6 +260,6 @@ Material:
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
     - _player: {r: 46.4, g: 10.4, b: 114.8, a: 0}
-    - _windNoiseTiling: {r: 0.03, g: 0.03, b: 0, a: 0}
-    - _windSpeedX: {r: 0.03, g: 0.04, b: 0, a: 0}
+    - _windNoiseTiling: {r: 0.02, g: 0.02, b: 0, a: 0}
+    - _windSpeedX: {r: 0.02, g: 0.02, b: 0, a: 0}
     - _windSpeedY: {r: 0.01, g: 0.01, b: 0, a: 0}

@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729373018607168216}
-  m_Mesh: {fileID: -5371938657833303437, guid: 1180b5de2651ff64b93c105be01042b5, type: 3}
+  m_Mesh: {fileID: -3313682449075333470, guid: b7c3b29ab62d68f4982146eadb54fbb7, type: 3}
 --- !u!23 &1135788458077036036
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70,7 +70,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

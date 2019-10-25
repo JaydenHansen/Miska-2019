@@ -5,62 +5,68 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum JournalPhoto
+public enum JournalSubject
 {
     CLN_Station,
     CLN_Rocks,
     CLN_Ducks,
     LOC_River,
     OBJ_DogToy,
-    INACTIVE
+};
+
+public struct JournalPhotoData
+{
+    public JournalPhotoData(GameObject ph, RawImage ri, string fl)
+    {
+        Photo_Op = ph;
+        Image = ri;
+        filename = fl;
+    }
+
+    public Vector3 getPhotoLocation()
+    {
+        return Photo_Op.transform.position;
+    }
+
+    GameObject Photo_Op;
+    RawImage Image;
+    string filename;
 
 };
 
 public class PhotoMode : MonoBehaviour
 {
-    bool                                   m_photoModeActive;
-    GameObject               m_photoOverlay;
-    RectTransform        m_viewfinderTrans;
-    Animator                      m_animator;
-    GameObject              m_PopupOverlay;
+    bool                    m_photoModeActive;
+    GameObject              m_photoOverlay;
+    Animator                m_animator;
 
-    public GameObject          m_virtCamOBJ;
-    Camera                                      m_virtCam;
-    PhotoSubject                        m_virtCamScript;
-    public PhotoAlbum          m_photoAlbum;
+    public GameObject       m_virtCamOBJ;
+    Camera                  m_virtCam;
+    PhotoSubject            m_virtCamScript;
+    public PhotoAlbum       m_photoAlbum;
 
-    bool m_isTakingJournalPhoto;
-    JournalPhoto m_currJournalPhoto;
+    public Dictionary<JournalSubject, JournalPhotoData> m_JournalDictionary;
 
     public List<RawImage> m_journalPhotos;
+
+    public float m_journalValid_distance;
+    public float m_journalValid_angle;
 
     private void Start()
     {
         m_photoModeActive = false;
         m_photoOverlay = GameObject.Find("Photo_Overlay");
         //m_photoOverlay.SetActive(false);
-        m_viewfinderTrans = m_photoOverlay.GetComponentInChildren<RectTransform>();
 
         m_animator = m_photoOverlay.GetComponentInChildren<Animator>();
 
-        m_PopupOverlay = GameObject.Find("PopUpCanvas");
+       // m_PopupOverlay = GameObject.Find("PopUpCanvas");
 
         m_virtCam = m_virtCamOBJ.GetComponent<Camera>();
         m_virtCamScript = m_virtCamOBJ.GetComponent<PhotoSubject>();
         m_virtCam.enabled = false;
 
-        m_isTakingJournalPhoto = false;
-        m_currJournalPhoto = 0;
-
         m_journalPhotos = new List<RawImage>();
-
-        //for (int i = 1; i <= m_totalJournalPhotos; i++)
-        //{
-        //    string name = "JournalPhoto_" + i.ToString();
-        //    GameObject go = GameObject.Find(name);
-        //    RawImage ri = go.GetComponent<RawImage>();
-        //        m_journalPhotos.Add(ri);
-        //}
 
 
     }
@@ -68,7 +74,7 @@ public class PhotoMode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) && !m_isTakingJournalPhoto)
+        if (Input.GetKeyDown(KeyCode.P))
         {
             togglePhotoModeActive();
         }
@@ -88,32 +94,17 @@ public class PhotoMode : MonoBehaviour
     {
         if (m_photoModeActive == false)
         {
-            m_PopupOverlay.SetActive(false);
+            //m_PopupOverlay.SetActive(false);
             m_photoModeActive = true;
             //m_photoOverlay.SetActive(true);
             m_animator.SetTrigger("TransIN");
         }
         else
         {
-            m_PopupOverlay.SetActive(true);
+           // m_PopupOverlay.SetActive(true);
             m_animator.SetTrigger("TransOUT");
             m_photoModeActive = false;
         }
-    }
-
-    public void EnableJournalPhotoMode(int photoOpNumber)
-    {
-        m_currJournalPhoto = (JournalPhoto)photoOpNumber;
-        m_isTakingJournalPhoto = true;
-        //m_currJournalPhoto = photoName;
-        togglePhotoModeActive();
-    }
-
-    public void DisableJournalPhotoMode()
-    {
-        m_isTakingJournalPhoto = false;
-        m_currJournalPhoto = JournalPhoto.INACTIVE;
-        togglePhotoModeActive();
     }
 
 
@@ -170,15 +161,46 @@ public class PhotoMode : MonoBehaviour
 
         System.IO.File.WriteAllBytes(filename, bytes);
 
-        if (!m_isTakingJournalPhoto)
+        (bool isValidated, JournalSubject subj) = isPhotoJournalValid();
+
+        if (isValidated)
         {
-            m_photoAlbum.AddNewPhoto(filename);
+            m_photoAlbum.AddToJournal(filename, subj);
         }
         else
         {
-            m_photoAlbum.AddToJournal(filename, m_currJournalPhoto);
+            m_photoAlbum.AddNewPhoto(filename);
         }
         //m_journalPhotos[m_currJournalPhoto].texture = LoadPNG(filename);
+    }
+
+    (bool, JournalSubject) isPhotoJournalValid()
+    {
+        Vector3 virtCamPos = m_virtCamOBJ.transform.position;
+        (JournalSubject subj, float dist) = FindClosest(virtCamPos);
+        bool location = (dist < m_journalValid_distance);
+        Quaternion idealAngle = Quaternion.identity;
+        bool angle = (Quaternion.Angle(idealAngle, m_virtCamOBJ.transform.localRotation) < m_journalValid_angle);
+
+        return (location && angle, subj);
+    }
+
+    (JournalSubject, float) FindClosest(Vector3 camPos)
+    {
+        float closestDist = 1000.0f;
+        JournalSubject closestSubj = JournalSubject.CLN_Station;
+        foreach(var go in m_JournalDictionary)
+        {
+            Vector3 subjPos = go.Value.getPhotoLocation();
+            float dist = Vector3.Distance(camPos, subjPos);
+            if(dist < closestDist)
+            {
+                closestDist = dist;
+                closestSubj = go.Key;
+            }
+        }
+
+        return (closestSubj, closestDist);
     }
 
     Texture2D LoadPNG(string filepath)

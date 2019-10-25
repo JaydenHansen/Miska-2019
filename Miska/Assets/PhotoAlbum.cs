@@ -9,7 +9,7 @@ public class PhotoAlbum : MonoBehaviour
 
     List<string>m_picsFileNames;
 
-    Dictionary<JournalPhoto, string> m_JournalPhotos;
+    Dictionary<JournalSubject, string> m_JournalPhotos;
 
     string          m_fullpath;
     string          m_folderPath;
@@ -26,6 +26,7 @@ public class PhotoAlbum : MonoBehaviour
     void Start()
     {
         m_picsFileNames = new List<string>();
+        m_JournalPhotos = new Dictionary<JournalSubject, string>();
         m_folderPath = "/Resources/Photos";
         m_fullpath = Application.dataPath + m_folderPath;
         m_isShowingAlbum = false;
@@ -126,8 +127,12 @@ public class PhotoAlbum : MonoBehaviour
         m_picsFileNames.Add(filename);
     }
 
-    public void AddToJournal(string filename, JournalPhoto photoPlace)
+    public void AddToJournal(string filename, JournalSubject photoPlace)
     {
-        m_JournalPhotos.Add(photoPlace, filename);
+        if (!m_JournalPhotos.ContainsKey(photoPlace))
+        {
+            m_JournalPhotos.Add(photoPlace, filename);
+        }
+
     }
 }

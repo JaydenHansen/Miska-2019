@@ -5,6 +5,17 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum JournalPhoto
+{
+    CLN_Station,
+    CLN_Rocks,
+    CLN_Ducks,
+    LOC_River,
+    OBJ_DogToy,
+    INACTIVE
+
+};
+
 public class PhotoMode : MonoBehaviour
 {
     bool                                   m_photoModeActive;
@@ -18,11 +29,10 @@ public class PhotoMode : MonoBehaviour
     PhotoSubject                        m_virtCamScript;
     public PhotoAlbum          m_photoAlbum;
 
-   bool m_isTakingJournalPhoto;
-   int m_currJournalPhoto;
-   int m_totalJournalPhotos;
+    bool m_isTakingJournalPhoto;
+    JournalPhoto m_currJournalPhoto;
 
-   public List<RawImage> m_journalPhotos;
+    public List<RawImage> m_journalPhotos;
 
     private void Start()
     {
@@ -43,53 +53,70 @@ public class PhotoMode : MonoBehaviour
         m_currJournalPhoto = 0;
 
         m_journalPhotos = new List<RawImage>();
-        m_totalJournalPhotos = m_journalPhotos.Count;
 
-        for (int i = 1; i <= m_totalJournalPhotos; i++)
-        {
-            string name = "JournalPhoto_" + i.ToString();
-            GameObject go = GameObject.Find(name);
-            RawImage ri = go.GetComponent<RawImage>();
-                m_journalPhotos.Add(ri);
-        }
+        //for (int i = 1; i <= m_totalJournalPhotos; i++)
+        //{
+        //    string name = "JournalPhoto_" + i.ToString();
+        //    GameObject go = GameObject.Find(name);
+        //    RawImage ri = go.GetComponent<RawImage>();
+        //        m_journalPhotos.Add(ri);
+        //}
 
 
-    }
-
-    public void JournalPhotoMode(bool status, int photoNo = 0)
-    {
-        m_isTakingJournalPhoto = status;
-        m_currJournalPhoto = photoNo;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && !m_isTakingJournalPhoto)
         {
-            if(m_photoModeActive == false)
-            {
-                m_PopupOverlay.SetActive(false);
-                m_photoModeActive = true;
-                Debug.Log("Photo Mode engaged");
-                //m_photoOverlay.SetActive(true);
-                m_animator.SetTrigger("TransIN");
-            }
-            else
-            {
-                m_PopupOverlay.SetActive(true);
-                m_animator.SetTrigger("TransOUT");
-                Debug.Log("Photo Mode disengaged");
-                m_photoModeActive = false;
-            }
+            togglePhotoModeActive();
         }
 
-        if(m_photoModeActive && Input.GetMouseButtonDown(0))
+
+        if (m_photoModeActive)
         {
-            StartCoroutine("CapturePhoto");
+            if (Input.GetMouseButtonDown(0))
+            {
+                StartCoroutine("CapturePhoto");
+            }
         }
 
     }
+
+    private void togglePhotoModeActive()
+    {
+        if (m_photoModeActive == false)
+        {
+            m_PopupOverlay.SetActive(false);
+            m_photoModeActive = true;
+            //m_photoOverlay.SetActive(true);
+            m_animator.SetTrigger("TransIN");
+        }
+        else
+        {
+            m_PopupOverlay.SetActive(true);
+            m_animator.SetTrigger("TransOUT");
+            m_photoModeActive = false;
+        }
+    }
+
+    public void EnableJournalPhotoMode(int photoOpNumber)
+    {
+        m_currJournalPhoto = (JournalPhoto)photoOpNumber;
+        m_isTakingJournalPhoto = true;
+        //m_currJournalPhoto = photoName;
+        togglePhotoModeActive();
+    }
+
+    public void DisableJournalPhotoMode()
+    {
+        m_isTakingJournalPhoto = false;
+        m_currJournalPhoto = JournalPhoto.INACTIVE;
+        togglePhotoModeActive();
+    }
+
+
 
     IEnumerator CapturePhoto()
     {
@@ -109,7 +136,7 @@ public class PhotoMode : MonoBehaviour
     private static string GenerateFileName()
     {
 
-        string folderPath = Application.dataPath + "/Resources/Photos/";
+        string folderPath = Application.persistentDataPath;
         DateTime now = DateTime.Now;
         string dt = now.Day.ToString() + "-" + now.Month.ToString() + "-" + now.Year.ToString() + " " + now.Hour.ToString() + "-" + now.Minute.ToString() + "-" + now.Second.ToString();
         //string ID
@@ -143,9 +170,16 @@ public class PhotoMode : MonoBehaviour
 
         System.IO.File.WriteAllBytes(filename, bytes);
 
-        m_photoAlbum.AddNewPhoto(filename);
+        if (!m_isTakingJournalPhoto)
+        {
+            m_photoAlbum.AddNewPhoto(filename);
+        }
+        else
+        {
+            m_photoAlbum.AddToJournal(filename, m_currJournalPhoto);
+        }
         //m_journalPhotos[m_currJournalPhoto].texture = LoadPNG(filename);
-     }
+    }
 
     Texture2D LoadPNG(string filepath)
     {

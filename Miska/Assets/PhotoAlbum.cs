@@ -7,27 +7,9 @@ using UnityEngine.UI;
 public class PhotoAlbum : MonoBehaviour
 {
 
-    //struct PhotoImage
-    //{
-    //    public PhotoImage(FileInfo fi)
-    //    {
-    //        isFile = true;
-    //        file = fi;
-    //        image = null;
-    //    }
-    //    public PhotoImage (Texture2D tx)
-    //    {
-    //        isFile = false;
-    //        file = null;
-    //        image = tx;
-    //    }
-
-    //    public bool isFile;
-    //   public  FileInfo file;
-    //    public Texture2D image;
-    //}
-
     List<string>m_picsFileNames;
+
+    Dictionary<JournalPhoto, string> m_JournalPhotos;
 
     string          m_fullpath;
     string          m_folderPath;
@@ -69,7 +51,7 @@ public class PhotoAlbum : MonoBehaviour
     {
         m_canvas.enabled        = m_isShowingAlbum;
         //m_playerScript.enabled  = !(m_isShowingAlbum);
-        if (Input.GetKeyDown(KeyCode.L))
+        /*if (Input.GetKeyDown(KeyCode.L))
         {
             if (m_isShowingAlbum == false)
             {
@@ -82,8 +64,9 @@ public class PhotoAlbum : MonoBehaviour
                 m_isShowingAlbum = false;
                 m_playerScript.enabled = true;
             }
-        }
+        }*/
 
+        /*
         if (m_isShowingAlbum)
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -110,26 +93,17 @@ public class PhotoAlbum : MonoBehaviour
                 }
                 LoadIndexedPhotoToTexture();
             }
-        }
+        }*/
     }
 
     private void LoadIndexedPhotoToTexture()
     {
 
         string PhotoPath = m_picsFileNames[m_currPicIndex];
-        string loadPath = Application.dataPath + "/Resources/Photos/" + PhotoPath;
+        string loadPath = m_fullpath + "/" + PhotoPath;
         var texture = LoadPNG(loadPath);
         m_photoOBJ.texture = texture;
 
-        //if (m_picsInfo[m_currPicIndex].isFile)
-        //{
-            
-        //}
-        //else
-        //{
-        //    m_photoOBJ.texture = m_picsInfo[m_currPicIndex].image;
-        //}
-       
     }
 
     Texture2D LoadPNG(string filePath)
@@ -149,8 +123,11 @@ public class PhotoAlbum : MonoBehaviour
 
     public void AddNewPhoto(string filename)
     {
-        string saveFile = Path.GetFileName(filename);
+        m_picsFileNames.Add(filename);
+    }
 
-        m_picsFileNames.Add(saveFile);
-     }
+    public void AddToJournal(string filename, JournalPhoto photoPlace)
+    {
+        m_JournalPhotos.Add(photoPlace, filename);
+    }
 }

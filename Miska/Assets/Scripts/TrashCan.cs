@@ -8,6 +8,7 @@ public class TrashCan : MonoBehaviour
     public TrashHolder m_trashCount;
     public GameObject[] m_trash;
     public VoidEvent m_onAllTrash;
+    public VoidEvent m_trashDeposited;
 
     public AK.Wwise.Event m_depositTrashSound;
     public AK.Wwise.Event m_allTrashDepositSound;
@@ -66,10 +67,11 @@ public class TrashCan : MonoBehaviour
         {
             m_triggered = true;
             m_onAllTrash.Invoke();
+            m_trashDeposited.Invoke();
         }
         else
         {
-            
+            m_trashDeposited.Invoke();
         }
     }   
 

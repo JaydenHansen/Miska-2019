@@ -14,6 +14,9 @@ public class UIDissolve : MonoBehaviour
     public Vector2 m_dissolveDistance;
     public Transform m_player;
     public Transform m_cameraArm;
+    public bool m_orbit;
+    public float m_orbitRadius;
+    public Transform m_orbitTransform;
 
     bool m_active;
     bool m_alreadyActivated;
@@ -42,6 +45,11 @@ public class UIDissolve : MonoBehaviour
     void Update()
     {
         transform.forward = m_cameraArm.forward;
+
+        if (m_orbit)
+        {
+            transform.position = m_orbitTransform.position + ((m_cameraArm.position - transform.position).normalized * m_orbitRadius);
+        }
 
         if (m_useDistance)
         {
@@ -89,6 +97,12 @@ public class UIDissolve : MonoBehaviour
     float Remap(float value, float from1, float from2, float to1, float to2)
     {
         return to1 + (value - from1) * (to2 - to1) / (from2 - from1);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (m_orbit && m_orbitTransform)
+            Gizmos.DrawWireSphere(m_orbitTransform.position, m_orbitRadius);
     }
 }
 

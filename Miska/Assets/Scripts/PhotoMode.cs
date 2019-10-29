@@ -5,52 +5,21 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum JournalSubject
-{
-    CLN_Station,
-    CLN_Rocks,
-    CLN_Ducks,
-    LOC_River,
-    OBJ_DogToy,
-};
-
 public struct JournalPhotoData
 {
-    public JournalPhotoData(GameObject ph, RawImage ri, string fl)
-    {
-        Photo_Op = ph;
-        Image = ri;
-        filename = fl;
-    }
-
-    public Vector3 getPhotoLocation()
-    {
-        return Photo_Op.transform.position;
-    }
-
-    GameObject Photo_Op;
-    RawImage Image;
-    string filename;
-
-};
 
 public class PhotoMode : MonoBehaviour
 {
-    bool                    m_photoModeActive;
-    GameObject              m_photoOverlay;
-    Animator                m_animator;
+    bool                            m_photoModeActive;
+    GameObject                      m_photoOverlay;
+    Animator                        m_animator;
 
-    public GameObject       m_virtCamOBJ;
-    Camera                  m_virtCam;
-    PhotoSubject            m_virtCamScript;
-    public PhotoAlbum       m_photoAlbum;
+    public GameObject               m_virtCamOBJ;
+    Camera                          m_virtCam;
+    PhotoSubject                    m_virtCamScript;
+    public PhotoAlbum               m_photoAlbum;
 
-    public Dictionary<JournalSubject, JournalPhotoData> m_JournalDictionary;
-
-    public List<RawImage> m_journalPhotos;
-
-    public float m_journalValid_distance;
-    public float m_journalValid_angle;
+    public List<PhotoSubject>       m_photoSubjects;
 
     private void Start()
     {
@@ -65,9 +34,6 @@ public class PhotoMode : MonoBehaviour
         m_virtCam = m_virtCamOBJ.GetComponent<Camera>();
         m_virtCamScript = m_virtCamOBJ.GetComponent<PhotoSubject>();
         m_virtCam.enabled = false;
-
-        m_journalPhotos = new List<RawImage>();
-
 
     }
 
@@ -165,7 +131,9 @@ public class PhotoMode : MonoBehaviour
 
         if (isValidated)
         {
+                //Photo Subject object -> send photo to poloroid function
             m_photoAlbum.AddToJournal(filename, subj);
+                //Run "journal alert"
         }
         else
         {
@@ -176,31 +144,14 @@ public class PhotoMode : MonoBehaviour
 
     (bool, JournalSubject) isPhotoJournalValid()
     {
-        Vector3 virtCamPos = m_virtCamOBJ.transform.position;
-        (JournalSubject subj, float dist) = FindClosest(virtCamPos);
-        bool location = (dist < m_journalValid_distance);
-        Quaternion idealAngle = Quaternion.identity;
-        bool angle = (Quaternion.Angle(idealAngle, m_virtCamOBJ.transform.localRotation) < m_journalValid_angle);
-
-        return (location && angle, subj);
-    }
-
-    (JournalSubject, float) FindClosest(Vector3 camPos)
-    {
-        float closestDist = 1000.0f;
-        JournalSubject closestSubj = JournalSubject.CLN_Station;
-        foreach(var go in m_JournalDictionary)
+        foreach(var subj in m_photoSubjects)
         {
-            Vector3 subjPos = go.Value.getPhotoLocation();
-            float dist = Vector3.Distance(camPos, subjPos);
-            if(dist < closestDist)
+            if(subj.isPhotoValid())
             {
-                closestDist = dist;
-                closestSubj = go.Key;
+                return (true, subj.getSubject());
             }
         }
-
-        return (closestSubj, closestDist);
+        return (false, JournalSubject.INACTIVE);
     }
 
     Texture2D LoadPNG(string filepath)

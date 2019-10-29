@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &7178810318093824745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603961126194230140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e5a41a846c0b94da9126a18b7b7642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_interestObjects: []
 --- !u!114 &2108206345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,7 +40,7 @@ PrefabInstance:
     - target: {fileID: 2504265661016138819, guid: 05f3b01f0eaa587498812f96177438b9,
         type: 3}
       propertyPath: m_Name
-      value: PHOTO-OP_River
+      value: PHOTO-OP_River Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2504265661016138822, guid: 05f3b01f0eaa587498812f96177438b9,
         type: 3}
@@ -154,23 +167,19 @@ PrefabInstance:
       propertyPath: m_range.x
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 2504265661016138937, guid: 05f3b01f0eaa587498812f96177438b9,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: m_onSuccess.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 2504265661016138937, guid: 05f3b01f0eaa587498812f96177438b9,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: m_onSuccess.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EnableJournalPhotoMode
       objectReference: {fileID: 0}
-    - target: {fileID: 2504265661016138937, guid: 05f3b01f0eaa587498812f96177438b9,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: m_onFailure.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 2504265661016138937, guid: 05f3b01f0eaa587498812f96177438b9,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: m_onFailure.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisableJournalPhotoMode
       objectReference: {fileID: 0}
@@ -204,11 +213,14 @@ PrefabInstance:
       propertyPath: m_cameraArm
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2504265661016138821, guid: 05f3b01f0eaa587498812f96177438b9, type: 3}
-    - {fileID: 2504265661016138820, guid: 05f3b01f0eaa587498812f96177438b9, type: 3}
-    - {fileID: 2504265661016138823, guid: 05f3b01f0eaa587498812f96177438b9, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05f3b01f0eaa587498812f96177438b9, type: 3}
+--- !u!1 &603961126194230140 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2504265661016138819, guid: 05f3b01f0eaa587498812f96177438b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3071810262016251711}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1611704172405657240 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4394580093123549607, guid: 05f3b01f0eaa587498812f96177438b9,

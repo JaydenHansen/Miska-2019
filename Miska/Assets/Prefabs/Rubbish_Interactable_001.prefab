@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 263e641651c1cdd42b383388cf6759af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_delay: 1
+  m_delay: 1.5
+  m_scaleThreshold: 1
+  m_disableOldParent: 0
   m_bottleSound:
     idInternal: 0
     valueGuidInternal: 
@@ -79,6 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4538c5f57b200ea4dba85dcb1e59e90e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_failOnStopLooking: 0
 --- !u!114 &2729283868041621390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +215,18 @@ PrefabInstance:
     - target: {fileID: 400000, guid: aa40ad18f8798df42b1fbf72bd6c8a38, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: aa40ad18f8798df42b1fbf72bd6c8a38, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: aa40ad18f8798df42b1fbf72bd6c8a38, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: aa40ad18f8798df42b1fbf72bd6c8a38, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: aa40ad18f8798df42b1fbf72bd6c8a38, type: 3}
       propertyPath: m_DynamicOccludee

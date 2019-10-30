@@ -8,6 +8,7 @@ public class UIDissolve : MonoBehaviour
     public Image[] m_image;
     public float m_dissolveSpeed;
     public float m_dissolveRandomOffset;
+    public float m_scalePulseSpeed;
     public Vector2 m_range;
     public bool m_useDistance;
     [Tooltip("X: Distance where image is full Y: Distance where image is gone")]
@@ -21,6 +22,10 @@ public class UIDissolve : MonoBehaviour
     bool m_active;
     bool m_alreadyActivated;
     float m_timer;
+    float m_scalePulseTimer;
+    bool m_scalePulseDirection;
+    Vector3 m_baseScale;
+    Vector3 m_minScale;
     bool m_direction;
 
     public bool UseDistance
@@ -32,7 +37,8 @@ public class UIDissolve : MonoBehaviour
     // Start is called before the first frame updated
     void Start()
     {
-        
+        m_baseScale = transform.localScale;
+        m_minScale = m_baseScale * 0.5f;
         foreach (Image image in m_image)
         {
             image.material = new Material(image.material);
@@ -45,6 +51,21 @@ public class UIDissolve : MonoBehaviour
     void Update()
     {
         transform.forward = m_cameraArm.forward;
+
+        if (m_scalePulseDirection)
+        {
+            m_scalePulseTimer += Time.deltaTime;
+            if (m_scalePulseTimer >= m_scalePulseSpeed)
+                m_scalePulseDirection = false;
+        }
+        else
+        {
+            m_scalePulseTimer -= Time.deltaTime;
+            if (m_scalePulseTimer <= 0)
+                m_scalePulseDirection = true;
+        }
+        transform.localScale = Vector3.Lerp(m_minScale, m_baseScale, m_scalePulseTimer / m_scalePulseSpeed);
+
 
         if (m_orbit)
         {

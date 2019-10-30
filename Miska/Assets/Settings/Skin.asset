@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Skin
   m_EditorClassIdentifier: 
   profile:
-    scatteringDistance: {r: 0.735849, g: 0.35870928, b: 0.25338197, a: 1}
+    scatteringDistance: {r: 1, g: 1, b: 1, a: 1}
     transmissionTint: {r: 0.75686276, g: 0.32156864, b: 0.2, a: 1}
     texturingMode: 0
     transmissionMode: 2
     thicknessRemap: {x: 0, y: 8.152544}
     worldScale: 1
-    ior: 1.36
+    ior: 1.383
     hash: 1076810881
   m_Version: 1
   profiles:

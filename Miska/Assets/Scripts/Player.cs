@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
             }
 
             // Gets the movement relative to the direction the camera is facing
-            Vector3 movementVector = Quaternion.Euler(0, m_cameraController.Yaw, 0) * new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
+            Vector3 movementVector = Quaternion.Euler(0, m_cameraController.Yaw, 0) * Vector3.ClampMagnitude(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")), 1);
 
             float acceleration = 0;
             switch (m_movementState) // changes the acceleration depending on the MovementState
@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
                 m_stepper.SetMovementState(m_movementState, movementVector.magnitude);
             }                      
 
-            //CollisionFlags collision = m_characterController.Move((m_velocity * Time.deltaTime) + (m_gravity * Time.deltaTime));
+            CollisionFlags collision = m_characterController.Move((m_velocity * Time.deltaTime) + (m_gravity * Time.deltaTime));
 
             m_velocity -= new Vector3(m_velocity.x, 0, m_velocity.z) * m_friction * Time.deltaTime; // Drag only on the x/z
 
@@ -142,7 +142,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        CollisionFlags collision = m_characterController.Move((m_velocity * Time.fixedDeltaTime) + (m_gravity * Time.fixedDeltaTime));
+        //CollisionFlags collision = m_characterController.Move((m_velocity * Time.fixedDeltaTime) + (m_gravity * Time.fixedDeltaTime));
     }
 
     public void SetPlayerSitting(bool isSitting)

@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
             }
 
             // Gets the movement relative to the direction the camera is facing
-            Vector3 movementVector = Quaternion.Euler(0, m_cameraController.Yaw, 0) * new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            Vector3 movementVector = Quaternion.Euler(0, m_cameraController.Yaw, 0) * new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
 
             float acceleration = 0;
             switch (m_movementState) // changes the acceleration depending on the MovementState

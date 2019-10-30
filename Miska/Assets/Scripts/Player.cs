@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
     [Header("")]
     public CameraController m_cameraController = null;
     public Transform m_pickup;
-    public float m_rockGlowDist;
 
     private CharacterController m_characterController;
     private Animator m_animator;
@@ -29,7 +28,6 @@ public class Player : MonoBehaviour
     private MovementState m_movementState = MovementState.Walking;
     private bool m_hasPickup;
     private Pickup m_pickupObject;
-    private Renderer m_lastLookedAt;
 
     //[SerializeField]
     //private int m_trashCount;
@@ -110,63 +108,23 @@ public class Player : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(0, m_cameraController.Yaw, 0); // rotate the player in the direction of the camera
         }
-
-        if (!m_hasPickup)
-        {
-            RaycastHit hit;
-            if (Physics.Raycast(m_cameraController.DirectionRay, out hit, m_rockGlowDist, (1 << LayerMask.NameToLayer("Rock")) | (1 << LayerMask.NameToLayer("Highlighters")), QueryTriggerInteraction.Collide))
-            {
-                if (m_lastLookedAt)
-                {
-                    m_lastLookedAt.material.SetFloat("_LookAt", 0);
-                }
-                Renderer renderer = hit.collider.GetComponent<Renderer>();
-                if (renderer)
-                {
-                    if (renderer.tag == "Pickup")
-                    {
-                        Pickup pickup = renderer.GetComponent<Pickup>();
-                        if (pickup && !pickup.Rigidbody.isKinematic)
-                        {
-                            renderer.material.SetFloat("_LookAt", 1);
-                            m_lastLookedAt = renderer;
-                        }
-                    }
-                    else
-                    {
-                        renderer.material.SetFloat("_LookAt", 1);
-                        m_lastLookedAt = renderer;
-                    }
-                }
-                else
-                {
-                    Renderer childRenderer = hit.collider.GetComponentInChildren<Renderer>();
-                    if (childRenderer)
-                    {
-                        childRenderer.material.SetFloat("_LookAt", 1);
-                        m_lastLookedAt = childRenderer;                        
-                    }
-                }
-            }
-            else if (m_lastLookedAt)
-            {
-                m_lastLookedAt.material.SetFloat("_LookAt", 0);
-                m_lastLookedAt = null;
-            }
-        }
+        
         // Pickup
         if (Input.GetMouseButtonDown(0))
         {
-            if (!m_hasPickup && m_lastLookedAt)
+            if (!m_hasPickup)
             {
-                Pickup rock = m_lastLookedAt.GetComponent<Pickup>();
-                if (rock && !rock.Rigidbody.isKinematic)
+                RaycastHit hit;
+                if (Physics.Raycast(m_cameraController.DirectionRay, out hit))
                 {
-                    rock.Renderer.material.SetFloat("_LookAt", 0);
-                    rock.StartPickup(m_pickup);
-                    Physics.IgnoreCollision(m_characterController, rock.Collider, true);
-                    m_hasPickup = true;
-                    m_pickupObject = rock;
+                    Pickup rock = hit.collider.GetComponent<Pickup>();
+                    if (rock && !rock.Rigidbody.isKinematic)
+                    {
+                        rock.StartPickup(m_pickup);
+                        Physics.IgnoreCollision(m_characterController, rock.Collider, true);
+                        m_hasPickup = true;
+                        m_pickupObject = rock;
+                    }
                 }
             }
             else

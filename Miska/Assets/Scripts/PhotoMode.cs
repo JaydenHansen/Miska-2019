@@ -5,9 +5,6 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
-public struct JournalPhotoData
-{
-
 public class PhotoMode : MonoBehaviour
 {
     bool                            m_photoModeActive;
@@ -19,7 +16,11 @@ public class PhotoMode : MonoBehaviour
     PhotoSubject                    m_virtCamScript;
     public PhotoAlbum               m_photoAlbum;
 
-    public List<PhotoSubject>       m_photoSubjects;
+    List<PhotoSubject>              m_capturedSubjects;
+    List<PhotoSubject>              m_allSubjects;
+
+    public GameObject               m_entry1,   m_entry2,   m_entry3; //Replace with array!!
+    public PhotoSubject             m_subj1,    m_subj2,    m_subj3;
 
     private void Start()
     {
@@ -35,6 +36,12 @@ public class PhotoMode : MonoBehaviour
         m_virtCamScript = m_virtCamOBJ.GetComponent<PhotoSubject>();
         m_virtCam.enabled = false;
 
+        m_capturedSubjects = new List<PhotoSubject>();
+        m_allSubjects = new List<PhotoSubject>();
+
+        m_allSubjects.Add(m_subj1);
+        m_allSubjects.Add(m_subj2);
+        m_allSubjects.Add(m_subj3);
     }
 
     // Update is called once per frame
@@ -127,12 +134,32 @@ public class PhotoMode : MonoBehaviour
 
         System.IO.File.WriteAllBytes(filename, bytes);
 
-        (bool isValidated, JournalSubject subj) = isPhotoJournalValid();
+        (bool isValidated, PhotoSubject subj) = isPhotoJournalValid();
 
         if (isValidated)
         {
-                //Photo Subject object -> send photo to poloroid function
-            m_photoAlbum.AddToJournal(filename, subj);
+            GameObject journalOBJ;
+            bool poloroidFound = false;
+            foreach (var lstdPhotos in m_capturedSubjects)
+            {
+                if (lstdPhotos == subj)
+                {
+                    journalOBJ = subj.getJournalEntry();
+                    poloroidFound = true;
+                }
+            }
+
+            if(!poloroidFound)
+            {
+                m_capturedSubjects.Add(subj);
+                journalOBJ = GetJournalEntry();
+            }
+            else
+            {
+                journalOBJ = null;
+            }
+
+            subj.SetupPoloroid(filename, journalOBJ);
                 //Run "journal alert"
         }
         else
@@ -142,16 +169,42 @@ public class PhotoMode : MonoBehaviour
         //m_journalPhotos[m_currJournalPhoto].texture = LoadPNG(filename);
     }
 
-    (bool, JournalSubject) isPhotoJournalValid()
+    GameObject GetJournalEntry()
     {
-        foreach(var subj in m_photoSubjects)
+        int count = m_capturedSubjects.Count;
+
+        GameObject entryOBJ;
+
+        if (count == 1)
+        {
+            entryOBJ = m_entry1;
+        }
+        else if (count == 2)
+        {
+            entryOBJ = m_entry2;
+        }
+        else if (count == 3)
+        {
+            entryOBJ = m_entry3;
+        }
+        else
+        {
+            entryOBJ = null;
+        }
+
+        return entryOBJ;
+    }
+
+    (bool, PhotoSubject) isPhotoJournalValid()
+    {
+        foreach (var subj in m_allSubjects)
         {
             if(subj.isPhotoValid())
             {
-                return (true, subj.getSubject());
+                return (true, subj);
             }
         }
-        return (false, JournalSubject.INACTIVE);
+        return (false, null);
     }
 
     Texture2D LoadPNG(string filepath)

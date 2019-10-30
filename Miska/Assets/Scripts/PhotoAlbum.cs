@@ -7,18 +7,18 @@ using UnityEngine.UI;
 public class PhotoAlbum : MonoBehaviour
 {
 
-    List<string>m_picsFileNames;
+    List<string>        m_picsFileNames;
 
-    Dictionary<JournalSubject, string> m_JournalPhotos;
+    string              m_fullpath;
+    string              m_folderPath;
+    bool                m_isShowingAlbum;
+    public Canvas              m_canvas;
+    RawImage            m_photoOBJ;
+    int                 m_currPicIndex;
 
-    string          m_fullpath;
-    string          m_folderPath;
-    bool            m_isShowingAlbum;
-    public Canvas          m_canvas;
-    RawImage        m_photoOBJ;
-    int             m_currPicIndex;
+    public Player       m_playerScript;
 
-    public Player   m_playerScript;
+    List<PhotoSubject>  m_journalEntries;
 
     
 
@@ -26,15 +26,13 @@ public class PhotoAlbum : MonoBehaviour
     void Start()
     {
         m_picsFileNames = new List<string>();
-        m_JournalPhotos = new Dictionary<JournalSubject, string>();
         m_folderPath = "/Resources/Photos";
         m_fullpath = Application.dataPath + m_folderPath;
         m_isShowingAlbum = false;
         m_currPicIndex = 0;
         GetFileArray();
         m_photoOBJ = gameObject.GetComponentInChildren<RawImage>();
-        //m_photoOBJ.enabled = false;
-        
+        m_journalEntries = new List<PhotoSubject>();
     }
 
     private void GetFileArray()
@@ -51,50 +49,6 @@ public class PhotoAlbum : MonoBehaviour
     void Update()
     {
         m_canvas.enabled        = m_isShowingAlbum;
-        //m_playerScript.enabled  = !(m_isShowingAlbum);
-        /*if (Input.GetKeyDown(KeyCode.L))
-        {
-            if (m_isShowingAlbum == false)
-            {
-                m_isShowingAlbum = true;
-                m_playerScript.enabled = false;
-                LoadIndexedPhotoToTexture();
-            }
-            else
-            {
-                m_isShowingAlbum = false;
-                m_playerScript.enabled = true;
-            }
-        }*/
-
-        /*
-        if (m_isShowingAlbum)
-        {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                if (m_currPicIndex == 0)
-                {
-                    m_currPicIndex = m_picsFileNames.Count - 1;
-                }
-                else
-                {
-                    m_currPicIndex--;
-                }
-                LoadIndexedPhotoToTexture();
-            }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                if (m_currPicIndex == m_picsFileNames.Count - 1)
-                {
-                    m_currPicIndex = 0;
-                }
-                else
-                {
-                    m_currPicIndex++;
-                }
-                LoadIndexedPhotoToTexture();
-            }
-        }*/
     }
 
     private void LoadIndexedPhotoToTexture()
@@ -125,14 +79,5 @@ public class PhotoAlbum : MonoBehaviour
     public void AddNewPhoto(string filename)
     {
         m_picsFileNames.Add(filename);
-    }
-
-    public void AddToJournal(string filename, JournalSubject photoPlace)
-    {
-        if (!m_JournalPhotos.ContainsKey(photoPlace))
-        {
-            m_JournalPhotos.Add(photoPlace, filename);
-        }
-
     }
 }

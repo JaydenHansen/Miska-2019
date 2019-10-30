@@ -5,8 +5,6 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
-public struct JournalPhotoData
-{
 
 public class PhotoMode : MonoBehaviour
 {

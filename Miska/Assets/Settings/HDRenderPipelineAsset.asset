@@ -17,8 +17,8 @@ MonoBehaviour:
   m_RenderPipelineRayTracingResources: {fileID: 0}
   m_RenderingPathDefaultCameraFrameSettings:
     bitDatas:
-      data1: 69283709189951
-      data2: 4539628424389459968
+      data1: 69278239817535
+      data2: 4467570830351532032
     lodBias: 1
     lodBiasMode: 0
     maximumLODLevel: 0
@@ -43,7 +43,7 @@ MonoBehaviour:
     supportShadowMask: 1
     supportSSR: 0
     supportSSAO: 1
-    supportSubsurfaceScattering: 1
+    supportSubsurfaceScattering: 0
     increaseSssSampleCount: 1
     supportVolumetrics: 1
     increaseResolutionOfVolumetrics: 1
@@ -57,7 +57,7 @@ MonoBehaviour:
     supportDecals: 1
     msaaSampleCount: 1
     supportMotionVectors: 1
-    supportRuntimeDebugDisplay: 1
+    supportRuntimeDebugDisplay: 0
     supportDitheringCrossFade: 1
     supportRayTracing: 0
     supportedRaytracingTier: 2
@@ -67,12 +67,12 @@ MonoBehaviour:
       pointCookieSize: 128
       cubeCookieTexArraySize: 16
       planarReflectionProbeCacheSize: 2
-      planarReflectionTextureSize: 1024
+      planarReflectionTextureSize: 128
       reflectionProbeCacheSize: 64
-      reflectionCubemapSize: 256
-      reflectionCacheCompressed: 0
-      planarReflectionCacheCompressed: 0
-      skyReflectionSize: 1024
+      reflectionCubemapSize: 128
+      reflectionCacheCompressed: 1
+      planarReflectionCacheCompressed: 1
+      skyReflectionSize: 512
       skyLightingOverrideLayerMask:
         serializedVersion: 2
         m_Bits: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
       maxEnvLightsOnScreen: 64
       maxDecalsOnScreen: 512
     hdShadowInitParams:
-      maxShadowRequests: 400
+      maxShadowRequests: 600
       directionalShadowsDepthBits: 32
       shadowQuality: 0
       punctualLightShadowAtlas:
@@ -110,14 +110,14 @@ MonoBehaviour:
       minPercentage: 100
       dynResType: 1
       upsampleFilter: 1
-      forceResolution: 0
+      forceResolution: 1
       forcedPercentage: 100
     lowresTransparentSettings:
-      enabled: 1
+      enabled: 0
       checkerboardDepthBuffer: 1
       upsampleType: 1
   allowShaderVariantStripping: 1
-  enableSRPBatcher: 0
+  enableSRPBatcher: 1
   shaderVariantLogLevel: 0
   diffusionProfileSettings: {fileID: 0}
   diffusionProfileSettingsList:

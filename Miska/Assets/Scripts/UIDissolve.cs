@@ -69,7 +69,7 @@ public class UIDissolve : MonoBehaviour
 
         if (m_orbit)
         {
-            transform.position = m_orbitTransform.position + ((m_cameraArm.position - transform.position).normalized * m_orbitRadius);
+            transform.position = m_orbitTransform.position + ((m_cameraArm.position - m_orbitTransform.position).normalized * m_orbitRadius);
         }
 
         if (m_useDistance)

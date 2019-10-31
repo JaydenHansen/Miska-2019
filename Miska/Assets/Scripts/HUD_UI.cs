@@ -10,7 +10,7 @@ public class HUD_UI : MonoBehaviour
     List<bool> m_checkedStatus;
     public GameObject m_GoalText;
     Animator m_animator;
-    public bool m_isAllTrashPickedUp;
+    public bool m_isAllTrashPickedUp, m_isAllTrashDisposed;
     int m_currentAreaTrash;
     public Texture2D m_box_empty, m_box_checked;
     public Texture2D m_gt_pickup3, m_gt_pickup3Done, m_gt_pickup4, m_gt_pickup4Done, m_gt_pickup5, m_gt_pickup5Done;
@@ -21,13 +21,34 @@ public class HUD_UI : MonoBehaviour
 
     public AK.Wwise.Event m_checkOffSound, m_slideSound, m_stampSound;
 
+    bool m_isGoalRefreshing;
+    public float m_goalRefreshTimeTotal;
+    float m_goalRefreshTimeCurrent;
+
     // Start is called before the first frame update
     void Start()
     {
         SetupCheckboxArrays();
         m_animator = GetComponent<Animator>();
         SetupTrashScene(3, 3);
-        StartCoroutine("IntialTransition");
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            GoalRefresh();
+        }
+
+        if (m_isGoalRefreshing)
+        {
+            m_goalRefreshTimeCurrent -= Time.deltaTime;
+            Debug.Log(m_goalRefreshTimeCurrent.ToString());
+            if (m_goalRefreshTimeCurrent <= 0.0f)
+            {
+                m_animator.SetTrigger("TransTO_PullBack");
+            }
+        }
     }
 
     public void SetupTrashScene(int totalTrash, int remainingTrash)
@@ -96,6 +117,7 @@ public class HUD_UI : MonoBehaviour
         {
             SetBoxChecked(i, false);
         }
+        m_isAllTrashPickedUp = false;
     }
 
     void SetupCheckboxes(int areaTrash)
@@ -132,6 +154,8 @@ public class HUD_UI : MonoBehaviour
 
     void SetBoxChecked(int boxNo, bool status)
     {
+        m_isAllTrashDisposed = false;
+        m_isAllTrashPickedUp = false;
         m_checkedStatus[boxNo] = status;
         RawImage ri = m_checkboxes[boxNo].GetComponent<RawImage>();
         if (status)
@@ -154,7 +178,10 @@ public class HUD_UI : MonoBehaviour
 
     public void OnAllTrashDisposed()
     {
-        m_animator.SetTrigger("TransTO_Inactive");
+        if (!m_isAllTrashDisposed)
+        {
+            StartCoroutine("AllTrashDisposed");
+        }
     }
 
     public void OnTransition()
@@ -192,6 +219,20 @@ public class HUD_UI : MonoBehaviour
         yield return null;
     }
 
+    IEnumerator AllTrashDisposed()
+    {
+        m_isAllTrashDisposed = true;
+        yield return new WaitForSeconds(2.0f);
+
+        RawImage ri = m_GoalText.GetComponent<RawImage>();
+        ri.texture = m_gt_disposeDone;
+        m_stampSound.Post(gameObject);
+        yield return new WaitForSeconds(1.5f);
+
+        m_animator.SetTrigger("TransTO_Inactive");
+        yield return null;
+    }
+
     IEnumerator IntialTransition()
     {
         m_animator.SetTrigger("TransTO_FullDetail");
@@ -199,5 +240,14 @@ public class HUD_UI : MonoBehaviour
 
         m_animator.SetTrigger("TransTO_PullBack");
         yield return null;
+    }
+
+    void GoalRefresh()
+    {
+        if(!m_isGoalRefreshing)
+        {
+            m_animator.SetTrigger("TransTO_FullDetail");
+        }
+        m_goalRefreshTimeCurrent = m_goalRefreshTimeTotal;
     }
 }

@@ -22,6 +22,8 @@ public class PhotoMode : MonoBehaviour
     public GameObject               m_entry1,   m_entry2,   m_entry3; //Replace with array!!
     public PhotoSubject             m_subj1,    m_subj2,    m_subj3;
 
+    public HUD_UI                   m_HUDUI;
+
     private void Start()
     {
         m_photoModeActive = false;
@@ -71,12 +73,14 @@ public class PhotoMode : MonoBehaviour
             m_photoModeActive = true;
             //m_photoOverlay.SetActive(true);
             m_animator.SetTrigger("TransIN");
+            //m_HUDUI.setActive(true); To Add
         }
         else
         {
            // m_PopupOverlay.SetActive(true);
             m_animator.SetTrigger("TransOUT");
             m_photoModeActive = false;
+            //m_HUDUI.setActive(false); To Add
         }
     }
 

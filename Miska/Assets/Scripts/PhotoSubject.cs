@@ -26,19 +26,19 @@ public class PhotoSubject : MonoBehaviour
 
     public GameObject m_player;
     public GameObject m_camera;
-    bool isPlayerInPosition;
-
 
     public GameObject m_targetOBJ;              //Physical object in scene that used to determine direction validity
     public float m_validAngleOffset;
 
     public Sprite m_renderedText;                       //Refers to the actual pre-rendered Image
+
+    public GameObject m_uiIcon;
                                                 // Start is called before the first frame update
     void Start()
     {
         m_coll = GetComponent<Collider>();
-        isPlayerInPosition = false;
     }
+
 
     public JournalSubject getSubject()
     {
@@ -60,21 +60,23 @@ public class PhotoSubject : MonoBehaviour
         return m_isActive;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.gameObject == m_player)
-        {
-            isPlayerInPosition = true;
-        }
-    }
+    //private void OnControllerColliderHit(ControllerColliderHit collision)
+    //{
+    //    Debug.Log("Collision Detected");
+    //    if (collision.collider.gameObject == m_player)
+    //    {
+    //        isPlayerInPosition = true;
+    //        Debug.Log("Player Entered Area.");
+    //    }
+    //}
 
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.collider.gameObject == m_player)
-        {
-            isPlayerInPosition = false;
-        }
-    }
+    //private void OnTriggerExit(Collision collision)
+    //{
+    //    if (collision.collider.gameObject == m_player)
+    //    {
+    //        isPlayerInPosition = false;
+    //    }
+    //}
     
     public bool isPhotoValid()                          //Checks validity for photo captured for use as a journal photo
     {
@@ -84,12 +86,25 @@ public class PhotoSubject : MonoBehaviour
         }
         else
         {
+            bool isPlayerInPosition = m_coll.bounds.Contains(m_player.transform.position);
+
             Vector3 playerFacing = m_camera.transform.forward;
-            Vector3 disp = m_player.transform.position - m_targetOBJ.transform.position;
-            float ang = Vector3.Angle(playerFacing, disp);
+            Vector3 disp = m_camera.transform.position - m_targetOBJ.transform.position;
+            float ang = CalculateAngle(playerFacing, disp);
             bool isPlayerAngleValid = ang < m_validAngleOffset;
+
             return isPlayerInPosition && isPlayerAngleValid;
         }
+    }
+
+    float CalculateAngle(Vector3 a, Vector3 b)
+    {
+        a.Normalize();
+        b.Normalize();
+
+        float dot = a.x * b.x + a.y * b.y + a.z * b.z;
+
+        return (float)Mathf.Acos(dot);
     }
     public void SetupPoloroid(string filename, GameObject entry) //passes in photo as an argument then loads as the poloroids texture
     {
@@ -111,6 +126,12 @@ public class PhotoSubject : MonoBehaviour
 
         m_poloroid.texture = tex;
         m_textImage.sprite = m_renderedText;
+
+        if(m_uiIcon)
+        {
+            Destroy(m_uiIcon);
+        }
+        
     }
 }
 

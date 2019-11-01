@@ -31,6 +31,7 @@ public class HUD_UI : MonoBehaviour
         SetupCheckboxArrays();
         m_animator = GetComponent<Animator>();
         SetupTrashScene(3, 3);
+        m_isGoalRefreshing = false;
     }
 
     private void Update()
@@ -47,6 +48,7 @@ public class HUD_UI : MonoBehaviour
             if (m_goalRefreshTimeCurrent <= 0.0f)
             {
                 m_animator.SetTrigger("TransTO_PullBack");
+                m_isGoalRefreshing = false;
             }
         }
     }
@@ -222,7 +224,7 @@ public class HUD_UI : MonoBehaviour
     IEnumerator AllTrashDisposed()
     {
         m_isAllTrashDisposed = true;
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
 
         RawImage ri = m_GoalText.GetComponent<RawImage>();
         ri.texture = m_gt_disposeDone;
@@ -236,7 +238,7 @@ public class HUD_UI : MonoBehaviour
     IEnumerator IntialTransition()
     {
         m_animator.SetTrigger("TransTO_FullDetail");
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(3.5f);
 
         m_animator.SetTrigger("TransTO_PullBack");
         yield return null;
@@ -249,5 +251,6 @@ public class HUD_UI : MonoBehaviour
             m_animator.SetTrigger("TransTO_FullDetail");
         }
         m_goalRefreshTimeCurrent = m_goalRefreshTimeTotal;
+        m_isGoalRefreshing = true;
     }
 }

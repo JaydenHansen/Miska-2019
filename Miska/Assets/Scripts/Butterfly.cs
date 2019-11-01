@@ -68,7 +68,7 @@ public class Butterfly : MonoBehaviour
                 m_butterfly.position += m_velocity * Time.deltaTime;
                 m_velocity -= m_velocity * m_friction * Time.deltaTime;
 
-                m_butterfly.rotation = Quaternion.Lerp(m_butterfly.rotation, Quaternion.LookRotation(m_velocity), Time.deltaTime * m_rotationSpeed);
+                m_butterfly.rotation = Quaternion.Lerp(m_butterfly.rotation, Quaternion.LookRotation(-m_velocity), Time.deltaTime * m_rotationSpeed);
 
                 if ((m_butterfly.position - m_nextPoint).magnitude < 0.05)
                 {
@@ -86,7 +86,7 @@ public class Butterfly : MonoBehaviour
                 m_timer += Time.deltaTime;
                 m_butterfly.position = getCasteljauPoint(m_pointCount - 1, 0, Mathf.Clamp01(m_timer / m_speed));
 
-                m_butterfly.rotation = Quaternion.Lerp(m_butterfly.rotation, Quaternion.LookRotation((m_lastPos - m_butterfly.position).normalized), Time.deltaTime * m_rotationSpeed);
+                m_butterfly.rotation = Quaternion.Lerp(m_butterfly.rotation, Quaternion.LookRotation(-(m_lastPos - m_butterfly.position).normalized), Time.deltaTime * m_rotationSpeed);
 
                 m_lastPos = m_butterfly.position;
                 if (m_timer >= m_speed)
@@ -115,13 +115,9 @@ public class Butterfly : MonoBehaviour
     void FindNextPoint()
     {
         List<Transform> tempList = new List<Transform>(m_waypoints);
-        if (!tempList.Remove(m_start))
-            Debug.Log("Can't remove");
         m_start = m_end;
+        tempList.Remove(m_start);
         m_end = tempList[Random.Range(0, tempList.Count)];
-
-        if (m_start == m_end)
-            Debug.Log("Same point");
 
         m_speed = (m_start.position - m_end.position).magnitude * m_baseSpeed;
         GeneratePoints();

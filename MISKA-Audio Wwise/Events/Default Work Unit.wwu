@@ -251,7 +251,7 @@
 						<Action Name="" ID="{2951D396-8DCA-4B11-BD96-E5D7E2B62193}" ShortID="63871002">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="duck pond poi complete music" ID="{16978C5E-752D-4150-B8C3-9F7F54BE27E1}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
+									<ObjectRef Name="duck POI" ID="{C79EAC2B-9AA6-48D7-9606-7B7842409C65}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -262,7 +262,7 @@
 						<Action Name="" ID="{96322410-FDA3-463D-B672-6E047BE43E90}" ShortID="940047396">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="rocks poi complete" ID="{2BDC05D8-9E1A-47DA-B127-B49FECF08EC5}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
+									<ObjectRef Name="Rock POI" ID="{A1CF2F20-BAF2-4F7D-9397-AB23DFB8C6B4}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -273,7 +273,7 @@
 						<Action Name="" ID="{E06D9B58-2331-4025-9768-B87576035A70}" ShortID="405963365">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="station poi complete music" ID="{88DD30EC-8AC3-44E5-8002-C379F83AF310}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
+									<ObjectRef Name="Station POI" ID="{9935C347-2D53-42CA-9D35-84D51E1705BD}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<IncrementalBankBuild Version="6" Flags="861300542">
+<IncrementalBankBuild Version="6" Flags="601859981">
 	<Platform GUID="{29AD6252-0245-435D-A5DA-DECBEE11E859}">
 		<Banks>
 			<Language ID="393239870">
-				<File Name="BNK_Ducks" Hash="1876643607" Timestamp="1573098645"/>
-				<File Name="BNK_Global" Hash="3621384963" Timestamp="1573098645"/>
-				<File Name="BNK_Rocks" Hash="3888393702" Timestamp="1573098645"/>
-				<File Name="BNK_Station" Hash="3894657024" Timestamp="1573098645"/>
-				<File Name="Init" Hash="279135298" Timestamp="1573098645"/>
+				<File Name="BNK_Ducks" Hash="1876643607" Timestamp="1573102982"/>
+				<File Name="BNK_Global" Hash="152611150" Timestamp="1573105020"/>
+				<File Name="BNK_Rocks" Hash="3888393702" Timestamp="1573102982"/>
+				<File Name="BNK_Station" Hash="3894657024" Timestamp="1573102982"/>
+				<File Name="Init" Hash="279135298" Timestamp="1573104163"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="142269833" Timestamp="1573098645"/>
+				<File Name="" Hash="3935758015" Timestamp="1573105020"/>
 			</Language>
 		</XMLInfo>
 	</Platform>

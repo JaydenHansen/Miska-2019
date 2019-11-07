@@ -196,7 +196,7 @@
 				</Attenuation>
 				<Attenuation Name="Music" ID="{E02CECDA-7B94-43EE-B349-A17467E892FD}" ShortID="858900468">
 					<PropertyList>
-						<Property Name="RadiusMax" Type="Real64" Value="75"/>
+						<Property Name="RadiusMax" Type="Real64" Value="40"/>
 					</PropertyList>
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
@@ -208,17 +208,24 @@
 									<PointList>
 										<Point>
 											<XPos>0</XPos>
-											<YPos>-0</YPos>
+											<YPos>0</YPos>
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>30.09404</XPos>
+											<XPos>9.84325</XPos>
 											<YPos>-0</YPos>
 											<Flags>0</Flags>
+											<SegmentShape>Exp2</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>75</XPos>
-											<YPos>-200</YPos>
+											<XPos>28.21317</XPos>
+											<YPos>-10.4236</YPos>
+											<Flags>0</Flags>
+											<SegmentShape>Log1</SegmentShape>
+										</Point>
+										<Point>
+											<XPos>40</XPos>
+											<YPos>-154.34907</YPos>
 											<Flags>37</Flags>
 										</Point>
 									</PointList>

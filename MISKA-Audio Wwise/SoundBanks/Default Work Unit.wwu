@@ -6,29 +6,10 @@
 				<SoundBank Name="BNK_Global" ID="{542750B9-22AC-4295-95C7-55CE9571FE56}">
 					<ObjectInclusionList>
 						<ObjectRef Name="GLOBAL" ID="{C41DE8B2-A957-4042-ACBD-47B6DF2A616A}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}" Filter="7" Origin="Manual"/>
-						<ObjectRef Name="LOCAL" ID="{7923B34A-3D52-4BA3-A729-D8955FBEC2E5}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="MUSIC_DucksPOI" ID="{353E74DB-F13E-4800-984A-6C1943C243B4}" WorkUnitID="{EEAABAC8-E09E-4265-99BD-B315B882E069}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="MUSIC_StationPOI" ID="{7F46B51B-6BD2-4907-AE0A-415E72DD81D9}" WorkUnitID="{EEAABAC8-E09E-4265-99BD-B315B882E069}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_CNNWLK_Grass" ID="{72964A1C-C518-4CF3-B2C0-438168CCF621}" WorkUnitID="{EEAABAC8-E09E-4265-99BD-B315B882E069}" Filter="7" Origin="Manual"/>
-					</ObjectInclusionList>
-					<ObjectExclusionList/>
-					<GameSyncExclusionList/>
-				</SoundBank>
-				<SoundBank Name="BNK_Station" ID="{5C35CE9A-8949-447F-9585-974DF495655A}">
-					<ObjectInclusionList>
-						<ObjectRef Name="STATION" ID="{2DBDA12F-4AA2-4DE6-A249-E029792750B0}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}" Filter="7" Origin="Manual"/>
-					</ObjectInclusionList>
-					<ObjectExclusionList/>
-					<GameSyncExclusionList/>
-				</SoundBank>
-				<SoundBank Name="BNK_Rocks" ID="{B34BE1BE-6A30-41B7-9D2F-CF665C13FD35}">
-					<ObjectInclusionList>
-						<ObjectRef Name="ROCKS" ID="{3A2BA605-A1DD-482B-8706-04B6FC493381}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}" Filter="7" Origin="Manual"/>
-					</ObjectInclusionList>
-					<ObjectExclusionList/>
-					<GameSyncExclusionList/>
-				</SoundBank>
-				<SoundBank Name="BNK_Ducks" ID="{5EBEC370-F31E-41ED-B803-F1900D2F3547}">
-					<ObjectInclusionList>
-						<ObjectRef Name="DUCKS" ID="{AAB07626-8856-4EC6-A9A1-4A6C5FBA9471}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="MUSIC_RocksPOI" ID="{8DCA17E2-7B9A-4FED-AADB-97AEEC473603}" WorkUnitID="{EEAABAC8-E09E-4265-99BD-B315B882E069}" Filter="7" Origin="Manual"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

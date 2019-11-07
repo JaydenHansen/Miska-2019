@@ -20,6 +20,9 @@ namespace AK
         static const AkUniqueID EMIT_CICADAS = 1225233505U;
         static const AkUniqueID EMIT_DUCKS = 2870480783U;
         static const AkUniqueID EMIT_RIVER = 1862066479U;
+        static const AkUniqueID MUSIC_DUCKSPOI = 1288184563U;
+        static const AkUniqueID MUSIC_ROCKSPOI = 1422345279U;
+        static const AkUniqueID MUSIC_STATIONPOI = 3415218025U;
         static const AkUniqueID OBJ_FOSSILPOI = 4108701605U;
         static const AkUniqueID OBJ_PICKUPCAN = 2331991283U;
         static const AkUniqueID OBJ_PICKUPCHIPPACKET = 2542323829U;
@@ -29,7 +32,6 @@ namespace AK
         static const AkUniqueID PLAY_CNNWLK_GRASS = 721889916U;
         static const AkUniqueID PLAY_TYPEWRITER_SLIDES = 398727428U;
         static const AkUniqueID PLYR_FOOTSTEP = 4254456693U;
-        static const AkUniqueID UI_CHECKOFF = 1901013417U;
         static const AkUniqueID UI_STAMP = 866718607U;
     } // namespace EVENTS
 
@@ -120,10 +122,7 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
-        static const AkUniqueID BNK_DUCKS = 2516644323U;
         static const AkUniqueID BNK_GLOBAL = 568373026U;
-        static const AkUniqueID BNK_ROCKS = 2733895951U;
-        static const AkUniqueID BNK_STATION = 1567831353U;
     } // namespace BANKS
 
     namespace BUSSES

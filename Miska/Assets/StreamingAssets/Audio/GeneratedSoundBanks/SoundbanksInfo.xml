@@ -23,6 +23,9 @@
 				<Event Id="1225233505" Name="EMIT_Cicadas" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Cicadas"/>
 				<Event Id="2870480783" Name="EMIT_Ducks" ObjectPath="\Events\Default Work Unit\LOCAL\DUCKS\EMIT_Ducks"/>
 				<Event Id="1862066479" Name="EMIT_River" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_River"/>
+				<Event Id="1288184563" Name="MUSIC_DucksPOI" ObjectPath="\Events\Default Work Unit\MUSIC_DucksPOI"/>
+				<Event Id="1422345279" Name="MUSIC_RocksPOI" ObjectPath="\Events\Default Work Unit\MUSIC_RocksPOI"/>
+				<Event Id="3415218025" Name="MUSIC_StationPOI" ObjectPath="\Events\Default Work Unit\MUSIC_StationPOI"/>
 				<Event Id="4108701605" Name="OBJ_FossilPOI" ObjectPath="\Events\Default Work Unit\LOCAL\ROCKS\OBJ_FossilPOI"/>
 				<Event Id="2331991283" Name="OBJ_PickupCan" ObjectPath="\Events\Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_PickupCan"/>
 				<Event Id="2542323829" Name="OBJ_PickupChipPacket" ObjectPath="\Events\Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_PickupChipPacket"/>
@@ -32,7 +35,6 @@
 				<Event Id="721889916" Name="Play_CNNWLK_Grass" ObjectPath="\Events\Default Work Unit\GLOBAL\Play_CNNWLK_Grass"/>
 				<Event Id="398727428" Name="Play_Typewriter_Slides" ObjectPath="\Events\Default Work Unit\Play_Typewriter_Slides"/>
 				<Event Id="4254456693" Name="PLYR_Footstep" ObjectPath="\Events\Default Work Unit\GLOBAL\PLAYER\PLYR_Footstep"/>
-				<Event Id="1901013417" Name="UI_CheckOff" ObjectPath="\Events\Default Work Unit\GLOBAL\UI\UI_CheckOff"/>
 				<Event Id="866718607" Name="UI_Stamp" ObjectPath="\Events\Default Work Unit\GLOBAL\UI\UI_Stamp"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
@@ -127,6 +129,10 @@
 				<File Id="252657119" Language="SFX">
 					<ShortName>canteen_walk.wav</ShortName>
 					<Path>SFX\canteen_walk_10C4C929.wem</Path>
+				</File>
+				<File Id="271295221" Language="SFX">
+					<ShortName>duck pond poi complete music.wav</ShortName>
+					<Path>SFX\duck pond poi complete music_D79FB2B7.wem</Path>
 				</File>
 				<File Id="273585866" Language="SFX">
 					<ShortName>wood walk4.wav</ShortName>
@@ -228,6 +234,10 @@
 					<ShortName>Rock-Fall-Debris 1.wav</ShortName>
 					<Path>SFX\Rock-Fall-Debris 1_1AA7C6D1.wem</Path>
 				</File>
+				<File Id="687237978" Language="SFX">
+					<ShortName>station poi complete music.wav</ShortName>
+					<Path>SFX\station poi complete music_D79FB2B7.wem</Path>
+				</File>
 				<File Id="756801656" Language="SFX">
 					<ShortName>CHAR_KeyJingle4.wav</ShortName>
 					<Path>SFX\CHAR_KeyJingle4_10C4C929.wem</Path>
@@ -284,6 +294,10 @@
 					<ShortName>Dog akita puppy whine breathy short_BLASTWAVEFX_10305.wav</ShortName>
 					<Path>SFX\Dog akita puppy whine breathy short_BLASTWAVEFX_10305_10C4C929.wem</Path>
 				</File>
+				<File Id="866905759" Language="SFX">
+					<ShortName>rocks poi complete.wav</ShortName>
+					<Path>SFX\rocks poi complete_D79FB2B7.wem</Path>
+				</File>
 				<File Id="889890054" Language="SFX">
 					<ShortName>canteen_walk3.wav</ShortName>
 					<Path>SFX\canteen_walk3_10C4C929.wem</Path>
@@ -332,10 +346,6 @@
 					<ShortName>grasswalk2.wav</ShortName>
 					<Path>SFX\grasswalk2_10C4C929.wem</Path>
 				</File>
-				<File Id="1053468266" Language="SFX">
-					<ShortName>Antique punchy typewriter typing x1 with a scrape.wav</ShortName>
-					<Path>SFX\Antique punchy typewriter typing x1 with a scrape_10C4C929.wem</Path>
-				</File>
 				<File Id="1058375346" Language="SFX">
 					<ShortName>dog_walk1.wav</ShortName>
 					<Path>SFX\dog_walk1_10C4C929.wem</Path>
@@ -350,21 +360,6 @@
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
-		</SoundBank>
-		<SoundBank Id="1567831353" Language="SFX">
-			<ObjectPath>\SoundBanks\Default Work Unit\BNK_Station</ObjectPath>
-			<ShortName>BNK_Station</ShortName>
-			<Path>BNK_Station.bnk</Path>
-		</SoundBank>
-		<SoundBank Id="2516644323" Language="SFX">
-			<ObjectPath>\SoundBanks\Default Work Unit\BNK_Ducks</ObjectPath>
-			<ShortName>BNK_Ducks</ShortName>
-			<Path>BNK_Ducks.bnk</Path>
-		</SoundBank>
-		<SoundBank Id="2733895951" Language="SFX">
-			<ObjectPath>\SoundBanks\Default Work Unit\BNK_Rocks</ObjectPath>
-			<ShortName>BNK_Rocks</ShortName>
-			<Path>BNK_Rocks.bnk</Path>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

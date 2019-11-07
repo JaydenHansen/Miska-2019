@@ -28,15 +28,13 @@ public class HUD_UI : MonoBehaviour
     public float m_goalRefreshTimeTotal;
     float m_goalRefreshTimeCurrent;
 
-    public TrashCan firstBin;
-
     // Start is called before the first frame update
     void Start()
     {
         SetupCheckboxArrays();
         m_animator = GetComponent<Animator>();
-        SetupTrashScene(firstBin);
         m_isGoalRefreshing = false;
+        m_currentAreaBin = GameObject.Find("BIN_Station").GetComponent<TrashCan>();
     }
 
     private void Update()
@@ -182,6 +180,14 @@ public class HUD_UI : MonoBehaviour
 
     void OnAllTrashCollected()
     {
+        if (!m_isAllTrashPickedUp)
+        {
+            StartCoroutine("AllTrashCollected");
+        }
+    }
+
+    public void OnAllTrashDisposed()
+    {
         AK.Wwise.Event POI = null;
 
         string BinName = m_currentAreaBin.gameObject.name;
@@ -199,17 +205,9 @@ public class HUD_UI : MonoBehaviour
             POI = m_duckPOIMusic;
         }
 
-        if (!m_isAllTrashPickedUp)
-        {
-            StartCoroutine(AllTrashCollected(POI, m_currentAreaBin.gameObject));
-        }
-    }
-
-    public void OnAllTrashDisposed()
-    {
         if (!m_isAllTrashDisposed)
         {
-            StartCoroutine("AllTrashDisposed");
+            StartCoroutine(AllTrashDisposed(POI, m_currentAreaBin.gameObject));
         }
     }
 
@@ -226,7 +224,7 @@ public class HUD_UI : MonoBehaviour
         //m_checkOffSound.Post(gameObject);
     }
 
-    IEnumerator AllTrashCollected(AK.Wwise.Event music, GameObject bin)
+    IEnumerator AllTrashCollected()
     {
         m_isAllTrashPickedUp = true;
         m_animator.SetTrigger("TransTO_FullDetail");
@@ -235,7 +233,6 @@ public class HUD_UI : MonoBehaviour
         RawImage ri = m_GoalText.GetComponent<RawImage>();
         ri.texture = thisArea_gt_pickupDone;
         m_stampSound.Post(gameObject);
-        music.Post(bin);
         yield return new WaitForSeconds(1.5f);
 
 
@@ -249,16 +246,21 @@ public class HUD_UI : MonoBehaviour
         yield return null;
     }
 
-    IEnumerator AllTrashDisposed()
+    IEnumerator AllTrashDisposed(AK.Wwise.Event music, GameObject bin)
     {
+        Debug.Log("trash disposed step1");
         m_isAllTrashDisposed = true;
         yield return new WaitForSeconds(1.0f);
 
+        Debug.Log("trash disposed step2");
         RawImage ri = m_GoalText.GetComponent<RawImage>();
         ri.texture = m_gt_disposeDone;
         m_stampSound.Post(gameObject);
+        music.Post(bin);
+        Debug.Log("trash disposed step3");
         yield return new WaitForSeconds(1.5f);
 
+        Debug.Log("trash disposed step4");
         m_animator.SetTrigger("TransTO_Inactive");
         yield return null;
     }

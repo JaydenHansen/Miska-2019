@@ -3,12 +3,6 @@
 	<GameParameters>
 		<WorkUnit Name="Default Work Unit" ID="{5BDB56D3-FCE7-4264-9A6C-F7770480508D}" PersistMode="Standalone">
 			<ChildrenList>
-				<GameParameter Name="CurrentSceneProgress" ID="{EA375F83-7D9B-482E-B2DD-EFBAFD61A912}"/>
-				<GameParameter Name="DistanceFrom_Centre" ID="{94F3AB72-93B6-45A7-9F3F-ED6AEE0EE548}">
-					<PropertyList>
-						<Property Name="Color" Type="int16" Value="19"/>
-					</PropertyList>
-				</GameParameter>
 				<GameParameter Name="RockCollideForce" ID="{3FDB926D-8E6B-4318-9908-4321D8098C42}">
 					<PropertyList>
 						<Property Name="InitialValue" Type="Real64" Value="7"/>

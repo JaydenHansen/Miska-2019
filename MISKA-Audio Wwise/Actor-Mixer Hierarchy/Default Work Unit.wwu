@@ -80,34 +80,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<RandomSequenceContainer Name="Bottle" ID="{89670AF7-2DD3-4955-952E-BED76D74ED70}" ShortID="436275670">
-																	<PropertyList>
-																		<Property Name="Pitch" Type="int32">
-																			<ModifierList>
-																				<ModifierInfo>
-																					<Modifier Name="" ID="{503E3F00-FD55-4D7F-B82E-4B7C9B0D32F5}">
-																						<PropertyList>
-																							<Property Name="Enabled" Type="bool" Value="True"/>
-																							<Property Name="Max" Type="Real64" Value="51"/>
-																							<Property Name="Min" Type="Real64" Value="-354"/>
-																						</PropertyList>
-																					</Modifier>
-																				</ModifierInfo>
-																			</ModifierList>
-																		</Property>
-																		<Property Name="Volume" Type="Real64">
-																			<ModifierList>
-																				<ModifierInfo>
-																					<Modifier Name="" ID="{D43CE2E2-1677-4696-820D-13EF08C938D7}">
-																						<PropertyList>
-																							<Property Name="Enabled" Type="bool" Value="True"/>
-																							<Property Name="Min" Type="Real64" Value="-9"/>
-																						</PropertyList>
-																					</Modifier>
-																				</ModifierInfo>
-																			</ModifierList>
-																		</Property>
-																	</PropertyList>
+																<RandomSequenceContainer Name="Can" ID="{2ED25347-2D82-4A81-A4A2-86B0C5372AD7}" ShortID="15264193">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
@@ -117,7 +90,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<Sound Name="Glass bottle 2" ID="{47819D0C-BA22-4FF5-8A49-FE6724A500F6}" ShortID="714656509">
+																		<Sound Name="can collect" ID="{1AC876C5-9987-43A7-98C1-78B3A2120DA7}" ShortID="520743768">
 																			<ReferenceList>
 																				<Reference Name="Conversion">
 																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
@@ -127,16 +100,16 @@
 																				</Reference>
 																			</ReferenceList>
 																			<ChildrenList>
-																				<AudioFileSource Name="Glass bottle 2" ID="{BFFC5993-4FA5-4CA5-9625-E3428A419753}" ShortID="58940914">
+																				<AudioFileSource Name="can collect" ID="{CE468F01-F036-4E74-819D-2CAFA8ED8B34}" ShortID="39096433">
 																					<Language>SFX</Language>
-																					<AudioFile>Glass bottle 2.wav</AudioFile>
+																					<AudioFile>can collect.wav</AudioFile>
 																				</AudioFileSource>
 																			</ChildrenList>
 																			<ActiveSourceList>
-																				<ActiveSource Name="Glass bottle 2" ID="{BFFC5993-4FA5-4CA5-9625-E3428A419753}" Platform="Linked"/>
+																				<ActiveSource Name="can collect" ID="{CE468F01-F036-4E74-819D-2CAFA8ED8B34}" Platform="Linked"/>
 																			</ActiveSourceList>
 																		</Sound>
-																		<Sound Name="Glass bottle 3" ID="{8E33CB1C-44B9-428E-9D20-C2E22B5E4AF2}" ShortID="771143225">
+																		<Sound Name="can collect2" ID="{A0E8CA5A-AB77-4776-94E6-2D87F0D91C71}" ShortID="231604639">
 																			<ReferenceList>
 																				<Reference Name="Conversion">
 																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
@@ -146,16 +119,16 @@
 																				</Reference>
 																			</ReferenceList>
 																			<ChildrenList>
-																				<AudioFileSource Name="Glass bottle 3" ID="{8AD3D63A-E19A-4C1C-A8E4-7CFFC4105536}" ShortID="118404946">
+																				<AudioFileSource Name="can collect2" ID="{0D23D0B8-C5F0-4DEF-AC56-BA5170ED87DF}" ShortID="844406887">
 																					<Language>SFX</Language>
-																					<AudioFile>Glass bottle 3.wav</AudioFile>
+																					<AudioFile>can collect2.wav</AudioFile>
 																				</AudioFileSource>
 																			</ChildrenList>
 																			<ActiveSourceList>
-																				<ActiveSource Name="Glass bottle 3" ID="{8AD3D63A-E19A-4C1C-A8E4-7CFFC4105536}" Platform="Linked"/>
+																				<ActiveSource Name="can collect2" ID="{0D23D0B8-C5F0-4DEF-AC56-BA5170ED87DF}" Platform="Linked"/>
 																			</ActiveSourceList>
 																		</Sound>
-																		<Sound Name="Glass bottle" ID="{F5FF74FA-1464-4BCB-999F-7CD272F2C3C2}" ShortID="360220227">
+																		<Sound Name="can collect3" ID="{8A1DAFA1-299D-4830-BD3C-F4E2449A30B5}" ShortID="535748531">
 																			<ReferenceList>
 																				<Reference Name="Conversion">
 																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
@@ -165,13 +138,189 @@
 																				</Reference>
 																			</ReferenceList>
 																			<ChildrenList>
-																				<AudioFileSource Name="Glass bottle" ID="{9E468496-696B-434A-BA36-D71063BF01BD}" ShortID="318438522">
+																				<AudioFileSource Name="can collect3" ID="{D1A3A9FB-FB13-40FB-A718-8DC97052D4B1}" ShortID="191058033">
 																					<Language>SFX</Language>
-																					<AudioFile>Glass bottle.wav</AudioFile>
+																					<AudioFile>can collect3.wav</AudioFile>
 																				</AudioFileSource>
 																			</ChildrenList>
 																			<ActiveSourceList>
-																				<ActiveSource Name="Glass bottle" ID="{9E468496-696B-434A-BA36-D71063BF01BD}" Platform="Linked"/>
+																				<ActiveSource Name="can collect3" ID="{D1A3A9FB-FB13-40FB-A718-8DC97052D4B1}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="can collect4" ID="{B42616FD-BE2C-4799-8FC6-326C93504198}" ShortID="825667399">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="can collect4" ID="{896C931C-A64F-4673-BB76-C859219AFB3F}" ShortID="227218511">
+																					<Language>SFX</Language>
+																					<AudioFile>can collect4.wav</AudioFile>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="can collect4" ID="{896C931C-A64F-4673-BB76-C859219AFB3F}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																	</ChildrenList>
+																</RandomSequenceContainer>
+																<RandomSequenceContainer Name="PlasticBottle" ID="{3E46FCB7-5D3F-4CC4-A29D-B49077CBBDC8}" ShortID="16065470">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<Sound Name="bottle collect" ID="{53A7BB16-6AD3-4917-8AE6-BA26E879AB7B}" ShortID="386385775">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="bottle collect" ID="{3A95D96E-00A9-4F77-8C9E-0A4465EF7095}" ShortID="795907594">
+																					<Language>SFX</Language>
+																					<AudioFile>bottle collect.wav</AudioFile>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="bottle collect" ID="{3A95D96E-00A9-4F77-8C9E-0A4465EF7095}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="bottle collect2" ID="{E8B234F8-3D0B-4786-B534-E1345C75B1DC}" ShortID="632873187">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="bottle collect2" ID="{48E32A39-D9C9-4D13-A0E9-87E0975C81C4}" ShortID="459083089">
+																					<Language>SFX</Language>
+																					<AudioFile>bottle collect2.wav</AudioFile>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="bottle collect2" ID="{48E32A39-D9C9-4D13-A0E9-87E0975C81C4}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="bottle collect3" ID="{A18F54D2-1660-4E2B-853D-6B410DCA4300}" ShortID="730843072">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="bottle collect3" ID="{EC55A894-D0A7-4474-89FE-23798F58F7E2}" ShortID="280487932">
+																					<Language>SFX</Language>
+																					<AudioFile>bottle collect3.wav</AudioFile>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="bottle collect3" ID="{EC55A894-D0A7-4474-89FE-23798F58F7E2}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																	</ChildrenList>
+																</RandomSequenceContainer>
+																<RandomSequenceContainer Name="ChipPacket" ID="{07E1BE5E-A0D0-40BC-BBB5-9AB50F46483A}" ShortID="495025110">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<Sound Name="packet collect" ID="{C07D0806-AAC4-48B0-A566-FD5BE286DB53}" ShortID="509320561">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="packet collect" ID="{56FAE684-66D8-4600-82CD-5E81C039B2C2}" ShortID="337239227">
+																					<Language>SFX</Language>
+																					<AudioFile>packet collect.wav</AudioFile>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="packet collect" ID="{56FAE684-66D8-4600-82CD-5E81C039B2C2}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="packet collect2" ID="{E279E935-F74F-4DF0-AAFF-2593B3DDEF97}" ShortID="158039994">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="packet collect2" ID="{949FF6F5-4E72-4195-AB0F-49906ACCD00A}" ShortID="770211361">
+																					<Language>SFX</Language>
+																					<AudioFile>packet collect2.wav</AudioFile>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="packet collect2" ID="{949FF6F5-4E72-4195-AB0F-49906ACCD00A}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="packet collect3" ID="{7030D83C-8DEA-44E0-9B2B-B63F3B078DD8}" ShortID="1065509882">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="packet collect3" ID="{F9AD4CD1-10D2-4A03-9D34-894782181FB2}" ShortID="8622858">
+																					<Language>SFX</Language>
+																					<AudioFile>packet collect3.wav</AudioFile>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="packet collect3" ID="{F9AD4CD1-10D2-4A03-9D34-894782181FB2}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="packet collect4" ID="{84162D2B-48E1-4312-BEB3-9A1E5FE8BC79}" ShortID="760119754">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="packet collect4" ID="{041168EE-4EB5-4A8A-A06A-009ECBBDCC99}" ShortID="1037416784">
+																					<Language>SFX</Language>
+																					<AudioFile>packet collect4.wav</AudioFile>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="packet collect4" ID="{041168EE-4EB5-4A8A-A06A-009ECBBDCC99}" Platform="Linked"/>
 																			</ActiveSourceList>
 																		</Sound>
 																	</ChildrenList>
@@ -180,93 +329,17 @@
 															<GroupingInfo>
 																<GroupingBehaviorList>
 																	<GroupingBehavior>
-																		<ItemRef Name="Bottle" ID="{89670AF7-2DD3-4955-952E-BED76D74ED70}"/>
+																		<ItemRef Name="Can" ID="{2ED25347-2D82-4A81-A4A2-86B0C5372AD7}"/>
+																	</GroupingBehavior>
+																	<GroupingBehavior>
+																		<ItemRef Name="ChipPacket" ID="{07E1BE5E-A0D0-40BC-BBB5-9AB50F46483A}"/>
+																	</GroupingBehavior>
+																	<GroupingBehavior>
+																		<ItemRef Name="PlasticBottle" ID="{3E46FCB7-5D3F-4CC4-A29D-B49077CBBDC8}"/>
 																	</GroupingBehavior>
 																</GroupingBehaviorList>
-																<GroupingList>
-																	<Grouping>
-																		<SwitchRef Name="Bottle" ID="{8F076B00-F6C0-4604-8EEE-D270B29CA4B2}"/>
-																		<ItemList>
-																			<ItemRef Name="Bottle" ID="{89670AF7-2DD3-4955-952E-BED76D74ED70}"/>
-																		</ItemList>
-																	</Grouping>
-																</GroupingList>
 															</GroupingInfo>
 														</SwitchContainer>
-														<RandomSequenceContainer Name="DepositBottle" ID="{D654B4A5-0154-4197-90C7-5A879D908987}" ShortID="1033538028">
-															<PropertyList>
-																<Property Name="Lowpass" Type="int16">
-																	<ValueList>
-																		<Value>22</Value>
-																	</ValueList>
-																	<ModifierList>
-																		<ModifierInfo>
-																			<Modifier Name="" ID="{4F0FED93-EB87-422F-AEA2-609FA5364480}">
-																				<PropertyList>
-																					<Property Name="Enabled" Type="bool" Value="True"/>
-																					<Property Name="Max" Type="Real64" Value="1"/>
-																					<Property Name="Min" Type="Real64" Value="-3"/>
-																				</PropertyList>
-																			</Modifier>
-																		</ModifierInfo>
-																	</ModifierList>
-																</Property>
-																<Property Name="Pitch" Type="int32">
-																	<ModifierList>
-																		<ModifierInfo>
-																			<Modifier Name="" ID="{C07DE6F5-BE7E-4EDF-BE3E-7EA85E11023C}">
-																				<PropertyList>
-																					<Property Name="Enabled" Type="bool" Value="True"/>
-																					<Property Name="Max" Type="Real64" Value="152"/>
-																					<Property Name="Min" Type="Real64" Value="-227"/>
-																				</PropertyList>
-																			</Modifier>
-																		</ModifierInfo>
-																	</ModifierList>
-																</Property>
-																<Property Name="Volume" Type="Real64">
-																	<ModifierList>
-																		<ModifierInfo>
-																			<Modifier Name="" ID="{B6E90393-A284-4990-B6D5-F8BDB1DB31E4}">
-																				<PropertyList>
-																					<Property Name="Enabled" Type="bool" Value="True"/>
-																					<Property Name="Min" Type="Real64" Value="-9"/>
-																				</PropertyList>
-																			</Modifier>
-																		</ModifierInfo>
-																	</ModifierList>
-																</Property>
-															</PropertyList>
-															<ReferenceList>
-																<Reference Name="Conversion">
-																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-																</Reference>
-																<Reference Name="OutputBus">
-																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-																</Reference>
-															</ReferenceList>
-															<ChildrenList>
-																<Sound Name="DepositBottles" ID="{A299CEBB-3575-4AA7-B78B-095CB515C940}" ShortID="839987586">
-																	<ReferenceList>
-																		<Reference Name="Conversion">
-																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-																		</Reference>
-																		<Reference Name="OutputBus">
-																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-																		</Reference>
-																	</ReferenceList>
-																	<ChildrenList>
-																		<AudioFileSource Name="Bottles16" ID="{6F1D52AD-1702-42E7-A09F-9996A93B7B5A}" ShortID="512137132">
-																			<Language>SFX</Language>
-																			<AudioFile>Bottles16.wav</AudioFile>
-																		</AudioFileSource>
-																	</ChildrenList>
-																	<ActiveSourceList>
-																		<ActiveSource Name="Bottles16" ID="{6F1D52AD-1702-42E7-A09F-9996A93B7B5A}" Platform="Linked"/>
-																	</ActiveSourceList>
-																</Sound>
-															</ChildrenList>
-														</RandomSequenceContainer>
 													</ChildrenList>
 												</Folder>
 												<Folder Name="CAMERA" ID="{4C9523CC-D341-4092-977B-15DB3F3DFC45}" ShortID="810293081">

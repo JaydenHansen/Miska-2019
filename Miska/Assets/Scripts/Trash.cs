@@ -14,7 +14,7 @@ public class Trash : MonoBehaviour
     bool m_pickedUp;
     Vector3 m_basePos;
     Vector3 m_baseScale;
-    public AK.Wwise.Event m_bottleSound;
+    public AK.Wwise.Event m_pickupSound;
     //m_chipsSound
 
     public Transform Target
@@ -47,7 +47,7 @@ public class Trash : MonoBehaviour
 
             if (m_timer >= m_delay)
             {
-                m_bottleSound.Post(gameObject);
+                m_pickupSound.Post(gameObject);
                 transform.parent = m_parent;
                 if (m_disableOldParent)                
                     m_parent.gameObject.SetActive(false);                

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -143,13 +143,6 @@ public class Dog : MonoBehaviour
 
     public void Spawn()
     {
-        gameObject.SetActive(true);
-
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(m_player.position - (m_player.forward * m_distanceBehindPlayer), out hit, 5, -1))
-        {
-            transform.position = hit.position;           
-        }
-
+        gameObject.SetActive(true);      
     }
 }

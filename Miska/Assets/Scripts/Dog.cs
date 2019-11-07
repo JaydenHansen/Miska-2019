@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -25,6 +25,7 @@ public class Dog : MonoBehaviour
     Target m_currentTarget;
     float m_baseStoppingDistance;
     Animator m_animator;
+    float m_pickupDelay;
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +48,8 @@ public class Dog : MonoBehaviour
                     if (m_ball.Parent == Parent.None && m_area.Contains(m_ball.transform.position))
                     {
                         m_currentTarget = Target.Ball;
-                        m_agent.stoppingDistance = 0;
+                        m_agent.stoppingDistance = 0.5f;
+                        m_pickupDelay = 1;
                         break;
                     }                    
                     if (!m_area.Contains(m_player.position))
@@ -86,7 +88,8 @@ public class Dog : MonoBehaviour
                         if (m_area.Contains(m_ball.transform.position))
                         {
                             m_currentTarget = Target.Ball;
-                            m_agent.stoppingDistance = 0;
+                            m_agent.stoppingDistance = 0.5f;
+                            m_pickupDelay = 1;
                         }
                     }
                     else
@@ -126,7 +129,30 @@ public class Dog : MonoBehaviour
             m_agent.speed = 3;
         }
 
-        m_animator.SetFloat("Speed", m_agent.velocity.magnitude);
+        if (m_currentTarget == Target.Ball)
+        {
+            m_pickupDelay += Time.deltaTime;
+            if ((transform.position - m_ball.transform.position).magnitude <= 1f && m_pickupDelay >= 1 && Mathf.Abs(m_ball.transform.position.y - transform.position.y) < 0.1)
+            {
+                m_animator.SetTrigger("Pickup");
+                m_pickupDelay = 0;
+            }
+            if (m_agent.velocity.sqrMagnitude == 0)
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position + Vector3.up * 0.5f, Vector3.down, out hit, 10, 1 << LayerMask.NameToLayer("Ground")))
+                {
+                    Quaternion targetRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+                    Vector3 direction = m_ball.transform.position - transform.position;
+                    direction.y = 0;                    
+                    targetRotation *= Quaternion.LookRotation(direction.normalized);
+
+                    transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10);
+                }
+            }
+        }
+
+        m_animator.SetFloat("Speed", m_agent.velocity.magnitude);   
 
         if (m_agent.velocity.sqrMagnitude != 0)
         {

@@ -35,6 +35,10 @@ public class Ball : MonoBehaviour
     {
         get { return m_parent; }
     }
+    public Rigidbody RigidBody
+    {
+        get { return m_rigidbody; }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +57,8 @@ public class Ball : MonoBehaviour
                 DogPickup(m_mouthTransform);
             }
         }
+
+        
 
         if (m_inHand && !m_onThisFrame && m_parent == Parent.Player && Input.GetKeyDown(KeyCode.Mouse0))
         {

@@ -19,18 +19,23 @@ public class HUD_UI : MonoBehaviour
 
     public Texture2D m_gt_dispose, m_gt_disposeDone;
 
-    public AK.Wwise.Event m_checkOffSound, m_slideSound, m_stampSound;
+    public AK.Wwise.Event m_slideSound, m_stampSound;
+
+    TrashCan m_currentAreaBin;
+    public AK.Wwise.Event m_stationPOIMusic, m_rocksPOIMusic, m_duckPOIMusic;
 
     bool m_isGoalRefreshing;
     public float m_goalRefreshTimeTotal;
     float m_goalRefreshTimeCurrent;
+
+    public TrashCan firstBin;
 
     // Start is called before the first frame update
     void Start()
     {
         SetupCheckboxArrays();
         m_animator = GetComponent<Animator>();
-        SetupTrashScene(3, 3);
+        SetupTrashScene(firstBin);
         m_isGoalRefreshing = false;
     }
 
@@ -53,8 +58,13 @@ public class HUD_UI : MonoBehaviour
         }
     }
 
-    public void SetupTrashScene(int totalTrash, int remainingTrash)
+    public void SetupTrashScene(TrashCan bin) //m_trashCan.m_requiredTrash, m_trashCan.TrashLeft
     {
+        int totalTrash = bin.m_requiredTrash;
+        int remainingTrash = bin.TrashLeft;
+
+        bin = m_currentAreaBin;
+
         SetupCheckboxes(totalTrash);
         m_currentAreaTrash = totalTrash;
 
@@ -172,9 +182,26 @@ public class HUD_UI : MonoBehaviour
 
     void OnAllTrashCollected()
     {
+        AK.Wwise.Event POI = null;
+
+        string BinName = m_currentAreaBin.gameObject.name;
+
+        if (BinName == "BIN_Station")
+        {
+            POI = m_stationPOIMusic;
+        }
+        if (BinName == "BIN_Rocks")
+        {
+            POI = m_rocksPOIMusic;
+        }
+        if (BinName == "BIN_Ducks")
+        {
+            POI = m_duckPOIMusic;
+        }
+
         if (!m_isAllTrashPickedUp)
         {
-            StartCoroutine("AllTrashCollected");
+            StartCoroutine(AllTrashCollected(POI, m_currentAreaBin.gameObject));
         }
     }
 
@@ -196,10 +223,10 @@ public class HUD_UI : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
 
         SetBoxChecked(i, true);
-        m_checkOffSound.Post(gameObject);
+        //m_checkOffSound.Post(gameObject);
     }
 
-    IEnumerator AllTrashCollected()
+    IEnumerator AllTrashCollected(AK.Wwise.Event music, GameObject bin)
     {
         m_isAllTrashPickedUp = true;
         m_animator.SetTrigger("TransTO_FullDetail");
@@ -208,6 +235,7 @@ public class HUD_UI : MonoBehaviour
         RawImage ri = m_GoalText.GetComponent<RawImage>();
         ri.texture = thisArea_gt_pickupDone;
         m_stampSound.Post(gameObject);
+        music.Post(bin);
         yield return new WaitForSeconds(1.5f);
 
 

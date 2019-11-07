@@ -20,9 +20,10 @@ namespace AK
         static const AkUniqueID EMIT_CICADAS = 1225233505U;
         static const AkUniqueID EMIT_DUCKS = 2870480783U;
         static const AkUniqueID EMIT_RIVER = 1862066479U;
-        static const AkUniqueID OBJ_BOTTLEPICKUP = 920825535U;
-        static const AkUniqueID OBJ_DEPOSITBOTTLE = 2632544887U;
         static const AkUniqueID OBJ_FOSSILPOI = 4108701605U;
+        static const AkUniqueID OBJ_PICKUPCAN = 2331991283U;
+        static const AkUniqueID OBJ_PICKUPCHIPPACKET = 2542323829U;
+        static const AkUniqueID OBJ_PICKUPPLASTICBOTTLE = 2507641825U;
         static const AkUniqueID OBJ_ROCKCOLLIDE = 614124066U;
         static const AkUniqueID OBJ_ROCKSTACKFALLS = 3472354586U;
         static const AkUniqueID PLAY_CNNWLK_GRASS = 721889916U;
@@ -113,8 +114,6 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID BALLCOLLIDEFORCE = 1774519205U;
-        static const AkUniqueID CURRENTSCENEPROGRESS = 4175992265U;
-        static const AkUniqueID DISTANCEFROM_CENTRE = 546813746U;
         static const AkUniqueID ROCKCOLLIDEFORCE = 1277399449U;
     } // namespace GAME_PARAMETERS
 

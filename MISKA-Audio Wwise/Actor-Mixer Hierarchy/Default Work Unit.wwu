@@ -64,21 +64,7 @@
 												</Folder>
 												<Folder Name="GARBAGE" ID="{0173D0DA-1FBB-47C5-BA09-829F78F925D8}" ShortID="634903326">
 													<ChildrenList>
-														<SwitchContainer Name="Pickup_TrashType" ID="{2643DFD8-9B2B-4BE3-A866-11ABB7F28DD3}" ShortID="743904428">
-															<PropertyList>
-																<Property Name="EnableAttenuation" Type="bool" Value="False"/>
-															</PropertyList>
-															<ReferenceList>
-																<Reference Name="Conversion">
-																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-																</Reference>
-																<Reference Name="OutputBus">
-																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-																</Reference>
-																<Reference Name="SwitchGroupOrStateGroup">
-																	<ObjectRef Name="TrashType" ID="{444093F4-0EF4-4EF0-ACFA-EF361CF6FE0B}" WorkUnitID="{A34F8B61-9D20-4E9E-8130-FCF4A3172A11}"/>
-																</Reference>
-															</ReferenceList>
+														<Folder Name="pickup" ID="{40D6ADCC-8809-4C06-9192-E0CDFF222576}" ShortID="796302631">
 															<ChildrenList>
 																<RandomSequenceContainer Name="Can" ID="{2ED25347-2D82-4A81-A4A2-86B0C5372AD7}" ShortID="15264193">
 																	<ReferenceList>
@@ -326,20 +312,7 @@
 																	</ChildrenList>
 																</RandomSequenceContainer>
 															</ChildrenList>
-															<GroupingInfo>
-																<GroupingBehaviorList>
-																	<GroupingBehavior>
-																		<ItemRef Name="Can" ID="{2ED25347-2D82-4A81-A4A2-86B0C5372AD7}"/>
-																	</GroupingBehavior>
-																	<GroupingBehavior>
-																		<ItemRef Name="ChipPacket" ID="{07E1BE5E-A0D0-40BC-BBB5-9AB50F46483A}"/>
-																	</GroupingBehavior>
-																	<GroupingBehavior>
-																		<ItemRef Name="PlasticBottle" ID="{3E46FCB7-5D3F-4CC4-A29D-B49077CBBDC8}"/>
-																	</GroupingBehavior>
-																</GroupingBehaviorList>
-															</GroupingInfo>
-														</SwitchContainer>
+														</Folder>
 													</ChildrenList>
 												</Folder>
 												<Folder Name="CAMERA" ID="{4C9523CC-D341-4092-977B-15DB3F3DFC45}" ShortID="810293081">
@@ -3186,30 +3159,11 @@
 										<ActiveSource Name="Stamp self inking push down slow click_BLASTWAVEFX_15434" ID="{1A458052-5501-45FF-96CA-5B4D03CBE5C2}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="Typewriter_CheckOff" ID="{15421EEC-A839-4A87-B53F-338EDC092D49}" ShortID="302777624">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="Antique punchy typewriter typing x1 with a scrape" ID="{42785187-2FC5-4D43-9357-95FDE5B38742}" ShortID="1053468266">
-											<Language>SFX</Language>
-											<AudioFile>Antique punchy typewriter typing x1 with a scrape.wav</AudioFile>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Antique punchy typewriter typing x1 with a scrape" ID="{42785187-2FC5-4D43-9357-95FDE5B38742}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
 								<RandomSequenceContainer Name="Typewriter Slides" ID="{23A1B979-2D90-44B4-BAEE-6D8B370DDF11}" ShortID="230350313">
 									<PropertyList>
 										<Property Name="Highpass" Type="int16">
 											<ValueList>
-												<Value>14</Value>
+												<Value>27</Value>
 											</ValueList>
 										</Property>
 										<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
@@ -3244,6 +3198,9 @@
 											</ValueList>
 										</Property>
 										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-10</Value>
+											</ValueList>
 											<ModifierList>
 												<ModifierInfo>
 													<Modifier Name="" ID="{1B4DAF6F-C638-43D8-8C98-F84DCB3CA671}">

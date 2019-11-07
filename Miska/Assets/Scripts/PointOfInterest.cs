@@ -30,7 +30,7 @@ public class PointOfInterest : MonoBehaviour
             {
                 if (m_trashCan.TrashLeft != 0)
                 {
-                    m_hudUI.SetupTrashScene(m_trashCan.m_requiredTrash, m_trashCan.TrashLeft);
+                    m_hudUI.SetupTrashScene(m_trashCan);
                 }
                 else
                 {

@@ -3,195 +3,6 @@
 	<InteractiveMusic>
 		<WorkUnit Name="Default Work Unit" ID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}" PersistMode="Standalone">
 			<ChildrenList>
-				<MusicSegment Name="rocks poi complete" ID="{2BDC05D8-9E1A-47DA-B127-B49FECF08EC5}" ShortID="180837993">
-					<PropertyList>
-						<Property Name="EndPosition" Type="Real64" Value="21573.0385487528"/>
-						<Property Name="Tempo" Type="Real64" Value="89"/>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="Music" ID="{E02CECDA-7B94-43EE-B349-A17467E892FD}" WorkUnitID="{9694F749-499E-4F12-BEF9-AA448E069519}"/>
-						</Reference>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<MusicTrack Name="rocks poi complete" ID="{A0204108-0073-45BF-8AE2-A9E69EA92E81}" ShortID="899044281">
-							<ReferenceList>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="rocks poi complete" ID="{28AB8C82-5146-4900-BBE4-6576A278A0C7}" ShortID="866905759">
-									<Language>SFX</Language>
-									<AudioFile>rocks poi complete.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<TransitionList>
-								<MusicTransition Name="Root" ID="{3AB9D5D6-809C-4D77-AF45-A62CD538F234}">
-									<PropertyList>
-										<Property Name="IsFolder" Type="bool" Value="True"/>
-									</PropertyList>
-									<TransitionInfo/>
-								</MusicTransition>
-							</TransitionList>
-							<SequenceList>
-								<MusicTrackSequence Name="" ID="{E4FA820A-F4F9-4545-B232-5CD12F33A9DD}">
-									<ClipList>
-										<MusicClip Name="rocks poi complete" ID="{7223B291-CFF8-4E70-82CC-AF00E03B4B03}">
-											<PropertyList>
-												<Property Name="EndTrimOffset" Type="Real64" Value="21573.0385487528"/>
-												<Property Name="FadeInMode" Type="int16" Value="0"/>
-												<Property Name="FadeOutMode" Type="int16" Value="0"/>
-											</PropertyList>
-											<AudioSourceRef Name="rocks poi complete" ID="{28AB8C82-5146-4900-BBE4-6576A278A0C7}"/>
-										</MusicClip>
-									</ClipList>
-								</MusicTrackSequence>
-							</SequenceList>
-						</MusicTrack>
-					</ChildrenList>
-					<CueList>
-						<MusicCue Name="Entry Cue" ID="{55E16A02-B332-41F2-BAA4-821C745C26AC}"/>
-						<MusicCue Name="Exit Cue" ID="{E1CE3B3E-AC9D-4BE1-B10D-1D5E2519EC76}">
-							<PropertyList>
-								<Property Name="CueType" Type="int16" Value="1"/>
-								<Property Name="TimeMs" Type="Real64" Value="21573.0385487528"/>
-							</PropertyList>
-						</MusicCue>
-					</CueList>
-				</MusicSegment>
-				<MusicSegment Name="station poi complete music" ID="{88DD30EC-8AC3-44E5-8002-C379F83AF310}" ShortID="68512700">
-					<PropertyList>
-						<Property Name="EndPosition" Type="Real64" Value="21573.0385487528"/>
-						<Property Name="Tempo" Type="Real64" Value="89"/>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="Music" ID="{E02CECDA-7B94-43EE-B349-A17467E892FD}" WorkUnitID="{9694F749-499E-4F12-BEF9-AA448E069519}"/>
-						</Reference>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<MusicTrack Name="station poi complete music" ID="{EBD5C1F1-A617-4858-8BA0-B03F23D81EF8}" ShortID="1007678423">
-							<ReferenceList>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="station poi complete music" ID="{1611FCC7-5AA0-4E8D-9DCD-1647330B2748}" ShortID="687237978">
-									<Language>SFX</Language>
-									<AudioFile>station poi complete music.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<TransitionList>
-								<MusicTransition Name="Root" ID="{9AAC8350-2ED6-47EF-9C19-2B1981E725DC}">
-									<PropertyList>
-										<Property Name="IsFolder" Type="bool" Value="True"/>
-									</PropertyList>
-									<TransitionInfo/>
-								</MusicTransition>
-							</TransitionList>
-							<SequenceList>
-								<MusicTrackSequence Name="" ID="{3361432A-DD34-4A75-910A-203990B1ABC9}">
-									<ClipList>
-										<MusicClip Name="station poi complete music" ID="{99E29CF1-B53D-4BCE-815C-8556D1EE7895}">
-											<PropertyList>
-												<Property Name="EndTrimOffset" Type="Real64" Value="21573.0385487528"/>
-												<Property Name="FadeInMode" Type="int16" Value="0"/>
-												<Property Name="FadeOutMode" Type="int16" Value="0"/>
-											</PropertyList>
-											<AudioSourceRef Name="station poi complete music" ID="{1611FCC7-5AA0-4E8D-9DCD-1647330B2748}"/>
-										</MusicClip>
-									</ClipList>
-								</MusicTrackSequence>
-							</SequenceList>
-						</MusicTrack>
-					</ChildrenList>
-					<CueList>
-						<MusicCue Name="Entry Cue" ID="{C7CE83EA-257B-4F29-BC84-30100DB40C90}"/>
-						<MusicCue Name="Exit Cue" ID="{FB1F47AD-EE9D-4E77-82A6-2B5542A142E3}">
-							<PropertyList>
-								<Property Name="CueType" Type="int16" Value="1"/>
-								<Property Name="TimeMs" Type="Real64" Value="21573.0385487528"/>
-							</PropertyList>
-						</MusicCue>
-					</CueList>
-				</MusicSegment>
-				<MusicSegment Name="duck pond poi complete music" ID="{16978C5E-752D-4150-B8C3-9F7F54BE27E1}" ShortID="634792596">
-					<PropertyList>
-						<Property Name="EndPosition" Type="Real64" Value="21573.0385487528"/>
-						<Property Name="Tempo" Type="Real64" Value="89"/>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="Music" ID="{E02CECDA-7B94-43EE-B349-A17467E892FD}" WorkUnitID="{9694F749-499E-4F12-BEF9-AA448E069519}"/>
-						</Reference>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<MusicTrack Name="duck pond poi complete music" ID="{52EF1B10-733B-4AC9-8D67-A1F8E0FE4280}" ShortID="670561201">
-							<ReferenceList>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="duck pond poi complete music" ID="{5818195C-2E91-46D2-942C-0035E720A970}" ShortID="271295221">
-									<Language>SFX</Language>
-									<AudioFile>duck pond poi complete music.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<TransitionList>
-								<MusicTransition Name="Root" ID="{0CDE4E64-1D7B-4387-AA6D-D754FD877989}">
-									<PropertyList>
-										<Property Name="IsFolder" Type="bool" Value="True"/>
-									</PropertyList>
-									<TransitionInfo/>
-								</MusicTransition>
-							</TransitionList>
-							<SequenceList>
-								<MusicTrackSequence Name="" ID="{BF36C6DD-7EAC-45C4-8FF1-5F0BF0E6C905}">
-									<ClipList>
-										<MusicClip Name="duck pond poi complete music" ID="{3F38ECB5-E734-427C-80F4-BD9A9799D45B}">
-											<PropertyList>
-												<Property Name="EndTrimOffset" Type="Real64" Value="21573.0385487528"/>
-												<Property Name="FadeInMode" Type="int16" Value="0"/>
-												<Property Name="FadeOutMode" Type="int16" Value="0"/>
-											</PropertyList>
-											<AudioSourceRef Name="duck pond poi complete music" ID="{5818195C-2E91-46D2-942C-0035E720A970}"/>
-										</MusicClip>
-									</ClipList>
-								</MusicTrackSequence>
-							</SequenceList>
-						</MusicTrack>
-					</ChildrenList>
-					<CueList>
-						<MusicCue Name="Entry Cue" ID="{A8710DE2-AE00-4BD5-9790-40CE96C535A6}"/>
-						<MusicCue Name="Exit Cue" ID="{84E8C684-644B-40F5-A670-A68C9C626C40}">
-							<PropertyList>
-								<Property Name="CueType" Type="int16" Value="1"/>
-								<Property Name="TimeMs" Type="Real64" Value="21573.0385487528"/>
-							</PropertyList>
-						</MusicCue>
-					</CueList>
-				</MusicSegment>
 				<MusicSegment Name="pause music" ID="{6BC09936-8591-4398-A588-1CE589E4DA63}" ShortID="634079214">
 					<PropertyList>
 						<Property Name="EndPosition" Type="Real64" Value="16179.7959183673"/>
@@ -274,6 +85,186 @@
 							<PropertyList>
 								<Property Name="CueType" Type="int16" Value="1"/>
 								<Property Name="TimeMs" Type="Real64" Value="16179.7959183673"/>
+							</PropertyList>
+						</MusicCue>
+					</CueList>
+				</MusicSegment>
+				<MusicSegment Name="rocks poi complete" ID="{2BDC05D8-9E1A-47DA-B127-B49FECF08EC5}" ShortID="180837993">
+					<PropertyList>
+						<Property Name="EndPosition" Type="Real64" Value="21573.0385487528"/>
+						<Property Name="Tempo" Type="Real64" Value="89"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="rocks poi complete" ID="{A0204108-0073-45BF-8AE2-A9E69EA92E81}" ShortID="899044281">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="rocks poi complete" ID="{28AB8C82-5146-4900-BBE4-6576A278A0C7}" ShortID="866905759">
+									<Language>SFX</Language>
+									<AudioFile>rocks poi complete.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{3AB9D5D6-809C-4D77-AF45-A62CD538F234}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<SequenceList>
+								<MusicTrackSequence Name="" ID="{E4FA820A-F4F9-4545-B232-5CD12F33A9DD}">
+									<ClipList>
+										<MusicClip Name="rocks poi complete" ID="{7223B291-CFF8-4E70-82CC-AF00E03B4B03}">
+											<PropertyList>
+												<Property Name="EndTrimOffset" Type="Real64" Value="21573.0385487528"/>
+												<Property Name="FadeInMode" Type="int16" Value="0"/>
+												<Property Name="FadeOutMode" Type="int16" Value="0"/>
+											</PropertyList>
+											<AudioSourceRef Name="rocks poi complete" ID="{28AB8C82-5146-4900-BBE4-6576A278A0C7}"/>
+										</MusicClip>
+									</ClipList>
+								</MusicTrackSequence>
+							</SequenceList>
+						</MusicTrack>
+					</ChildrenList>
+					<CueList>
+						<MusicCue Name="Entry Cue" ID="{55E16A02-B332-41F2-BAA4-821C745C26AC}"/>
+						<MusicCue Name="Exit Cue" ID="{E1CE3B3E-AC9D-4BE1-B10D-1D5E2519EC76}">
+							<PropertyList>
+								<Property Name="CueType" Type="int16" Value="1"/>
+								<Property Name="TimeMs" Type="Real64" Value="21573.0385487528"/>
+							</PropertyList>
+						</MusicCue>
+					</CueList>
+				</MusicSegment>
+				<MusicSegment Name="station poi complete music" ID="{88DD30EC-8AC3-44E5-8002-C379F83AF310}" ShortID="68512700">
+					<PropertyList>
+						<Property Name="EndPosition" Type="Real64" Value="21573.0385487528"/>
+						<Property Name="Tempo" Type="Real64" Value="89"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="station poi complete music" ID="{EBD5C1F1-A617-4858-8BA0-B03F23D81EF8}" ShortID="1007678423">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="station poi complete music" ID="{1611FCC7-5AA0-4E8D-9DCD-1647330B2748}" ShortID="687237978">
+									<Language>SFX</Language>
+									<AudioFile>station poi complete music.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{9AAC8350-2ED6-47EF-9C19-2B1981E725DC}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<SequenceList>
+								<MusicTrackSequence Name="" ID="{3361432A-DD34-4A75-910A-203990B1ABC9}">
+									<ClipList>
+										<MusicClip Name="station poi complete music" ID="{99E29CF1-B53D-4BCE-815C-8556D1EE7895}">
+											<PropertyList>
+												<Property Name="EndTrimOffset" Type="Real64" Value="21573.0385487528"/>
+												<Property Name="FadeInMode" Type="int16" Value="0"/>
+												<Property Name="FadeOutMode" Type="int16" Value="0"/>
+											</PropertyList>
+											<AudioSourceRef Name="station poi complete music" ID="{1611FCC7-5AA0-4E8D-9DCD-1647330B2748}"/>
+										</MusicClip>
+									</ClipList>
+								</MusicTrackSequence>
+							</SequenceList>
+						</MusicTrack>
+					</ChildrenList>
+					<CueList>
+						<MusicCue Name="Entry Cue" ID="{C7CE83EA-257B-4F29-BC84-30100DB40C90}"/>
+						<MusicCue Name="Exit Cue" ID="{FB1F47AD-EE9D-4E77-82A6-2B5542A142E3}">
+							<PropertyList>
+								<Property Name="CueType" Type="int16" Value="1"/>
+								<Property Name="TimeMs" Type="Real64" Value="21573.0385487528"/>
+							</PropertyList>
+						</MusicCue>
+					</CueList>
+				</MusicSegment>
+				<MusicSegment Name="duck pond poi complete music" ID="{16978C5E-752D-4150-B8C3-9F7F54BE27E1}" ShortID="634792596">
+					<PropertyList>
+						<Property Name="EndPosition" Type="Real64" Value="21573.0385487528"/>
+						<Property Name="Tempo" Type="Real64" Value="89"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="duck pond poi complete music" ID="{52EF1B10-733B-4AC9-8D67-A1F8E0FE4280}" ShortID="670561201">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="duck pond poi complete music" ID="{5818195C-2E91-46D2-942C-0035E720A970}" ShortID="271295221">
+									<Language>SFX</Language>
+									<AudioFile>duck pond poi complete music.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{0CDE4E64-1D7B-4387-AA6D-D754FD877989}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<SequenceList>
+								<MusicTrackSequence Name="" ID="{BF36C6DD-7EAC-45C4-8FF1-5F0BF0E6C905}">
+									<ClipList>
+										<MusicClip Name="duck pond poi complete music" ID="{3F38ECB5-E734-427C-80F4-BD9A9799D45B}">
+											<PropertyList>
+												<Property Name="EndTrimOffset" Type="Real64" Value="21573.0385487528"/>
+												<Property Name="FadeInMode" Type="int16" Value="0"/>
+												<Property Name="FadeOutMode" Type="int16" Value="0"/>
+											</PropertyList>
+											<AudioSourceRef Name="duck pond poi complete music" ID="{5818195C-2E91-46D2-942C-0035E720A970}"/>
+										</MusicClip>
+									</ClipList>
+								</MusicTrackSequence>
+							</SequenceList>
+						</MusicTrack>
+					</ChildrenList>
+					<CueList>
+						<MusicCue Name="Entry Cue" ID="{A8710DE2-AE00-4BD5-9790-40CE96C535A6}"/>
+						<MusicCue Name="Exit Cue" ID="{84E8C684-644B-40F5-A670-A68C9C626C40}">
+							<PropertyList>
+								<Property Name="CueType" Type="int16" Value="1"/>
+								<Property Name="TimeMs" Type="Real64" Value="21573.0385487528"/>
 							</PropertyList>
 						</MusicCue>
 					</CueList>

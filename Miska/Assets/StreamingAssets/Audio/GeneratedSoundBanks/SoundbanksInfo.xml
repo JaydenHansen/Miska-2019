@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
 	<RootPaths>
-		<ProjectRoot>D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\</ProjectRoot>
-		<SourceFilesRoot>D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Games Making\MISKA\Miska-2019\Miska\Assets\StreamingAssets\Audio\GeneratedSoundBanks\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\s182378\Documents\Miska-2019\MISKA-Audio Wwise\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\s182378\Documents\Miska-2019\MISKA-Audio Wwise\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\s182378\Documents\Miska-2019\Miska\Assets\StreamingAssets\Audio\GeneratedSoundBanks\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\s182378\Documents\Miska-2019\MISKA-Audio Wwise\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -23,9 +23,10 @@
 				<Event Id="1225233505" Name="EMIT_Cicadas" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Cicadas"/>
 				<Event Id="2870480783" Name="EMIT_Ducks" ObjectPath="\Events\Default Work Unit\LOCAL\DUCKS\EMIT_Ducks"/>
 				<Event Id="1862066479" Name="EMIT_River" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_River"/>
-				<Event Id="920825535" Name="OBJ_BottlePickup" ObjectPath="\Events\Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_BottlePickup"/>
-				<Event Id="2632544887" Name="OBJ_DepositBottle" ObjectPath="\Events\Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_DepositBottle"/>
 				<Event Id="4108701605" Name="OBJ_FossilPOI" ObjectPath="\Events\Default Work Unit\LOCAL\ROCKS\OBJ_FossilPOI"/>
+				<Event Id="2331991283" Name="OBJ_PickupCan" ObjectPath="\Events\Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_PickupCan"/>
+				<Event Id="2542323829" Name="OBJ_PickupChipPacket" ObjectPath="\Events\Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_PickupChipPacket"/>
+				<Event Id="2507641825" Name="OBJ_PickupPlasticBottle" ObjectPath="\Events\Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_PickupPlasticBottle"/>
 				<Event Id="614124066" Name="OBJ_RockCollide" ObjectPath="\Events\Default Work Unit\LOCAL\ROCKS\OBJ_RockCollide"/>
 				<Event Id="3472354586" Name="OBJ_RockStackFalls" ObjectPath="\Events\Default Work Unit\LOCAL\ROCKS\OBJ_RockStackFalls"/>
 				<Event Id="721889916" Name="Play_CNNWLK_Grass" ObjectPath="\Events\Default Work Unit\GLOBAL\Play_CNNWLK_Grass"/>
@@ -35,6 +36,10 @@
 				<Event Id="866718607" Name="UI_Stamp" ObjectPath="\Events\Default Work Unit\GLOBAL\UI\UI_Stamp"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="8622858" Language="SFX">
+					<ShortName>packet collect3.wav</ShortName>
+					<Path>SFX\packet collect3_10C4C929.wem</Path>
+				</File>
 				<File Id="31473344" Language="SFX">
 					<ShortName>ball bounce grass2.wav</ShortName>
 					<Path>SFX\ball bounce grass2_10C4C929.wem</Path>
@@ -43,17 +48,17 @@
 					<ShortName>thick-billed flowerpecker calls- india 191204.wav</ShortName>
 					<Path>SFX\thick-billed flowerpecker calls- india 191204_10C4C929.wem</Path>
 				</File>
+				<File Id="39096433" Language="SFX">
+					<ShortName>can collect.wav</ShortName>
+					<Path>SFX\can collect_10C4C929.wem</Path>
+				</File>
 				<File Id="41777339" Language="SFX">
 					<ShortName>grasswalk3.wav</ShortName>
 					<Path>SFX\grasswalk3_10C4C929.wem</Path>
 				</File>
 				<File Id="45904059" Language="SFX">
 					<ShortName>Levers_Sliders_227-ss.wav</ShortName>
-					<Path>SFX\Levers_Sliders_227-ss_C629F2C0.wem</Path>
-				</File>
-				<File Id="58940914" Language="SFX">
-					<ShortName>Glass bottle 2.wav</ShortName>
-					<Path>SFX\Glass bottle 2_10C4C929.wem</Path>
+					<Path>SFX\Levers_Sliders_227-ss_CB828E62.wem</Path>
 				</File>
 				<File Id="70690693" Language="SFX">
 					<ShortName>IMPACT ROCKS FALL SCATTER CEMENT 01.wav</ShortName>
@@ -79,10 +84,6 @@
 					<ShortName>river 1.wav</ShortName>
 					<Path>SFX\river 1_D79FB2B7.wem</Path>
 				</File>
-				<File Id="118404946" Language="SFX">
-					<ShortName>Glass bottle 3.wav</ShortName>
-					<Path>SFX\Glass bottle 3_10C4C929.wem</Path>
-				</File>
 				<File Id="138724543" Language="SFX">
 					<ShortName>wood walk2.wav</ShortName>
 					<Path>SFX\wood walk2_10C4C929.wem</Path>
@@ -103,6 +104,10 @@
 					<ShortName>ducks on canal 01.wav</ShortName>
 					<Path>SFX\ducks on canal 01_2B7606C8.wem</Path>
 				</File>
+				<File Id="191058033" Language="SFX">
+					<ShortName>can collect3.wav</ShortName>
+					<Path>SFX\can collect3_10C4C929.wem</Path>
+				</File>
 				<File Id="220955263" Language="SFX">
 					<ShortName>wood walk3.wav</ShortName>
 					<Path>SFX\wood walk3_10C4C929.wem</Path>
@@ -110,6 +115,10 @@
 				<File Id="225701338" Language="SFX">
 					<ShortName>run_dirt4.wav</ShortName>
 					<Path>SFX\run_dirt4_10C4C929.wem</Path>
+				</File>
+				<File Id="227218511" Language="SFX">
+					<ShortName>can collect4.wav</ShortName>
+					<Path>SFX\can collect4_10C4C929.wem</Path>
 				</File>
 				<File Id="236611281" Language="SFX">
 					<ShortName>Dog akita puppy single bark_BLASTWAVEFX_00090.wav</ShortName>
@@ -123,6 +132,10 @@
 					<ShortName>wood walk4.wav</ShortName>
 					<Path>SFX\wood walk4_10C4C929.wem</Path>
 				</File>
+				<File Id="280487932" Language="SFX">
+					<ShortName>bottle collect3.wav</ShortName>
+					<Path>SFX\bottle collect3_10C4C929.wem</Path>
+				</File>
 				<File Id="281232217" Language="SFX">
 					<ShortName>Emerald-spotted Wood Dove.wav</ShortName>
 					<Path>SFX\Emerald-spotted Wood Dove_10C4C929.wem</Path>
@@ -131,13 +144,13 @@
 					<ShortName>Wooodpecker Bearded.wav</ShortName>
 					<Path>SFX\Wooodpecker Bearded_10C4C929.wem</Path>
 				</File>
-				<File Id="318438522" Language="SFX">
-					<ShortName>Glass bottle.wav</ShortName>
-					<Path>SFX\Glass bottle_10C4C929.wem</Path>
-				</File>
 				<File Id="327973492" Language="SFX">
 					<ShortName>canteen_run3.wav</ShortName>
 					<Path>SFX\canteen_run3_10C4C929.wem</Path>
+				</File>
+				<File Id="337239227" Language="SFX">
+					<ShortName>packet collect.wav</ShortName>
+					<Path>SFX\packet collect_10C4C929.wem</Path>
 				</File>
 				<File Id="391704253" Language="SFX">
 					<ShortName>dog_walk4.wav</ShortName>
@@ -159,6 +172,10 @@
 					<ShortName>grassrun1.wav</ShortName>
 					<Path>SFX\grassrun1_10C4C929.wem</Path>
 				</File>
+				<File Id="459083089" Language="SFX">
+					<ShortName>bottle collect2.wav</ShortName>
+					<Path>SFX\bottle collect2_10C4C929.wem</Path>
+				</File>
 				<File Id="465045227" Language="SFX">
 					<ShortName>Fox bark.wav</ShortName>
 					<Path>SFX\Fox bark_A6DF42BA.wem</Path>
@@ -173,11 +190,7 @@
 				</File>
 				<File Id="494594126" Language="SFX">
 					<ShortName>Levers_Sliders_227-ss.wav</ShortName>
-					<Path>SFX\Levers_Sliders_227-ss_D234D260.wem</Path>
-				</File>
-				<File Id="512137132" Language="SFX">
-					<ShortName>Bottles16.wav</ShortName>
-					<Path>SFX\Bottles16_10C4C929.wem</Path>
+					<Path>SFX\Levers_Sliders_227-ss_064555EA.wem</Path>
 				</File>
 				<File Id="520141947" Language="SFX">
 					<ShortName>forest BED.wav</ShortName>
@@ -185,7 +198,7 @@
 				</File>
 				<File Id="536595712" Language="SFX">
 					<ShortName>Levers_Sliders_227-ss.wav</ShortName>
-					<Path>SFX\Levers_Sliders_227-ss_AD245591.wem</Path>
+					<Path>SFX\Levers_Sliders_227-ss_751FC753.wem</Path>
 				</File>
 				<File Id="542045413" Language="SFX">
 					<ShortName>WATER LAPS- LAKESIDE.wav</ShortName>
@@ -205,7 +218,7 @@
 				</File>
 				<File Id="663238036" Language="SFX">
 					<ShortName>Levers_Sliders_227-ss.wav</ShortName>
-					<Path>SFX\Levers_Sliders_227-ss_A9401F6C.wem</Path>
+					<Path>SFX\Levers_Sliders_227-ss_C1598069.wem</Path>
 				</File>
 				<File Id="672269398" Language="SFX">
 					<ShortName>Drop_Masonry_SoftSurface_Heavy_01.wav</ShortName>
@@ -223,6 +236,10 @@
 					<ShortName>ducks on canal 01.wav</ShortName>
 					<Path>SFX\ducks on canal 01_474874EC.wem</Path>
 				</File>
+				<File Id="770211361" Language="SFX">
+					<ShortName>packet collect2.wav</ShortName>
+					<Path>SFX\packet collect2_10C4C929.wem</Path>
+				</File>
 				<File Id="778543657" Language="SFX">
 					<ShortName>CHAR_StepDirt4.wav</ShortName>
 					<Path>SFX\CHAR_StepDirt4_10C4C929.wem</Path>
@@ -230,6 +247,10 @@
 				<File Id="782625208" Language="SFX">
 					<ShortName>Drop_Rock_HardSurface_Heavy_02.wav</ShortName>
 					<Path>SFX\Drop_Rock_HardSurface_Heavy_02_9662FAA1.wem</Path>
+				</File>
+				<File Id="795907594" Language="SFX">
+					<ShortName>bottle collect.wav</ShortName>
+					<Path>SFX\bottle collect_10C4C929.wem</Path>
 				</File>
 				<File Id="812160932" Language="SFX">
 					<ShortName>slaty flycatcher song- halmahera 091006.wav</ShortName>
@@ -254,6 +275,10 @@
 				<File Id="841502212" Language="SFX">
 					<ShortName>ducks on canal 01.wav</ShortName>
 					<Path>SFX\ducks on canal 01_9448EBF5.wem</Path>
+				</File>
+				<File Id="844406887" Language="SFX">
+					<ShortName>can collect2.wav</ShortName>
+					<Path>SFX\can collect2_10C4C929.wem</Path>
 				</File>
 				<File Id="850930565" Language="SFX">
 					<ShortName>Dog akita puppy whine breathy short_BLASTWAVEFX_10305.wav</ShortName>
@@ -290,6 +315,10 @@
 				<File Id="1025837284" Language="SFX">
 					<ShortName>Stamp self inking push down slow click_BLASTWAVEFX_15434.wav</ShortName>
 					<Path>SFX\Stamp self inking push down slow click_BLASTWAVEFX_15434_10C4C929.wem</Path>
+				</File>
+				<File Id="1037416784" Language="SFX">
+					<ShortName>packet collect4.wav</ShortName>
+					<Path>SFX\packet collect4_10C4C929.wem</Path>
 				</File>
 				<File Id="1043040951" Language="SFX">
 					<ShortName>dog_walk2.wav</ShortName>

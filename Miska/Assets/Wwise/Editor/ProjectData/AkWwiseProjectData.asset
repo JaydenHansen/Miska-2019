@@ -17,21 +17,21 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 008f34a31108904182ccca47e0b7be48
     GuidInternal: 
-    m_lastTime: -8586309487880054530
+    m_lastTime: -8586296479900698445
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: c836f35345477a4ab19e8ee120a18e42
     GuidInternal: 
-    m_lastTime: -8586309487885730394
+    m_lastTime: -8586296479906086562
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 61613fc2e9e030449a3f2b92ca0e24f2
     GuidInternal: 
-    m_lastTime: -8586309452558467821
+    m_lastTime: -8586296479900778415
     List:
     - name: BNK_Ducks
       guid: 70c3be5e1ef3ed41b803f1900d2f3547
@@ -74,7 +74,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: c8baaaee9ee0654299bdb315b882e069
     GuidInternal: 
-    m_lastTime: -8586309452558607771
+    m_lastTime: -8586285058632581856
     List:
     - name: AMB_Bed
       guid: 1c394a03ad28ed49a352084c06ac4828
@@ -192,24 +192,42 @@ MonoBehaviour:
       maxAttenuation: 30
       maxDuration: -1
       minDuration: -1
-    - name: OBJ_BottlePickup
-      guid: 5e8105b8c7d6ad4d911d8556e50204af
-      id: 920825535
+    - name: MUSIC_DucksPOI
+      guid: db743e353ef10048984a6c1943c243b4
+      id: 1288184563
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: GLOBAL
-        ObjectType: 4
-      - ElementName: OBJECT
-        ObjectType: 4
-      - ElementName: GARBAGE
-        ObjectType: 4
-      - ElementName: OBJ_BottlePickup
+      - ElementName: MUSIC_DucksPOI
         ObjectType: 3
-      Path: Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_BottlePickup
+      Path: Default Work Unit\MUSIC_DucksPOI
       maxAttenuation: 0
-      maxDuration: 1.35319
-      minDuration: 1.014565
+      maxDuration: -1
+      minDuration: -1
+    - name: MUSIC_RocksPOI
+      guid: e217ca8d9a7bed4faadb97aeec473603
+      id: 1422345279
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MUSIC_RocksPOI
+        ObjectType: 3
+      Path: Default Work Unit\MUSIC_RocksPOI
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: MUSIC_StationPOI
+      guid: 1bb5467fd26b0749ae0a415e72dd81d9
+      id: 3415218025
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MUSIC_StationPOI
+        ObjectType: 3
+      Path: Default Work Unit\MUSIC_StationPOI
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: OBJ_DepositBottle
       guid: e68e72ed3faae54b824c2ad343fc741d
       id: 2632544887
@@ -226,8 +244,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_DepositBottle
       maxAttenuation: 0
-      maxDuration: 1.117279
-      minDuration: 0.897607
+      maxDuration: -1
+      minDuration: -1
     - name: OBJ_FossilPOI
       guid: 72b8a330876671498dc58637744f3d23
       id: 4108701605
@@ -292,6 +310,60 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: OBJ_PickupCan
+      guid: 6802b163ab435744879cf6086344385f
+      id: 2331991283
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GLOBAL
+        ObjectType: 4
+      - ElementName: OBJECT
+        ObjectType: 4
+      - ElementName: GARBAGE
+        ObjectType: 4
+      - ElementName: OBJ_PickupCan
+        ObjectType: 3
+      Path: Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_PickupCan
+      maxAttenuation: 0
+      maxDuration: 1.602177
+      minDuration: 0.795283
+    - name: OBJ_PickupChipPacket
+      guid: a9200bb439d0ed4b904264fb8d3c9237
+      id: 2542323829
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GLOBAL
+        ObjectType: 4
+      - ElementName: OBJECT
+        ObjectType: 4
+      - ElementName: GARBAGE
+        ObjectType: 4
+      - ElementName: OBJ_PickupChipPacket
+        ObjectType: 3
+      Path: Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_PickupChipPacket
+      maxAttenuation: 0
+      maxDuration: 3.424943
+      minDuration: 2.113016
+    - name: OBJ_PickupPlasticBottle
+      guid: c49983b9c3e00a419e99937e31051ef5
+      id: 2507641825
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GLOBAL
+        ObjectType: 4
+      - ElementName: OBJECT
+        ObjectType: 4
+      - ElementName: GARBAGE
+        ObjectType: 4
+      - ElementName: OBJ_PickupPlasticBottle
+        ObjectType: 3
+      Path: Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_PickupPlasticBottle
+      maxAttenuation: 0
+      maxDuration: 1.369977
+      minDuration: 1.068118
     - name: OBJ_RockCollide
       guid: 36ae18d28f16f849bd59314fde71f4b0
       id: 614124066
@@ -380,22 +452,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: UI_CheckOff
-      guid: b590efe0e8acfd4f84108906ee9e7718
-      id: 1901013417
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: GLOBAL
-        ObjectType: 4
-      - ElementName: UI
-        ObjectType: 4
-      - ElementName: UI_CheckOff
-        ObjectType: 3
-      Path: Default Work Unit\GLOBAL\UI\UI_CheckOff
-      maxAttenuation: 0
-      maxDuration: 1.369977
-      minDuration: 1.369977
     - name: UI_POIComplete
       guid: 8ea1a903e3e20a45b48e1a624d7c41fb
       id: 781213427
@@ -433,7 +489,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d356db5be7fc64429a6cf7770480508d
     GuidInternal: 
-    m_lastTime: -8586309487885850202
+    m_lastTime: -8586285089262430181
     List:
     - name: BallCollideForce
       guid: 3827dc73d2285a4eb7cc183d25ee3db9
@@ -444,24 +500,6 @@ MonoBehaviour:
       - ElementName: BallCollideForce
         ObjectType: 13
       Path: Default Work Unit\BallCollideForce
-    - name: CurrentSceneProgress
-      guid: 835f37ea9b7d2e48b2ddefbafd61a912
-      id: 4175992265
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: CurrentSceneProgress
-        ObjectType: 13
-      Path: Default Work Unit\CurrentSceneProgress
-    - name: DistanceFrom_Centre
-      guid: 72abf394b693a7459f3fed6aee0ee548
-      id: 546813746
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: DistanceFrom_Centre
-        ObjectType: 13
-      Path: Default Work Unit\DistanceFrom_Centre
     - name: RockCollideForce
       guid: 6d92db3f6b8e184399084321d8098c42
       id: 1277399449
@@ -476,7 +514,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 40f47286675947438a6b0f966d807484
     GuidInternal: 
-    m_lastTime: -8586309487880109447
+    m_lastTime: -8586296479900748424
     List:
     - name: PlayerState
       guid: f604ef065e4d7840b334c0a4e2d725c1
@@ -520,7 +558,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 618b4fa3209d9e4e8130fcf4a3172a11
     GuidInternal: 
-    m_lastTime: -8586309487880109447
+    m_lastTime: -8586296479900718436
     List:
     - name: Circket_Loc
       guid: fa6588e612196b458516506bd0546e0d
@@ -670,14 +708,13 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: bda7fc60bf5701409f43a92e37509cfe
     GuidInternal: 
-    m_lastTime: -8586309487880054530
+    m_lastTime: -8586296479900718436
     List: []
   ExpandedItems:
   - /MISKA Sound
   - /MISKA Sound/Events
   - /MISKA Sound/Events/Default Work Unit
   - /MISKA Sound/Events/Default Work Unit/GLOBAL
-  - /MISKA Sound/Events/Default Work Unit/GLOBAL/AMBIENCE
-  - /MISKA Sound/Events/Default Work Unit/LOCAL
+  - /MISKA Sound/Events/Default Work Unit/GLOBAL/UI
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

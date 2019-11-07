@@ -12,23 +12,45 @@
 								<Event Name="OBJ_JournalWrite" ID="{4A504EF9-46F4-4237-9A01-146D383B0F69}"/>
 								<Folder Name="GARBAGE" ID="{0A58FC4A-1C8D-4535-9F3E-BCF77D5751EB}" ShortID="367835178">
 									<ChildrenList>
-										<Event Name="OBJ_BottlePickup" ID="{B805815E-D6C7-4DAD-911D-8556E50204AF}">
-											<ChildrenList>
-												<Action Name="" ID="{69D05366-869D-4EF5-AF9A-06928B68C1EC}" ShortID="914177561">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="Bottle" ID="{89670AF7-2DD3-4955-952E-BED76D74ED70}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
 										<Event Name="OBJ_DepositBottle" ID="{ED728EE6-AA3F-4BE5-824C-2AD343FC741D}">
 											<ChildrenList>
 												<Action Name="" ID="{332D31DF-13C9-44CB-8514-B7D3F082693A}" ShortID="415625978">
 													<ReferenceList>
 														<Reference Name="Target">
 															<ObjectRef Name="DepositBottle" ID="{D654B4A5-0154-4197-90C7-5A879D908987}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="OBJ_PickupPlasticBottle" ID="{B98399C4-E0C3-410A-9E99-937E31051EF5}">
+											<ChildrenList>
+												<Action Name="" ID="{C16B6902-4E79-4CFA-A3DB-ECDD44D54BAD}" ShortID="833983852">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="PlasticBottle" ID="{3E46FCB7-5D3F-4CC4-A29D-B49077CBBDC8}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="OBJ_PickupCan" ID="{63B10268-43AB-4457-879C-F6086344385F}">
+											<ChildrenList>
+												<Action Name="" ID="{C2374159-6F76-4619-8C1C-31751EDA98F0}" ShortID="593586704">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Can" ID="{2ED25347-2D82-4A81-A4A2-86B0C5372AD7}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="OBJ_PickupChipPacket" ID="{B40B20A9-D039-4BED-9042-64FB8D3C9237}">
+											<ChildrenList>
+												<Action Name="" ID="{E0625A60-17F3-4781-9BD3-7822190900E1}" ShortID="339246371">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="ChipPacket" ID="{07E1BE5E-A0D0-40BC-BBB5-9AB50F46483A}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
 														</Reference>
 													</ReferenceList>
 												</Action>
@@ -62,17 +84,6 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Self-Inking Stamp" ID="{BD7245AE-24FA-457D-99E2-ED802F21D095}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="UI_CheckOff" ID="{E0EF90B5-ACE8-4FFD-8410-8906EE9E7718}">
-									<ChildrenList>
-										<Action Name="" ID="{E7E66543-8727-4A5D-9A27-F827388F3C13}" ShortID="791895521">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Typewriter_CheckOff" ID="{15421EEC-A839-4A87-B53F-338EDC092D49}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -230,6 +241,39 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Typewriter Slides" ID="{23A1B979-2D90-44B4-BAEE-6D8B370DDF11}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MUSIC_DucksPOI" ID="{353E74DB-F13E-4800-984A-6C1943C243B4}">
+					<ChildrenList>
+						<Action Name="" ID="{2951D396-8DCA-4B11-BD96-E5D7E2B62193}" ShortID="63871002">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="duck pond poi complete music" ID="{16978C5E-752D-4150-B8C3-9F7F54BE27E1}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MUSIC_RocksPOI" ID="{8DCA17E2-7B9A-4FED-AADB-97AEEC473603}">
+					<ChildrenList>
+						<Action Name="" ID="{96322410-FDA3-463D-B672-6E047BE43E90}" ShortID="940047396">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="rocks poi complete" ID="{2BDC05D8-9E1A-47DA-B127-B49FECF08EC5}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MUSIC_StationPOI" ID="{7F46B51B-6BD2-4907-AE0A-415E72DD81D9}">
+					<ChildrenList>
+						<Action Name="" ID="{E06D9B58-2331-4025-9768-B87576035A70}" ShortID="405963365">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="station poi complete music" ID="{88DD30EC-8AC3-44E5-8002-C379F83AF310}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

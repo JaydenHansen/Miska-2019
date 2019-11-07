@@ -171,4 +171,9 @@ public class Dog : MonoBehaviour
     {
         gameObject.SetActive(true);      
     }
+
+    public void StartPat()
+    {
+        m_animator.SetTrigger("Pat");
+    }
 }

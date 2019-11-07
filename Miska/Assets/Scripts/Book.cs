@@ -8,7 +8,6 @@ public class Book : MonoBehaviour
     public Player m_player;
     public CameraController m_playerCamera;
     public Camera m_bookCamera;
-    public Camera m_groundCamera;
     public GameObject m_pageMesh;
     public Transform m_pageTurnLeft;
     public Transform m_pageTurnRight;
@@ -106,9 +105,6 @@ public class Book : MonoBehaviour
             m_bookCamera.transform.localPosition = Vector3.Lerp(m_startPosition, m_targetPosition, m_timer / m_openDelay);
             m_bookCamera.transform.localRotation = Quaternion.Lerp(m_startRotation, m_targetRotation, m_timer / m_openDelay);
 
-            m_groundCamera.transform.localPosition = Vector3.Lerp(m_startPosition, m_targetPosition, m_timer / m_openDelay);
-            m_groundCamera.transform.localRotation = Quaternion.Lerp(m_startRotation, m_targetRotation, m_timer / m_openDelay);
-
             m_opening = false;
         }
     }
@@ -147,8 +143,6 @@ public class Book : MonoBehaviour
             Cursor.visible = true;
 
             m_bookCamera.enabled = true;
-            if (m_groundCamera)
-                m_groundCamera.enabled = true;
             m_playerCamera.m_camera.enabled = false;
             m_playerCamera.enabled = false;
 
@@ -179,8 +173,6 @@ public class Book : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         m_bookCamera.enabled = false;
-        if (m_groundCamera)
-            m_groundCamera.enabled = false;
         m_playerCamera.m_camera.enabled = true;
         m_playerCamera.enabled = true;
 

@@ -126,7 +126,7 @@ public class Butterfly : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (m_showDebug)
+        if (m_showDebug && m_points != null)
         {
             for (int j = 0; j < m_butterflies.Length; j++)
             {

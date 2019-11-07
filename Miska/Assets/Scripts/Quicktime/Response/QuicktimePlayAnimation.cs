@@ -31,6 +31,7 @@ public class QuicktimePlayAnimation : QuicktimeResponse
 
         if (m_disableMovement)
         {
+            m_player.MovementState = MovementState.Disabled;
             m_player.CharacterController.enabled = false;
         }
     }

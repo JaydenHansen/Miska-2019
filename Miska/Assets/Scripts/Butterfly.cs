@@ -130,7 +130,7 @@ public class Butterfly : MonoBehaviour
         {
             for (int j = 0; j < m_butterflies.Length; j++)
             {
-                if (m_points[j].Length == 0 || m_points[j].Length != m_pointCount)
+                if (m_points != null && (m_points[j].Length == 0 || m_points[j].Length != m_pointCount))
                     GeneratePoints(j);
 
                 Gizmos.color = Color.red;

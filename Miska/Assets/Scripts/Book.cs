@@ -21,6 +21,7 @@ public class Book : MonoBehaviour
     public float m_openDelay;
     public bool m_autoClose;
     public bool m_manualControl = true;
+    public bool m_menuBook;
 
     List<GameObject> m_pages;
     int m_currentPage;
@@ -105,7 +106,8 @@ public class Book : MonoBehaviour
             m_bookCamera.transform.localPosition = Vector3.Lerp(m_startPosition, m_targetPosition, m_timer / m_openDelay);
             m_bookCamera.transform.localRotation = Quaternion.Lerp(m_startRotation, m_targetRotation, m_timer / m_openDelay);
 
-            m_opening = false;
+            if (m_timer >= m_openDelay)
+                m_opening = false;
         }
     }
 
@@ -113,7 +115,8 @@ public class Book : MonoBehaviour
     {
         if (!m_animation.isPlaying && !m_open)
         {
-            m_animation.Play("Book_Open_001");
+            if (!m_menuBook)
+                m_animation.Play("Book_Open_001");
 
             m_currentPage = page;
             m_leftPages.gameObject.SetActive(true);

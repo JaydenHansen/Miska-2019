@@ -21,7 +21,8 @@ public class HUD_UI : MonoBehaviour
 
     public AK.Wwise.Event m_slideSound, m_stampSound;
 
-    TrashCan m_currentAreaBin;
+    GameObject m_currentAreaBin;
+    AK.Wwise.Event m_currentAreaMusic;
     public AK.Wwise.Event m_stationPOIMusic, m_rocksPOIMusic, m_duckPOIMusic;
 
     bool m_isGoalRefreshing;
@@ -34,7 +35,8 @@ public class HUD_UI : MonoBehaviour
         SetupCheckboxArrays();
         m_animator = GetComponent<Animator>();
         m_isGoalRefreshing = false;
-        m_currentAreaBin = GameObject.Find("BIN_Station").GetComponent<TrashCan>();
+        m_currentAreaBin = GameObject.Find("BIN_Station");
+        m_currentAreaMusic = m_stationPOIMusic;
     }
 
     private void Update()
@@ -56,12 +58,16 @@ public class HUD_UI : MonoBehaviour
         }
     }
 
-    public void SetupTrashScene(TrashCan bin) //m_trashCan.m_requiredTrash, m_trashCan.TrashLeft
+    public void SetupTrashScene(GameObject binOBJ) //m_trashCan.m_requiredTrash, m_trashCan.TrashLeft
     {
-        int totalTrash = bin.m_requiredTrash;
-        int remainingTrash = bin.TrashLeft;
+        m_currentAreaMusic.Stop(m_currentAreaBin);
 
-        bin = m_currentAreaBin;
+        TrashCan binScript = binOBJ.GetComponent<TrashCan>();
+
+        int totalTrash = binScript.m_requiredTrash;
+        int remainingTrash = binScript.TrashLeft;
+
+        m_currentAreaBin = binOBJ;
 
         SetupCheckboxes(totalTrash);
         m_currentAreaTrash = totalTrash;
@@ -93,6 +99,21 @@ public class HUD_UI : MonoBehaviour
         RawImage ri = m_GoalText.GetComponent<RawImage>();
         ri.texture = thisArea_gt_pickup;
         StartCoroutine("IntialTransition");
+        string BinName = m_currentAreaBin.name;
+
+        if (BinName == "BIN_Station")
+        {
+            m_currentAreaMusic = m_stationPOIMusic;
+        }
+        if (BinName == "BIN_Rocks")
+        {
+            m_currentAreaMusic = m_rocksPOIMusic;
+        }
+        if (BinName == "BIN_Ducks")
+        {
+            m_currentAreaMusic = m_duckPOIMusic;
+        }
+
     }
 
     public void OnTrashAreaExit()
@@ -188,26 +209,9 @@ public class HUD_UI : MonoBehaviour
 
     public void OnAllTrashDisposed()
     {
-        AK.Wwise.Event POI = null;
-
-        string BinName = m_currentAreaBin.gameObject.name;
-
-        if (BinName == "BIN_Station")
-        {
-            POI = m_stationPOIMusic;
-        }
-        if (BinName == "BIN_Rocks")
-        {
-            POI = m_rocksPOIMusic;
-        }
-        if (BinName == "BIN_Ducks")
-        {
-            POI = m_duckPOIMusic;
-        }
-
         if (!m_isAllTrashDisposed)
         {
-            StartCoroutine(AllTrashDisposed(POI, m_currentAreaBin.gameObject));
+            StartCoroutine(AllTrashDisposed(m_currentAreaMusic, m_currentAreaBin));
         }
     }
 
@@ -250,13 +254,12 @@ public class HUD_UI : MonoBehaviour
     {
         Debug.Log("trash disposed step1");
         m_isAllTrashDisposed = true;
-        yield return new WaitForSeconds(1.0f);
+        music.Post(bin);
+        yield return new WaitForSeconds(3.0f);
 
         Debug.Log("trash disposed step2");
         RawImage ri = m_GoalText.GetComponent<RawImage>();
         ri.texture = m_gt_disposeDone;
-        m_stampSound.Post(gameObject);
-        music.Post(bin);
         Debug.Log("trash disposed step3");
         yield return new WaitForSeconds(1.5f);
 

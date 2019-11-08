@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 61613fc2e9e030449a3f2b92ca0e24f2
     GuidInternal: 
-    m_lastTime: -8586285038804745483
+    m_lastTime: -8586284432143373709
     List:
     - name: BNK_Global
       guid: b9502754ac22954295c755ce9571fe56
@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: c8baaaee9ee0654299bdb315b882e069
     GuidInternal: 
-    m_lastTime: -8586285032697453644
+    m_lastTime: -8586284432143473671
     List:
     - name: AMB_Bed
       guid: 1c394a03ad28ed49a352084c06ac4828
@@ -174,9 +174,9 @@ MonoBehaviour:
       - ElementName: MUSIC_DucksPOI
         ObjectType: 3
       Path: Default Work Unit\MUSIC_DucksPOI
-      maxAttenuation: 25
-      maxDuration: 21.57304
-      minDuration: 21.57304
+      maxAttenuation: 40
+      maxDuration: -1
+      minDuration: -1
     - name: MUSIC_RocksPOI
       guid: e217ca8d9a7bed4faadb97aeec473603
       id: 1422345279
@@ -186,9 +186,9 @@ MonoBehaviour:
       - ElementName: MUSIC_RocksPOI
         ObjectType: 3
       Path: Default Work Unit\MUSIC_RocksPOI
-      maxAttenuation: 25
-      maxDuration: 21.57304
-      minDuration: 21.57304
+      maxAttenuation: 40
+      maxDuration: -1
+      minDuration: -1
     - name: MUSIC_StationPOI
       guid: 1bb5467fd26b0749ae0a415e72dd81d9
       id: 3415218025
@@ -198,9 +198,9 @@ MonoBehaviour:
       - ElementName: MUSIC_StationPOI
         ObjectType: 3
       Path: Default Work Unit\MUSIC_StationPOI
-      maxAttenuation: 25
-      maxDuration: 21.57304
-      minDuration: 21.57304
+      maxAttenuation: 40
+      maxDuration: -1
+      minDuration: -1
     - name: OBJ_DepositBottle
       guid: e68e72ed3faae54b824c2ad343fc741d
       id: 2632544887

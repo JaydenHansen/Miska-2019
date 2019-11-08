@@ -7,10 +7,16 @@ public class PointOfInterest : MonoBehaviour
 {
     public GameObject m_player;
     public HUD_UI m_hudUI;
-    public TrashCan m_trashCan;
+    public GameObject m_trashCanOBJ;
+    TrashCan m_trashCan;    
     public Vector3 m_size;
 
     bool m_playerInArea;
+
+    private void Start()
+    {
+        m_trashCan = m_trashCanOBJ.GetComponent<TrashCan>();   
+    }
 
     private void Update()
     {
@@ -30,7 +36,7 @@ public class PointOfInterest : MonoBehaviour
             {
                 if (m_trashCan.TrashLeft != 0)
                 {
-                    m_hudUI.SetupTrashScene(m_trashCan);
+                    m_hudUI.SetupTrashScene(m_trashCanOBJ);
                 }
                 else
                 {

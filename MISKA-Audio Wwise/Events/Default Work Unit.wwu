@@ -246,39 +246,80 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="MUSIC_DucksPOI" ID="{353E74DB-F13E-4800-984A-6C1943C243B4}">
+				<Folder Name="MINIGAME" ID="{61C67DA3-C8E1-4776-87BC-2356DE429CE7}" ShortID="600775357">
 					<ChildrenList>
-						<Action Name="" ID="{2951D396-8DCA-4B11-BD96-E5D7E2B62193}" ShortID="63871002">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="duck POI" ID="{C79EAC2B-9AA6-48D7-9606-7B7842409C65}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="MINI_Fail" ID="{8D756B99-5251-45D8-A844-A1E768269BD6}">
+							<ChildrenList>
+								<Action Name="" ID="{03A16538-C808-43BB-B8C8-2920C2A8E288}" ShortID="339703596">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="fail" ID="{528A8275-0418-417C-A450-9527E276EF53}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MINI_Step" ID="{3D49CB5A-AD94-414A-96D7-97BD7756B9C7}">
+							<ChildrenList>
+								<Action Name="" ID="{C5D3FF39-0F89-4876-8486-CAA906BD361E}" ShortID="294488635">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="step" ID="{40FD8F22-61CE-4091-9898-3D2C80568723}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MINI_Goal" ID="{6A243223-8DC8-4212-8697-9EB163FF79F2}">
+							<ChildrenList>
+								<Action Name="" ID="{AB6CC8E7-0ED6-4937-88EE-DB71D5D546F2}" ShortID="517084090">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="goal" ID="{6890FC3A-1CDD-4BC8-977E-5815802F041D}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
-				<Event Name="MUSIC_RocksPOI" ID="{8DCA17E2-7B9A-4FED-AADB-97AEEC473603}">
+				</Folder>
+				<Folder Name="MUSIC" ID="{134D8226-718D-43C6-9743-28A92616FC42}" ShortID="775016090">
 					<ChildrenList>
-						<Action Name="" ID="{96322410-FDA3-463D-B672-6E047BE43E90}" ShortID="940047396">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Rock POI" ID="{A1CF2F20-BAF2-4F7D-9397-AB23DFB8C6B4}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="MUSIC_DucksPOI" ID="{353E74DB-F13E-4800-984A-6C1943C243B4}">
+							<ChildrenList>
+								<Action Name="" ID="{2951D396-8DCA-4B11-BD96-E5D7E2B62193}" ShortID="63871002">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="duck POI" ID="{C79EAC2B-9AA6-48D7-9606-7B7842409C65}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MUSIC_RocksPOI" ID="{8DCA17E2-7B9A-4FED-AADB-97AEEC473603}">
+							<ChildrenList>
+								<Action Name="" ID="{96322410-FDA3-463D-B672-6E047BE43E90}" ShortID="940047396">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Rock POI" ID="{A1CF2F20-BAF2-4F7D-9397-AB23DFB8C6B4}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MUSIC_StationPOI" ID="{7F46B51B-6BD2-4907-AE0A-415E72DD81D9}">
+							<ChildrenList>
+								<Action Name="" ID="{E06D9B58-2331-4025-9768-B87576035A70}" ShortID="405963365">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Station POI" ID="{9935C347-2D53-42CA-9D35-84D51E1705BD}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
-				<Event Name="MUSIC_StationPOI" ID="{7F46B51B-6BD2-4907-AE0A-415E72DD81D9}">
-					<ChildrenList>
-						<Action Name="" ID="{E06D9B58-2331-4025-9768-B87576035A70}" ShortID="405963365">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Station POI" ID="{9935C347-2D53-42CA-9D35-84D51E1705BD}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

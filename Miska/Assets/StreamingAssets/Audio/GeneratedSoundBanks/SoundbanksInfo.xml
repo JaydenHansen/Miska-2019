@@ -38,6 +38,10 @@
 				<Event Id="866718607" Name="UI_Stamp" ObjectPath="\Events\Default Work Unit\GLOBAL\UI\UI_Stamp"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="6702475" Language="SFX">
+					<ShortName>goal.wav</ShortName>
+					<Path>SFX\goal_10C4C929.wem</Path>
+				</File>
 				<File Id="8622858" Language="SFX">
 					<ShortName>packet collect3.wav</ShortName>
 					<Path>SFX\packet collect3_10C4C929.wem</Path>
@@ -130,10 +134,6 @@
 					<ShortName>canteen_walk.wav</ShortName>
 					<Path>SFX\canteen_walk_10C4C929.wem</Path>
 				</File>
-				<File Id="271295221" Language="SFX">
-					<ShortName>duck pond poi complete music.wav</ShortName>
-					<Path>SFX\duck pond poi complete music_D79FB2B7.wem</Path>
-				</File>
 				<File Id="273585866" Language="SFX">
 					<ShortName>wood walk4.wav</ShortName>
 					<Path>SFX\wood walk4_10C4C929.wem</Path>
@@ -157,6 +157,14 @@
 				<File Id="337239227" Language="SFX">
 					<ShortName>packet collect.wav</ShortName>
 					<Path>SFX\packet collect_10C4C929.wem</Path>
+				</File>
+				<File Id="365574621" Language="SFX">
+					<ShortName>station poi music v2.wav</ShortName>
+					<Path>SFX\station poi music v2_D79FB2B7.wem</Path>
+				</File>
+				<File Id="389985573" Language="SFX">
+					<ShortName>fail.wav</ShortName>
+					<Path>SFX\fail_10C4C929.wem</Path>
 				</File>
 				<File Id="391704253" Language="SFX">
 					<ShortName>dog_walk4.wav</ShortName>
@@ -234,9 +242,9 @@
 					<ShortName>Rock-Fall-Debris 1.wav</ShortName>
 					<Path>SFX\Rock-Fall-Debris 1_1AA7C6D1.wem</Path>
 				</File>
-				<File Id="687237978" Language="SFX">
-					<ShortName>station poi complete music.wav</ShortName>
-					<Path>SFX\station poi complete music_D79FB2B7.wem</Path>
+				<File Id="701385824" Language="SFX">
+					<ShortName>duck pond poi music v2.wav</ShortName>
+					<Path>SFX\duck pond poi music v2_D79FB2B7.wem</Path>
 				</File>
 				<File Id="756801656" Language="SFX">
 					<ShortName>CHAR_KeyJingle4.wav</ShortName>
@@ -257,6 +265,10 @@
 				<File Id="782625208" Language="SFX">
 					<ShortName>Drop_Rock_HardSurface_Heavy_02.wav</ShortName>
 					<Path>SFX\Drop_Rock_HardSurface_Heavy_02_9662FAA1.wem</Path>
+				</File>
+				<File Id="788858522" Language="SFX">
+					<ShortName>step.wav</ShortName>
+					<Path>SFX\step_10C4C929.wem</Path>
 				</File>
 				<File Id="795907594" Language="SFX">
 					<ShortName>bottle collect.wav</ShortName>
@@ -294,10 +306,6 @@
 					<ShortName>Dog akita puppy whine breathy short_BLASTWAVEFX_10305.wav</ShortName>
 					<Path>SFX\Dog akita puppy whine breathy short_BLASTWAVEFX_10305_10C4C929.wem</Path>
 				</File>
-				<File Id="866905759" Language="SFX">
-					<ShortName>rocks poi complete.wav</ShortName>
-					<Path>SFX\rocks poi complete_D79FB2B7.wem</Path>
-				</File>
 				<File Id="889890054" Language="SFX">
 					<ShortName>canteen_walk3.wav</ShortName>
 					<Path>SFX\canteen_walk3_10C4C929.wem</Path>
@@ -317,6 +325,10 @@
 				<File Id="963579058" Language="SFX">
 					<ShortName>grasswalk4.wav</ShortName>
 					<Path>SFX\grasswalk4_10C4C929.wem</Path>
+				</File>
+				<File Id="979453094" Language="SFX">
+					<ShortName>rocks poi music v2.wav</ShortName>
+					<Path>SFX\rocks poi music v2_D79FB2B7.wem</Path>
 				</File>
 				<File Id="983771690" Language="SFX">
 					<ShortName>grassrun2.wav</ShortName>

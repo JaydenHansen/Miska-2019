@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1002497288}
-  m_IndirectSpecularColor: {r: 0.20412293, g: 0.3037171, b: 0.44225153, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -718,6 +718,36 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fa9e569e35a681f498fa34355603f7d6, type: 2}
+    - target: {fileID: -6922205921590831600, guid: 42ca6ec76ee657d4fb526c7d8af0100c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6922205921590831600, guid: 42ca6ec76ee657d4fb526c7d8af0100c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7297965
+      objectReference: {fileID: 0}
+    - target: {fileID: -6922205921590831600, guid: 42ca6ec76ee657d4fb526c7d8af0100c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6836644
+      objectReference: {fileID: 0}
+    - target: {fileID: -6922205921590831600, guid: 42ca6ec76ee657d4fb526c7d8af0100c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -6922205921590831600, guid: 42ca6ec76ee657d4fb526c7d8af0100c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.41
+      objectReference: {fileID: 0}
+    - target: {fileID: -6922205921590831600, guid: 42ca6ec76ee657d4fb526c7d8af0100c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 93.739006
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 42ca6ec76ee657d4fb526c7d8af0100c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -783,41 +813,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: fa9e569e35a681f498fa34355603f7d6, type: 2}
-    - target: {fileID: 7017053610125174492, guid: 42ca6ec76ee657d4fb526c7d8af0100c,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fa9e569e35a681f498fa34355603f7d6, type: 2}
-    - target: {fileID: -6922205921590831600, guid: 42ca6ec76ee657d4fb526c7d8af0100c,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -6922205921590831600, guid: 42ca6ec76ee657d4fb526c7d8af0100c,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7297965
-      objectReference: {fileID: 0}
-    - target: {fileID: -6922205921590831600, guid: 42ca6ec76ee657d4fb526c7d8af0100c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6836644
-      objectReference: {fileID: 0}
-    - target: {fileID: -6922205921590831600, guid: 42ca6ec76ee657d4fb526c7d8af0100c,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: -6922205921590831600, guid: 42ca6ec76ee657d4fb526c7d8af0100c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 4.41
-      objectReference: {fileID: 0}
-    - target: {fileID: -6922205921590831600, guid: 42ca6ec76ee657d4fb526c7d8af0100c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 93.739006
-      objectReference: {fileID: 0}
     - target: {fileID: 752322495159310993, guid: 42ca6ec76ee657d4fb526c7d8af0100c,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -848,6 +843,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -16.493
       objectReference: {fileID: 0}
+    - target: {fileID: 7017053610125174492, guid: 42ca6ec76ee657d4fb526c7d8af0100c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa9e569e35a681f498fa34355603f7d6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42ca6ec76ee657d4fb526c7d8af0100c, type: 3}
 --- !u!1001 &176654509
@@ -990,6 +990,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_score: {fileID: 775671580}
+  m_goal:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9fdd6ae9335b6ff4783f2c1d75419a05,
+      type: 2}
 --- !u!1 &218435873
 GameObject:
   m_ObjectHideFlags: 0
@@ -2137,8 +2142,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 43093514bfec1e945be0ad297e2ff469,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
   decodeBank: 0
   loadAsynchronous: 0
   saveDecodedBank: 0
@@ -2624,7 +2628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: e63c5fcdbc18c024b9a360404f90f231, type: 2}
   m_StaticLightingSkyUniqueID: 1
-  m_SkySettings: {fileID: 1557703573}
+  m_SkySettings: {fileID: 1241826346}
   m_SkySettingsFromProfile: {fileID: -7691833635960765289, guid: e63c5fcdbc18c024b9a360404f90f231,
     type: 2}
 --- !u!114 &636661772
@@ -2806,8 +2810,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 027c9b7c5207edc47b55bac767bc5ec7,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
   decodeBank: 0
   loadAsynchronous: 0
   saveDecodedBank: 0
@@ -4261,8 +4264,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: d07aa79302fdfa447a9a08bb6a8f373d,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
   decodeBank: 0
   loadAsynchronous: 0
   saveDecodedBank: 0
@@ -5317,6 +5319,16 @@ MonoBehaviour:
   m_startDelay: 3
   m_startCountdown: {fileID: 1813879406}
   m_score: {fileID: 775671580}
+  m_step:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f5d22066ac99d104e8c9bd223f58ec68,
+      type: 2}
+  m_fail:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c3ca897e79b543242aa6ec4f852857a4,
+      type: 2}
 --- !u!50 &1210620807
 Rigidbody2D:
   serializedVersion: 4
@@ -5549,6 +5561,55 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1241826346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b6606ef2548734bb6d11b9d160bc7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 250
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 0
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 0
+  hdriSky:
+    m_OverrideState: 0
+    m_Value: {fileID: 8900000, guid: 8348a2723025f7541a1bf7dce22b567f, type: 3}
 --- !u!1 &1358453927
 GameObject:
   m_ObjectHideFlags: 0
@@ -6045,55 +6106,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &1557703573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59b6606ef2548734bb6d11b9d160bc7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 250
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 0
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 0
-  hdriSky:
-    m_OverrideState: 0
-    m_Value: {fileID: 8900000, guid: 8348a2723025f7541a1bf7dce22b567f, type: 3}
 --- !u!1001 &1569829316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13032,11 +13044,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.199265
       objectReference: {fileID: 0}
-    - target: {fileID: 2729283867599146598, guid: 905a8e77bc1e21f48ba26e1e3ed9ad0e,
-        type: 3}
-      propertyPath: m_delay
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1902206272, guid: 905a8e77bc1e21f48ba26e1e3ed9ad0e, type: 3}
       propertyPath: m_onSuccess.m_PersistentCalls.m_Calls.Array.size
       value: 3
@@ -13085,6 +13092,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729283867599146598, guid: 905a8e77bc1e21f48ba26e1e3ed9ad0e,
+        type: 3}
+      propertyPath: m_delay
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2729283868041621385, guid: 905a8e77bc1e21f48ba26e1e3ed9ad0e, type: 3}
@@ -13368,11 +13380,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.199265
       objectReference: {fileID: 0}
-    - target: {fileID: 2729283867599146598, guid: 905a8e77bc1e21f48ba26e1e3ed9ad0e,
-        type: 3}
-      propertyPath: m_delay
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1902206272, guid: 905a8e77bc1e21f48ba26e1e3ed9ad0e, type: 3}
       propertyPath: m_onSuccess.m_PersistentCalls.m_Calls.Array.size
       value: 3
@@ -13426,6 +13433,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.z
       value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729283867599146598, guid: 905a8e77bc1e21f48ba26e1e3ed9ad0e,
+        type: 3}
+      propertyPath: m_delay
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2729283868041621385, guid: 905a8e77bc1e21f48ba26e1e3ed9ad0e, type: 3}

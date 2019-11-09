@@ -17,6 +17,9 @@ public class Frog : MonoBehaviour
     float m_startTimer;
     Vector2Int m_gridPos;
 
+    public AK.Wwise.Event m_step;
+    public AK.Wwise.Event m_fail;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,28 +53,33 @@ public class Frog : MonoBehaviour
         {
             rb.MovePosition(rb.position + Vector2.right * m_travelDistance);
             m_gridPos.x++;
+            m_step.Post(gameObject);
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow) && m_gridPos.x - 1 >= 0)
         {
             rb.MovePosition(rb.position + Vector2.left * m_travelDistance);
             m_gridPos.x--;
+            m_step.Post(gameObject);
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow) && m_gridPos.y + 1 <= 4)
         {
             rb.MovePosition(rb.position + Vector2.up * m_travelDistance);
             m_gridPos.y++;
+            m_step.Post(gameObject);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && m_gridPos.y - 1 >= 0)
         {
             rb.MovePosition(rb.position + Vector2.down * m_travelDistance);
             m_gridPos.y--;
-        }                    
+            m_step.Post(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Enemy")
         {
+            m_fail.Post(gameObject);
             ResetGame(true);
         }
     }

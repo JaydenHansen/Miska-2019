@@ -17,21 +17,21 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 008f34a31108904182ccca47e0b7be48
     GuidInternal: 
-    m_lastTime: -8586296479900698445
+    m_lastTime: -8586283253698983336
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: c836f35345477a4ab19e8ee120a18e42
     GuidInternal: 
-    m_lastTime: -8586296479906086562
+    m_lastTime: -8586283253699083425
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 61613fc2e9e030449a3f2b92ca0e24f2
     GuidInternal: 
-    m_lastTime: -8586284432143373709
+    m_lastTime: -8586283253699003348
     List:
     - name: BNK_Global
       guid: b9502754ac22954295c755ce9571fe56
@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: c8baaaee9ee0654299bdb315b882e069
     GuidInternal: 
-    m_lastTime: -8586284432143473671
+    m_lastTime: -8586283253699093436
     List:
     - name: AMB_Bed
       guid: 1c394a03ad28ed49a352084c06ac4828
@@ -165,15 +165,59 @@ MonoBehaviour:
       maxAttenuation: 30
       maxDuration: -1
       minDuration: -1
+    - name: MINI_Fail
+      guid: 996b758d5152d845a844a1e768269bd6
+      id: 603583975
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MINIGAME
+        ObjectType: 4
+      - ElementName: MINI_Fail
+        ObjectType: 3
+      Path: Default Work Unit\MINIGAME\MINI_Fail
+      maxAttenuation: 0
+      maxDuration: 2.886796
+      minDuration: 2.219604
+    - name: MINI_Goal
+      guid: 2332246ac88d124286979eb163ff79f2
+      id: 3549721850
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MINIGAME
+        ObjectType: 4
+      - ElementName: MINI_Goal
+        ObjectType: 3
+      Path: Default Work Unit\MINIGAME\MINI_Goal
+      maxAttenuation: 0
+      maxDuration: 1.210959
+      minDuration: 1.142993
+    - name: MINI_Step
+      guid: 5acb493d94ad4a4196d797bd7756b9c7
+      id: 3430316605
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MINIGAME
+        ObjectType: 4
+      - ElementName: MINI_Step
+        ObjectType: 3
+      Path: Default Work Unit\MINIGAME\MINI_Step
+      maxAttenuation: 0
+      maxDuration: 0.663655
+      minDuration: 0.517993
     - name: MUSIC_DucksPOI
       guid: db743e353ef10048984a6c1943c243b4
       id: 1288184563
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
+      - ElementName: MUSIC
+        ObjectType: 4
       - ElementName: MUSIC_DucksPOI
         ObjectType: 3
-      Path: Default Work Unit\MUSIC_DucksPOI
+      Path: Default Work Unit\MUSIC\MUSIC_DucksPOI
       maxAttenuation: 40
       maxDuration: -1
       minDuration: -1
@@ -183,9 +227,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
+      - ElementName: MUSIC
+        ObjectType: 4
       - ElementName: MUSIC_RocksPOI
         ObjectType: 3
-      Path: Default Work Unit\MUSIC_RocksPOI
+      Path: Default Work Unit\MUSIC\MUSIC_RocksPOI
       maxAttenuation: 40
       maxDuration: -1
       minDuration: -1
@@ -195,9 +241,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
+      - ElementName: MUSIC
+        ObjectType: 4
       - ElementName: MUSIC_StationPOI
         ObjectType: 3
-      Path: Default Work Unit\MUSIC_StationPOI
+      Path: Default Work Unit\MUSIC\MUSIC_StationPOI
       maxAttenuation: 40
       maxDuration: -1
       minDuration: -1
@@ -299,8 +347,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_PickupCan
       maxAttenuation: 0
-      maxDuration: 1.602177
-      minDuration: 0.795283
+      maxDuration: 2.083776
+      minDuration: 0.728436
     - name: OBJ_PickupChipPacket
       guid: a9200bb439d0ed4b904264fb8d3c9237
       id: 2542323829
@@ -317,8 +365,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_PickupChipPacket
       maxAttenuation: 0
-      maxDuration: 3.424943
-      minDuration: 2.113016
+      maxDuration: 4.263131
+      minDuration: 1.964693
     - name: OBJ_PickupPlasticBottle
       guid: c49983b9c3e00a419e99937e31051ef5
       id: 2507641825
@@ -335,8 +383,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_PickupPlasticBottle
       maxAttenuation: 0
-      maxDuration: 1.369977
-      minDuration: 1.068118
+      maxDuration: 1.632012
+      minDuration: 0.978338
     - name: OBJ_RockCollide
       guid: 36ae18d28f16f849bd59314fde71f4b0
       id: 614124066
@@ -462,7 +510,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d356db5be7fc64429a6cf7770480508d
     GuidInternal: 
-    m_lastTime: -8586285089262430181
+    m_lastTime: -8586283253699103444
     List:
     - name: BallCollideForce
       guid: 3827dc73d2285a4eb7cc183d25ee3db9
@@ -487,7 +535,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 40f47286675947438a6b0f966d807484
     GuidInternal: 
-    m_lastTime: -8586296479900748424
+    m_lastTime: -8586283253698993347
     List:
     - name: PlayerState
       guid: f604ef065e4d7840b334c0a4e2d725c1
@@ -531,7 +579,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 618b4fa3209d9e4e8130fcf4a3172a11
     GuidInternal: 
-    m_lastTime: -8586296479900718436
+    m_lastTime: -8586283253698993347
     List:
     - name: Circket_Loc
       guid: fa6588e612196b458516506bd0546e0d
@@ -681,7 +729,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: bda7fc60bf5701409f43a92e37509cfe
     GuidInternal: 
-    m_lastTime: -8586296479900718436
+    m_lastTime: -8586283253698983336
     List: []
   ExpandedItems:
   - /MISKA Sound

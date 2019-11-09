@@ -20,6 +20,9 @@ namespace AK
         static const AkUniqueID EMIT_CICADAS = 1225233505U;
         static const AkUniqueID EMIT_DUCKS = 2870480783U;
         static const AkUniqueID EMIT_RIVER = 1862066479U;
+        static const AkUniqueID MINI_FAIL = 603583975U;
+        static const AkUniqueID MINI_GOAL = 3549721850U;
+        static const AkUniqueID MINI_STEP = 3430316605U;
         static const AkUniqueID MUSIC_DUCKSPOI = 1288184563U;
         static const AkUniqueID MUSIC_ROCKSPOI = 1422345279U;
         static const AkUniqueID MUSIC_STATIONPOI = 3415218025U;

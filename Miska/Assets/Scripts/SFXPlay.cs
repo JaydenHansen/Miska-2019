@@ -2,19 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
+
 public class SFXPlay : MonoBehaviour
 {
-    AudioSource m_sound;
+    public AK.Wwise.Event m_sound;
 
-    // Start is called before the first frame update
-    void Start()
+    public void PlaySound()
     {
-        m_sound = GetComponent<AudioSource>();
-    }
-
-public void PlaySound()
-    {
-        m_sound.Play();
+        m_sound.Post(gameObject);
     }
 }
+

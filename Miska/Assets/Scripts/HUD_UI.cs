@@ -171,7 +171,7 @@ public class HUD_UI : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            if(m_checkedStatus[i] == false && !m_isAllTrashPickedUp)
+            if (m_checkedStatus[i] == false && !m_isAllTrashPickedUp)
             {
                 StartCoroutine("CheckOff", i);
                 if (i + 1 == m_currentAreaTrash)
@@ -252,18 +252,16 @@ public class HUD_UI : MonoBehaviour
 
     IEnumerator AllTrashDisposed(AK.Wwise.Event music, GameObject bin)
     {
-        Debug.Log("trash disposed step1");
+        yield return new WaitForSeconds(0.4f);
+
         m_isAllTrashDisposed = true;
         music.Post(bin);
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(0.7f);
 
-        Debug.Log("trash disposed step2");
         RawImage ri = m_GoalText.GetComponent<RawImage>();
         ri.texture = m_gt_disposeDone;
-        Debug.Log("trash disposed step3");
         yield return new WaitForSeconds(1.5f);
 
-        Debug.Log("trash disposed step4");
         m_animator.SetTrigger("TransTO_Inactive");
         yield return null;
     }
@@ -279,7 +277,7 @@ public class HUD_UI : MonoBehaviour
 
     void GoalRefresh()
     {
-        if(!m_isGoalRefreshing)
+        if (!m_isGoalRefreshing)
         {
             m_animator.SetTrigger("TransTO_FullDetail");
         }

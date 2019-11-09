@@ -27,6 +27,9 @@ public class Dog : MonoBehaviour
     Animator m_animator;
     float m_pickupDelay;
 
+    public AK.Wwise.Event m_barkSound;
+    public AK.Wwise.Event m_barkStop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +41,7 @@ public class Dog : MonoBehaviour
         m_animator = GetComponent<Animator>();
     }
 
-    
+
     void Update()
     {
         switch (m_currentTarget)
@@ -51,7 +54,7 @@ public class Dog : MonoBehaviour
                         m_agent.stoppingDistance = 0.5f;
                         m_pickupDelay = 1;
                         break;
-                    }                    
+                    }
                     if (!m_area.Contains(m_player.position))
                     {
                         m_currentTarget = Target.Base;
@@ -65,7 +68,7 @@ public class Dog : MonoBehaviour
                     {
                         m_currentTarget = Target.Player;
                         m_agent.stoppingDistance = m_baseStoppingDistance;
-                    }                    
+                    }
                     if (!m_area.Contains(m_ball.transform.position))
                     {
                         if (m_area.Contains(m_player.position))
@@ -93,7 +96,7 @@ public class Dog : MonoBehaviour
                         }
                     }
                     else
-                    {                        
+                    {
                         if (m_area.Contains(m_player.position))
                         {
                             m_currentTarget = Target.Player;
@@ -101,7 +104,7 @@ public class Dog : MonoBehaviour
                         }
                     }
                     break;
-                }            
+                }
         }
 
         Vector3 targetPosition = Vector3.zero;
@@ -144,7 +147,7 @@ public class Dog : MonoBehaviour
                 {
                     Quaternion targetRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
                     Vector3 direction = m_ball.transform.position - transform.position;
-                    direction.y = 0;                    
+                    direction.y = 0;
                     targetRotation *= Quaternion.LookRotation(direction.normalized);
 
                     transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10);
@@ -152,7 +155,7 @@ public class Dog : MonoBehaviour
             }
         }
 
-        m_animator.SetFloat("Speed", m_agent.velocity.magnitude);   
+        m_animator.SetFloat("Speed", m_agent.velocity.magnitude);
 
         if (m_agent.velocity.sqrMagnitude != 0)
         {
@@ -169,11 +172,12 @@ public class Dog : MonoBehaviour
 
     public void Spawn()
     {
-        gameObject.SetActive(true);      
+        gameObject.SetActive(true);
     }
 
     public void StartPat()
     {
+        m_barkStop.Post(gameObject);
         m_animator.SetTrigger("Pat");
     }
 }

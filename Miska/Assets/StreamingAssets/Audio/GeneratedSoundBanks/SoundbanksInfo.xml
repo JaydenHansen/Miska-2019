@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
 	<RootPaths>
-		<ProjectRoot>C:\Users\s182378\Documents\Miska-2019\MISKA-Audio Wwise\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\s182378\Documents\Miska-2019\MISKA-Audio Wwise\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\s182378\Documents\Miska-2019\Miska\Assets\StreamingAssets\Audio\GeneratedSoundBanks\</SoundBanksRoot>
+		<ProjectRoot>D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\</ProjectRoot>
+		<SourceFilesRoot>D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Games Making\MISKA\Miska-2019\Miska\Assets\StreamingAssets\Audio\GeneratedSoundBanks\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\s182378\Documents\Miska-2019\MISKA-Audio Wwise\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -23,9 +23,12 @@
 				<Event Id="1225233505" Name="EMIT_Cicadas" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Cicadas"/>
 				<Event Id="2870480783" Name="EMIT_Ducks" ObjectPath="\Events\Default Work Unit\LOCAL\DUCKS\EMIT_Ducks"/>
 				<Event Id="1862066479" Name="EMIT_River" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_River"/>
-				<Event Id="1288184563" Name="MUSIC_DucksPOI" ObjectPath="\Events\Default Work Unit\MUSIC_DucksPOI"/>
-				<Event Id="1422345279" Name="MUSIC_RocksPOI" ObjectPath="\Events\Default Work Unit\MUSIC_RocksPOI"/>
-				<Event Id="3415218025" Name="MUSIC_StationPOI" ObjectPath="\Events\Default Work Unit\MUSIC_StationPOI"/>
+				<Event Id="603583975" Name="MINI_Fail" ObjectPath="\Events\Default Work Unit\MINIGAME\MINI_Fail"/>
+				<Event Id="3549721850" Name="MINI_Goal" ObjectPath="\Events\Default Work Unit\MINIGAME\MINI_Goal"/>
+				<Event Id="3430316605" Name="MINI_Step" ObjectPath="\Events\Default Work Unit\MINIGAME\MINI_Step"/>
+				<Event Id="1288184563" Name="MUSIC_DucksPOI" ObjectPath="\Events\Default Work Unit\MUSIC\MUSIC_DucksPOI"/>
+				<Event Id="1422345279" Name="MUSIC_RocksPOI" ObjectPath="\Events\Default Work Unit\MUSIC\MUSIC_RocksPOI"/>
+				<Event Id="3415218025" Name="MUSIC_StationPOI" ObjectPath="\Events\Default Work Unit\MUSIC\MUSIC_StationPOI"/>
 				<Event Id="4108701605" Name="OBJ_FossilPOI" ObjectPath="\Events\Default Work Unit\LOCAL\ROCKS\OBJ_FossilPOI"/>
 				<Event Id="2331991283" Name="OBJ_PickupCan" ObjectPath="\Events\Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_PickupCan"/>
 				<Event Id="2542323829" Name="OBJ_PickupChipPacket" ObjectPath="\Events\Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_PickupChipPacket"/>
@@ -150,6 +153,10 @@
 					<ShortName>Wooodpecker Bearded.wav</ShortName>
 					<Path>SFX\Wooodpecker Bearded_10C4C929.wem</Path>
 				</File>
+				<File Id="325748800" Language="SFX">
+					<ShortName>duck pond poi trans.wav</ShortName>
+					<Path>SFX\duck pond poi trans_D79FB2B7.wem</Path>
+				</File>
 				<File Id="327973492" Language="SFX">
 					<ShortName>canteen_run3.wav</ShortName>
 					<Path>SFX\canteen_run3_10C4C929.wem</Path>
@@ -158,9 +165,17 @@
 					<ShortName>packet collect.wav</ShortName>
 					<Path>SFX\packet collect_10C4C929.wem</Path>
 				</File>
+				<File Id="348058602" Language="SFX">
+					<ShortName>rocks poi trans.wav</ShortName>
+					<Path>SFX\rocks poi trans_D79FB2B7.wem</Path>
+				</File>
 				<File Id="365574621" Language="SFX">
 					<ShortName>station poi music v2.wav</ShortName>
 					<Path>SFX\station poi music v2_D79FB2B7.wem</Path>
+				</File>
+				<File Id="370219100" Language="SFX">
+					<ShortName>station poi trans.wav</ShortName>
+					<Path>SFX\station poi trans_D79FB2B7.wem</Path>
 				</File>
 				<File Id="389985573" Language="SFX">
 					<ShortName>fail.wav</ShortName>

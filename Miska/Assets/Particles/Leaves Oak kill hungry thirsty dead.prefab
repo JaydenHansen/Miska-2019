@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6382116706961414084}
   - component: {fileID: 6382116706961414083}
   m_Layer: 0
-  m_Name: Leaves
+  m_Name: Leaves Oak kill hungry thirsty dead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4717,7 +4717,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 278ef684524db5049a87f76cba6a9e5a, type: 2}
+  - {fileID: 2100000, guid: e9adea44d5a4d2649bbae8ec739b0da9, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -4757,7 +4757,7 @@ ParticleSystemRenderer:
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: 2932904012241104797, guid: a118e2f83ec4ae04591959256733f120, type: 3}
+  m_Mesh: {fileID: 8484681609117892432, guid: 3d1a7a86c62242245952e8fd75a34b9f, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}

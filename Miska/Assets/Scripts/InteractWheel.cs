@@ -11,6 +11,7 @@ public class InteractWheel : MonoBehaviour
     public float m_mouseSpeed;
     public float m_maxMagnitude = 40;
     public float m_deadZone = 10;
+    public float m_unselectedAlpha;
 
     float m_angle;
     Vector2 m_mousePosition;
@@ -24,6 +25,13 @@ public class InteractWheel : MonoBehaviour
         m_angle = 360f / m_images.Length;
         m_mousePosition = Vector2.zero;
         m_disabledOptions = new bool[m_images.Length];
+
+        foreach(Image image in m_images)
+        {
+            Color newColor = image.color;
+            newColor.a = m_unselectedAlpha;
+            image.color = newColor;
+        }
     }
 
     // Update is called once per frame
@@ -70,13 +78,21 @@ public class InteractWheel : MonoBehaviour
         if (m_currentSelected == newSelected)
             return;
 
-        if (m_currentSelected >= 0)        
-            m_images[m_currentSelected].enabled = false;        
+        if (m_currentSelected >= 0)
+        {
+            Color newColor = m_images[m_currentSelected].color;
+            newColor.a = m_unselectedAlpha;
+            m_images[m_currentSelected].color = newColor;
+        }
 
         m_currentSelected = newSelected;
 
         if (m_currentSelected >= 0 && !m_disabledOptions[m_currentSelected])
-            m_images[m_currentSelected].enabled = true;
+        {
+            Color newColor = m_images[m_currentSelected].color;
+            newColor.a = 1;
+            m_images[m_currentSelected].color = newColor;
+        }
     }
 
     public void EnableWheel()

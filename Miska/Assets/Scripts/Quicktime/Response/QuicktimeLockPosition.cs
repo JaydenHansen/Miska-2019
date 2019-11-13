@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Locks the position of the player
+/// </summary>
 public class QuicktimeLockPosition : QuicktimeResponse
 {
     public Player m_player;
@@ -10,10 +13,10 @@ public class QuicktimeLockPosition : QuicktimeResponse
 
     Vector3 m_oldPos;
 
-    public override void OnStart()
-    {        
-    }
-
+    /// <summary>
+    /// Disables the movement in the player script and disables the character controller
+    /// Moves the character to the set position
+    /// </summary>
     public override void OnSuccess()
     {
         m_player.MovementState = MovementState.Disabled;
@@ -23,6 +26,9 @@ public class QuicktimeLockPosition : QuicktimeResponse
         m_player.transform.position = m_setPosition.position;
     }
 
+    /// <summary>
+    /// Re-enables the movement for the player and moves the player back to their old position
+    /// </summary>
     public override void OnFailure()
     {
         m_player.MovementState = MovementState.Walking;

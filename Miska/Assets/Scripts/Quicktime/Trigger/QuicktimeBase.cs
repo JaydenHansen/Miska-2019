@@ -9,6 +9,10 @@ public enum QuicktimeResult
     Failure
 }
 
+/// <summary>
+/// Base class for quicktime triggers
+/// simply stores the quicktime responses attached to the gameobject
+/// </summary>
 public class QuicktimeBase : MonoBehaviour
 {
     protected Player m_player;
@@ -19,7 +23,10 @@ public class QuicktimeBase : MonoBehaviour
     {
         get { return m_player; }
     }
-    // Start is called before the first frame update
+
+    /// <summary>
+    /// base start function that stores attached responses
+    /// </summary>
     public virtual void Start()
     {
         m_responses = GetComponents<QuicktimeResponse>();

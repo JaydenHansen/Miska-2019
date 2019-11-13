@@ -45,10 +45,54 @@ public class PhotoAlbum : MonoBehaviour
         }
     }
 
+    public void toggleShowingAlbum()
+    {
+        setShowingAlbum(!m_isShowingAlbum);
+    }
+
+    void setShowingAlbum(bool status)
+    {
+        m_isShowingAlbum = status;
+        m_playerScript.enabled = !(status);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        GameObject.Find("CameraArmMain").GetComponent<Camera>().enabled = !(status);
+        GameObject.Find("VirtCamera").SetActive(status);
+    }
+
     // Update is called once per frame
     void Update()
     {
         m_canvas.enabled        = m_isShowingAlbum;
+        
+        if(Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            if (m_currPicIndex == 0)
+            {
+                m_currPicIndex = m_picsFileNames.Count - 1;
+            }
+            else
+            {
+                m_currPicIndex--;
+            }
+            LoadIndexedPhotoToTexture();
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if (m_currPicIndex == m_picsFileNames.Count - 1)
+            {
+                m_currPicIndex = 0;
+            }
+            else
+            {
+                m_currPicIndex++;
+            }
+            LoadIndexedPhotoToTexture();
+        }
+        else if (Input.GetKeyDown(KeyCode.Tab) && m_isShowingAlbum)
+        {
+            setShowingAlbum(false);
+        }
     }
 
     private void LoadIndexedPhotoToTexture()

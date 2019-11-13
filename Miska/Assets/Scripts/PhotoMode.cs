@@ -54,7 +54,6 @@ public class PhotoMode : MonoBehaviour
             togglePhotoModeActive();
         }
 
-
         if (m_photoModeActive)
         {
             if (Input.GetMouseButtonDown(0))

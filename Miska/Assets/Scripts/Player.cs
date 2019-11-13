@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     private Vector3 m_velocity;
     private bool m_grounded = false;
     private MovementState m_movementState = MovementState.Walking;
+    private MovementState m_prevState;
     private bool m_hasPickup;
     private Pickup m_pickupObject;
 

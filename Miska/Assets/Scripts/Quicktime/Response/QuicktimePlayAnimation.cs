@@ -2,29 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Play a specific animation on the player
+/// </summary>
 public class QuicktimePlayAnimation : QuicktimeResponse
 {
     public Player m_player;
     public string m_animationName;
     public bool m_disableMovement;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public override void OnStart()
     {
         
     }
 
+    /// <summary>
+    /// Plays the animation
+    /// </summary>
     public override void OnSuccess()
     {
         m_player.Animator.Play(m_animationName);
@@ -36,6 +30,9 @@ public class QuicktimePlayAnimation : QuicktimeResponse
         }
     }
 
+    /// <summary>
+    /// re-enables the movement
+    /// </summary>
     public override void OnFailure()
     {
         if (m_disableMovement)

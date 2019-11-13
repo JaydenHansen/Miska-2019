@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Quicktime trigger that toggles between success and failure
+/// </summary>
 public class QuicktimeToggle : QuicktimeTrigger
 {
     public KeyCode m_startButton;
@@ -17,6 +20,9 @@ public class QuicktimeToggle : QuicktimeTrigger
         m_stayInQuicktime = true;
     }
 
+    /// <summary>
+    /// Calls the OnStart function for all responses
+    /// </summary>
     protected override void QuicktimeStart()
     {
         foreach (QuicktimeResponse response in m_responses)
@@ -25,22 +31,29 @@ public class QuicktimeToggle : QuicktimeTrigger
         }
     }
 
+    /// <summary>
+    /// On update will toggle between sucess and failure
+    /// </summary>
+    /// <returns></returns>
     protected override QuicktimeResult QuicktimeUpdate()
     {        
-        if (!m_active && Input.GetKeyDown(m_startButton))
+        if (!m_active && Input.GetKeyDown(m_startButton)) // if the toggle hasn't already been activated and the player presses the start button
         {
             m_active = true;
             return QuicktimeResult.Success;
         }
-        else if (m_active && Input.GetKeyDown(m_stopButton))
+        else if (m_active && Input.GetKeyDown(m_stopButton)) // if the toggle has already been activated and the player presses the stop button
         {
             m_active = false;
             return QuicktimeResult.Failure;
         }        
 
-        return QuicktimeResult.Continue;
+        return QuicktimeResult.Continue; // if no buttons have been pressed continue to the next frame
     }
 
+    /// <summary>
+    /// Calls the OnSuccess on all responses
+    /// </summary>
     protected override void QuicktimeSuccess()
     {
         foreach (QuicktimeResponse response in m_responses)
@@ -49,6 +62,9 @@ public class QuicktimeToggle : QuicktimeTrigger
         }
     }
 
+    /// <summary>
+    /// Calls the OnFailure on all responses
+    /// </summary>
     protected override void QuicktimeFailure()
     {
         foreach (QuicktimeResponse response in m_responses)
@@ -57,6 +73,9 @@ public class QuicktimeToggle : QuicktimeTrigger
         }
     }
 
+    /// <summary>
+    /// Exits the quicktime
+    /// </summary>
     protected override void QuicktimeExit()
     {
         m_inQuicktime = false;

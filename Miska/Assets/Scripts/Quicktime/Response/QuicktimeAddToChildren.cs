@@ -2,23 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Quicktime response that parents a child tranform to a parent transform
+/// </summary>
 public class QuicktimeAddToChildren : QuicktimeResponse
 {
     public Transform m_parent;
     public Transform m_child;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /// <summary>
+    /// Changes the childs parent and resets the local position
+    /// </summary>
     public override void OnSuccess()
     {
         m_child.parent = m_parent;

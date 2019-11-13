@@ -11,6 +11,13 @@ public class Save
 
     public List<int> m_trashCanTrashLeft = new List<int>();
     public List<List<bool>> m_trashActive = new List<List<bool>>();
+
+}
+
+[System.Serializable]
+public class CollectableSave
+{
+    public bool[] m_collectables;
 }
 
 [System.Serializable]

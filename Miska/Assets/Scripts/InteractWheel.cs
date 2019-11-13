@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class InteractWheel : MonoBehaviour
 {
     public Image[] m_images;
-    public Text m_tempText;
-    public Image m_tempMousePos;
+    public Image m_mousePos;
     public float m_mouseSpeed;
     public float m_maxMagnitude = 40;
     public float m_deadZone = 10;
@@ -39,15 +38,13 @@ public class InteractWheel : MonoBehaviour
     {
         m_mousePosition += new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")) * m_mouseSpeed;
         m_mousePosition = Vector2.ClampMagnitude(m_mousePosition, m_maxMagnitude);
-        m_tempMousePos.rectTransform.localPosition = m_mousePosition;
+        m_mousePos.rectTransform.localPosition = m_mousePosition;
 
         if (m_mousePosition.magnitude > m_deadZone)
         {
             float angleBetween = -Vector2.SignedAngle(Vector2.up, m_mousePosition);
             if (angleBetween < 0)
                 angleBetween += 360;
-
-            m_tempText.text = angleBetween.ToString("0");
 
             for (int i = 0; i < m_images.Length; i++)
             {
@@ -100,7 +97,7 @@ public class InteractWheel : MonoBehaviour
         gameObject.SetActive(true);
         ChangeSelected(-1);
         m_mousePosition = Vector2.zero;
-        m_tempMousePos.rectTransform.localPosition = m_mousePosition;
+        m_mousePos.rectTransform.localPosition = m_mousePosition;
         m_enabled = true;
     }
 

@@ -2,19 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class MainMenu : MonoBehaviour
 {
     public Animation m_animation;
     public CameraController m_camera;
     public VoidEvent m_animationEnd;
+    public GameObject[] m_collectables;
 
-    bool isLoadingNow;
+    bool m_isLoadingNow;
     // Start is called before the first frame update
     void Start()
     {
+        if (File.Exists(Application.persistentDataPath + "/collectables.save"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/collectables.save", FileMode.Open);
+            CollectableSave save = (CollectableSave)bf.Deserialize(file);
+            file.Close();
+
+            for (int i = 0; i < save.m_collectables.Length; i++)
+            {
+                if (save.m_collectables[i])
+                    m_collectables[i].SetActive(true);
+            }
+        }
+
         PlayAnimation();
-        isLoadingNow = false;
+        m_isLoadingNow = false;
     }
 
     // Update is called once per frame
@@ -32,9 +50,10 @@ public class MainMenu : MonoBehaviour
         int oldIndex = SceneManager.GetActiveScene().buildIndex;
 
         AsyncOperation async = SceneManager.LoadSceneAsync(index, LoadSceneMode.Additive);
-
         while (!async.isDone)
+        {
             yield return null;
+        }
 
         if (loadSave)
         {
@@ -47,27 +66,31 @@ public class MainMenu : MonoBehaviour
                     gameMan.LoadGame();
                 }
             }
+        }        
 
-        }
+        AsyncOperation unloadAsync = SceneManager.UnloadSceneAsync(oldIndex);
 
-        SceneManager.UnloadSceneAsync(oldIndex);
+        while (!unloadAsync.isDone)
+            yield return null;
+
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(index));
     }
 
     public void ContinueGame()
     {
-        if (isLoadingNow == false)
+        if (m_isLoadingNow == false)
         {
             StartCoroutine(LoadScene(1, true));
-            isLoadingNow = true;
+            m_isLoadingNow = true;
         }
     }
 
     public void NewGame()
     {
-        if (isLoadingNow == false)
+        if (m_isLoadingNow == false)
         {
             StartCoroutine(LoadScene(1, false));
-            isLoadingNow = true;
+            m_isLoadingNow = true;
         }
     }
 

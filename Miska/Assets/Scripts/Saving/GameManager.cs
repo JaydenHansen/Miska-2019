@@ -4,18 +4,25 @@ using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
+enum Collectable
+{
+    Fossil,
+    GameBoy,
+    Shell
+}
+
 public class GameManager : MonoBehaviour
 {
     public GameObject m_player;
     public CameraController m_camera;
     public TrashHolder m_trashHolder;
     public TrashCan[] m_trashCans;
-    
+    public bool[] m_collectables;    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -82,5 +89,52 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SaveCollectables()
+    {
+        CollectableSave save = new CollectableSave();
+
+        if (File.Exists(Application.persistentDataPath + "/collectables.save"))
+        {
+            BinaryFormatter bfIn = new BinaryFormatter();
+            FileStream fileIn = File.Open(Application.persistentDataPath + "/collectables.save", FileMode.Open);
+            CollectableSave saveIn = (CollectableSave)bfIn.Deserialize(fileIn);
+            fileIn.Close();
+
+            save.m_collectables = new bool[m_collectables.Length];
+            for (int i = 0; i < m_collectables.Length; i++)
+            {
+                save.m_collectables[i] = m_collectables[i] || saveIn.m_collectables[i];
+            }
+        }
+        else
+        {
+            save.m_collectables = m_collectables;
+        }       
+
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/collectables.save");
+        bf.Serialize(file, save);
+        file.Close();
+    }
+
+    public void LoadCollectables()
+    {
+        if (File.Exists(Application.persistentDataPath + "/collectables.save"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/collectables.save", FileMode.Open);
+            CollectableSave save = (CollectableSave)bf.Deserialize(file);
+            file.Close();
+
+            m_collectables = save.m_collectables;
+        }
+    }
+
+    public void OnCollectablePickup(int collectable)
+    {
+        m_collectables[collectable] = true;
+        SaveCollectables();
     }
 }

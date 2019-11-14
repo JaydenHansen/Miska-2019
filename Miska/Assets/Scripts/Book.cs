@@ -38,43 +38,50 @@ public class Book : MonoBehaviour
     Quaternion m_targetRotation;
 
     bool m_opening;
+    bool m_openDirection;
+    bool m_startCalled;
 
     Dictionary<AreaName, bool> m_checklist;
     public ProgressLog m_progress;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        //m_pageTurn.clip.legacy = true;
-
-        m_checklist = new Dictionary<AreaName, bool>();
-
-        m_checklist.Add(AreaName.STATION, false);
-        m_checklist.Add(AreaName.ROCKS, false);
-        m_checklist.Add(AreaName.DUCKS, false);
-
-        // Adds all the left and right pages in order to a list
-        m_pages = new List<GameObject>();
-        for(int i = 0; i < m_leftPages.childCount; i++)
+        if (!m_startCalled)
         {
-            m_pages.Add(m_leftPages.GetChild(i).gameObject);
-            if (i < m_rightPages.childCount)
-                m_pages.Add(m_rightPages.GetChild(i).gameObject);
+            //m_pageTurn.clip.legacy = true;
+
+            m_checklist = new Dictionary<AreaName, bool>();
+
+            m_checklist.Add(AreaName.STATION, false);
+            m_checklist.Add(AreaName.ROCKS, false);
+            m_checklist.Add(AreaName.DUCKS, false);
+
+            // Adds all the left and right pages in order to a list
+            m_pages = new List<GameObject>();
+            for (int i = 0; i < m_leftPages.childCount; i++)
+            {
+                m_pages.Add(m_leftPages.GetChild(i).gameObject);
+                if (i < m_rightPages.childCount)
+                    m_pages.Add(m_rightPages.GetChild(i).gameObject);
+            }
+
+            // Sets the world camera for all pages to the book camera
+            Canvas[] pageCanvas = GetComponentsInChildren<Canvas>(true);
+            foreach (Canvas canvas in pageCanvas)
+            {
+                canvas.worldCamera = m_bookCamera;
+            }
+
+            m_targetPosition = m_bookCamera.transform.localPosition;
+            m_targetRotation = m_bookCamera.transform.localRotation;
+
+            if (m_autoClose)
+                CloseBook();
+            //OpenBook();
+
+            m_startCalled = true;
         }
-
-        // Sets the world camera for all pages to the book camera
-        Canvas[] pageCanvas = GetComponentsInChildren<Canvas>(true);
-        foreach(Canvas canvas in pageCanvas)
-        {
-            canvas.worldCamera = m_bookCamera;
-        }
-
-        m_targetPosition = m_bookCamera.transform.localPosition;
-        m_targetRotation = m_bookCamera.transform.localRotation;
-
-        if (m_autoClose)
-            CloseBook();
-        //OpenBook();
     }
 
     // Update is called once per frame
@@ -84,7 +91,21 @@ public class Book : MonoBehaviour
         {
             if (m_open)
             {
-                CloseBook(); // closes the book
+                if (!m_menuBook)
+                {
+                    CloseBook(); // closes the book
+                }
+                else
+                {
+                    m_opening = true;
+                    m_open = false;
+                    m_openDirection = false;
+                    m_timer = 0;
+
+                    // disables cursor
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;                    
+                }
             }
             else if (!m_open)
             {
@@ -108,12 +129,30 @@ public class Book : MonoBehaviour
 
         if (m_opening) // lerps the camera downwards when opening
         {
-            m_timer += Time.deltaTime;
-            m_bookCamera.transform.localPosition = Vector3.Lerp(m_startPosition, m_targetPosition, m_timer / m_openDelay);
-            m_bookCamera.transform.localRotation = Quaternion.Lerp(m_startRotation, m_targetRotation, m_timer / m_openDelay);
+            if (m_openDirection)
+            {
+                m_timer += Time.deltaTime;
+                m_bookCamera.transform.localPosition = Vector3.Lerp(m_startPosition, m_targetPosition, m_timer / m_openDelay);
+                m_bookCamera.transform.localRotation = Quaternion.Lerp(m_startRotation, m_targetRotation, m_timer / m_openDelay);
 
-            if (m_timer >= m_openDelay)
-                m_opening = false;
+                if (m_timer >= m_openDelay)
+                    m_opening = false;
+            }
+            else
+            {
+                m_timer += Time.deltaTime;
+                m_bookCamera.transform.localPosition = Vector3.Lerp(m_targetPosition, m_startPosition, m_timer / m_openDelay);
+                m_bookCamera.transform.localRotation = Quaternion.Lerp(m_targetRotation, m_startRotation, m_timer / m_openDelay);
+
+                if (m_timer >= m_openDelay)
+                {
+                    m_opening = false;
+
+                    m_bookCamera.enabled = false;
+                    m_playerCamera.m_camera.enabled = true;
+                    m_playerCamera.enabled = true;
+                }
+            }
         }
     }
 
@@ -124,7 +163,7 @@ public class Book : MonoBehaviour
     public void OpenBook(int page)
     {
         if (!m_animation.isPlaying && !m_open) // if the book is not open
-        {
+        {            
             if (!m_menuBook) // only play the opening animation ingame
                 m_animation.Play("Book_Open_001");
 
@@ -167,7 +206,9 @@ public class Book : MonoBehaviour
             m_playerCamera.m_camera.enabled = false;
             m_playerCamera.enabled = false;
 
-            m_opening = true;            
+            m_opening = true;
+            m_openDirection = true;
+            m_timer = 0;
 
             // sets the book camera to the player camera's position/rotation to lerp back down to the normal position
             m_bookCamera.transform.position = m_playerCamera.transform.position;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 enum Collectable
 {
@@ -83,6 +84,8 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < m_trashCans.Length && i < save.m_trashCanTrashLeft.Count; i++)
             {
                 m_trashCans[i].TrashLeft = save.m_trashCanTrashLeft[i];
+                if (m_trashCans[i].TrashLeft == 0)
+                    m_trashCans[i].m_onAllTrash.Invoke();
                 for (int j = 0; j < m_trashCans[i].m_trash.Length; j++)
                 {
                     m_trashCans[i].m_trash[j].SetActive(save.m_trashActive[i][j]);
@@ -136,5 +139,10 @@ public class GameManager : MonoBehaviour
     {
         m_collectables[collectable] = true;
         SaveCollectables();
+    }
+
+    public void LoadMenuScene()
+    {
+        SceneManager.LoadScene(0);
     }
 }

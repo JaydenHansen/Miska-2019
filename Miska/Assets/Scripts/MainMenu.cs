@@ -12,8 +12,12 @@ public class MainMenu : MonoBehaviour
     public CameraController m_camera;
     public VoidEvent m_animationEnd;
     public GameObject[] m_collectables;
+    public Book m_book;
+    public float m_bookOpenDelay;
 
     bool m_isLoadingNow;
+    float m_bookOpenTimer;
+    bool m_bookOpening;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +46,16 @@ public class MainMenu : MonoBehaviour
         {
             m_animation.Stop();
             m_animation.clip.SampleAnimation(m_camera.gameObject, m_animation.clip.length);
+        }
+
+        if (m_bookOpening)
+        {
+            m_bookOpenTimer += Time.deltaTime;
+            if (m_bookOpenTimer > m_bookOpenDelay)
+            {
+                m_book.OpenBook(0);
+                m_bookOpening = false;
+            }
         }
     }
 
@@ -117,5 +131,10 @@ public class MainMenu : MonoBehaviour
     {
         m_animation.Play();
         StartCoroutine(WaitForAnimation(m_animation));
+    }
+
+    public void StartBookOpen()
+    {
+        m_bookOpening = true;
     }
 }

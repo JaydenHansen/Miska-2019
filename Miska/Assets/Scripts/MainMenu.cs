@@ -21,6 +21,9 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         if (File.Exists(Application.persistentDataPath + "/collectables.save"))
         {
             BinaryFormatter bf = new BinaryFormatter();

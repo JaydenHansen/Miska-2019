@@ -87,6 +87,14 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame()
     {
+        CollectableSave save = new CollectableSave();
+        save.m_collectables = new bool[m_collectables.Length];        
+
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/collectables.save");
+        bf.Serialize(file, save);
+        file.Close();
+
         if (m_isLoadingNow == false)
         {
             StartCoroutine(LoadScene(1, false));

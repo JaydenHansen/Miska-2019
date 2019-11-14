@@ -15,11 +15,14 @@ public class DuckFollow : MonoBehaviour
 
     NavMeshAgent m_agent;
     bool m_returnToWater;
+    Animator m_animator;
+    float m_returnTimer;
 
     // Start is called before the first frame update
     void Start()
     {
         m_agent = GetComponent<NavMeshAgent>();
+        m_animator = GetComponent<Animator>();
         m_agent.updateRotation = false;
         m_agent.updateUpAxis = false;
     }
@@ -29,12 +32,19 @@ public class DuckFollow : MonoBehaviour
     {
         if (m_returnToWater)
         {
-            m_agent.SetDestination(m_waterReturnPos.position);
-            if ((transform.position - m_waterReturnPos.position).magnitude < 0.1)
+            if (m_returnTimer < 0.967)
             {
-                this.enabled = false;
-                m_agent.enabled = false;
-                m_wanderDuck.enabled = true;
+                m_returnTimer += Time.deltaTime;
+            }
+            else
+            {
+                m_agent.SetDestination(m_waterReturnPos.position);
+                if ((transform.position - m_waterReturnPos.position).magnitude < 0.1)
+                {
+                    this.enabled = false;
+                    m_agent.enabled = false;
+                    m_wanderDuck.enabled = true;
+                }
             }
         }
         else
@@ -44,6 +54,8 @@ public class DuckFollow : MonoBehaviour
             else
                 m_agent.SetDestination(m_baseArea.position);
         }
+
+        m_animator.SetFloat("Speed", m_agent.velocity.magnitude);
 
         if (m_agent.velocity.sqrMagnitude != 0)
         {

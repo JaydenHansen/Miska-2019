@@ -13,11 +13,13 @@ public class Duck : MonoBehaviour
 
     Vector3 m_velocity;
     int m_areaMask;
+    Animator m_animator;
 
     // Start is called before the first frame update
     void Start()
     {
         m_areaMask = 1 << NavMesh.GetAreaFromName("Duck");
+        m_animator = GetComponent<Animator>();
         m_duckSound.Post(gameObject);
     }
 
@@ -29,6 +31,7 @@ public class Duck : MonoBehaviour
 
         transform.position += m_velocity * Time.deltaTime * m_speed;
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(m_velocity.normalized), Time.deltaTime);
+        m_animator.SetFloat("Speed", m_velocity.magnitude);
     }
 
     void Wander()

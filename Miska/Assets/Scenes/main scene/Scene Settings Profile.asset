@@ -70,7 +70,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0
   fogType:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -131,12 +131,12 @@ MonoBehaviour:
   m_AdvancedMode: 0
   temperature:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 40
     min: -100
     max: 100
   tint:
     m_OverrideState: 1
-    m_Value: 19
+    m_Value: 0
     min: -100
     max: 100
 --- !u!114 &1191834483143515499
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f034cba68ab55e046ae1445a42f18c0e, type: 3}
   m_Name: IndirectLightingController
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   indirectSpecularIntensity:
     m_OverrideState: 1
@@ -159,7 +159,7 @@ MonoBehaviour:
     min: 0
   indirectDiffuseIntensity:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.3
     min: 0
 --- !u!114 &1235744231697325297
 MonoBehaviour:

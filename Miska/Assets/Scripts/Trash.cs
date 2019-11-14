@@ -59,6 +59,7 @@ public class Trash : MonoBehaviour
 
     public void StartPickup(Transform target)
     {
+        m_basePos = transform.position;
         m_pickedUp = true;
         m_target = target;
         transform.parent = target;

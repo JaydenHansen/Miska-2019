@@ -15,11 +15,10 @@ MonoBehaviour:
   m_delay: 1.5
   m_scaleThreshold: 1
   m_disableOldParent: 0
-  m_bottleSound:
+  m_pickupSound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 211eb4a55bd2b6d4f87be88dd30165ec,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &2729283868041621384
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,8 +30,6 @@ GameObject:
   - component: {fileID: 2729283868041621389}
   - component: {fileID: 2729283868041621388}
   - component: {fileID: 9177164741041191345}
-  - component: {fileID: 2729283868041621390}
-  - component: {fileID: 2729283868041621385}
   - component: {fileID: 1902206272}
   m_Layer: 11
   m_Name: Rubbish_Interactable_001
@@ -82,35 +79,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_failOnStopLooking: 0
---- !u!114 &2729283868041621390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2729283868041621384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8907b4fcf84a36b47a4c579f968d034d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_parent: {fileID: 0}
-  m_child: {fileID: 2729283867281494102}
---- !u!114 &2729283868041621385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2729283868041621384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 860a8238a74b2494c9807f6ae01a23d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_player: {fileID: 0}
-  m_animationName: Pickup
-  m_disableMovement: 0
 --- !u!114 &1902206272
 MonoBehaviour:
   m_ObjectHideFlags: 0

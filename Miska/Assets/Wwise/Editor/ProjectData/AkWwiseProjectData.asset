@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 61613fc2e9e030449a3f2b92ca0e24f2
     GuidInternal: 
-    m_lastTime: -8586283253699003348
+    m_lastTime: -8586280110069807711
     List:
     - name: BNK_Global
       guid: b9502754ac22954295c755ce9571fe56
@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: c8baaaee9ee0654299bdb315b882e069
     GuidInternal: 
-    m_lastTime: -8586283253699093436
+    m_lastTime: -8586280110070884851
     List:
     - name: AMB_Bed
       guid: 1c394a03ad28ed49a352084c06ac4828
@@ -265,8 +265,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_DepositBottle
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.117279
+      minDuration: 0.897607
     - name: OBJ_FossilPOI
       guid: 72b8a330876671498dc58637744f3d23
       id: 4108701605
@@ -281,8 +281,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\LOCAL\ROCKS\OBJ_FossilPOI
       maxAttenuation: 0
-      maxDuration: 4.61653
-      minDuration: 4.61653
+      maxDuration: 3.616531
+      minDuration: 3.616531
     - name: OBJ_JournalClose
       guid: 31851d286e0b8b49821b4fa5093e2cf9
       id: 1744469232

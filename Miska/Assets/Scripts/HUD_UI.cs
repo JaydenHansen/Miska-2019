@@ -29,6 +29,10 @@ public class HUD_UI : MonoBehaviour
     public float m_goalRefreshTimeTotal;
     float m_goalRefreshTimeCurrent;
 
+    public Texture2D m_gt_returnToLodge;
+
+    bool m_isAllAreasCleared;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +41,7 @@ public class HUD_UI : MonoBehaviour
         m_isGoalRefreshing = false;
         m_currentAreaBin = GameObject.Find("BIN_Station");
         m_currentAreaMusic = m_stationPOIMusic;
+        m_isAllAreasCleared = false;
     }
 
     private void Update()
@@ -123,10 +128,13 @@ public class HUD_UI : MonoBehaviour
 
     public void SetupDisposeScene()
     {
-        SetupCheckboxes(0);
-        RawImage ri = m_GoalText.GetComponent<RawImage>();
-        ri.texture = m_gt_dispose;
-        StartCoroutine("IntialTransition");
+        if(!m_isAllAreasCleared)
+        {
+            SetupCheckboxes(0);
+            RawImage ri = m_GoalText.GetComponent<RawImage>();
+            ri.texture = m_gt_dispose;
+            StartCoroutine("IntialTransition");
+        }
     }
 
     private void SetupCheckboxArrays()
@@ -263,6 +271,14 @@ public class HUD_UI : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         m_animator.SetTrigger("TransTO_Inactive");
+        if (m_isAllAreasCleared)
+        {
+            yield return new WaitForSeconds(0.3f);
+
+            ri.texture = m_gt_returnToLodge;
+            m_animator.SetTrigger("TransTO_FullDetail");
+        }
+
         yield return null;
     }
 
@@ -283,5 +299,10 @@ public class HUD_UI : MonoBehaviour
         }
         m_goalRefreshTimeCurrent = m_goalRefreshTimeTotal;
         m_isGoalRefreshing = true;
+    }
+
+    public void SetupReturnToLodge()
+    {
+        m_isAllAreasCleared = true;
     }
 }

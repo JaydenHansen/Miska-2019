@@ -26,6 +26,7 @@ public class Gate : MonoBehaviour
         {
             transform.position = m_openPosition.position;
             transform.rotation = m_openPosition.rotation;
+            GameObject.Find("Goal UI").GetComponent<HUD_UI>().SetupReturnToLodge();
         }
     }
 }

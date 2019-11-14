@@ -53,6 +53,8 @@ public class MainMenu : MonoBehaviour
             m_bookOpenTimer += Time.deltaTime;
             if (m_bookOpenTimer > m_bookOpenDelay)
             {
+                m_book.enabled = true;
+                m_book.Start();
                 m_book.OpenBook(0);
                 m_bookOpening = false;
             }

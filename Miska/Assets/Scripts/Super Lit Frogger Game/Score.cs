@@ -23,6 +23,9 @@ public class Score : MonoBehaviour
     }
 
     int m_highScore = 0;
+    /// <summary>
+    /// Changes highscore text
+    /// </summary>
     public int HighScore
     {
         get { return m_highScore; }

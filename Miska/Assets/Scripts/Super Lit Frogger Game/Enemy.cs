@@ -17,18 +17,26 @@ public class Enemy : MonoBehaviour
     float speed = 1f;
 
     // Start is called before the first frame update
+    /// <summary>
+    /// Chooses between one of the speeds
+    /// </summary>
     void Start()
     {
         speed = Random.Range(2f, 6f);
     }
 
-    
+    /// <summary>
+    /// Moves the enemy in a direction at the set speed
+    /// </summary>
     void FixedUpdate()
     {
         Vector2 forward = new Vector2(transform.right.x, transform.right.y);
         rb.MovePosition(rb.position + forward * Time.fixedDeltaTime * speed * enemyTravelDistance);
     }
 
+    /// <summary>
+    /// Destroys enemy after 7 seconds
+    /// </summary>
      void Update()
     {
         timer += Time.deltaTime;

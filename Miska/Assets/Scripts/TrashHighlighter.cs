@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// OLD SCRIPT UNUSED
+/// Activated the glow when looking at trash items
+/// </summary>
 public class TrashHighlighter : MonoBehaviour
 {
     public CameraController m_cameraController;

@@ -21,8 +21,12 @@ public class EnemySpawner : MonoBehaviour
     }
 
     // Update is called once per frame
+    /// <summary>
+    /// Spawns enemy at the correct time
+    /// </summary>
     void Update()
     {
+        
         if (nextTimeToSpawn <= Time.time)
         {
             SpawnEnemy();
@@ -30,6 +34,9 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Spawns at one of the spawn points
+    /// </summary>
     void SpawnEnemy()
     {
         int randomIndex = Random.Range(0, spawnPoints.Length);
@@ -40,6 +47,9 @@ public class EnemySpawner : MonoBehaviour
         enemy.GetComponent<Enemy>().m_spawner = this;
     }
 
+    /// <summary>
+    /// Destroys all the enemies
+    /// </summary>
     public void ResetGame()
     {
         foreach(GameObject enemy in m_spawned)
@@ -49,6 +59,9 @@ public class EnemySpawner : MonoBehaviour
         m_spawned.Clear();
     }
 
+    /// <summary>
+    /// Enemy Gets removed from list when it dies
+    /// </summary>
     public void EnemyDeath()
     {
         m_spawned.RemoveFirst();

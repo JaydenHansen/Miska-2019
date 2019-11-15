@@ -19,7 +19,10 @@ public class Goal : MonoBehaviour
     {
 
     }
-
+    /// <summary>
+    /// When the player reaches the end goal trigger + 100 to score and reset the players position
+    /// </summary>
+    /// <param name="collision"></param>
     void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("You Won");

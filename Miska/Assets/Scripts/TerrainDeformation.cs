@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// OLD SCRIPT UNUSED
+/// Adds a deformation over terrain the player walks on
+/// </summary>
 public class TerrainDeformation : MonoBehaviour
 {
     public Terrain m_terrain;

@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// OLD SCRIPT
+/// UNUSED
+/// </summary>
 public class PopUpTrigger : MonoBehaviour
 {
     public PopUp m_popUp;

@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// OLD SCRIPT UNUSED
+/// Applies force on a rigid body to knock over the rock
+/// </summary>
 public class SingleRock : MonoBehaviour
 {
     public Vector3 m_knockOverDirection;

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Checks if the player is in the point of interest area to setup the ui
+/// </summary>
 public class PointOfInterest : MonoBehaviour
 {
     public GameObject m_player;
@@ -23,7 +26,7 @@ public class PointOfInterest : MonoBehaviour
         if (!m_trashCan.Triggered)
         {
             bool playerInArea = false;
-            Collider[] hits = Physics.OverlapBox(transform.position, m_size * 0.5f, transform.rotation, 1 << LayerMask.NameToLayer("Player"));
+            Collider[] hits = Physics.OverlapBox(transform.position, m_size * 0.5f, transform.rotation, 1 << LayerMask.NameToLayer("Player")); // checks the bounds for a player
             foreach (Collider hit in hits)
             {
                 if (hit.gameObject == m_player)

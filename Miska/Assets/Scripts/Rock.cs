@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// UNSED
+/// Freezes rocks that are touching to create a rock stack
+/// </summary>
 public class Rock : Pickup
 {
     public RockStacker m_stacker;

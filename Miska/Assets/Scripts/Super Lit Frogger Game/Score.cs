@@ -15,14 +15,17 @@ public class Score : MonoBehaviour
         set
         {
             m_currentScore = value;
-            if (m_currentScore > m_highScore)
-                HighScore = m_currentScore;
+            if (m_currentScore > m_highScore) // if the current score is greater than the highscore
+                HighScore = m_currentScore; // update the highscore
 
             m_scoreText.text = m_currentScore.ToString();
         }
     }
 
     int m_highScore = 0;
+    /// <summary>
+    /// Changes highscore text
+    /// </summary>
     public int HighScore
     {
         get { return m_highScore; }

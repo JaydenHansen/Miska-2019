@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Checks if the player has player has picked up all the trash in the area and calls an event
+/// </summary>
 public class TrashCan : MonoBehaviour
 {
     public int m_requiredTrash;
-    public TrashHolder m_trashCount;
     public GameObject[] m_trash;
     public VoidEvent m_onAllTrash;
     public VoidEvent m_trashDeposited;
@@ -33,36 +35,11 @@ public class TrashCan : MonoBehaviour
         m_renderer = GetComponent<Renderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /// <summary>
+    /// Checks if there is no trash left and calls the event
+    /// </summary>
     public void DepositTrash()
-    {
-        //if (m_trashLeft > 0)
-        //{
-        //    if (m_trashLeft >= m_trashCount.TrashCount)
-        //    {
-        //        Debug.Log("Deposited " + m_trashCount.TrashCount.ToString() + " trash");
-        //        m_trashLeft -= m_trashCount.TrashCount;
-        //        m_trashCount.TrashCount = 0;
-        //    }
-        //    else
-        //    {
-        //        Debug.Log("Deposited " + m_trashLeft.ToString() + " trash");
-        //        m_trashCount.TrashCount -= m_trashLeft;
-        //        m_trashLeft = 0;
-        //    }
-
-        //    if (m_trashLeft <= 0)
-        //    {
-        //        // do stuff
-        //        Debug.Log("Collected all trash");
-        //        m_onAllTrash.Invoke();
-        //    }
-        //}
+    {        
         if (m_trashLeft <= 0 && !m_triggered)
         {
             m_triggered = true;
@@ -75,13 +52,11 @@ public class TrashCan : MonoBehaviour
         }
     }   
 
+    /// <summary>
+    /// Called when trash has been picked up and counts down how much trash is left
+    /// </summary>
     public void OnTrashPickup()
     {
         m_trashLeft--;
-    }
-
-    public void DisableGlow()
-    {
-        m_renderer.material.SetFloat("_Enabled", 0);
     }
 }

@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// OLD SCRIPT
+/// </summary>
 public class CustomCharacterController : MonoBehaviour
 {
     public float m_acceleration;

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controls how trash is picked up and destroyed
+/// </summary>
 public class Trash : MonoBehaviour
 {    
     public float m_delay;
@@ -36,16 +39,16 @@ public class Trash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_pickedUp)
+        if (m_pickedUp) // if the trash has been picked up
         {
             m_timer += Time.deltaTime;
 
-            if (m_target && m_timer <= m_scaleThreshold)
-                transform.position = Vector3.Lerp(m_basePos, m_target.position, (m_timer / (m_scaleThreshold)));
-            else if (m_timer > m_scaleThreshold)
-                transform.localScale = Vector3.Lerp(m_baseScale, Vector3.zero, (m_timer - m_scaleThreshold) / (m_delay - m_scaleThreshold));
+            if (m_target && m_timer <= m_scaleThreshold) // if the timer hasn't reached the scale threshold
+                transform.position = Vector3.Lerp(m_basePos, m_target.position, (m_timer / (m_scaleThreshold))); // lerp between the starting pos and the target pos
+            else if (m_timer > m_scaleThreshold) // if the timer has reached the scale threshold
+                transform.localScale = Vector3.Lerp(m_baseScale, Vector3.zero, (m_timer - m_scaleThreshold) / (m_delay - m_scaleThreshold)); // lerp the scale between the base scale and a scale of zero
 
-            if (m_timer >= m_delay)
+            if (m_timer >= m_delay) // if the trash has finished being picked up
             {
                 m_pickupSound.Post(gameObject);
                 transform.parent = m_parent;
@@ -57,6 +60,10 @@ public class Trash : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Start the pickup
+    /// </summary>
+    /// <param name="target">The transform that the trash will lerp to</param>
     public void StartPickup(Transform target)
     {
         m_basePos = transform.position;

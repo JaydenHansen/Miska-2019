@@ -10,7 +10,6 @@ public class Save
 {
     public SerializableVector3 m_playerPosition;
     public SerializableVector3 m_cameraRotation;
-    public int m_playerTrashCount;
 
     public List<int> m_trashCanTrashLeft = new List<int>();
     public List<List<bool>> m_trashActive = new List<List<bool>>();

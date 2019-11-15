@@ -4,34 +4,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// Controls the UI overlay and associated animations and sounds
+/// </summary>
 public class HUD_UI : MonoBehaviour
 {
-    List<GameObject> m_checkboxes;
-    List<bool> m_checkedStatus;
-    public GameObject m_GoalText;
-    Animator m_animator;
-    public bool m_isAllTrashPickedUp, m_isAllTrashDisposed;
-    int m_currentAreaTrash;
-    public Texture2D m_box_empty, m_box_checked;
-    public Texture2D m_gt_pickup3, m_gt_pickup3Done, m_gt_pickup4, m_gt_pickup4Done, m_gt_pickup5, m_gt_pickup5Done;
+    private     List<GameObject>    m_checkboxes;
+    private     List<bool>          m_checkedStatus;
+    private     Animator            m_animator;
+    private     int                 m_currentAreaTrash;
+    private     bool                m_isAllAreasCleared;
+    private     GameObject          m_currentAreaBin;
+    public      GameObject          m_GoalText;
+    private     bool                m_isAllTrashPickedUp, m_isAllTrashDisposed;
 
-    Texture2D thisArea_gt_pickup, thisArea_gt_pickupDone;
+    [Header("Images")]
+    public      Texture2D           m_box_empty, m_box_checked;
+    public      Texture2D           m_gt_pickup3, m_gt_pickup3Done, m_gt_pickup4, m_gt_pickup4Done, m_gt_pickup5, m_gt_pickup5Done;
+    public      Texture2D           m_gt_dispose, m_gt_disposeDone;
+    public      Texture2D           m_gt_returnToLodge;
+    private     Texture2D           m_thisArea_gt_pickup, m_thisArea_gt_pickupDone;
 
-    public Texture2D m_gt_dispose, m_gt_disposeDone;
-
-    public AK.Wwise.Event m_slideSound, m_stampSound;
-
-    GameObject m_currentAreaBin;
-    AK.Wwise.Event m_currentAreaMusic;
-    public AK.Wwise.Event m_stationPOIMusic, m_rocksPOIMusic, m_duckPOIMusic;
-
+    [Header("Audio Events")]
+    public      AK.Wwise.Event      m_slideSound, m_stampSound;
+    public      AK.Wwise.Event      m_stationPOIMusic, m_rocksPOIMusic, m_duckPOIMusic;
+    private     AK.Wwise.Event      m_currentAreaMusic;
+    
+    [Header("Goal Refresh")]      
     bool m_isGoalRefreshing;
     public float m_goalRefreshTimeTotal;
     float m_goalRefreshTimeCurrent;
 
-    public Texture2D m_gt_returnToLodge;
+    
 
-    bool m_isAllAreasCleared;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +70,12 @@ public class HUD_UI : MonoBehaviour
         }
     }
 
-    public void SetupTrashScene(GameObject binOBJ) //m_trashCan.m_requiredTrash, m_trashCan.TrashLeft
+
+    /// <summary>
+    /// Sets up scene for area with trash to collect
+    /// </summary>
+    /// <param name="binOBJ"> Game object for the area's bin</param>
+    public void SetupTrashScene(GameObject binOBJ)
     {
         m_currentAreaMusic.Stop(m_currentAreaBin);
 
@@ -77,6 +89,7 @@ public class HUD_UI : MonoBehaviour
         SetupCheckboxes(totalTrash);
         m_currentAreaTrash = totalTrash;
 
+        //if some trash has been collected check off the checklist
         if (remainingTrash < totalTrash)
         {
             int disp = totalTrash - remainingTrash;
@@ -86,26 +99,32 @@ public class HUD_UI : MonoBehaviour
             }
         }
 
+        #region setting up goal text images
         if (totalTrash == 3)
         {
-            thisArea_gt_pickup = m_gt_pickup3;
-            thisArea_gt_pickupDone = m_gt_pickup3Done;
+            m_thisArea_gt_pickup = m_gt_pickup3;
+            m_thisArea_gt_pickupDone = m_gt_pickup3Done;
         }
         else if (totalTrash == 4)
         {
-            thisArea_gt_pickup = m_gt_pickup4;
-            thisArea_gt_pickupDone = m_gt_pickup4Done;
+            m_thisArea_gt_pickup = m_gt_pickup4;
+            m_thisArea_gt_pickupDone = m_gt_pickup4Done;
         }
         else if (totalTrash == 5)
         {
-            thisArea_gt_pickup = m_gt_pickup5;
-            thisArea_gt_pickupDone = m_gt_pickup5Done;
+            m_thisArea_gt_pickup = m_gt_pickup5;
+            m_thisArea_gt_pickupDone = m_gt_pickup5Done;
         }
+
+
         RawImage ri = m_GoalText.GetComponent<RawImage>();
-        ri.texture = thisArea_gt_pickup;
+        ri.texture = m_thisArea_gt_pickup;
+        #endregion
+
         StartCoroutine("IntialTransition");
         string BinName = m_currentAreaBin.name;
 
+        #region setting up music
         if (BinName == "BIN_Station")
         {
             m_currentAreaMusic = m_stationPOIMusic;
@@ -118,6 +137,7 @@ public class HUD_UI : MonoBehaviour
         {
             m_currentAreaMusic = m_duckPOIMusic;
         }
+        #endregion
 
     }
 
@@ -126,6 +146,9 @@ public class HUD_UI : MonoBehaviour
         m_animator.SetTrigger("TransTO_Inactive");
     }
 
+    /// <summary>
+    /// Sets up scene for area where all trash has been collected
+    /// </summary>
     public void SetupDisposeScene()
     {
         if(!m_isAllAreasCleared)
@@ -137,6 +160,9 @@ public class HUD_UI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets up an array of checkboxes (triggers in start)
+    /// </summary>
     private void SetupCheckboxArrays()
     {
         m_checkboxes = new List<GameObject>();
@@ -150,6 +176,9 @@ public class HUD_UI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Resets the values of checkbox arrays
+    /// </summary>
     void ResetArrayValues()
     {
         for (int i = 0; i < 5; i++)
@@ -159,6 +188,10 @@ public class HUD_UI : MonoBehaviour
         m_isAllTrashPickedUp = false;
     }
 
+    /// <summary>
+    /// Sets up number of checkboxes to display when entering a trash area
+    /// </summary>
+    /// <param name="areaTrash"> total number in trash for area</param>
     void SetupCheckboxes(int areaTrash)
     {
         ResetArrayValues();
@@ -175,6 +208,9 @@ public class HUD_UI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks off next box in list, checks for all trash in area being collected
+    /// </summary>
     public void CheckOffNextBox()
     {
         for (int i = 0; i < 5; i++)
@@ -191,6 +227,12 @@ public class HUD_UI : MonoBehaviour
         }
     }
 
+
+    /// <summary>
+    /// Sets the checked status (checked/unchecked) of a specific box in checklist
+    /// </summary>
+    /// <param name="boxNo">Box as location in array</param>
+    /// <param name="status">box set to checked/unchecked</param>
     void SetBoxChecked(int boxNo, bool status)
     {
         m_isAllTrashDisposed = false;
@@ -207,6 +249,9 @@ public class HUD_UI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Runs animation upon all trash being collected
+    /// </summary>
     void OnAllTrashCollected()
     {
         if (!m_isAllTrashPickedUp)
@@ -215,6 +260,9 @@ public class HUD_UI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Run animation upon all trash being disposed
+    /// </summary>
     public void OnAllTrashDisposed()
     {
         if (!m_isAllTrashDisposed)
@@ -223,11 +271,19 @@ public class HUD_UI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Plays sound during transition
+    /// </summary>
     public void OnTransition()
     {
         m_slideSound.Post(gameObject);
     }
 
+    /// <summary>
+    /// Checks off box after a delay
+    /// </summary>
+    /// <param name="i">box number</param>
+    /// <returns></returns>
     IEnumerator CheckOff(int i)
     {
         yield return new WaitForSeconds(0.8f);
@@ -236,6 +292,10 @@ public class HUD_UI : MonoBehaviour
         //m_checkOffSound.Post(gameObject);
     }
 
+
+    /// <summary>
+    /// Animation for all trash collected
+    /// </summary>
     IEnumerator AllTrashCollected()
     {
         m_isAllTrashPickedUp = true;
@@ -243,7 +303,7 @@ public class HUD_UI : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
 
         RawImage ri = m_GoalText.GetComponent<RawImage>();
-        ri.texture = thisArea_gt_pickupDone;
+        ri.texture = m_thisArea_gt_pickupDone;
         m_stampSound.Post(gameObject);
         yield return new WaitForSeconds(1.5f);
 
@@ -258,6 +318,12 @@ public class HUD_UI : MonoBehaviour
         yield return null;
     }
 
+    /// <summary>
+    /// Animation for the trash disposed
+    /// </summary>
+    /// <param name="music"> This Area's music </param>
+    /// <param name="bin">This Area's bin</param>
+    /// <returns></returns>
     IEnumerator AllTrashDisposed(AK.Wwise.Event music, GameObject bin)
     {
         yield return new WaitForSeconds(0.4f);
@@ -282,6 +348,9 @@ public class HUD_UI : MonoBehaviour
         yield return null;
     }
 
+    /// <summary>
+    /// Transition in from the start of an area
+    /// </summary>
     IEnumerator IntialTransition()
     {
         m_animator.SetTrigger("TransTO_FullDetail");
@@ -291,6 +360,9 @@ public class HUD_UI : MonoBehaviour
         yield return null;
     }
 
+    /// <summary>
+    /// "Refreshes" the goal informaiton
+    /// </summary>
     void GoalRefresh()
     {
         if (!m_isGoalRefreshing)
@@ -301,6 +373,9 @@ public class HUD_UI : MonoBehaviour
         m_isGoalRefreshing = true;
     }
 
+    /// <summary>
+    /// Sets up the Return to Lodge 
+    /// </summary>
     public void SetupReturnToLodge()
     {
         m_isAllAreasCleared = true;

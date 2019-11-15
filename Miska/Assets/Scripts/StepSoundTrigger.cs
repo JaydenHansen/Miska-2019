@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Determines walking terrain, and handles Wwise elements to play relevant sound
+/// </summary>
 public class StepSoundTrigger : MonoBehaviour
 {
-    Animator m_animator;
-
-    public AK.Wwise.Event m_stepEvent;
+    private     Animator        m_animator;
+    public      AK.Wwise.Event  m_stepEvent;
 
 
 
@@ -15,13 +18,18 @@ public class StepSoundTrigger : MonoBehaviour
         m_animator = GetComponent<Animator>();
     }
 
-    //Triggered by Animation Event, plays Wwise Event
+    /// <summary>
+    /// Triggered by Animation Event, plays step event
+    /// </summary>
     public void OnStepTrigger()
     {
         m_stepEvent.Post(gameObject);
     }
 
-    //Sets Terrain Material (from TerrainReader) to player's position's material for use by Wwise to determine footstep sound
+    /// <summary>
+    /// Sets Terrain Material in Wwise
+    /// </summary>
+    /// <param name="terMat">Terrain Material being set in Wwise</param>
     public void SetTerrainMaterial(TerrainMaterial terMat)
     {
         if (terMat == TerrainMaterial.Dirt)
@@ -44,6 +52,11 @@ public class StepSoundTrigger : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Sets the Movement Parameters for Animation and Wwise Audio
+    /// </summary>
+    /// <param name="moveState">Movement state (walk/sprint)</param>
+    /// <param name="moveSpeed">Speed of movement</param>
     public void SetMovementState(MovementState moveState, float moveSpeed)
     {
         //Sets movement state for headbob

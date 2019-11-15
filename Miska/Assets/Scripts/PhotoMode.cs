@@ -5,24 +5,27 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Photo Capture Mode, including animation, image capture & sending
+/// </summary>
 public class PhotoMode : MonoBehaviour
 {
-    bool                            m_photoModeActive;
-    GameObject                      m_photoOverlay;
-    Animator                        m_animator;
+    private         bool                m_photoModeActive;
+    private         GameObject          m_photoOverlay;
+    private         Animator            m_animator;
 
-    public GameObject               m_virtCamOBJ;
-    Camera                          m_virtCam;
-    PhotoSubject                    m_virtCamScript;
-    public PhotoAlbum               m_photoAlbum;
+    public          GameObject          m_virtCamOBJ;
+    private         Camera              m_virtCam;
+    private         PhotoSubject        m_virtCamScript;
+    public          PhotoAlbum          m_photoAlbum;
 
-    List<PhotoSubject>              m_capturedSubjects;
-    List<PhotoSubject>              m_allSubjects;
+    private         List<PhotoSubject>  m_capturedSubjects;
+    private         List<PhotoSubject>  m_allSubjects;
 
-    public GameObject               m_entry1,   m_entry2,   m_entry3; //Replace with array!!
-    public PhotoSubject             m_subj1,    m_subj2,    m_subj3;
+    public          GameObject          m_entry1,   m_entry2,   m_entry3; //Replace with array!!
+    public          PhotoSubject        m_subj1,    m_subj2,    m_subj3;
 
-    public HUD_UI                   m_HUDUI;
+    public          HUD_UI              m_HUDUI;
 
     private void Start()
     {
@@ -64,35 +67,34 @@ public class PhotoMode : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Toggles Photo Mode on and off
+    /// </summary>
     private void togglePhotoModeActive()
     {
         if (m_photoModeActive == false)
         {
-            //m_PopupOverlay.SetActive(false);
             m_photoModeActive = true;
-            //m_photoOverlay.SetActive(true);
             m_animator.SetTrigger("TransIN");
-            //m_HUDUI.setActive(true); To Add
         }
         else
         {
-           // m_PopupOverlay.SetActive(true);
             m_animator.SetTrigger("TransOUT");
             m_photoModeActive = false;
-            //m_HUDUI.setActive(false); To Add
         }
     }
 
 
-
+    /// <summary>
+    /// Manages photo capture (toggling photo viewfinder overlay, virtual camera and intiating photo capture)
+    /// </summary>
     IEnumerator CapturePhoto()
     {
-        m_virtCam.enabled = true;
-        m_photoOverlay.SetActive(false);
+        m_virtCam.enabled = true;                   //Enables virtual camera to capture image (no UI)   --> both are reverted after image capture
+        m_photoOverlay.SetActive(false);            //Disables photo overlay for visual feedback
         yield return new WaitForSeconds(.05f);
 
         RenderToImage();
-        //m_virtCamScript.RunIdentifier();
         yield return new WaitForSeconds(.05f);
 
         m_photoOverlay.SetActive(true);
@@ -100,50 +102,58 @@ public class PhotoMode : MonoBehaviour
         m_virtCam.enabled = false;
     }
 
+    /// <summary>
+    /// Creates a file name string
+    /// </summary>
     private static string GenerateFileName()
     {
 
         string folderPath = Application.persistentDataPath;
         DateTime now = DateTime.Now;
         string dt = now.Day.ToString() + "-" + now.Month.ToString() + "-" + now.Year.ToString() + " " + now.Hour.ToString() + "-" + now.Minute.ToString() + "-" + now.Second.ToString();
-        //string ID
 
-        string fullName = folderPath + dt + ".png"; //Add ID
+        string fullName = folderPath + dt + ".png";
 
         return fullName;
     }
 
+
+    /// <summary>
+    /// Renders the photograph to a .png file
+    /// </summary>
     private void RenderToImage()
     {
         int sqrSide = 512;
         m_virtCam.aspect = 1.0f;
 
-        RenderTexture tempRT = new RenderTexture(sqrSide, sqrSide, 24);
+        RenderTexture tempRT = new RenderTexture(sqrSide, sqrSide, 24); 
 
-        m_virtCam.targetTexture = tempRT;
+        
+        m_virtCam.targetTexture = tempRT;                                                       //Renders the image to a temporary texutre
         m_virtCam.Render();
 
         RenderTexture.active = tempRT;
-        Texture2D virtualPhoto = new Texture2D(sqrSide, sqrSide, TextureFormat.RGB24, false);
+        Texture2D virtualPhoto = new Texture2D(sqrSide, sqrSide, TextureFormat.RGB24, false);   //Conversion to Texture 2D
         virtualPhoto.ReadPixels(new Rect(0, 0, sqrSide, sqrSide), 0, 0);
                
         RenderTexture.active = null;
         m_virtCam.targetTexture = null;
 
         byte[] bytes;
-        bytes = virtualPhoto.EncodeToPNG();
+        bytes = virtualPhoto.EncodeToPNG();                                                     //Encoded to png File
 
         string filename = GenerateFileName();
 
-        System.IO.File.WriteAllBytes(filename, bytes);
+        System.IO.File.WriteAllBytes(filename, bytes);                                          //Saved to system
 
         (bool isValidated, PhotoSubject subj) = isPhotoJournalValid();
+
 
         if (isValidated)
         {
             GameObject journalOBJ;
             bool poloroidFound = false;
-            foreach (var lstdPhotos in m_capturedSubjects)
+            foreach (var lstdPhotos in m_capturedSubjects)  //For loop checks that there is no photo has been taken of the subject
             {
                 if (lstdPhotos == subj)
                 {
@@ -152,12 +162,12 @@ public class PhotoMode : MonoBehaviour
                 }
             }
 
-            if(!poloroidFound)
+            if(!poloroidFound)                              //if no photo has been taken previous, add subject to captured list, and get next journal entry
             {
                 m_capturedSubjects.Add(subj);
                 journalOBJ = GetJournalEntry();
             }
-            else
+            else                                            //Otherwise no 
             {
                 journalOBJ = null;
             }
@@ -169,9 +179,11 @@ public class PhotoMode : MonoBehaviour
         {
             m_photoAlbum.AddNewPhoto(filename);
         }
-        //m_journalPhotos[m_currJournalPhoto].texture = LoadPNG(filename);
     }
 
+    /// <summary>
+    /// Finds next available Journal Entry object (which contains text and photo image objects
+    /// </summary>
     GameObject GetJournalEntry()
     {
         int count = m_capturedSubjects.Count;
@@ -198,6 +210,9 @@ public class PhotoMode : MonoBehaviour
         return entryOBJ;
     }
 
+    /// <summary>
+    /// checks if photo is "journal valid" and the subject
+    /// </summary>
     (bool, PhotoSubject) isPhotoJournalValid()
     {
         foreach (var subj in m_allSubjects)
@@ -210,6 +225,10 @@ public class PhotoMode : MonoBehaviour
         return (false, null);
     }
 
+    /// <summary>
+    /// Returns a texture from a png at a given file path
+    /// </summary>
+    /// <param name="filepath"> file path of photo being loaded</param>
     Texture2D LoadPNG(string filepath)
     {
         Texture2D tex = null;

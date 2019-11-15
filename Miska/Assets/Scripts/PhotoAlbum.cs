@@ -4,30 +4,41 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// Displays the Captured Images in the Gallery and Journal Entries
+/// </summary>
 public class PhotoAlbum : MonoBehaviour
 {
-
-    List<string>        m_picsFileNames;
-
-    string              m_fullpath;
-    string              m_folderPath;
-    bool                m_isShowingAlbum;
-    public Canvas              m_canvas;
-    RawImage            m_photoOBJ;
-    int                 m_currPicIndex;
-
-    public Player       m_playerScript;
-
-    List<PhotoSubject>  m_journalEntries;
-
     
+    private     string              m_fullpath;
+    /// <summary>
+    /// Array of all pictures in fullpath folder
+    /// </summary>
+    private     List<string>        m_picsFileNames;
+
+    private     bool                m_isShowingAlbum;
+    /// <summary>
+    /// Object that displays images, texture changes to show new images
+    /// </summary>
+    private     RawImage            m_photoOBJ;
+    /// <summary>
+    /// current location in picture index
+    /// </summary>
+    private     int                 m_currPicIndex;
+    private     List<PhotoSubject>  m_journalEntries;
+
+    /// <summary>
+    /// The photo canvas, incl. BG, Text & Buttons
+    /// </summary>
+    public      Canvas              m_canvas;
+    public      Player              m_playerScript;
 
     // Start is called before the first frame update
     void Start()
     {
         m_picsFileNames = new List<string>();
-        m_folderPath = "/Resources/Photos";
-        m_fullpath = Application.dataPath + m_folderPath;
+        m_fullpath = Application.persistentDataPath;
         m_isShowingAlbum = false;
         m_currPicIndex = 0;
         GetFileArray();
@@ -35,6 +46,9 @@ public class PhotoAlbum : MonoBehaviour
         m_journalEntries = new List<PhotoSubject>();
     }
 
+    /// <summary>
+    /// Gets array of .png files from folder
+    /// </summary>
     private void GetFileArray()
     {
         DirectoryInfo dir = new DirectoryInfo(m_fullpath);
@@ -45,11 +59,20 @@ public class PhotoAlbum : MonoBehaviour
         }
     }
 
+
+    /// <summary>
+    /// Toggles the album visibility
+    /// </summary>
     public void toggleShowingAlbum()
     {
         setShowingAlbum(!m_isShowingAlbum);
     }
 
+
+    /// <summary>
+    /// Sets the showing album state
+    /// </summary>
+    /// <param name="status">show/hide album</param>
     void setShowingAlbum(bool status)
     {
         m_isShowingAlbum = status;
@@ -65,7 +88,8 @@ public class PhotoAlbum : MonoBehaviour
     {
         m_canvas.enabled        = m_isShowingAlbum;
         
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
+        //if left is pressed, current pic moves "back". right moves it "forward". Wraps from start to finish. Then loads image
+        if(Input.GetKeyDown(KeyCode.LeftArrow)) 
         {
             if (m_currPicIndex == 0)
             {
@@ -95,6 +119,9 @@ public class PhotoAlbum : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Loads currently selected photo in array
+    /// </summary>
     private void LoadIndexedPhotoToTexture()
     {
 
@@ -105,6 +132,11 @@ public class PhotoAlbum : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Loads a texture from .png file
+    /// </summary>
+    /// <param name="filePath"> path of image to load </param>
+    /// <returns> image found at filepath </returns>
     Texture2D LoadPNG(string filePath)
     {
 
@@ -120,6 +152,10 @@ public class PhotoAlbum : MonoBehaviour
         return tex;
     }
 
+    /// <summary>
+    /// Adds a new path to array that holds a photo
+    /// </summary>
+    /// <param name="filename">photo's filepath</param>
     public void AddNewPhoto(string filename)
     {
         m_picsFileNames.Add(filename);

@@ -9,12 +9,18 @@ public enum TerrainMaterial
     Wood
 };
 
+/// <summary>
+/// Identifies the underfoot terrain
+/// </summary>
 public class TerrainReader : MonoBehaviour
 {
+    //Width and height of 2D map of game area & number of terrain textures
+    private int m_alphaMapWidth, m_alphaMapHeight, m_numTextures;
 
-    int m_alphaMapWidth, m_alphaMapHeight, m_numTextures;
-    float[,,] m_splatMapData;
-    TerrainData m_terrainData;
+    private float[,,] m_splatMapData;
+
+    private TerrainData m_terrainData;
+
     public GameObject m_player;
     public StepSoundTrigger m_stepScript;
 
@@ -41,6 +47,9 @@ public class TerrainReader : MonoBehaviour
         return pos;
     }
 
+    /// <summary>
+    /// Uses collider to determine if player is standing on a wooden surface (eg bridge)
+    /// </summary>
     bool IsPlayerOnWood()
     {
         Vector3 rayOrigin = m_player.transform.position + new Vector3(0.0f, 0.5f, 0.0f);
@@ -70,7 +79,9 @@ public class TerrainReader : MonoBehaviour
         
     }
 
-    //Creates an array of floats that defines the defines the relative amounts of different textures in the player's position
+    /// <summary>
+    /// Gets a array of floats, indicating the relative amounts of each terrain type in the player position
+    /// </summary>
     float[] GetTextureMix()
     {
         Vector3 playerPos = m_player.transform.position;
@@ -88,7 +99,9 @@ public class TerrainReader : MonoBehaviour
     }
 
 
-    //Creates a Texture Mix array, and then selects the dominant texture
+    /// <summary>
+    /// Returns the texture with the highest priority in the texture mix
+    /// </summary>
     public TerrainMaterial GetMainTexture()
     {
         float[] mix = GetTextureMix();
@@ -104,11 +117,11 @@ public class TerrainReader : MonoBehaviour
             }
         }
 
-        if (maxIndex == 0 || maxIndex == 1 || maxIndex == 2 || maxIndex == 4 )
+        if (maxIndex == 0 || maxIndex == 1 || maxIndex == 2 || maxIndex == 4 )      //Grass textures
         {
             return TerrainMaterial.Grass;
         }
-        else if (maxIndex == 3 || maxIndex == 5 || maxIndex == 6 || maxIndex == 7)
+        else if (maxIndex == 3 || maxIndex == 5 || maxIndex == 6 || maxIndex == 7)  //Dirt texture 
         {
             return TerrainMaterial.Dirt;
         }

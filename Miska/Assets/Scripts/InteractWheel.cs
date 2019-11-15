@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// A wheel that allows the selection of different actions using the Quicktime(interaction) system
+/// </summary>
 public class InteractWheel : MonoBehaviour
 {
     public Image[] m_images;
@@ -36,62 +39,72 @@ public class InteractWheel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // moves the cursor around the avaliable area
         m_mousePosition += new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")) * m_mouseSpeed;
         m_mousePosition = Vector2.ClampMagnitude(m_mousePosition, m_maxMagnitude);
         m_mousePos.rectTransform.localPosition = m_mousePosition;
 
-        if (m_mousePosition.magnitude > m_deadZone)
+        if (m_mousePosition.magnitude > m_deadZone) // if the cursor is out of the centre deadzone
         {
-            float angleBetween = -Vector2.SignedAngle(Vector2.up, m_mousePosition);
-            if (angleBetween < 0)
+            float angleBetween = -Vector2.SignedAngle(Vector2.up, m_mousePosition); // gets the angle of the cursor's position
+            if (angleBetween < 0) // keeps the angel between [0, 360]
                 angleBetween += 360;
 
-            for (int i = 0; i < m_images.Length; i++)
+            for (int i = 0; i < m_images.Length; i++) // foreach image
             {
-                if (i != 0)
+                if (i != 0) // if the current image is not the first one
                 {
-                    if (angleBetween > (i * m_angle) - (m_angle * 0.5f) && angleBetween <= (i * m_angle) + (m_angle * 0.5f))
+                    if (angleBetween > (i * m_angle) - (m_angle * 0.5f) && angleBetween <= (i * m_angle) + (m_angle * 0.5f)) // if the angle between is in the current images section
                     {
-                        ChangeSelected(i);
+                        ChangeSelected(i); // change the current selected to the index of the current image
                     }
                 }
                 else
                 {
-                    if ((angleBetween <= (m_angle * 0.5f)) || (angleBetween > 360 - (m_angle * 0.5f)))
+                    if ((angleBetween <= (m_angle * 0.5f)) || (angleBetween > 360 - (m_angle * 0.5f))) // if the angle between is in the first images section
                     {
-                        ChangeSelected(i);
+                        ChangeSelected(i); // change the current selected to the index of the current image
                     }
                 }
             }
         }
         else
         {
-            ChangeSelected(-1);
+            ChangeSelected(-1); // none are selected
         }
     }
 
+    /// <summary>
+    /// Changes the currently selected image
+    /// </summary>
+    /// <param name="newSelected">the index of the new image</param>
     void ChangeSelected(int newSelected)
     {
-        if (m_currentSelected == newSelected)
+        if (m_currentSelected == newSelected) // can't change to the same image
             return;
 
-        if (m_currentSelected >= 0)
+        if (m_currentSelected >= 0) // if there is currently a selected image
         {
+            // revert the currently selected image's alpha back to the unselected alpha
             Color newColor = m_images[m_currentSelected].color;
             newColor.a = m_unselectedAlpha;
             m_images[m_currentSelected].color = newColor;
         }
 
-        m_currentSelected = newSelected;
+        m_currentSelected = newSelected; // change the current selection to the new one
 
-        if (m_currentSelected >= 0 && !m_disabledOptions[m_currentSelected])
+        if (m_currentSelected >= 0 && !m_disabledOptions[m_currentSelected]) // if the new selection is an actual selection (not -1)
         {
+            // change the newly selected image's alpha to full
             Color newColor = m_images[m_currentSelected].color;
             newColor.a = 1;
             m_images[m_currentSelected].color = newColor;
         }
     }
 
+    /// <summary>
+    /// Enables the interact wheel and resets the values
+    /// </summary>
     public void EnableWheel()
     {
         gameObject.SetActive(true);
@@ -101,29 +114,37 @@ public class InteractWheel : MonoBehaviour
         m_enabled = true;
     }
 
+    /// <summary>
+    /// Disables the interact wheel and activates the selection
+    /// </summary>
     public void DisableWheel()
     {
-        if (m_enabled)
+        if (m_enabled) // only disable when actually enabled
         {
-            if (m_currentSelected >= 0 && !m_disabledOptions[m_currentSelected])
+            if (m_currentSelected >= 0 && !m_disabledOptions[m_currentSelected]) // if there is a current selection thats not disabled
             {
-                QuicktimeResponse[] responses = m_images[m_currentSelected].GetComponents<QuicktimeResponse>();
-                foreach (QuicktimeResponse response in responses)
+                QuicktimeResponse[] responses = m_images[m_currentSelected].GetComponents<QuicktimeResponse>(); // get the array of quicktime responses on the image's object
+                foreach (QuicktimeResponse response in responses) // call the on success function for each response
                 {
-                    response.OnSuccess();
+                    response.OnSuccess(); 
                 }
             }
 
+            // disable the interact wheel
             gameObject.SetActive(false);
             m_enabled = false;
         }
     }
 
+    /// <summary>
+    /// Disables an option on the wheel
+    /// </summary>
+    /// <param name="index">The index of the option to disable</param>
     public void DisableOption(int index)
     {
-        if (index >= 0 && index < m_disabledOptions.Length)
+        if (index >= 0 && index < m_disabledOptions.Length) // if the index is within the bounds
         {
-            m_disabledOptions[index] = true;
+            m_disabledOptions[index] = true; // sets the image at index to disabled
         }
         else
         {
@@ -131,11 +152,15 @@ public class InteractWheel : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Enables and option on the wheel
+    /// </summary>
+    /// <param name="index">the index of the option to enable</param>
     public void EnableOption(int index)
     {
-        if (index >= 0 && index < m_disabledOptions.Length)
+        if (index >= 0 && index < m_disabledOptions.Length) // if the index is within the bounds
         {
-            m_disabledOptions[index] = false;
+            m_disabledOptions[index] = false; // sets the image at index to enabled
         }
         else
         {

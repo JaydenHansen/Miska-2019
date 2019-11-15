@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// OLD SCRIPT UNUSED
+/// Checks if all the rocks are stacked on each other and calls an event
+/// </summary>
 public class RockStacker : MonoBehaviour
 {
     public Pickup[] m_rocks;

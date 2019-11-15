@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Passes the player position to a shader
+/// </summary>
 public class PassPlayerPos : MonoBehaviour
 {
     public Transform m_player;

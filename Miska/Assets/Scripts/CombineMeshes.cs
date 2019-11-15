@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+/// <summary>
+/// Editor script to combine meshes into a single object (or multiple if there are too many verts)
+/// Warning kinda janky
+/// </summary>
 public class CombineMeshes : MonoBehaviour
 {
     public MeshFilter[] m_subMeshes;
@@ -14,35 +18,38 @@ public class CombineMeshes : MonoBehaviour
 
     MeshFilter m_combined;
 
+    /// <summary>
+    /// The function to start combining the meshes
+    /// </summary>
     public void Combine()
     {
-        if (m_useChildren)
+        if (m_useChildren) // if the children of the gameobject should be used as the submeshes
         {
             m_subMeshes = GetComponentsInChildren<MeshFilter>();
         }
 
-        Dictionary<Mesh, List<MeshFilter>> meshTypes = new Dictionary<Mesh, List<MeshFilter>>();
+        Dictionary<Mesh, List<MeshFilter>> meshTypes = new Dictionary<Mesh, List<MeshFilter>>(); // splits the submeshes based on their mesh, grouping those with the same mesh
         for (int i = 0; i < m_subMeshes.Length; i++)
         {
-            if (m_subMeshes[i].gameObject != gameObject)
+            if (m_subMeshes[i].gameObject != gameObject) // checks that it doesn't include the parent object
             {
-                if (meshTypes.ContainsKey(m_subMeshes[i].sharedMesh))
+                if (meshTypes.ContainsKey(m_subMeshes[i].sharedMesh)) // if the mesh of the current object is already in the dictionary
                     meshTypes[m_subMeshes[i].sharedMesh].Add(m_subMeshes[i]);
                 else
-                    meshTypes.Add(m_subMeshes[i].sharedMesh, new List<MeshFilter> { m_subMeshes[i] });
+                    meshTypes.Add(m_subMeshes[i].sharedMesh, new List<MeshFilter> { m_subMeshes[i] }); // create a new entry using the mesh of the object and it's mesh filter
             }
-
         }
 
+        // for each of the mesh types
         foreach (var entry in meshTypes)
         {
-            List<MeshFilter> sameMeshes = entry.Value;
+            List<MeshFilter> sameMeshes = entry.Value; // list of objects that share a mesh
 
-            int totalVertexCount = sameMeshes[0].sharedMesh.vertexCount * sameMeshes.Count;
-            if (totalVertexCount > 65000 || true)
+            int totalVertexCount = sameMeshes[0].sharedMesh.vertexCount * sameMeshes.Count; // get's the total vertex count of all the meshes combined
+            if (totalVertexCount > 65000 || true) // unity limits the amount of vertices in a mesh to ~65000 (TEMP OVERRIDE)
             {
-                int meshesPerObject = Mathf.FloorToInt(65000f / sameMeshes[0].sharedMesh.vertexCount);
-                int objectCount = Mathf.CeilToInt(totalVertexCount / 65000f);
+                int meshesPerObject = Mathf.FloorToInt(65000f / sameMeshes[0].sharedMesh.vertexCount); // calculates the amount of submeshes that can be combined into a single object
+                int objectCount = Mathf.CeilToInt(totalVertexCount / 65000f); // calculates the amount of objects needed for all submeshes to be combined
           
                 //CombineInstance[,] combineStorage = new CombineInstance[objectCount, meshesPerObject];
                 List<List<CombineInstance>> combineStorage = new List<List<CombineInstance>>();
@@ -51,9 +58,9 @@ public class CombineMeshes : MonoBehaviour
 
                 for (int i = 0; i < sameMeshes.Count; i++)
                 {
-                    if (sameMeshes[i].sharedMesh.subMeshCount == 1)
+                    if (sameMeshes[i].sharedMesh.subMeshCount == 1) // if the current mesh only has a single sub mesh
                     {
-                        int index = Mathf.FloorToInt(i / (float)meshesPerObject);
+                        int index = Mathf.FloorToInt(i / (float)meshesPerObject); // the index of the combined objects that the current mesh will fit into
                         CombineInstance newInstance = new CombineInstance();
                         newInstance.subMeshIndex = 0;
                         newInstance.mesh = sameMeshes[i].sharedMesh;
@@ -61,7 +68,7 @@ public class CombineMeshes : MonoBehaviour
                         combineStorage[index].Add(newInstance);
                         sameMeshes[i].gameObject.SetActive(false);
                     }
-                    else
+                    else // might not work correctly
                     {
                         int index = Mathf.FloorToInt(i / (float)meshesPerObject);
                         for (int j = 0; j < sameMeshes[i].sharedMesh.subMeshCount; j++)
@@ -77,13 +84,14 @@ public class CombineMeshes : MonoBehaviour
                 }
 
                 combineStorage.TrimExcess();
-                for (int i = 0; i < objectCount; i++)
+
+                for (int i = 0; i < objectCount; i++) // for the total amount of combined meshes
                 {
-                    CombineInstance[] temp = combineStorage[i].ToArray();
+                    CombineInstance[] temp = combineStorage[i].ToArray(); // get list of combine instances for the current combined mesh
                    
                     Mesh combinedMesh = new Mesh();
 
-                    if (sameMeshes[0].sharedMesh.subMeshCount == 1)
+                    if (sameMeshes[0].sharedMesh.subMeshCount == 1) // if there is only a single submesh for the meshes in the list
                     {
                         combinedMesh.CombineMeshes(temp);
                     }
@@ -123,13 +131,15 @@ public class CombineMeshes : MonoBehaviour
                         }
                     }
 
+                    // finish mesh setup
                     combinedMesh.Optimize();
                     combinedMesh.RecalculateBounds();
                     combinedMesh.RecalculateNormals();
 
                     combinedMesh.name = sameMeshes[0].sharedMesh.name + " combined " + i.ToString();
 
-                    GameObject newObject = new GameObject(sameMeshes[0].sharedMesh.name + " combined " + i.ToString());
+                    // create a game object for the new combined mesh
+                    GameObject newObject = new GameObject(sameMeshes[0].sharedMesh.name + " combined " + i.ToString()); 
                     newObject.transform.parent = gameObject.transform;
 
                     MeshFilter newMeshFilter = newObject.AddComponent<MeshFilter>();
@@ -161,6 +171,9 @@ public class CombineMeshes : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// combine child meshes into a parent mesh
+    /// </summary>
     public void CombineIntoParent()
     {
         m_subMeshes = GetComponentsInChildren<MeshFilter>();        
@@ -177,12 +190,12 @@ public class CombineMeshes : MonoBehaviour
             newInstance.mesh = m_subMeshes[i].sharedMesh;
 
             Matrix4x4 matrix = Matrix4x4.identity;
-            if (i != 0)
-                matrix.SetTRS(m_subMeshes[i].transform.localPosition, m_subMeshes[i].transform.localRotation, m_subMeshes[i].transform.localScale);
+            if (i != 0) // if the current mesh is a child mesh
+                matrix.SetTRS(m_subMeshes[i].transform.localPosition, m_subMeshes[i].transform.localRotation, m_subMeshes[i].transform.localScale); // uses the local values for the matrix
 
             newInstance.transform = matrix;
             combineStorage.Add(newInstance);
-            if (m_destroySub && i != 0)
+            if (m_destroySub && i != 0) // destroies the old child mesh
             {
                 DestroyImmediate(m_subMeshes[i].gameObject);
             }
@@ -191,14 +204,14 @@ public class CombineMeshes : MonoBehaviour
         Mesh combinedMesh = new Mesh();
         combinedMesh.CombineMeshes(combineStorage.ToArray());
 
-        if (m_saveMesh)
+        if (m_saveMesh) // if the mesh should be saved into assets
         {
             string path = EditorUtility.SaveFilePanel("Save Combined Mesh", "Assets/", "combined", "asset");
             if (string.IsNullOrEmpty(path)) return;
 
             path = FileUtil.GetProjectRelativePath(path);
 
-            AssetDatabase.CreateAsset(combinedMesh, path);
+            AssetDatabase.CreateAsset(combinedMesh, path); // creates an asset for the combined mesh
             AssetDatabase.SaveAssets();                   
         }
         else
@@ -206,7 +219,7 @@ public class CombineMeshes : MonoBehaviour
             m_subMeshes[0].sharedMesh = combinedMesh;
         }
 
-        if (m_destroyScript)
+        if (m_destroyScript) // if the combine script should be auto removed
         {
             DestroyImmediate(this);
         }
@@ -216,6 +229,9 @@ public class CombineMeshes : MonoBehaviour
 #endif
 
 #if UNITY_EDITOR
+/// <summary>
+/// Custom inspector for the combine meshes
+/// </summary>
 [CustomEditor(typeof(CombineMeshes))]
 [CanEditMultipleObjects]
 public class CombineMeshesInspector : Editor

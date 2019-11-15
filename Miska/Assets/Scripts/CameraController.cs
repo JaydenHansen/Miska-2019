@@ -8,6 +8,9 @@ public enum LookAtMode
     Once
 };
 
+/// <summary>
+/// The main camera controller
+/// </summary>
 public class CameraController : MonoBehaviour
 {
     [Header("Setup")]
@@ -86,35 +89,43 @@ public class CameraController : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        // the offset of the camera from the parent
         m_baseOffset = transform.position - m_parent.transform.position;
         m_offset = m_baseOffset;
+
         m_lookAtStrength = m_baseLookAtStrength;
+
+        // get the current pitch and yaw from the camera's rotation
         m_yaw = transform.rotation.eulerAngles.y;
         m_pitch = transform.rotation.eulerAngles.x;
 
         Cursor.lockState = CursorLockMode.Locked;
     }
 	
-	// Update is called once per frame
+	/// <summary>
+    /// The main camera control from the mouse and the look at functionality
+    /// </summary>
 	void Update ()
     {        
-        transform.position = (m_parent.transform.position + m_offset);
+        transform.position = (m_parent.transform.position + m_offset); // moves the camera with it's parent, keeps it's initial offset
 
-        if (!m_disableControl)
+        if (!m_disableControl) // if the player has control of the camera
         {
             m_yawVelocity += Input.GetAxis("Mouse X") * m_rotationSpeed; // mouse x controls the yaw
         }
-        m_yaw += m_yawVelocity * Time.deltaTime;
+        m_yaw += m_yawVelocity * Time.deltaTime; // uses velocity to smooth the camera
 
         float yawDrag = m_yawVelocity * m_rotationFriction * Time.deltaTime; // drag
-        if (Mathf.Abs(yawDrag) > Mathf.Abs(m_yawVelocity))
+
+        if (Mathf.Abs(yawDrag) > Mathf.Abs(m_yawVelocity)) // stops the drag from overcompensating at lower framerates
             m_yawVelocity = 0;
         else
             m_yawVelocity -= yawDrag;
 
-        if (m_lockYaw)
+
+        if (m_lockYaw) // if the yaw is locked
         {
-            m_yaw = Mathf.Clamp(m_yaw, m_yawBounds.x, m_yawBounds.y);
+            m_yaw = Mathf.Clamp(m_yaw, m_yawBounds.x, m_yawBounds.y); // keep the yaw between the bounds
         }
         else
         { 
@@ -129,14 +140,16 @@ public class CameraController : MonoBehaviour
             }
         }
 
-        if (!m_disableControl)
+
+        if (!m_disableControl) // if the player has control of the camera
         {
             m_pitchVelocity -= Input.GetAxis("Mouse Y") * m_rotationSpeed; // mouse y controls the pitch
         }
         m_pitch += m_pitchVelocity * Time.deltaTime;
 
         float pitchDrag = m_pitchVelocity * m_rotationFriction * Time.deltaTime; // drag
-        if (Mathf.Abs(pitchDrag) > Mathf.Abs(m_pitchVelocity))
+
+        if (Mathf.Abs(pitchDrag) > Mathf.Abs(m_pitchVelocity)) // stops the drag from overcompensating at lower framerates
             m_pitchVelocity = 0;
         else
             m_pitchVelocity -= pitchDrag;
@@ -212,18 +225,28 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the pitch and yaw from a euler rotation
+    /// </summary>
+    /// <param name="euler">The target euler rotation</param>
     public void SetRotation(Vector3 euler)
     {
         m_yaw = euler.y;
         m_pitch = euler.x;
     }
 
+    /// <summary>
+    /// Disables the player's control of the camera
+    /// </summary>
     public void DisableMovement()
     {
         m_disableControl = true;
         //Cursor.visible = true;
         //Cursor.lockState = CursorLockMode.None;
     }
+    /// <summary>
+    /// Enables the player's control of the camera
+    /// </summary>
     public void EnableMovement()
     {
         m_disableControl = false;

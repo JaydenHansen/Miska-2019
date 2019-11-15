@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// The ai behaviour of the randomly wandering duck
+/// </summary>
 public class Duck : MonoBehaviour
 {
     public float m_forwardDist;
@@ -34,6 +37,9 @@ public class Duck : MonoBehaviour
         m_animator.SetFloat("Speed", m_velocity.magnitude);
     }
 
+    /// <summary>
+    /// Seeks towards and random position around the duck
+    /// </summary>
     void Wander()
     {
         Vector3 circlePos = transform.position + (m_velocity.normalized * m_forwardDist);
@@ -43,14 +49,17 @@ public class Duck : MonoBehaviour
         m_velocity += ((displacement - transform.position).normalized - m_velocity) * Time.deltaTime;
     }
 
+    /// <summary>
+    /// Flees the closest edge of the duck to keep it from wandering out of the area
+    /// </summary>
     void FleeEdge()
     {
         NavMeshHit hit;
         if (NavMesh.FindClosestEdge(transform.position, out hit, m_areaMask))
         {
-            if (hit.distance < m_distanceFromEdge)
+            if (hit.distance < m_distanceFromEdge) // if the edge isn't too far away
             {
-                m_velocity += ((new Vector3(transform.position.x, 0, transform.position.z) - new Vector3(hit.position.x, 0, hit.position.z)).normalized - m_velocity) * Time.deltaTime;
+                m_velocity += ((new Vector3(transform.position.x, 0, transform.position.z) - new Vector3(hit.position.x, 0, hit.position.z)).normalized - m_velocity) * Time.deltaTime; // flee from the edge
             }
         }
     }

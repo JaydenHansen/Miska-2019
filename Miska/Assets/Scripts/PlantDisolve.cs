@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Dissolves a set of plants
+/// </summary>
 public class PlantDisolve : MonoBehaviour
 {
     public Renderer[] m_plants;
@@ -15,7 +18,7 @@ public class PlantDisolve : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach (Renderer plant in m_plants)
+        foreach (Renderer plant in m_plants) // starts each plant as already dissolved
         {
             foreach (Material material in plant.materials)
             {
@@ -27,16 +30,16 @@ public class PlantDisolve : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_active)
+        if (m_active) // if the plant should be dissolving
         {
             m_timer += Time.deltaTime;
 
             for (int i = 0; i < m_plants.Length; i++)
             { 
-                Random.InitState(i);
+                Random.InitState(i); // each plant has a random offset to it's dissove speed
                 foreach (Material material in m_plants[i].materials)
                 {
-                    material.SetFloat("_DissolveSlider", -((m_timer / (m_dissolveSpeed + Random.Range(-m_dissolveRandomOffset, m_dissolveRandomOffset))) +1));
+                    material.SetFloat("_DissolveSlider", -((m_timer / (m_dissolveSpeed + Random.Range(-m_dissolveRandomOffset, m_dissolveRandomOffset))) +1)); // lerps between the dissolve values
                 }
             }
 
@@ -45,9 +48,12 @@ public class PlantDisolve : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Starts the dissolve timer
+    /// </summary>
     public void StartDissolve()
     {
-        if (!m_alreadyActivated)
+        if (!m_alreadyActivated) // can only be activated once
         {
             m_timer = 0;
             m_active = true;

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// The hand icon on the dog while it's being patted
+/// </summary>
 public class DogPat : MonoBehaviour
 {
     public Transform m_cameraArm;
@@ -9,17 +12,12 @@ public class DogPat : MonoBehaviour
 
     float m_timer;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        transform.forward = m_cameraArm.forward;
+        transform.forward = m_cameraArm.forward; // billboard
 
+        // disables itself after the duration is up
         m_timer += Time.deltaTime;
         if (m_timer >= m_duration)
         {
@@ -27,6 +25,9 @@ public class DogPat : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// enables the gameobject and starts hte timer
+    /// </summary>
     public void StartPat()
     {
         m_timer = 0;

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Knocks over the attaches pickup rocks in a direction
+/// </summary>
 public class RockStack : MonoBehaviour
 {
     public float m_knockOverStrength;
@@ -17,7 +20,7 @@ public class RockStack : MonoBehaviour
 
     public void KnockOver()
     {
-        foreach(Pickup rock in m_rocks)
+        foreach(Pickup rock in m_rocks) // applies force on each rock in the knockover direction
         {
             rock.Rigidbody.isKinematic = false;
             rock.Rigidbody.AddForce(m_knockOverStrength * m_knockOverDirection);

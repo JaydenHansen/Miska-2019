@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Makes a rigid body follow a target
+/// Unused
+/// </summary>
 public class Pickup : MonoBehaviour
 {
     protected Transform m_target;
@@ -43,17 +47,25 @@ public class Pickup : MonoBehaviour
     {
         if (m_target != null)
         {
-            m_rigidbody.drag = 10 - Mathf.Clamp((transform.position - m_target.position).magnitude, 0, 10);
+            m_rigidbody.drag = 10 - Mathf.Clamp((transform.position - m_target.position).magnitude, 0, 10); // increases the drag the closer the rigidbody is to the collider
             m_rigidbody.AddForce((m_target.position - transform.position) * 100);
         }
     }
 
+    /// <summary>
+    /// Starts the object following the target
+    /// </summary>
+    /// <param name="target">the target to follow</param>
     public void StartPickup(Transform target)
     {
         m_target = target;
         m_rigidbody.useGravity = false;
         m_rigidbody.angularDrag = 5f;
     }
+
+    /// <summary>
+    /// Stops following the target
+    /// </summary>
     public void EndPickup()
     {
         m_target = null;

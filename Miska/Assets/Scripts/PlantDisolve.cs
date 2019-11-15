@@ -14,10 +14,16 @@ public class PlantDisolve : MonoBehaviour
     bool m_active;
     bool m_alreadyActivated;
     float m_timer;
+    float[] m_dissolveOffsets;
 
     // Start is called before the first frame update
     void Start()
     {
+        m_dissolveOffsets = new float[m_plants.Length];
+        for (int i = 0; i < m_dissolveOffsets.Length; i++)
+        {
+            Random.Range(-m_dissolveRandomOffset, m_dissolveRandomOffset);
+        }
         foreach (Renderer plant in m_plants) // starts each plant as already dissolved
         {
             foreach (Material material in plant.materials)
@@ -36,10 +42,9 @@ public class PlantDisolve : MonoBehaviour
 
             for (int i = 0; i < m_plants.Length; i++)
             { 
-                Random.InitState(i); // each plant has a random offset to it's dissove speed
                 foreach (Material material in m_plants[i].materials)
                 {
-                    material.SetFloat("_DissolveSlider", -((m_timer / (m_dissolveSpeed + Random.Range(-m_dissolveRandomOffset, m_dissolveRandomOffset))) +1)); // lerps between the dissolve values
+                    material.SetFloat("_DissolveSlider", -((m_timer / (m_dissolveSpeed + m_dissolveOffsets[i])) +1)); // lerps between the dissolve values
                 }
             }
 

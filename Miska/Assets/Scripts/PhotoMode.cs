@@ -26,6 +26,7 @@ public class PhotoMode : MonoBehaviour
     public          PhotoSubject        m_subj1,    m_subj2,    m_subj3;
 
     public          HUD_UI              m_HUDUI;
+    public          AK.Wwise.Event      m_captureSound;
 
     private void Start()
     {
@@ -95,6 +96,7 @@ public class PhotoMode : MonoBehaviour
         yield return new WaitForSeconds(.05f);
 
         RenderToImage();
+        m_captureSound.Post(gameObject);
         yield return new WaitForSeconds(.05f);
 
         m_photoOverlay.SetActive(true);
@@ -108,11 +110,11 @@ public class PhotoMode : MonoBehaviour
     private static string GenerateFileName()
     {
 
-        string folderPath = Application.persistentDataPath;
+        string folderPath = Application.dataPath + "/Photos";
         DateTime now = DateTime.Now;
         string dt = now.Day.ToString() + "-" + now.Month.ToString() + "-" + now.Year.ToString() + " " + now.Hour.ToString() + "-" + now.Minute.ToString() + "-" + now.Second.ToString();
 
-        string fullName = folderPath + dt + ".png";
+        string fullName = folderPath + "/" + dt + ".png";
 
         return fullName;
     }

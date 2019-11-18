@@ -33,17 +33,19 @@ public class PhotoAlbum : MonoBehaviour
     /// </summary>
     public      Canvas              m_canvas;
     public      Player              m_playerScript;
+    public      Camera              m_virtCam;
 
     // Start is called before the first frame update
     void Start()
     {
         m_picsFileNames = new List<string>();
-        m_fullpath = Application.persistentDataPath;
+        m_fullpath = Application.dataPath + "/Photos";
         m_isShowingAlbum = false;
         m_currPicIndex = 0;
         GetFileArray();
         m_photoOBJ = gameObject.GetComponentInChildren<RawImage>();
         m_journalEntries = new List<PhotoSubject>();
+        Debug.Log("start not skipped");
     }
 
     /// <summary>
@@ -56,6 +58,10 @@ public class PhotoAlbum : MonoBehaviour
         foreach (var file in picsInfo)
         {
             m_picsFileNames. Add(file.Name);
+        }
+        if (m_picsFileNames.Count != 0)
+        {
+            LoadIndexedPhotoToTexture();
         }
     }
 
@@ -79,8 +85,9 @@ public class PhotoAlbum : MonoBehaviour
         m_playerScript.enabled = !(status);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        GameObject.Find("CameraArmMain").GetComponent<Camera>().enabled = !(status);
-        GameObject.Find("VirtCamera").SetActive(status);
+        GameObject.Find("CameraArmMain").GetComponent<CameraController>().enabled = !(status);
+        m_virtCam.enabled = status;
+        if (status) { LoadIndexedPhotoToTexture(); }
     }
 
     // Update is called once per frame
@@ -159,5 +166,9 @@ public class PhotoAlbum : MonoBehaviour
     public void AddNewPhoto(string filename)
     {
         m_picsFileNames.Add(filename);
+        if(m_picsFileNames.Count == 1)
+        {
+            LoadIndexedPhotoToTexture();
+        }
     }
 }

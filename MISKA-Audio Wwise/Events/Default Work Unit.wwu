@@ -318,8 +318,30 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="MUSIC_Pause" ID="{221C666B-E0EF-4C84-829C-50F83B372BEF}">
+							<ChildrenList>
+								<Action Name="" ID="{C140B7F0-68D0-45C6-A363-10973D885F76}" ShortID="459655266">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Pause" ID="{33ACEA4E-9FE8-4C27-B264-0ED93D83925B}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="CMRA_Capture" ID="{D21A62FC-F253-4167-BB25-9A645F4613DE}">
+					<ChildrenList>
+						<Action Name="" ID="{A50EDD5E-0CBB-4C46-80B4-6DC6F7CB1098}" ShortID="1004530419">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Camera capture" ID="{9AA07679-FD6B-4672-BB55-853FF4C6D231}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

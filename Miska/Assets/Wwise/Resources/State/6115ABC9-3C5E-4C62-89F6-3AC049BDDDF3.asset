@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30548d4c154e4ea449d3053e7a779277, type: 3}
+  m_Name: 6115ABC9-3C5E-4C62-89F6-3AC049BDDDF3
+  m_EditorClassIdentifier: 
+  objectName: Journal
+  id: 3484357458
+  guid: 6115ABC9-3C5E-4C62-89F6-3AC049BDDDF3
+  WwiseStateGroupReference: {fileID: 11400000, guid: bf3b93c2299321b479bf2e7c2f840aec,
+    type: 2}

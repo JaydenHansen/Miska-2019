@@ -20,6 +20,9 @@ public enum JournalSubject                      //ADD LATER: Cleaned up areas, O
 public class PhotoSubject : MonoBehaviour
 {
     public      JournalSubject  m_subject;
+    public      bool            m_isActive;
+    public      AK.Wwise.Event  m_journalUpdateSound;
+
     private     RawImage        m_poloroid;
     private     Image           m_textImage;
     private     GameObject      m_journalEntry;
@@ -37,7 +40,7 @@ public class PhotoSubject : MonoBehaviour
     public      Sprite          m_renderedText;                       //Refers to the actual pre-rendered Image
     public      GameObject      m_uiIcon;
 
-    public      bool            m_isActive;
+
 
     // Start is called before the first frame update
     void Start()
@@ -120,7 +123,7 @@ public class PhotoSubject : MonoBehaviour
     /// <param name="entry">journal entry object contains photo & text image object</param>
     public void SetupPoloroid(string filename, GameObject entry) 
     {
-        if (entry == null) { break; }
+        if (entry == null) { return; }
         m_journalEntry = entry;
         m_journalEntry.SetActive(true);
         m_poloroid = entry.transform.Find("JournalPhoto").GetComponent<RawImage>();
@@ -145,6 +148,14 @@ public class PhotoSubject : MonoBehaviour
             Destroy(m_uiIcon);
         }
         
+    }
+
+    IEnumerator JournalUpdateAudio()
+    {
+        yield return new WaitForSeconds(0.7f);
+
+        m_journalUpdateSound.Post(gameObject);
+        yield return null;
     }
 }
 

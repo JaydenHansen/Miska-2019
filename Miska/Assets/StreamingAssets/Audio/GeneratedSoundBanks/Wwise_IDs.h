@@ -16,6 +16,7 @@ namespace AK
         static const AkUniqueID AMB_BED = 3587600583U;
         static const AkUniqueID BALLCOLLIDE = 3849891620U;
         static const AkUniqueID BEDAMB_WATERLAPS = 2574415040U;
+        static const AkUniqueID CMRA_CAPTURE = 4196882697U;
         static const AkUniqueID EMIT_BIRDS = 1054363565U;
         static const AkUniqueID EMIT_CICADAS = 1225233505U;
         static const AkUniqueID EMIT_DUCKS = 2870480783U;
@@ -24,6 +25,7 @@ namespace AK
         static const AkUniqueID MINI_GOAL = 3549721850U;
         static const AkUniqueID MINI_STEP = 3430316605U;
         static const AkUniqueID MUSIC_DUCKSPOI = 1288184563U;
+        static const AkUniqueID MUSIC_PAUSE = 2895066125U;
         static const AkUniqueID MUSIC_ROCKSPOI = 1422345279U;
         static const AkUniqueID MUSIC_STATIONPOI = 3415218025U;
         static const AkUniqueID OBJ_FOSSILPOI = 4108701605U;
@@ -46,8 +48,7 @@ namespace AK
 
             namespace STATE
             {
-                static const AkUniqueID JOURNAL = 3484357458U;
-                static const AkUniqueID SITTING = 3353412347U;
+                static const AkUniqueID PAUSED = 319258907U;
                 static const AkUniqueID WALKING = 340271938U;
             } // namespace STATE
         } // namespace PLAYERSTATE

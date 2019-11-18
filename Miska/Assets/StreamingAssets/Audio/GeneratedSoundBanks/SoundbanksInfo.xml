@@ -19,6 +19,7 @@
 				<Event Id="3587600583" Name="AMB_Bed" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\AMB_Bed"/>
 				<Event Id="3849891620" Name="BallCollide" ObjectPath="\Events\Default Work Unit\LOCAL\BallCollide"/>
 				<Event Id="2574415040" Name="BEDAMB_WaterLaps" ObjectPath="\Events\Default Work Unit\LOCAL\DUCKS\BEDAMB_WaterLaps"/>
+				<Event Id="4196882697" Name="CMRA_Capture" ObjectPath="\Events\Default Work Unit\CMRA_Capture"/>
 				<Event Id="1054363565" Name="EMIT_Birds" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Birds"/>
 				<Event Id="1225233505" Name="EMIT_Cicadas" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Cicadas"/>
 				<Event Id="2870480783" Name="EMIT_Ducks" ObjectPath="\Events\Default Work Unit\LOCAL\DUCKS\EMIT_Ducks"/>
@@ -27,6 +28,7 @@
 				<Event Id="3549721850" Name="MINI_Goal" ObjectPath="\Events\Default Work Unit\MINIGAME\MINI_Goal"/>
 				<Event Id="3430316605" Name="MINI_Step" ObjectPath="\Events\Default Work Unit\MINIGAME\MINI_Step"/>
 				<Event Id="1288184563" Name="MUSIC_DucksPOI" ObjectPath="\Events\Default Work Unit\MUSIC\MUSIC_DucksPOI"/>
+				<Event Id="2895066125" Name="MUSIC_Pause" ObjectPath="\Events\Default Work Unit\MUSIC\MUSIC_Pause"/>
 				<Event Id="1422345279" Name="MUSIC_RocksPOI" ObjectPath="\Events\Default Work Unit\MUSIC\MUSIC_RocksPOI"/>
 				<Event Id="3415218025" Name="MUSIC_StationPOI" ObjectPath="\Events\Default Work Unit\MUSIC\MUSIC_StationPOI"/>
 				<Event Id="4108701605" Name="OBJ_FossilPOI" ObjectPath="\Events\Default Work Unit\LOCAL\ROCKS\OBJ_FossilPOI"/>
@@ -223,7 +225,7 @@
 				</File>
 				<File Id="520141947" Language="SFX">
 					<ShortName>forest BED.wav</ShortName>
-					<Path>SFX\forest BED_10C4C929.wem</Path>
+					<Path>SFX\forest BED_D79FB2B7.wem</Path>
 				</File>
 				<File Id="536595712" Language="SFX">
 					<ShortName>Levers_Sliders_227-ss.wav</ShortName>
@@ -288,6 +290,10 @@
 				<File Id="795907594" Language="SFX">
 					<ShortName>bottle collect.wav</ShortName>
 					<Path>SFX\bottle collect_10C4C929.wem</Path>
+				</File>
+				<File Id="805016516" Language="SFX">
+					<ShortName>capture1.wav</ShortName>
+					<Path>SFX\capture1_872ABD34.wem</Path>
 				</File>
 				<File Id="812160932" Language="SFX">
 					<ShortName>slaty flycatcher song- halmahera 091006.wav</ShortName>
@@ -372,6 +378,10 @@
 				<File Id="1046108882" Language="SFX">
 					<ShortName>grasswalk2.wav</ShortName>
 					<Path>SFX\grasswalk2_10C4C929.wem</Path>
+				</File>
+				<File Id="1046527570" Language="SFX">
+					<ShortName>pause music.wav</ShortName>
+					<Path>SFX\pause music_D79FB2B7.wem</Path>
 				</File>
 				<File Id="1058375346" Language="SFX">
 					<ShortName>dog_walk1.wav</ShortName>

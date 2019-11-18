@@ -3,9 +3,8 @@ State Group	ID	Name			Wwise Object Path	Notes
 
 State	ID	Name	State Group			Notes
 	0	None	PlayerState			
+	319258907	Paused	PlayerState			
 	340271938	Walking	PlayerState			
-	3353412347	Sitting	PlayerState			
-	3484357458	Journal	PlayerState			
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	

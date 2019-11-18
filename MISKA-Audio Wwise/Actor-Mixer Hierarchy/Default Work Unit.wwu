@@ -64,7 +64,22 @@
 												</Folder>
 												<Folder Name="GARBAGE" ID="{0173D0DA-1FBB-47C5-BA09-829F78F925D8}" ShortID="634903326">
 													<ChildrenList>
-														<Folder Name="pickup" ID="{40D6ADCC-8809-4C06-9192-E0CDFF222576}" ShortID="796302631">
+														<ActorMixer Name="Pcik up" ID="{829473D3-8B53-4A15-B26E-B2DE0B76DC36}" ShortID="646717734">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-9</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																</Reference>
+															</ReferenceList>
 															<ChildrenList>
 																<RandomSequenceContainer Name="Can" ID="{2ED25347-2D82-4A81-A4A2-86B0C5372AD7}" ShortID="15264193">
 																	<PropertyList>
@@ -396,12 +411,12 @@
 																	</ChildrenList>
 																</RandomSequenceContainer>
 															</ChildrenList>
-														</Folder>
+														</ActorMixer>
 													</ChildrenList>
 												</Folder>
 												<Folder Name="CAMERA" ID="{4C9523CC-D341-4092-977B-15DB3F3DFC45}" ShortID="810293081">
 													<ChildrenList>
-														<RandomSequenceContainer Name="New Random Container" ID="{9AA07679-FD6B-4672-BB55-853FF4C6D231}" ShortID="1046108895">
+														<RandomSequenceContainer Name="Camera capture" ID="{9AA07679-FD6B-4672-BB55-853FF4C6D231}" ShortID="1046108895">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
@@ -410,6 +425,62 @@
 																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
 																</Reference>
 															</ReferenceList>
+															<ChildrenList>
+																<Sound Name="capture1" ID="{F809B723-351D-4DC8-924A-D3377F61406E}" ShortID="378772004">
+																	<PropertyList>
+																		<Property Name="Pitch" Type="int32">
+																			<ModifierList>
+																				<ModifierInfo>
+																					<Modifier Name="" ID="{EFD55097-6400-4B5A-A4EB-28B5F9497EE0}">
+																						<PropertyList>
+																							<Property Name="Enabled" Type="bool" Value="True"/>
+																							<Property Name="Max" Type="Real64" Value="328"/>
+																							<Property Name="Min" Type="Real64" Value="-379"/>
+																						</PropertyList>
+																					</Modifier>
+																				</ModifierInfo>
+																			</ModifierList>
+																		</Property>
+																		<Property Name="Volume" Type="Real64">
+																			<ValueList>
+																				<Value>-5</Value>
+																			</ValueList>
+																			<ModifierList>
+																				<ModifierInfo>
+																					<Modifier Name="" ID="{971D0B2D-4EFE-4EBF-ADFC-73F7CC987B95}">
+																						<PropertyList>
+																							<Property Name="Enabled" Type="bool" Value="True"/>
+																							<Property Name="Max" Type="Real64" Value="1"/>
+																							<Property Name="Min" Type="Real64" Value="-2"/>
+																						</PropertyList>
+																					</Modifier>
+																				</ModifierInfo>
+																			</ModifierList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="capture1" ID="{872EA3B7-6308-401A-B1E5-BE6CE0EAF614}" ShortID="805016516">
+																			<PropertyList>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																				<Property Name="TrimBegin" Type="Real64" Value="2.09059112229366"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>capture1.wav</AudioFile>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="capture1" ID="{872EA3B7-6308-401A-B1E5-BE6CE0EAF614}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+															</ChildrenList>
 														</RandomSequenceContainer>
 													</ChildrenList>
 												</Folder>
@@ -1847,6 +1918,13 @@
 							</ChildrenList>
 						</Folder>
 						<ActorMixer Name="AMBIENCE" ID="{2EB473F9-AD11-4CF8-9C50-87772FA15338}" ShortID="559218032">
+							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>24</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
@@ -2234,7 +2312,7 @@
 								</StateGroupList>
 								<CustomStateList>
 									<CustomState>
-										<StateRef Name="Sitting" ID="{7957FA1A-2BFC-4208-BA73-14228E9E0BE6}"/>
+										<StateRef Name="Paused" ID="{7957FA1A-2BFC-4208-BA73-14228E9E0BE6}"/>
 										<CustomState Name="" ID="{99B57CB8-469B-4A72-9616-BC6A3B9AE9DE}" ShortID="949563131">
 											<PropertyList>
 												<Property Name="Highpass" Type="int16" Value="7"/>
@@ -2244,18 +2322,8 @@
 										</CustomState>
 									</CustomState>
 									<CustomState>
-										<StateRef Name="Journal" ID="{9715A2F6-D386-45BC-92C0-B99622ABB9E9}"/>
-										<CustomState Name="" ID="{CA75097D-B00F-4211-BA38-EC59CC81BFB0}" ShortID="745928592">
-											<PropertyList>
-												<Property Name="Highpass" Type="int16" Value="22"/>
-												<Property Name="Lowpass" Type="int16" Value="31"/>
-												<Property Name="MakeUpGain" Type="Real64" Value="-14"/>
-											</PropertyList>
-										</CustomState>
-									</CustomState>
-									<CustomState>
-										<StateRef Name="Walking" ID="{6115ABC9-3C5E-4C62-89F6-3AC049BDDDF3}"/>
-										<CustomState Name="" ID="{A055B3CC-DD5E-49AC-8F69-63FC37392341}" ShortID="144202977"/>
+										<StateRef Name="Walking" ID="{9715A2F6-D386-45BC-92C0-B99622ABB9E9}"/>
+										<CustomState Name="" ID="{CA75097D-B00F-4211-BA38-EC59CC81BFB0}" ShortID="745928592"/>
 									</CustomState>
 								</CustomStateList>
 							</StateInfo>
@@ -3634,7 +3702,7 @@
 						</StateGroupList>
 						<CustomStateList>
 							<CustomState>
-								<StateRef Name="Sitting" ID="{7957FA1A-2BFC-4208-BA73-14228E9E0BE6}"/>
+								<StateRef Name="Paused" ID="{7957FA1A-2BFC-4208-BA73-14228E9E0BE6}"/>
 								<CustomState Name="" ID="{8AECB97C-0358-4B2C-B332-751699777BFA}" ShortID="571067494">
 									<PropertyList>
 										<Property Name="Lowpass" Type="int16" Value="15"/>
@@ -3642,12 +3710,8 @@
 								</CustomState>
 							</CustomState>
 							<CustomState>
-								<StateRef Name="Journal" ID="{9715A2F6-D386-45BC-92C0-B99622ABB9E9}"/>
+								<StateRef Name="Walking" ID="{9715A2F6-D386-45BC-92C0-B99622ABB9E9}"/>
 								<CustomState Name="" ID="{39A697BE-554B-49FA-9F32-2485F4379D4F}" ShortID="917599653"/>
-							</CustomState>
-							<CustomState>
-								<StateRef Name="Walking" ID="{6115ABC9-3C5E-4C62-89F6-3AC049BDDDF3}"/>
-								<CustomState Name="" ID="{FE99EBE3-C6BE-4730-9B16-CEE3E22B6C83}" ShortID="299226017"/>
 							</CustomState>
 						</CustomStateList>
 					</StateInfo>

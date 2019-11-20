@@ -6,10 +6,12 @@
 				<SoundBank Name="BNK_Global" ID="{542750B9-22AC-4295-95C7-55CE9571FE56}">
 					<ObjectInclusionList>
 						<ObjectRef Name="GLOBAL" ID="{C41DE8B2-A957-4042-ACBD-47B6DF2A616A}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="MUSIC" ID="{134D8226-718D-43C6-9743-28A92616FC42}" WorkUnitID="{EEAABAC8-E09E-4265-99BD-B315B882E069}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="MUSIC_DucksPOI" ID="{353E74DB-F13E-4800-984A-6C1943C243B4}" WorkUnitID="{EEAABAC8-E09E-4265-99BD-B315B882E069}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="MUSIC_StationPOI" ID="{7F46B51B-6BD2-4907-AE0A-415E72DD81D9}" WorkUnitID="{EEAABAC8-E09E-4265-99BD-B315B882E069}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Pause" ID="{33ACEA4E-9FE8-4C27-B264-0ED93D83925B}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="MUSIC_Pause" ID="{221C666B-E0EF-4C84-829C-50F83B372BEF}" WorkUnitID="{EEAABAC8-E09E-4265-99BD-B315B882E069}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="FLWR_Growth" ID="{2358088E-2699-4CB9-8B23-AA0D243BD8E6}" WorkUnitID="{EEAABAC8-E09E-4265-99BD-B315B882E069}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_CNNWLK_Grass" ID="{72964A1C-C518-4CF3-B2C0-438168CCF621}" WorkUnitID="{EEAABAC8-E09E-4265-99BD-B315B882E069}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="MUSIC_RocksPOI" ID="{8DCA17E2-7B9A-4FED-AADB-97AEEC473603}" WorkUnitID="{EEAABAC8-E09E-4265-99BD-B315B882E069}" Filter="7" Origin="Manual"/>
 					</ObjectInclusionList>

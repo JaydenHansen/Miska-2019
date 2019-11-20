@@ -3509,6 +3509,82 @@
 										</Sound>
 									</ChildrenList>
 								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Growth" ID="{9A948329-032F-4260-B42E-265BA021AD54}" ShortID="799116077">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-13</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="growup one" ID="{30707323-CF3D-4434-A184-FD48EA9BBA54}" ShortID="843634983">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="growup one" ID="{875A7B2B-AA47-4B4C-9006-242441136009}" ShortID="870865937">
+													<Language>SFX</Language>
+													<AudioFile>growup one.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="growup one" ID="{875A7B2B-AA47-4B4C-9006-242441136009}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="growup three" ID="{05A41D68-B9D1-40BD-A4CD-68928B728103}" ShortID="640545990">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="growup three" ID="{5395F877-A72E-4804-B435-77A17A839528}" ShortID="388162527">
+													<Language>SFX</Language>
+													<AudioFile>growup three.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="growup three" ID="{5395F877-A72E-4804-B435-77A17A839528}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="growup two" ID="{74D9AA69-60A2-4BD5-A09A-0D3855FE4517}" ShortID="96403493">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BEB96F9-C13A-4F53-962F-D1D66A91AF36}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53F336C8-4745-4A7A-B19E-8EE120A18E42}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="growup two" ID="{5EB37CAA-81B1-482B-BBEE-662D5368DE1B}" ShortID="433090068">
+													<Language>SFX</Language>
+													<AudioFile>growup two.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="growup two" ID="{5EB37CAA-81B1-482B-BBEE-662D5368DE1B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="MINIGAME" ID="{3A26DB7C-7B69-407C-8925-F920D05F53C7}" ShortID="511638441">

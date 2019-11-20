@@ -21,6 +21,7 @@ namespace AK
         static const AkUniqueID EMIT_CICADAS = 1225233505U;
         static const AkUniqueID EMIT_DUCKS = 2870480783U;
         static const AkUniqueID EMIT_RIVER = 1862066479U;
+        static const AkUniqueID FLWR_GROWTH = 2690494U;
         static const AkUniqueID MINI_FAIL = 603583975U;
         static const AkUniqueID MINI_GOAL = 3549721850U;
         static const AkUniqueID MINI_STEP = 3430316605U;
@@ -37,6 +38,8 @@ namespace AK
         static const AkUniqueID PLAY_CNNWLK_GRASS = 721889916U;
         static const AkUniqueID PLAY_TYPEWRITER_SLIDES = 398727428U;
         static const AkUniqueID PLYR_FOOTSTEP = 4254456693U;
+        static const AkUniqueID STATE_PAUSE = 106931287U;
+        static const AkUniqueID STATE_WALK = 1494321432U;
         static const AkUniqueID UI_STAMP = 866718607U;
     } // namespace EVENTS
 

@@ -16,6 +16,8 @@ public class PlantDisolve : MonoBehaviour
     float m_timer;
     float[] m_dissolveOffsets;
 
+    public AK.Wwise.Event m_growthAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +65,7 @@ public class PlantDisolve : MonoBehaviour
             m_timer = 0;
             m_active = true;
             m_alreadyActivated = true;
+            m_growthAudio.Post(gameObject);
         }
     }
 }

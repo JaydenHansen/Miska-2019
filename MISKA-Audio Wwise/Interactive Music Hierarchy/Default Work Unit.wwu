@@ -760,7 +760,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-12</Value>
+								<Value>-19</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -776,7 +776,17 @@
 						<MusicSegment Name="pause music" ID="{6BC09936-8591-4398-A588-1CE589E4DA63}" ShortID="634079214">
 							<PropertyList>
 								<Property Name="EndPosition" Type="Real64" Value="20941.6833385432"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>23</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Tempo" Type="Real64" Value="89"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-25</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -864,12 +874,19 @@
 						</StateGroupList>
 						<CustomStateList>
 							<CustomState>
+								<StateRef Name="Paused" ID="{7957FA1A-2BFC-4208-BA73-14228E9E0BE6}"/>
+								<CustomState Name="" ID="{5B487EE5-1412-40C8-A1CF-6CB4629CA722}" ShortID="55575594">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16" Value="-60"/>
+										<Property Name="Volume" Type="Real64" Value="31"/>
+									</PropertyList>
+								</CustomState>
+							</CustomState>
+							<CustomState>
 								<StateRef Name="Walking" ID="{9715A2F6-D386-45BC-92C0-B99622ABB9E9}"/>
 								<CustomState Name="" ID="{A37357FF-0F16-4115-AC34-1005DEA6EFBA}" ShortID="199371865">
 									<PropertyList>
 										<Property Name="Highpass" Type="int16" Value="26"/>
-										<Property Name="Lowpass" Type="int16" Value="37"/>
-										<Property Name="Volume" Type="Real64" Value="-55"/>
 									</PropertyList>
 								</CustomState>
 							</CustomState>

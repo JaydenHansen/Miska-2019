@@ -24,6 +24,7 @@
 				<Event Id="1225233505" Name="EMIT_Cicadas" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_Cicadas"/>
 				<Event Id="2870480783" Name="EMIT_Ducks" ObjectPath="\Events\Default Work Unit\LOCAL\DUCKS\EMIT_Ducks"/>
 				<Event Id="1862066479" Name="EMIT_River" ObjectPath="\Events\Default Work Unit\GLOBAL\AMBIENCE\EMITTERS\EMIT_River"/>
+				<Event Id="2690494" Name="FLWR_Growth" ObjectPath="\Events\Default Work Unit\FLWR_Growth"/>
 				<Event Id="603583975" Name="MINI_Fail" ObjectPath="\Events\Default Work Unit\MINIGAME\MINI_Fail"/>
 				<Event Id="3549721850" Name="MINI_Goal" ObjectPath="\Events\Default Work Unit\MINIGAME\MINI_Goal"/>
 				<Event Id="3430316605" Name="MINI_Step" ObjectPath="\Events\Default Work Unit\MINIGAME\MINI_Step"/>
@@ -40,6 +41,8 @@
 				<Event Id="721889916" Name="Play_CNNWLK_Grass" ObjectPath="\Events\Default Work Unit\GLOBAL\Play_CNNWLK_Grass"/>
 				<Event Id="398727428" Name="Play_Typewriter_Slides" ObjectPath="\Events\Default Work Unit\Play_Typewriter_Slides"/>
 				<Event Id="4254456693" Name="PLYR_Footstep" ObjectPath="\Events\Default Work Unit\GLOBAL\PLAYER\PLYR_Footstep"/>
+				<Event Id="106931287" Name="STATE_Pause" ObjectPath="\Events\Default Work Unit\MUSIC\STATE_Pause"/>
+				<Event Id="1494321432" Name="STATE_Walk" ObjectPath="\Events\Default Work Unit\MUSIC\STATE_Walk"/>
 				<Event Id="866718607" Name="UI_Stamp" ObjectPath="\Events\Default Work Unit\GLOBAL\UI\UI_Stamp"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
@@ -179,6 +182,10 @@
 					<ShortName>station poi trans.wav</ShortName>
 					<Path>SFX\station poi trans_D79FB2B7.wem</Path>
 				</File>
+				<File Id="388162527" Language="SFX">
+					<ShortName>growup three.wav</ShortName>
+					<Path>SFX\growup three_10C4C929.wem</Path>
+				</File>
 				<File Id="389985573" Language="SFX">
 					<ShortName>fail.wav</ShortName>
 					<Path>SFX\fail_10C4C929.wem</Path>
@@ -202,6 +209,10 @@
 				<File Id="415327098" Language="SFX">
 					<ShortName>grassrun1.wav</ShortName>
 					<Path>SFX\grassrun1_10C4C929.wem</Path>
+				</File>
+				<File Id="433090068" Language="SFX">
+					<ShortName>growup two.wav</ShortName>
+					<Path>SFX\growup two_10C4C929.wem</Path>
 				</File>
 				<File Id="459083089" Language="SFX">
 					<ShortName>bottle collect2.wav</ShortName>
@@ -293,7 +304,7 @@
 				</File>
 				<File Id="805016516" Language="SFX">
 					<ShortName>capture1.wav</ShortName>
-					<Path>SFX\capture1_872ABD34.wem</Path>
+					<Path>SFX\capture1_999230FB.wem</Path>
 				</File>
 				<File Id="812160932" Language="SFX">
 					<ShortName>slaty flycatcher song- halmahera 091006.wav</ShortName>
@@ -326,6 +337,10 @@
 				<File Id="850930565" Language="SFX">
 					<ShortName>Dog akita puppy whine breathy short_BLASTWAVEFX_10305.wav</ShortName>
 					<Path>SFX\Dog akita puppy whine breathy short_BLASTWAVEFX_10305_10C4C929.wem</Path>
+				</File>
+				<File Id="870865937" Language="SFX">
+					<ShortName>growup one.wav</ShortName>
+					<Path>SFX\growup one_10C4C929.wem</Path>
 				</File>
 				<File Id="889890054" Language="SFX">
 					<ShortName>canteen_walk3.wav</ShortName>

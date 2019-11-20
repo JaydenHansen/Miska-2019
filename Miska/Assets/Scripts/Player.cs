@@ -147,25 +147,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Set the state of the player sitting
-    /// </summary>
-    /// <param name="isSitting">if the player is sitting</param>
-    public void SetPlayerSitting(bool isSitting)
-    {
-        if (isSitting)
-        {
-            // change the sound and animation state to sitting
-            AkSoundEngine.SetState("PlayerState", "Sitting");
-            Animator anim = GameObject.Find("Headbob").GetComponent<Animator>();
-            anim.SetTrigger("Sitting");
-        }
-        else
-        {
-            AkSoundEngine.SetState("PlayerState", "Walking");
-        }
-    }
-
 
     //private void OnControllerColliderHit(ControllerColliderHit hit)
     //{

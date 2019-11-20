@@ -320,10 +320,48 @@
 						</Event>
 						<Event Name="MUSIC_Pause" ID="{221C666B-E0EF-4C84-829C-50F83B372BEF}">
 							<ChildrenList>
+								<Action Name="" ID="{D0A2C88D-C89C-4475-A3C6-E0E4703A147B}" ShortID="474943868">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Walking" ID="{9715A2F6-D386-45BC-92C0-B99622ABB9E9}" WorkUnitID="{8672F440-5967-4347-8A6B-0F966D807484}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{C140B7F0-68D0-45C6-A363-10973D885F76}" ShortID="459655266">
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Pause" ID="{33ACEA4E-9FE8-4C27-B264-0ED93D83925B}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="STATE_Pause" ID="{54BE3B76-8804-45EB-8F2C-067B7A0E810E}">
+							<ChildrenList>
+								<Action Name="" ID="{12710D42-DBC7-4937-B8DD-070193D62EF2}" ShortID="140625778">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Paused" ID="{7957FA1A-2BFC-4208-BA73-14228E9E0BE6}" WorkUnitID="{8672F440-5967-4347-8A6B-0F966D807484}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="STATE_Walk" ID="{AEAC44EB-5147-4C29-BDD3-93CE64C1B0BD}">
+							<ChildrenList>
+								<Action Name="" ID="{D9C78C58-3F33-4D94-8DF3-BAA6AA9612EE}" ShortID="924475915">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Walking" ID="{9715A2F6-D386-45BC-92C0-B99622ABB9E9}" WorkUnitID="{8672F440-5967-4347-8A6B-0F966D807484}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -337,6 +375,17 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Camera capture" ID="{9AA07679-FD6B-4672-BB55-853FF4C6D231}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="FLWR_Growth" ID="{2358088E-2699-4CB9-8B23-AA0D243BD8E6}">
+					<ChildrenList>
+						<Action Name="" ID="{C16A70A2-0E2F-44C9-9236-C9BCA7F73466}" ShortID="813712010">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Growth" ID="{9A948329-032F-4260-B42E-265BA021AD54}" WorkUnitID="{BDAA91F6-9A2A-409E-A0E4-928550375B6B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

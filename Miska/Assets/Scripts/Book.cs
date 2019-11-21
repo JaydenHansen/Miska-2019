@@ -260,6 +260,32 @@ public class Book : MonoBehaviour
     }
 
     /// <summary>
+    /// Closes the book (for Photo Album)
+    /// </summary>
+    public void OnPhotoGallery()
+    {
+        transform.GetChild(0).gameObject.SetActive(false); // disables the book mesh
+
+        // disable pages
+        m_staticLeftPage.SetActive(false);
+        m_staticRightPage.SetActive(false);
+        foreach (GameObject page in m_pages)
+            page.SetActive(false);
+        if (m_nextPageButton)
+            m_nextPageButton.SetActive(false);
+        if (m_prevPageButton)
+            m_prevPageButton.SetActive(false);
+        m_open = false;
+
+        if (m_zoomed) // if the player had zoomed into the map reset the position of the book
+        {
+            AnimationClip zoomReverse = m_animation.GetClip("Book_Zoom_Reverse_001");
+            zoomReverse.SampleAnimation(gameObject, zoomReverse.length);
+            m_zoomed = false;
+        }
+    }
+
+    /// <summary>
     /// Toggle between zooming into the book
     /// </summary>
     public void LeftZoom()
@@ -465,6 +491,7 @@ public class Book : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameObject.Find("Screen Capture").GetComponent<PhotoMode>().ResetPhotoData();
     }
   
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
 	<RootPaths>
-		<ProjectRoot>D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\</ProjectRoot>
-		<SourceFilesRoot>D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Games Making\MISKA\Miska-2019\Miska\Assets\StreamingAssets\Audio\GeneratedSoundBanks\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\s182378\Documents\Miska-2019\MISKA-Audio Wwise\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\s182378\Documents\Miska-2019\MISKA-Audio Wwise\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\s182378\Documents\Miska-2019\Miska\Assets\StreamingAssets\Audio\GeneratedSoundBanks\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Games Making\MISKA\Miska-2019\MISKA-Audio Wwise\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\s182378\Documents\Miska-2019\MISKA-Audio Wwise\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -32,6 +32,7 @@
 				<Event Id="2895066125" Name="MUSIC_Pause" ObjectPath="\Events\Default Work Unit\MUSIC\MUSIC_Pause"/>
 				<Event Id="1422345279" Name="MUSIC_RocksPOI" ObjectPath="\Events\Default Work Unit\MUSIC\MUSIC_RocksPOI"/>
 				<Event Id="3415218025" Name="MUSIC_StationPOI" ObjectPath="\Events\Default Work Unit\MUSIC\MUSIC_StationPOI"/>
+				<Event Id="3561587775" Name="MUSIC_StopPOI" ObjectPath="\Events\Default Work Unit\MUSIC\MUSIC_StopPOI"/>
 				<Event Id="4108701605" Name="OBJ_FossilPOI" ObjectPath="\Events\Default Work Unit\LOCAL\ROCKS\OBJ_FossilPOI"/>
 				<Event Id="2331991283" Name="OBJ_PickupCan" ObjectPath="\Events\Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_PickupCan"/>
 				<Event Id="2542323829" Name="OBJ_PickupChipPacket" ObjectPath="\Events\Default Work Unit\GLOBAL\OBJECT\GARBAGE\OBJ_PickupChipPacket"/>

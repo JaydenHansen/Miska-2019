@@ -367,6 +367,40 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="MUSIC_StopPOI" ID="{22FC7649-2A92-42D6-B8F4-DF0C4D4CD1A9}">
+							<ChildrenList>
+								<Action Name="" ID="{8681774C-142A-48A0-BB5B-53DAB8F06FBD}" ShortID="1049286180">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="duck POI" ID="{C79EAC2B-9AA6-48D7-9606-7B7842409C65}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{89497D92-364D-4551-9C85-E1B0C7983109}" ShortID="426360333">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Rock POI" ID="{A1CF2F20-BAF2-4F7D-9397-AB23DFB8C6B4}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{F27B6DE3-A80E-4F5A-8EB3-DEAD93EB5952}" ShortID="611602395">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Station POI" ID="{9935C347-2D53-42CA-9D35-84D51E1705BD}" WorkUnitID="{E6CFB16B-EA67-45F6-BA62-79AAC8207EC3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Event Name="CMRA_Capture" ID="{D21A62FC-F253-4167-BB25-9A645F4613DE}">

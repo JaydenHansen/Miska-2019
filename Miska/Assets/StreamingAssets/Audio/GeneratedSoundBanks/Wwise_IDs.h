@@ -29,6 +29,7 @@ namespace AK
         static const AkUniqueID MUSIC_PAUSE = 2895066125U;
         static const AkUniqueID MUSIC_ROCKSPOI = 1422345279U;
         static const AkUniqueID MUSIC_STATIONPOI = 3415218025U;
+        static const AkUniqueID MUSIC_STOPPOI = 3561587775U;
         static const AkUniqueID OBJ_FOSSILPOI = 4108701605U;
         static const AkUniqueID OBJ_PICKUPCAN = 2331991283U;
         static const AkUniqueID OBJ_PICKUPCHIPPACKET = 2542323829U;

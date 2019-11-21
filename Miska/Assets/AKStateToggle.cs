@@ -10,6 +10,8 @@ public class AKStateToggle : MonoBehaviour
     [Tooltip("List of states, put default (runs on scene load) at top")]
     public AK.Wwise.Event[] m_stateEvents;
 
+    public AK.Wwise.Event[] m_stopEvents;
+
     /// <summary>
     /// Sets up the default state
     /// </summary>
@@ -27,6 +29,14 @@ public class AKStateToggle : MonoBehaviour
         if(m_stateEvents[i].IsValid())
         {
             m_stateEvents[i].Post(gameObject);
+        }
+    }
+
+    public void StopMusic()
+    {
+        foreach (var stop in m_stopEvents)
+        {
+            stop.Post(gameObject);
         }
     }
 }

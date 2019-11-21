@@ -22,13 +22,13 @@ public class PhotoMode : MonoBehaviour
     private         List<PhotoSubject>  m_capturedSubjects;
     private         List<PhotoSubject>  m_allSubjects;
 
-    public          GameObject          m_entry1,   m_entry2,   m_entry3; //Replace with array!!
+    public          GameObject          m_entry1,   m_entry2,   m_entry3; 
     public          PhotoSubject        m_subj1,    m_subj2,    m_subj3;
 
     public          HUD_UI              m_HUDUI;
     public          AK.Wwise.Event      m_captureSound;
 
-    private void Start()
+    private void Awake()
     {
         m_photoModeActive = false;
         m_photoOverlay = GameObject.Find("Photo_Overlay");
@@ -107,14 +107,32 @@ public class PhotoMode : MonoBehaviour
     /// <summary>
     /// Creates a file name string
     /// </summary>
-    private static string GenerateFileName()
+    private static string GenerateFileName(bool valid, PhotoSubject subject)
     {
+        string prefix = "";
 
-        string folderPath = Application.dataPath + "/Photos";
+        if (valid)
+        {
+            var picOBJ = subject.getSubject();
+            if (picOBJ == JournalSubject.LOC_River)
+            {
+                prefix = "RIV";
+            }
+            else if (picOBJ == JournalSubject.LOC_Fireflies)
+            {
+                prefix = "FLY";
+            }
+            else if (picOBJ == JournalSubject.LOC_DuckPond)
+            {
+                prefix = "DCK";
+            }
+        }
+
+        string folderPath = Application.persistentDataPath + "/Photos";
         DateTime now = DateTime.Now;
         string dt = now.Day.ToString() + "-" + now.Month.ToString() + "-" + now.Year.ToString() + " " + now.Hour.ToString() + "-" + now.Minute.ToString() + "-" + now.Second.ToString();
 
-        string fullName = folderPath + "/" + dt + ".png";
+        string fullName = folderPath + "/" + prefix + dt + ".png";
 
         return fullName;
     }
@@ -144,38 +162,18 @@ public class PhotoMode : MonoBehaviour
         byte[] bytes;
         bytes = virtualPhoto.EncodeToPNG();                                                     //Encoded to png File
 
-        string filename = GenerateFileName();
+        (bool isValidated, PhotoSubject subj) = isPhotoJournalValid();
+
+        string filename = GenerateFileName(isValidated, subj);
 
         System.IO.File.WriteAllBytes(filename, bytes);                                          //Saved to system
 
-        (bool isValidated, PhotoSubject subj) = isPhotoJournalValid();
+
 
 
         if (isValidated)
         {
-            GameObject journalOBJ;
-            bool poloroidFound = false;
-            foreach (var lstdPhotos in m_capturedSubjects)  //For loop checks that there is no photo has been taken of the subject
-            {
-                if (lstdPhotos == subj)
-                {
-                    journalOBJ = subj.getJournalEntry();
-                    poloroidFound = true;
-                }
-            }
-
-            if(!poloroidFound)                              //if no photo has been taken previous, add subject to captured list, and get next journal entry
-            {
-                m_capturedSubjects.Add(subj);
-                journalOBJ = GetJournalEntry();
-            }
-            else                                            //Otherwise no 
-            {
-                journalOBJ = null;
-            }
-
-            subj.SetupPoloroid(filename, journalOBJ);
-                //Run "journal alert"
+            AttachToJournal(subj, filename);
         }
         else
         {
@@ -183,10 +181,52 @@ public class PhotoMode : MonoBehaviour
         }
     }
 
+    public void AttachToJournal(PhotoSubject subj, string filename)
+    {
+        GameObject journalOBJ;
+        bool poloroidFound = false;
+        foreach (var lstdPhotos in m_capturedSubjects)  //For loop checks that there is no photo has been taken of the subject
+        {
+            if (lstdPhotos == subj)
+            {
+                journalOBJ = subj.getJournalEntry();
+                poloroidFound = true;
+            }
+        }
+
+        if (!poloroidFound)                              //if no photo has been taken previous, add subject to captured list, and get next journal entry
+        {
+            m_capturedSubjects.Add(subj);
+            journalOBJ = GetNextAvailableJournalEntry();
+        }
+        else                                            //Otherwise don't provide a journal object 
+        {
+            journalOBJ = null;
+        }
+
+        subj.SetupPoloroid(filename, journalOBJ);
+        //Run "journal alert"
+    }
+
+    /// <summary>
+    /// Loading in photos from file and appending to journal entry
+    /// </summary>
+    /// <param name="js">subject of the journal photo</param>
+    /// <param name="fi">file info of the import photo</param>
+    public void LoadInJournalEntry(JournalSubject js, FileInfo fi)
+    {
+        int num = m_capturedSubjects.Count;
+        PhotoSubject ps = m_allSubjects[num];
+        m_capturedSubjects.Add(ps);
+        GameObject journalOBJ = GetNextAvailableJournalEntry();
+        ps.SetupPoloroid(fi.Name, journalOBJ);
+
+    }
+
     /// <summary>
     /// Finds next available Journal Entry object (which contains text and photo image objects
     /// </summary>
-    GameObject GetJournalEntry()
+    GameObject GetNextAvailableJournalEntry()
     {
         int count = m_capturedSubjects.Count;
 
@@ -243,5 +283,14 @@ public class PhotoMode : MonoBehaviour
             tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
         }
         return tex;
+    }
+
+    public void ResetPhotoData()
+    {
+        m_entry1.SetActive(false);
+        m_entry2.SetActive(false);
+        m_entry3.SetActive(false);
+        m_photoAlbum.ResetPhotos();
+        GameObject.Find("AudioEmiters/BedAmb").GetComponent<AKStateToggle>().StopMusic();
     }
 }

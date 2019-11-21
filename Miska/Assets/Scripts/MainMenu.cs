@@ -21,6 +21,7 @@ public class MainMenu : MonoBehaviour
     bool m_isLoadingNow;
     float m_bookOpenTimer;
     bool m_bookOpening;
+    public PhotoMode m_photoMode;
 
     // Start is called before the first frame update
     void Start()
@@ -139,6 +140,9 @@ public class MainMenu : MonoBehaviour
             StartCoroutine(LoadScene(1, false));
             m_isLoadingNow = true;
         }
+        m_photoMode.enabled = true;
+        m_photoMode.ResetPhotoData();
+
     }
 
     /// <summary>

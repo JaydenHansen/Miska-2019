@@ -11,17 +11,17 @@ using UnityEngine.UI;
 public class PhotoAlbum : MonoBehaviour
 {
     
-    private     string              m_fullpath;
+    private     DirectoryInfo       m_photoDirectory;
     /// <summary>
     /// Array of all pictures in fullpath folder
     /// </summary>
-    private     List<string>        m_picsFileNames;
+    private     List<FileInfo>      m_photoRollFileInfo;
 
     private     bool                m_isShowingAlbum;
     /// <summary>
     /// Object that displays images, texture changes to show new images
     /// </summary>
-    private     RawImage            m_photoOBJ;
+    public     RawImage            m_photoOBJ;
     /// <summary>
     /// current location in picture index
     /// </summary>
@@ -34,35 +34,51 @@ public class PhotoAlbum : MonoBehaviour
     public      Canvas              m_canvas;
     public      Player              m_playerScript;
     public      Camera              m_virtCam;
+    public      CameraController    m_camControl;
 
     // Start is called before the first frame update
     void Start()
     {
-        m_picsFileNames = new List<string>();
-        m_fullpath = Application.dataPath + "/Photos";
+        m_photoDirectory = Directory.CreateDirectory(Application.persistentDataPath + "/Photos");
         m_isShowingAlbum = false;
         m_currPicIndex = 0;
-        GetFileArray();
-        m_photoOBJ = gameObject.GetComponentInChildren<RawImage>();
+        FileInfo[] m_picFileInfo = m_photoDirectory.GetFiles("*.png");
+        m_photoRollFileInfo = new List<FileInfo>();
+        PhotoMode phm = GameObject.Find("Screen Capture").GetComponent<PhotoMode>();
+        foreach (var pic in m_picFileInfo)
+        {
+            if (pic.Name.Contains("RIV"))
+            {
+                phm.LoadInJournalEntry(JournalSubject.LOC_River, pic);
+            }
+            else if (pic.Name.Contains("FLY"))
+            {
+                phm.LoadInJournalEntry(JournalSubject.LOC_Fireflies, pic);
+            }
+            else if (pic.Name.Contains("DCK"))
+            {
+                phm.LoadInJournalEntry(JournalSubject.LOC_DuckPond, pic);
+            }
+            else
+            {
+                m_photoRollFileInfo.Add(pic);
+            }
+
+        }
         m_journalEntries = new List<PhotoSubject>();
-        Debug.Log("start not skipped");
     }
 
-    /// <summary>
-    /// Gets array of .png files from folder
-    /// </summary>
-    private void GetFileArray()
+    public void ResetPhotos()
     {
-        DirectoryInfo dir = new DirectoryInfo(m_fullpath);
-        var picsInfo = dir.GetFiles("*.png");
-        foreach (var file in picsInfo)
+        foreach (var file in m_photoRollFileInfo)
         {
-            m_picsFileNames. Add(file.Name);
+            File.Delete(file.FullName);
         }
-        if (m_picsFileNames.Count != 0)
-        {
-            LoadIndexedPhotoToTexture();
-        }
+        Directory.Delete(m_photoDirectory.FullName);
+        m_photoDirectory = Directory.CreateDirectory(Application.persistentDataPath + "/Photos");
+        m_isShowingAlbum = false;
+        m_currPicIndex = 0;
+        m_photoRollFileInfo = new List<FileInfo>();
     }
 
 
@@ -82,12 +98,16 @@ public class PhotoAlbum : MonoBehaviour
     void setShowingAlbum(bool status)
     {
         m_isShowingAlbum = status;
-        m_playerScript.enabled = !(status);
+        m_playerScript.enabled = !status;
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        m_camControl.m_camera.enabled = !status;
+
         GameObject.Find("CameraArmMain").GetComponent<CameraController>().enabled = !(status);
         m_virtCam.enabled = status;
-        if (status) { LoadIndexedPhotoToTexture(); }
+        if (status && m_photoRollFileInfo.Count != 0) { LoadIndexedPhotoToTexture(); }
     }
 
     // Update is called once per frame
@@ -100,7 +120,7 @@ public class PhotoAlbum : MonoBehaviour
         {
             if (m_currPicIndex == 0)
             {
-                m_currPicIndex = m_picsFileNames.Count - 1;
+                m_currPicIndex = m_photoRollFileInfo.Count - 1;
             }
             else
             {
@@ -110,7 +130,7 @@ public class PhotoAlbum : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (m_currPicIndex == m_picsFileNames.Count - 1)
+            if (m_currPicIndex == m_photoRollFileInfo.Count - 1)
             {
                 m_currPicIndex = 0;
             }
@@ -132,9 +152,9 @@ public class PhotoAlbum : MonoBehaviour
     private void LoadIndexedPhotoToTexture()
     {
 
-        string PhotoPath = m_picsFileNames[m_currPicIndex];
-        string loadPath = m_fullpath + "/" + PhotoPath;
-        var texture = LoadPNG(loadPath);
+        var PhotoInfo = m_photoRollFileInfo[m_currPicIndex];
+        var texture = LoadPNG(PhotoInfo);
+        if(!m_photoOBJ) { Debug.Log("photo Object not found"); }
         m_photoOBJ.texture = texture;
 
     }
@@ -144,15 +164,16 @@ public class PhotoAlbum : MonoBehaviour
     /// </summary>
     /// <param name="filePath"> path of image to load </param>
     /// <returns> image found at filepath </returns>
-    Texture2D LoadPNG(string filePath)
+    Texture2D LoadPNG(FileInfo photoInfo)
     {
 
         Texture2D tex = null;
         byte[] fileData;
 
-        if (File.Exists(filePath))
+        if (photoInfo.Exists)
         {
-            fileData = File.ReadAllBytes(filePath);
+            string fn = photoInfo.FullName;
+            fileData = File.ReadAllBytes(fn);
             tex = new Texture2D(2, 2);
             tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
         }
@@ -163,10 +184,12 @@ public class PhotoAlbum : MonoBehaviour
     /// Adds a new path to array that holds a photo
     /// </summary>
     /// <param name="filename">photo's filepath</param>
-    public void AddNewPhoto(string filename)
+    public void AddNewPhoto(string file)
     {
-        m_picsFileNames.Add(filename);
-        if(m_picsFileNames.Count == 1)
+        FileInfo newPic = new FileInfo(file);
+
+        m_photoRollFileInfo.Add(newPic);
+        if(m_photoRollFileInfo.Count == 1)
         {
             LoadIndexedPhotoToTexture();
         }

@@ -41,21 +41,12 @@ public class Book : MonoBehaviour
     bool m_openDirection;
     bool m_startCalled;
 
-    Dictionary<AreaName, bool> m_checklist;
-    public ProgressLog m_progress;
-
     // Start is called before the first frame update
     public void Start()
     {
         if (!m_startCalled)
         {
             //m_pageTurn.clip.legacy = true;
-
-            m_checklist = new Dictionary<AreaName, bool>();
-
-            m_checklist.Add(AreaName.STATION, false);
-            m_checklist.Add(AreaName.ROCKS, false);
-            m_checklist.Add(AreaName.DUCKS, false);
 
             // Adds all the left and right pages in order to a list
             m_pages = new List<GameObject>();
@@ -446,22 +437,6 @@ public class Book : MonoBehaviour
             m_prevPageButton.SetActive(true);
         else if (m_prevPageButton)
             m_prevPageButton.SetActive(false);
-    }
-
-    //Updates Checklist
-    void updateChecklist()
-    {
-        bool[] prog = m_progress.getProgressChecks();
-        for (int i = 0; i < 3; i++)                             //Iterate through lists
-        {
-            bool prog_bl = prog[i];
-            bool list_bl = m_checklist[(AreaName)i];
-            if (prog_bl != list_bl)                             //if there is a discrepancy between the progress, and that recorded on the checklist
-            {
-                m_checklist[(AreaName)i] = prog_bl;             //set checklist item to match the progress log
-                //start animation
-            }
-        }
     }
     
     /// <summary>

@@ -10,6 +10,7 @@ TagManager:
   - Fox
   - Dog
   - Enemy
+  - DUCK
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - Ball
   - Log
   - Sparkles
-  - 
+  - Wall
   - 
   - 
   - 

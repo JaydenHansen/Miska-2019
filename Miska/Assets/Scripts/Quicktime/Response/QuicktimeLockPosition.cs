@@ -32,7 +32,8 @@ public class QuicktimeLockPosition : QuicktimeResponse
     public override void OnFailure()
     {
         m_player.MovementState = MovementState.Walking;
-        m_player.transform.position = m_oldPos;
+        //m_player.transform.position = m_oldPos;
+        m_player.transform.position = transform.position + (-transform.forward * 0.5f); // doesn't take player back to old pos to stop the teleport bug
         m_player.CharacterController.enabled = true;
     }
 }

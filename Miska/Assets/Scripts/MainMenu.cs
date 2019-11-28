@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour
     public GameObject[] m_collectables;
     public Book m_book;
     public float m_bookOpenDelay;
+    public float m_cameraRotThreshold;
     public GameObject[] m_trash;
     public TrashCan m_trashCan;
     public GameObject m_trashUI;
@@ -25,6 +26,7 @@ public class MainMenu : MonoBehaviour
     bool m_isLoadingNow;
     float m_bookOpenTimer;
     bool m_bookOpening;
+    Quaternion m_startCameraRot;
     public PhotoMode m_photoMode;
 
     // Start is called before the first frame update
@@ -65,6 +67,12 @@ public class MainMenu : MonoBehaviour
         // adds a delay before the book opens
         if (m_bookOpening)
         {
+            m_camera.transform.rotation = Quaternion.Lerp(m_startCameraRot, Quaternion.LookRotation(Vector3.back), m_bookOpenTimer / m_cameraRotThreshold);
+            if (m_bookOpenTimer >= m_cameraRotThreshold && !m_camera.enabled)
+            {
+                m_camera.SetRotation(m_camera.transform.rotation.eulerAngles);
+                m_camera.enabled = true;
+            }
             m_bookOpenTimer += Time.deltaTime;
             if (m_bookOpenTimer > m_bookOpenDelay)
             {
@@ -180,6 +188,8 @@ public class MainMenu : MonoBehaviour
     public void StartBookOpen()
     {
         m_bookOpening = true;
+        m_camera.enabled = false;
+        m_startCameraRot = m_camera.transform.rotation;
     }
 
     public void GameFinished()

@@ -465,8 +465,9 @@ public class Book : MonoBehaviour
     /// </summary>
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        GameObject.Find("Screen Capture").GetComponent<PhotoMode>().ResetPhotoData();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //GameObject.Find("Screen Capture").GetComponent<PhotoMode>().ResetPhotoData();
+        SceneManager.LoadScene(0);
     }
   
 }

@@ -68,4 +68,17 @@ public class PlantDisolve : MonoBehaviour
             m_growthAudio.Post(gameObject);
         }
     }
+
+    public void SetDissolve(float value)
+    {
+        m_active = false;
+
+        for (int i = 0; i < m_plants.Length; i++)
+        {
+            foreach (Material material in m_plants[i].materials)
+            {
+                material.SetFloat("_DissolveSlider", -((value / m_dissolveSpeed) + 1));
+            }
+        }
+    }
 }

@@ -164,6 +164,29 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void LoadMenuScene()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(LoadMenuAsync());
+    }
+
+    public IEnumerator LoadMenuAsync()
+    {
+        int oldIndex = SceneManager.GetActiveScene().buildIndex;
+
+        AsyncOperation async = SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
+        while (!async.isDone)
+        {
+            yield return null;
+        }
+
+        GameObject bookObject = GameObject.Find("Book_menu");
+        if (bookObject)
+        {
+            MainMenu mainMenu = bookObject.GetComponent<MainMenu>();
+            if (mainMenu)
+            {
+                mainMenu.GameFinished();
+            }
+        }
+
+        SceneManager.UnloadSceneAsync(oldIndex);
     }
 }

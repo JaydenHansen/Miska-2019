@@ -17,6 +17,10 @@ public class MainMenu : MonoBehaviour
     public GameObject[] m_collectables;
     public Book m_book;
     public float m_bookOpenDelay;
+    public GameObject[] m_trash;
+    public TrashCan m_trashCan;
+    public GameObject m_trashUI;
+    public PlantDisolve m_plantDissolve;
 
     bool m_isLoadingNow;
     float m_bookOpenTimer;
@@ -176,5 +180,24 @@ public class MainMenu : MonoBehaviour
     public void StartBookOpen()
     {
         m_bookOpening = true;
+    }
+
+    public void GameFinished()
+    {
+        m_animation.Stop();
+        m_animation.clip.SampleAnimation(m_camera.gameObject, m_animation.clip.length);
+
+        foreach(GameObject trash in m_trash)
+        {
+            trash.SetActive(false);
+        }
+
+        m_trashCan.Triggered = true;
+        m_trashUI.SetActive(false);
+
+        m_plantDissolve.SetDissolve(m_plantDissolve.m_dissolveSpeed);
+
+        m_book.enabled = true;
+        m_book.Start();
     }
 }

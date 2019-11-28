@@ -26,6 +26,7 @@ public class TrashCan : MonoBehaviour
     public bool Triggered
     {
         get { return m_triggered; }
+        set { m_triggered = value; }
     }
 
     // Start is called before the first frame update

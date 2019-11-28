@@ -41,6 +41,7 @@ public class DuckFollow : MonoBehaviour
             }
             else
             {
+                m_agent.enabled = true;
                 m_agent.SetDestination(m_waterReturnPos.position); // moves back into the water
                 if ((transform.position - m_waterReturnPos.position).magnitude < 0.1) // if the duck has reached the water
                 {
@@ -88,6 +89,7 @@ public class DuckFollow : MonoBehaviour
     {
         m_returnToWater = true;
         m_agent.stoppingDistance = 0;
+        m_agent.enabled = false;
     }
 
     /// <summary>

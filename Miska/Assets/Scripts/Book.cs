@@ -162,6 +162,7 @@ public class Book : MonoBehaviour
             m_leftPages.gameObject.SetActive(true);
             m_rightPages.gameObject.SetActive(true);
 
+
             // only show the next page button if there is a next page
             if (m_nextPageButton && m_currentPage + 1 <= Mathf.CeilToInt(m_pages.Count / 2f) - 1) 
                 m_nextPageButton.SetActive(true);

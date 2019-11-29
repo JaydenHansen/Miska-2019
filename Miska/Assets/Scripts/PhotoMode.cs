@@ -174,6 +174,7 @@ public class PhotoMode : MonoBehaviour
         if (isValidated)
         {
             AttachToJournal(subj, filename);
+            subj.SetActiveState(false);
         }
         else
         {

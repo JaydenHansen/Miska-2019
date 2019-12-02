@@ -25,6 +25,8 @@ public class Book : MonoBehaviour
     public bool m_autoClose;
     public bool m_manualControl = true;
     public bool m_menuBook;
+    public AK.Wwise.Event m_stopPOIEvent;
+    public PhotoMode m_photoMode;
 
     List<GameObject> m_pages;
     int m_currentPage;
@@ -467,7 +469,8 @@ public class Book : MonoBehaviour
     public void Restart()
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //GameObject.Find("Screen Capture").GetComponent<PhotoMode>().ResetPhotoData();
+        m_photoMode.ResetPhotoData();
+        m_stopPOIEvent.Post(gameObject);
         SceneManager.LoadScene(0);
     }
   

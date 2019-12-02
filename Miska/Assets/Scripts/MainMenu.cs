@@ -22,6 +22,7 @@ public class MainMenu : MonoBehaviour
     public TrashCan m_trashCan;
     public GameObject m_trashUI;
     public PlantDisolve m_plantDissolve;
+    public AK.Wwise.Event m_stopPOIMusic;
 
     bool m_isLoadingNow;
     float m_bookOpenTimer;
@@ -154,15 +155,17 @@ public class MainMenu : MonoBehaviour
         }
         m_photoMode.enabled = true;
         m_photoMode.ResetPhotoData();
+        m_stopPOIMusic.Post(gameObject);
 
-    }
 
-    /// <summary>
-    /// waits for an animation to finish
-    /// </summary>
-    /// <param name="animation">The animation to wait for</param>
-    /// <returns>coroutine</returns>
-    private IEnumerator WaitForAnimation(Animation animation)
+}
+
+/// <summary>
+/// waits for an animation to finish
+/// </summary>
+/// <param name="animation">The animation to wait for</param>
+/// <returns>coroutine</returns>
+private IEnumerator WaitForAnimation(Animation animation)
     {
         do
         {

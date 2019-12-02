@@ -27,6 +27,7 @@ public class PhotoMode : MonoBehaviour
 
     public          HUD_UI              m_HUDUI;
     public          AK.Wwise.Event      m_captureSound;
+    public          AKStateToggle       m_AmbienceToggle;
 
     private void Awake()
     {
@@ -292,6 +293,6 @@ public class PhotoMode : MonoBehaviour
         m_entry2.SetActive(false);
         m_entry3.SetActive(false);
         m_photoAlbum.ResetPhotos();
-        GameObject.Find("AudioEmiters/BedAmb").GetComponent<AKStateToggle>().StopMusic();
+        m_AmbienceToggle.StopMusic();
     }
 }

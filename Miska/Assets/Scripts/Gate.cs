@@ -9,6 +9,7 @@ public class Gate : MonoBehaviour
 {
     public int m_trashCanCount;
     public Transform m_openPosition;
+    public VoidEvent m_allAreasComplete;
 
     /// <summary>
     /// Called each time an area is completed
@@ -24,6 +25,8 @@ public class Gate : MonoBehaviour
             transform.rotation = m_openPosition.rotation;
           
             GameObject.Find("Goal UI").GetComponent<HUD_UI>().SetupReturnToLodge();
+
+            m_allAreasComplete.Invoke();
         }
     }
 }

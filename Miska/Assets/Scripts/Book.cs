@@ -156,9 +156,11 @@ public class Book : MonoBehaviour
     public void OpenBook(int page)
     {
         if (!m_animation.isPlaying && !m_open) // if the book is not open
-        {            
+        {
             if (!m_menuBook) // only play the opening animation ingame
                 m_animation.Play("Book_Open_001");
+            else
+                m_animation.Play("Book_Open_Menu_001");
 
             m_currentPage = page;
             m_leftPages.gameObject.SetActive(true);

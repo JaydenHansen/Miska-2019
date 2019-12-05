@@ -5,6 +5,7 @@
 			<ChildrenList>
 				<MusicPlaylistContainer Name="duck POI" ID="{C79EAC2B-9AA6-48D7-9606-7B7842409C65}" ShortID="92926193">
 					<PropertyList>
+						<Property Name="EnableAttenuation" Type="bool" Value="False"/>
 						<Property Name="HoldEmitterPositionOrientation" Type="bool" Value="True"/>
 						<Property Name="Tempo" Type="Real64" Value="89"/>
 						<Property Name="Volume" Type="Real64">

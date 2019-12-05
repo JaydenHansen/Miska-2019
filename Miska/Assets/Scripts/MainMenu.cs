@@ -68,8 +68,10 @@ public class MainMenu : MonoBehaviour
         // adds a delay before the book opens
         if (m_bookOpening)
         {
-            m_camera.transform.rotation = Quaternion.Lerp(m_startCameraRot, Quaternion.LookRotation(Vector3.back), m_bookOpenTimer / m_cameraRotThreshold);
-            if (m_bookOpenTimer >= m_cameraRotThreshold && !m_camera.enabled)
+            if (m_bookOpenTimer < m_cameraRotThreshold)
+                m_camera.transform.rotation = Quaternion.Lerp(m_startCameraRot, Quaternion.LookRotation(Vector3.back), m_bookOpenTimer / m_cameraRotThreshold);
+
+            if (m_bookOpenTimer >= m_cameraRotThreshold && !m_camera.enabled && !m_book.enabled)
             {
                 m_camera.SetRotation(m_camera.transform.rotation.eulerAngles);
                 m_camera.enabled = true;

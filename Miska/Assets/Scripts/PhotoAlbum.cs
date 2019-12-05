@@ -70,7 +70,8 @@ public class PhotoAlbum : MonoBehaviour
 
     public void ResetPhotos()
     {
-        foreach (var file in m_photoRollFileInfo)
+        FileInfo[] m_picFileInfo = m_photoDirectory.GetFiles("*.png");
+        foreach (var file in m_picFileInfo)
         {
             File.Delete(file.FullName);
         }

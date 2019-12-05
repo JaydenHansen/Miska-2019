@@ -4,7 +4,7 @@
 		<Banks>
 			<Language ID="393239870">
 				<File Name="BNK_Ducks" Hash="1876643607" Timestamp="1573102982"/>
-				<File Name="BNK_Global" Hash="3355860788" Timestamp="1574989339"/>
+				<File Name="BNK_Global" Hash="3355860788" Timestamp="1575503525"/>
 				<File Name="BNK_Rocks" Hash="3888393702" Timestamp="1573102982"/>
 				<File Name="BNK_Station" Hash="3894657024" Timestamp="1573102982"/>
 				<File Name="Init" Hash="3481149352" Timestamp="1574989339"/>
@@ -12,7 +12,7 @@
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="2564357795" Timestamp="1574989339"/>
+				<File Name="" Hash="2564357795" Timestamp="1575503525"/>
 			</Language>
 		</XMLInfo>
 	</Platform>

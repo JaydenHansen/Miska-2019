@@ -119,27 +119,11 @@ public class PhotoAlbum : MonoBehaviour
         //if left is pressed, current pic moves "back". right moves it "forward". Wraps from start to finish. Then loads image
         if(Input.GetKeyDown(KeyCode.LeftArrow)) 
         {
-            if (m_currPicIndex == 0)
-            {
-                m_currPicIndex = m_photoRollFileInfo.Count - 1;
-            }
-            else
-            {
-                m_currPicIndex--;
-            }
-            LoadIndexedPhotoToTexture();
+            PrevPhoto();
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (m_currPicIndex == m_photoRollFileInfo.Count - 1)
-            {
-                m_currPicIndex = 0;
-            }
-            else
-            {
-                m_currPicIndex++;
-            }
-            LoadIndexedPhotoToTexture();
+            NextPhoto();
         }
         else if (Input.GetKeyDown(KeyCode.Tab) && m_isShowingAlbum)
         {
@@ -194,5 +178,31 @@ public class PhotoAlbum : MonoBehaviour
         {
             LoadIndexedPhotoToTexture();
         }
+    }
+
+    public void NextPhoto()
+    {
+        if (m_currPicIndex == m_photoRollFileInfo.Count - 1)
+        {
+            m_currPicIndex = 0;
+        }
+        else
+        {
+            m_currPicIndex++;
+        }
+        LoadIndexedPhotoToTexture();
+    }
+
+    public void PrevPhoto()
+    {
+        if (m_currPicIndex == 0)
+        {
+            m_currPicIndex = m_photoRollFileInfo.Count - 1;
+        }
+        else
+        {
+            m_currPicIndex--;
+        }
+        LoadIndexedPhotoToTexture();
     }
 }

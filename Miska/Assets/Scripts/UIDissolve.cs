@@ -12,6 +12,7 @@ public class UIDissolve : MonoBehaviour
     public Image[] m_image;
     public float m_dissolveSpeed;
     public float m_dissolveRandomOffset;
+    public bool m_startAppeared;
     public bool m_scalePulse;
     public float m_scalePulseSpeed;
     public Vector2 m_range;
@@ -48,7 +49,7 @@ public class UIDissolve : MonoBehaviour
         {
             image.material = new Material(image.material);
             image.material.name += " (Instance)";
-            image.material.SetFloat("_DissolveSlider", 0.1f);
+            image.material.SetFloat("_DissolveSlider", m_startAppeared ? m_range.y : m_range.x);
         }
     }
 
